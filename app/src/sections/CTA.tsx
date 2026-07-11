@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useInView } from '../hooks/useInView';
 import SectionChip from '../components/brand/SectionChip';
 import BrandPattern from '../components/brand/BrandPattern';
+import BrandButton from '../components/brand/BrandButton';
 import { useT } from '../i18n/I18nContext';
 import { Check, Mail, Phone, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -42,7 +43,7 @@ const formFields = {
     notes: 'ملاحظات إضافية / متطلبات خاصة',
     submit: 'إرسال الطلب',
     submitting: 'جاري الإرسال...',
-    successTitle: 'شكرًا لثقتك في Fast Access!',
+    successTitle: 'شكرًا لثقتك في فاست أكسس!',
     successSub: 'وبيننا تواصل قريب. فريقنا راح يتواصل معك خلال يوم عمل واحد لمناقشة احتياجاتك وتفاصيل التعاون.',
     types: ['متجر إلكتروني', 'شركة تجزئة', 'شركة ناشئة', 'أخرى'],
     volumes: ['أقل من 500 طلب / شهر', '500 - 2,000 طلب / شهر', '2,000 - 10,000 طلب / شهر', 'أكثر من 10,000 طلب / شهر'],
@@ -123,29 +124,10 @@ export default function CTA() {
               {t('cta.body')}
             </p>
 
-            {/* Direct Contact info */}
-            <div className="mt-12 space-y-5 border-t border-white/10 pt-8 max-w-[440px]" style={{ opacity: isInView ? 1 : 0, transform: isInView ? 'translateY(0)' : 'translateY(20px)', transition: 'all 500ms ease-out 300ms' }}>
-              <div className="flex items-center gap-4 text-fa-classic-chalk/85">
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-fa-orange-soda">
-                  <Mail size={16} />
-                </div>
-                <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-fa-classic-chalk/45">{isAr ? 'البريد الإلكتروني' : 'Email Address'}</div>
-                  <a href="mailto:support@faccess.co" className="text-sm font-medium hover:underline hover:text-white transition-colors">support@faccess.co</a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 text-fa-classic-chalk/85">
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-fa-orange-soda">
-                  <Phone size={16} />
-                </div>
-                <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-fa-classic-chalk/45">{isAr ? 'تواصل معنا' : 'Contact Support'}</div>
-                  <a href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:underline hover:text-white transition-colors">{isAr ? 'تواصل عبر واتساب' : 'Chat via WhatsApp'}</a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 mt-4 text-[11px] text-fa-orange-soda font-semibold uppercase tracking-wider font-body">
+            {/* Clear contact CTA (brand review: link to contact page instead of listing details) */}
+            <div className="mt-10" style={{ opacity: isInView ? 1 : 0, transform: isInView ? 'translateY(0)' : 'translateY(20px)', transition: 'all 500ms ease-out 300ms' }}>
+              <BrandButton href="/contact">{isAr ? 'تواصل معنا' : 'Contact us'}</BrandButton>
+              <div className="flex items-center gap-2 mt-6 text-[11px] text-fa-orange-soda font-semibold uppercase tracking-wider font-body">
                 <span className="w-1.5 h-1.5 rounded-full bg-fa-orange-soda animate-pulse" />
                 {isAr ? 'الرد خلال يوم عمل واحد' : 'Reply within one business day'}
               </div>

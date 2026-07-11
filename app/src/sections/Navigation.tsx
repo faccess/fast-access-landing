@@ -8,6 +8,7 @@ import { useT } from '../i18n/I18nContext';
 export default function Navigation() {
   const { t } = useT();
   const navLinks = [
+    { label: t('nav.home'), to: '/' },
     { label: t('nav.solutions'), to: '/solutions' },
     { label: t('nav.pricing'), to: '/pricing' },
     { label: t('nav.resources'), to: '/resources' },

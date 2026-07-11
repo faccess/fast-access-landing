@@ -12,10 +12,8 @@ interface Props {
   className?: string;
 }
 
-export default function SectionChip({ children, onDark = false, className = '' }: Props) {
-  return (
-    <span className={`section-chip${onDark ? ' section-chip--on-dark' : ''} ${className}`.trim()}>
-      {children}
-    </span>
-  );
+export default function SectionChip(_props: Props) {
+  // Per brand review (July 2026): section titles must stand alone —
+  // the eyebrow chips above headings were removed site-wide.
+  return null;
 }

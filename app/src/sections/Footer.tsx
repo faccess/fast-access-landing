@@ -75,8 +75,10 @@ export default function Footer() {
         {/* Top section */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Logo & Description */}
-          <div className="col-span-2">
-            <BrandLogo variant="full" mode="dark" height={56} />
+          <div className="col-span-2 rtl:order-last rtl:text-right">
+            <div dir="ltr" className="text-left">
+              <BrandLogo variant="full" mode="dark" height={56} />
+            </div>
             <div className="font-display mt-5 text-base text-fa-classic-chalk font-semibold tracking-[-0.01em] inline-flex items-center gap-2.5">
               <span
                 className="w-1.5 h-1.5 rounded-full bg-fa-orange-soda inline-block"

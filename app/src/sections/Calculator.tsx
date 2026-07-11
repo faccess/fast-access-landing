@@ -83,7 +83,7 @@ export default function Calculator() {
 
             <p className="calc-fade font-body mt-4 text-[15px] lg:text-base text-fa-liberty-blue/65 max-w-[500px] leading-[1.55]">
               {isAr
-                ? 'حرّك المؤشرات لتشاهد كم توفّر من المال والوقت — وكم يتحسّن وقت التوصيل — مع Fast Access.'
+                ? 'حرّك المؤشرات لتشاهد كم توفّر من المال والوقت — وكم يتحسّن وقت التوصيل — مع فاست أكسس.'
                 : 'Slide the inputs to see how much money and time you save — and how much faster your customers get their orders — with Fast Access.'}
             </p>
 
@@ -214,7 +214,7 @@ export default function Calculator() {
 
             <div className="mt-4 font-body text-[11px] text-fa-liberty-blue/45 text-center">
               {isAr
-                ? 'تقديرات تعتمد على متوسط نتائج تجار Fast Access. النتائج الفعلية تختلف.'
+                ? 'تقديرات تعتمد على متوسط نتائج تجار فاست أكسس. النتائج الفعلية تختلف.'
                 : 'Estimates based on average Fast Access merchant outcomes. Actual results vary.'}
             </div>
           </div>

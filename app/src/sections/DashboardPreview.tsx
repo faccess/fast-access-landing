@@ -68,11 +68,6 @@ export default function DashboardPreview() {
                 </>
               )}
             </h2>
-            <p className="font-body mt-5 text-base text-fa-ink-muted leading-[1.6]" style={{ opacity: isInView ? 1 : 0, transform: isInView ? 'translateY(0)' : 'translateY(20px)', transition: 'all 500ms ease-out 200ms' }}>
-              {isAr
-                ? 'رؤية لحظية لفريق عملياتك، صفحات تتبع واضحة لعملائك، وربط مباشر مع المنصات اللي تعتمد عليها — مافي شي يمشي بدون ما تدري عنه.'
-                : 'Real-time visibility for your operations team. Clear tracking pages for your customers. APIs for the platforms you rely on.'}
-            </p>
             <ul className="mt-6 space-y-2.5">
               {bullets.map((item, i) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-[#6b6b7b]" style={{ opacity: isInView ? 1 : 0, transform: isInView ? 'translateY(0)' : 'translateY(10px)', transition: `all 400ms ease-out ${300 + i * 100}ms` }}>
