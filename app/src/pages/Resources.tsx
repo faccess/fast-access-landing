@@ -18,7 +18,7 @@ export default function Resources() {
     { icon: CalendarDays, tag: isAr ? 'مواسم' : 'Peak', title: isAr ? 'الاستعداد لموسم الذروة' : 'Surviving peak season', body: isAr ? 'قائمة تحقّق عملية لرمضان والجمعة البيضاء ومواسم التخفيضات.' : 'A practical checklist for Ramadan, White Friday, and sale seasons.' },
     { icon: RotateCcw, tag: isAr ? 'مرتجعات' : 'Returns', title: isAr ? 'تحويل المرتجعات لميزة' : 'Turning returns into an edge', body: isAr ? 'سياسة مرتجعات تبني الثقة وتقلّل الخسارة في آنٍ واحد.' : 'A returns policy that builds trust and reduces loss at the same time.' },
     { icon: Plug, tag: isAr ? 'تكامل' : 'Integration', title: isAr ? 'توصيل متجرك بفاست أكسس' : 'Connecting your store to Fast Access', body: isAr ? 'خطوات ربط سلة وزد وشوبيفاي ومزامنة الطلبات تلقائيًا.' : 'Steps to link Salla, Zid, and Shopify and sync orders automatically.' },
-    { icon: BookOpen, tag: isAr ? 'مفاهيم' : 'Basics', title: isAr ? 'مصطلحات اللوجستيات' : 'A glossary of logistics terms', body: isAr ? 'من 3PL إلى المتجر السحابي — المفاهيم التي تحتاجها بلغة بسيطة.' : 'From 3PL to cloud store — the concepts you need, in plain language.' },
+    { icon: BookOpen, tag: isAr ? 'مفاهيم' : 'Basics', title: isAr ? 'مصطلحات اللوجستيات' : 'A glossary of logistics terms', body: isAr ? 'من 3PL إلى المتجر السحابي، المفاهيم التي تحتاجها بلغة بسيطة.' : 'From 3PL to cloud store — the concepts you need, in plain language.' },
   ];
 
   return (

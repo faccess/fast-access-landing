@@ -97,7 +97,7 @@ export default function Coverage() {
 
   // High-level reach — no live counts, just the coverage story.
   const stats = [
-    { value: isAr ? 'السعودية' : 'KSA', label: isAr ? 'تغطية وطنية — كل المدن الرئيسية' : 'Nationwide — every major city' },
+    { value: isAr ? 'السعودية' : 'KSA', label: isAr ? 'تغطية وطنية، كل المدن الرئيسية' : 'Nationwide — every major city' },
     { value: isAr ? 'الخليج' : 'GCC', label: isAr ? 'شحن سريع لجميع دول الخليج' : 'Fast shipping to all GCC countries' },
     { value: isAr ? 'دولي' : 'Global', label: isAr ? 'شحنات دولية عبر شركاء موثوقين' : 'International shipments worldwide' },
   ];

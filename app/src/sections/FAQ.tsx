@@ -18,13 +18,13 @@ const faqItems = [
     qEn: 'Who are the clients you work with?',
     qAr: 'مين العملاء اللي تشتغلون معهم؟',
     aEn: 'We work with all types of e-commerce brands, commercial companies, and retailers looking for automated logistics and fast delivery inside Saudi Arabia and the Gulf.',
-    aAr: 'أصحاب المتاجر الإلكترونية، والشركات التجارية، وتجار التجزئة — من أول متجر ناشئ إلى العلامات الكبيرة.',
+    aAr: 'أصحاب المتاجر الإلكترونية، والشركات التجارية، وتجار التجزئة، من أول متجر ناشئ إلى العلامات الكبيرة.',
   },
   {
     qEn: 'Do you support integration with e-commerce platforms?',
     qAr: 'هل تدعمون الربط مع منصات التجارة الإلكترونية؟',
     aEn: 'Yes! We support plug-and-play integrations with Salla, Zid, Shopify, WooCommerce, Magento, as well as a robust developer API for custom store platforms.',
-    aAr: 'نعم — سلة، زد، شوبيفاي، ووكومرس، ماجينتو، وواجهة API للمنصات الخاصة. الربط مباشر والطلبات تنسحب تلقائيًا.',
+    aAr: 'نعم، سلة، زد، شوبيفاي، ووكومرس، ماجينتو، وواجهة API للمنصات الخاصة. الربط مباشر والطلبات تنسحب تلقائيًا.',
   },
   {
     qEn: 'How long is delivery inside Saudi cities and the Gulf?',
@@ -36,19 +36,19 @@ const faqItems = [
     qEn: 'Do you ship worldwide?',
     qAr: 'هل يوجد شحن دولي؟',
     aEn: 'Yes, we ship globally to over 220 countries through our strong partnerships with leading international carrier networks.',
-    aAr: 'نعم — نشحن لأكثر من 220 دولة حول العالم عبر شركاء موثوقين.',
+    aAr: 'نعم، نشحن لأكثر من 220 دولة حول العالم عبر شركاء موثوقين.',
   },
   {
     qEn: 'How can I know shipping rates?',
     qAr: 'كيف أعرف أسعار الشحن؟',
     aEn: 'We offer flexible customized pricing based on your product dimensions, monthly order volume, and packaging choice. Use our website savings calculator or click "Inquire Now" to get a transparent custom quote.',
-    aAr: 'الأسعار مرنة ومخصصة حسب نشاطك — استخدم الحاسبة التفاعلية أو تواصل معنا ويوصلك عرضك خلال يوم عمل.',
+    aAr: 'الأسعار مرنة ومخصصة حسب نشاطك، استخدم الحاسبة التفاعلية أو تواصل معنا ويوصلك عرضك خلال يوم عمل.',
   },
   {
     qEn: 'Can you manage returns?',
     qAr: 'هل تديرون المرتجعات؟',
     aEn: 'Absolutely. We handle the entire reverse logistics chain: collecting returns from customers, inspecting their condition, restocking them in the warehouse, and updating your inventory instantly.',
-    aAr: 'نعم — إدارة كاملة: نستلم المرتجع، نفحصه، نرجّعه للمخزون، ونحدّث الكميات تلقائيًا.',
+    aAr: 'نعم، إدارة كاملة: نستلم المرتجع، نفحصه، نرجّعه للمخزون، ونحدّث الكميات تلقائيًا.',
   },
   {
     qEn: 'Do you provide reports and operational visibility?',
@@ -60,13 +60,13 @@ const faqItems = [
     qEn: 'Can operations scale with our business growth?',
     qAr: 'هل تقدر عملياتكم تتوسع مع نمو نشاطي؟',
     aEn: 'Yes. Our infrastructure and fulfillment center network are built to scale with your store, handling seasonal peaks, sales events, and volume surges without delays.',
-    aAr: 'بنيتنا التحتية وشبكة مستودعاتنا مصممة أصلًا لمواكبة النمو والمواسم — توسّع براحتك، والسعة علينا.',
+    aAr: 'بنيتنا التحتية وشبكة مستودعاتنا مصممة أصلًا لمواكبة النمو والمواسم، توسّع براحتك، والسعة علينا.',
   },
   {
     qEn: 'Do you support custom operational requirements?',
     qAr: 'هل تدعمون متطلبات تشغيلية خاصة؟',
     aEn: 'Yes. We support custom kitting, bundle assembly, promotional inserts, custom branded gift packaging, and specific product preparation guidelines.',
-    aAr: 'نعم — تجهيز الباقات، دمج المنتجات، كروت الهدايا، والتغليف الكامل بهوية علامتك.',
+    aAr: 'نعم، تجهيز الباقات، دمج المنتجات، كروت الهدايا، والتغليف الكامل بهوية علامتك.',
   },
   {
     qEn: 'What is the warehouse size?',
@@ -78,13 +78,13 @@ const faqItems = [
     qEn: 'Can I visit the warehouse?',
     qAr: 'هل أقدر أزور المستودع؟',
     aEn: 'Yes. Visits can be scheduled in advance with our account managers for inventory audits, quality reviews, or general facility tours.',
-    aAr: 'أكيد — بالتنسيق مع مدير حسابك، حياك في أي وقت.',
+    aAr: 'أكيد، بالتنسيق مع مدير حسابك، حياك في أي وقت.',
   },
   {
     qEn: 'Is there refrigerated storage?',
     qAr: 'هل يوجد تخزين مبرّد؟',
     aEn: 'Yes, we have specialized climate-controlled zones built to store temperature-sensitive products under perfect conditions.',
-    aAr: 'نعم — مساحات مكيّفة (18-22°م) ومناطق تبريد مخصصة (2-8°م) للمنتجات الحساسة.',
+    aAr: 'نعم، مساحات مكيّفة (18-22°م) ومناطق تبريد مخصصة (2-8°م) للمنتجات الحساسة.',
   },
   {
     qEn: 'What is the temperature of the refrigerated storage?',
@@ -102,13 +102,13 @@ const faqItems = [
     qEn: 'Do you have the SFDA certificate?',
     qAr: 'هل عندكم ترخيص هيئة الغذاء والدواء (SFDA)؟',
     aEn: 'Yes! All our warehouses are fully certified and licensed by the Saudi Food and Drug Authority (SFDA) for cosmetics, health, and medical products.',
-    aAr: 'نعم — جميع مستودعاتنا مرخصة من الهيئة العامة للغذاء والدواء.',
+    aAr: 'نعم، جميع مستودعاتنا مرخصة من الهيئة العامة للغذاء والدواء.',
   },
   {
     qEn: 'If a carrier damages my products, what is the compensation?',
     qAr: 'لو تلفت منتجاتي أثناء الشحن، وش التعويض؟',
     aEn: 'All shipments are covered by logistics insurance. In the rare event of damage or loss by a carrier, we handle the claims process and compensate you for the declared cost value of the products.',
-    aAr: 'جميع الشحنات مغطاة بتأمين لوجستي — نتولى إدارة المطالبة كاملة، والتعويض يُحسب حسب القيمة التكلفية للمنتج.',
+    aAr: 'جميع الشحنات مغطاة بتأمين لوجستي، نتولى إدارة المطالبة كاملة، والتعويض يُحسب حسب القيمة التكلفية للمنتج.',
   },
 ];
 

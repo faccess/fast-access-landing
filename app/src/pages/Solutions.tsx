@@ -26,14 +26,14 @@ export default function Solutions() {
       step: '02',
       title: isAr ? 'نربط متجرك' : 'We connect your store',
       body: isAr
-        ? 'تكامل مباشر مع سلة وزد وشوبيفاي — الطلبات تنزل إلينا تلقائيًا لحظة الشراء.'
+        ? 'تكامل مباشر مع سلة وزد وشوبيفاي، الطلبات تنزل إلينا تلقائيًا لحظة الشراء.'
         : 'Direct integration with Salla, Zid, and Shopify — orders flow to us automatically the moment a buyer checks out.',
     },
     {
       step: '03',
       title: isAr ? 'نشحن ونتابع' : 'We ship & track',
       body: isAr
-        ? 'نجهّز ونغلّف ونسلّم — وكل طلب متتبَّع من الرف حتى باب العميل في لوحة واحدة.'
+        ? 'نجهّز ونغلّف ونسلّم، وكل طلب متتبَّع من الرف حتى باب العميل في لوحة واحدة.'
         : 'We pick, pack, and deliver — every order tracked from shelf to doorstep in one live dashboard.',
     },
   ];

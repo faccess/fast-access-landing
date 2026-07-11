@@ -9,46 +9,50 @@ gsap.registerPlugin(ScrollTrigger);
 const SCENES = [
   {
     progress: 0,
-    time: '00:00',
-    label: { en: 'Winter lane', ar: 'مسار بارد' },
-    title: { en: 'The first scan locks the route.', ar: 'أول مسح يثبت مسار الطلب.' },
-    metric: { en: 'Origin signal', ar: 'إشارة البداية' },
+    time: '11:00 ص',
+    timeEn: '11:00 AM',
+    label: { en: 'Order in', ar: 'الطلب وصل' },
+    title: { en: 'Your customer hit "Buy" — and it became ours to handle.', ar: 'عميلك ضغط «اشتري»... وخلاص، صارت علينا.' },
+    metric: { en: 'New order', ar: 'طلب جديد' },
     detail: {
-      en: 'When the terrain is cold or visibility drops, the order still starts with a clear pickup record.',
-      ar: 'من أول مسح ضوئي يبدأ الطلب بسجل استلام واضح — حتى لو كان الطريق باردًا أو الرؤية منخفضة، المعلومة عندك قبل السؤال.',
+      en: 'The order flows from your store into our system automatically. No emails, no spreadsheets, no follow-ups.',
+      ar: 'الطلب انسحب من متجرك لنظامنا تلقائيًا. بدون إيميل، بدون إكسل، بدون «أبشر أرسله لك».',
     },
   },
   {
     progress: 0.27,
-    time: '00:02',
-    label: { en: 'Water crossing', ar: 'عبور ساحلي' },
-    title: { en: 'A scenery change becomes an ETA update.', ar: 'تغير المشهد يتحول لتحديث وقت الوصول.' },
-    metric: { en: 'ETA recalculated', ar: 'إعادة حساب الوصول' },
+    time: '11:30 ص',
+    timeEn: '11:30 AM',
+    label: { en: 'Pick & pack', ar: 'التجهيز' },
+    title: { en: 'Picked, packed, and wearing your brand.', ar: 'انتقاء، تغليف، وهوية علامتك على الصندوق.' },
+    metric: { en: 'Ready to ship', ar: 'جاهز للشحن' },
     detail: {
-      en: 'The dashboard reads movement, not just milestones, so support knows what changed before the buyer asks.',
-      ar: 'لوحة التحكم تقرأ الحركة وليس المحطات فقط، فيعرف الدعم ما تغيّر قبل سؤال العميل.',
+      en: 'Our team packs every order in your branding, not ours. Your customer receives an experience, not a box.',
+      ar: 'فريقنا يجهّز الطلب بتغليف يحمل اسم براندك مو اسمنا. عميلك يستلم تجربة، مو كرتون.',
     },
   },
   {
     progress: 0.54,
-    time: '00:04',
-    label: { en: 'Green stretch', ar: 'المسار الأخضر' },
-    title: { en: 'The handoff stays visible between teams.', ar: 'تظل نقطة التسليم واضحة بين الفرق.' },
-    metric: { en: 'Driver sync', ar: 'مزامنة السائق' },
+    time: '2:00 م',
+    timeEn: '2:00 PM',
+    label: { en: 'On the road', ar: 'على الطريق' },
+    title: { en: 'The truck is moving, and tracking is in everyone\u2019s hands.', ar: 'الشاحنة تحركت... والتتبع بيدك وبيد عميلك.' },
+    metric: { en: 'Live tracking', ar: 'تتبع مباشر' },
     detail: {
-      en: 'Warehouse, driver, and customer support see the same live route state as the truck crosses zones.',
-      ar: 'المخزن والسائق والدعم يشاهدون نفس حالة المسار أثناء انتقال الشاحنة بين المناطق.',
+      en: 'A live tracking link reaches your customer automatically. They know where their order is without asking you, and you see every shipment in one dashboard.',
+      ar: 'رابط تتبع لحظي يوصل عميلك تلقائيًا، يعرف وين طلبه بدون ما يسألك، وأنت تشوف كل شحناتك بلوحة واحدة.',
     },
   },
   {
     progress: 0.78,
-    time: '00:06',
-    label: { en: 'Heat & last mile', ar: 'الحرارة وآخر ميل' },
-    title: { en: 'Exceptions surface while there is still time.', ar: 'تظهر الاستثناءات قبل فوات الوقت.' },
-    metric: { en: 'Action required', ar: 'إجراء مطلوب' },
+    time: '6:00 م',
+    timeEn: '6:00 PM',
+    label: { en: 'At the door', ar: 'عند الباب' },
+    title: { en: 'Delivered, and your customer loves you a little more.', ar: 'وصل الطلب... وعميلك صار يحبّك أكثر.' },
+    metric: { en: 'Delivered ✓', ar: 'تم التسليم ✓' },
     detail: {
-      en: 'Traffic, capacity, and address issues become operational signals before they turn into missed delivery windows.',
-      ar: 'مشاكل الطريق أو السعة أو العنوان تظهر كإشارات تشغيلية قبل أن تتحول إلى تأخير.',
+      en: 'From the morning click to the doorstep before sunset, same day. That is what brings customers back, and gets them talking about you.',
+      ar: 'من ضغطة الصباح إلى باب البيت قبل المغرب، بنفس اليوم. هذا اللي يخلي العميل يرجع يطلب، ويحكي عنك.',
     },
   },
 ] as const;
@@ -239,24 +243,24 @@ export default function ScrollRoute() {
               scrubber spanning a full-width bottom row. */}
           <div className="flex flex-1 flex-col gap-3 lg:grid lg:grid-cols-[minmax(320px,0.9fr)_minmax(240px,0.8fr)_minmax(320px,0.72fr)] lg:grid-rows-[1fr_auto] lg:items-start lg:gap-x-8 lg:gap-y-0">
             <div className="order-1 max-w-[560px] pt-1 lg:col-start-1 lg:row-start-1 lg:pt-7">
-              <SectionChip onDark>{isAr ? 'تغيرات الطريق' : 'Scenery signals'}</SectionChip>
+              <SectionChip onDark>{isAr ? 'يوم في فاست أكسس' : 'A day at Fast Access'}</SectionChip>
               <h2 className="mt-3 font-display text-[25px] font-semibold leading-[1.02] tracking-[-0.025em] text-fa-classic-chalk sm:mt-5 sm:text-[50px] sm:leading-[0.98] lg:text-[68px]">
                 {isAr ? (
                   <>
-                    الطريق يتغيّر...{' '}
-                    <span className="text-fa-orange-soda">ومعلومتك ما تنقطع</span>.
+                    طلب الصباح...{' '}
+                    <span className="text-fa-orange-soda">يوصل نفس اليوم</span>.
                   </>
                 ) : (
                   <>
-                    When the scenery changes,{' '}
-                    <span className="text-fa-orange-soda">the signal changes</span>
+                    A morning order,{' '}
+                    <span className="text-fa-orange-soda">delivered the same day</span>
                   </>
                 )}
               </h2>
               <p className="mt-5 hidden max-w-[34rem] font-body text-[14px] leading-[1.75] text-fa-classic-chalk/68 sm:block sm:text-base">
                 {isAr
-                  ? 'بين المستودع وباب العميل، تمر شحنتك ببيئات وظروف مختلفة — وكل تغيّر يصير حولها يتحوّل عندنا إلى معلومة واضحة توصلك لحظيًا.'
-                  : 'This is not another steps list. It is a live readout of what changes around the truck as it crosses each environment.'}
+                  ? 'هذي مو خطة توصيل، هذا يوم عادي في فاست أكسس. تابع رحلة طلب واحد من قبل الظهر إلى باب العميل.'
+                  : 'This is not a delivery plan. It is an ordinary day at Fast Access. Follow one order from late morning to the customer\u2019s door.'}
               </p>
             </div>
 
@@ -272,7 +276,7 @@ export default function ScrollRoute() {
               <div key={activeScene} className="route-panel">
                 <div className="route-panel__el flex items-center justify-between gap-4 border-b border-fa-classic-chalk/12 pb-2.5 sm:pb-4">
                   <span className="font-ui text-[11px] font-semibold uppercase tracking-[0.16em] text-fa-orange-soda">
-                    {active.time}
+                    {isAr ? active.time : active.timeEn}
                   </span>
                   <span className="font-ui text-[11px] font-semibold uppercase tracking-[0.14em] text-fa-classic-chalk/48">
                     <b className="text-fa-classic-chalk/70 tabular-nums">{String(activeScene + 1).padStart(2, '0')}</b>
@@ -321,7 +325,7 @@ export default function ScrollRoute() {
                 ))}
               </div>
               <span className="font-ui text-[11px] font-semibold uppercase tracking-[0.14em] tabular-nums text-fa-classic-chalk/65">
-                {active.time}
+                {isAr ? active.time : active.timeEn}
               </span>
             </div>
             </div>

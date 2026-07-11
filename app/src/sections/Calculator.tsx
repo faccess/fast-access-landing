@@ -83,7 +83,7 @@ export default function Calculator() {
 
             <p className="calc-fade font-body mt-4 text-[15px] lg:text-base text-fa-liberty-blue/65 max-w-[500px] leading-[1.55]">
               {isAr
-                ? 'حرّك المؤشرات لتشاهد كم توفّر من المال والوقت — وكم يتحسّن وقت التوصيل — مع فاست أكسس.'
+                ? 'حرّك المؤشرات لتشاهد كم توفّر من المال والوقت، وكم يتحسّن وقت التوصيل، مع فاست أكسس.'
                 : 'Slide the inputs to see how much money and time you save — and how much faster your customers get their orders — with Fast Access.'}
             </p>
 

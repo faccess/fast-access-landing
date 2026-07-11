@@ -38,7 +38,7 @@ export default function AnnouncementBar() {
           <TrendingUp size={12} className="text-[#F15B41] flex-shrink-0" />
           <p className="text-[11px] sm:text-xs text-white/65 leading-snug">
             {isAr
-              ? 'توصيل بنفس اليوم داخل المدن الرئيسية — خلّها علينا،'
+              ? 'توصيل بنفس اليوم داخل المدن الرئيسية... خلّها علينا،'
               : 'Same-day cloud-store delivery is available in major Saudi cities'}
           </p>
           <Link

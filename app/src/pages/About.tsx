@@ -13,7 +13,7 @@ export default function About() {
   const isAr = locale === 'ar';
 
   const values = [
-    { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نقيس أنفسنا بالساعات، لا الأيام — لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
+    { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نقيس أنفسنا بالساعات، لا الأيام، لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
     { icon: ShieldCheck, title: isAr ? 'موثوقية مطلقة' : 'Radical reliability', body: isAr ? 'كل طلب يُعامل كأنه يحمل اسمك، لأنه فعلًا يحمله.' : 'Every order is handled as if it carries your name — because it does.' },
     { icon: HeartHandshake, title: isAr ? 'شريك لا مورّد' : 'Partner, not vendor', body: isAr ? 'ننجح حين تنجح أنت، فنبني حولك لا حول أنفسنا.' : 'We win when you win, so we build around you — not us.' },
     { icon: TrendingUp, title: isAr ? 'مبنيّ للنمو' : 'Built for growth', body: isAr ? 'نمتص قفزات الطلب حتى لا يتحوّل التوسّع إلى فوضى.' : 'We absorb demand spikes so expansion never turns into chaos.' },
