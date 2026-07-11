@@ -417,10 +417,14 @@ html.anim-ready .reveal.is-in {
   overflow: hidden;
   vertical-align: top;
   line-height: inherit;
+  /* Arabic glyphs (shadda above, descenders below) need room inside the
+     overflow-hidden clip; negative margin cancels the layout shift. */
+  padding: 0.22em 0.06em;
+  margin: -0.22em -0.06em;
 }
 .rv-word {
   display: inline-block;
-  transform: translate3d(0, 110%, 0);
+  transform: translate3d(0, 130%, 0);
   transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }

@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="max-w-none text-left rtl:text-right">
             <h1 className="hero-fade font-display font-bold text-[38px] sm:text-[56px] lg:text-[68px] text-fa-classic-chalk leading-[1.0] tracking-[-0.025em] max-w-[680px]">
               <RevealText accent={t('hero.headlineHighlight')} stagger={60}>
-                {`${t('hero.headlineA')} ${t('hero.headlineHighlight')} ${t('hero.headlineB')}`}
+                {`${t('hero.headlineA')} ${t('hero.headlineHighlight')} ${t('hero.headlineB')}`.trim().replace(/\s+/g, ' ')}
               </RevealText>
             </h1>
 
