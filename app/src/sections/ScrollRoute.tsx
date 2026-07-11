@@ -54,6 +54,7 @@ const SCENES = [
 ] as const;
 
 const VIDEO_DURATION = 12.041667;
+const ROUTE_VIDEO_SRC = '/assets/scroll-route-truck.mp4';
 
 export default function ScrollRoute() {
   const { locale } = useT();
@@ -63,8 +64,35 @@ export default function ScrollRoute() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const [activeScene, setActiveScene] = useState(0);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoadVideo(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setShouldLoadVideo(true);
+        observer.disconnect();
+      },
+      // Start fetching before the sticky section reaches the viewport so the
+      // scroll-scrub still feels ready without loading the MP4 at first paint.
+      { rootMargin: '1800px 0px' },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoadVideo) return;
+
     const section = sectionRef.current;
     const video = videoRef.current;
     const progress = progressRef.current;
@@ -91,9 +119,53 @@ export default function ScrollRoute() {
     };
 
     video.addEventListener('loadedmetadata', handleMetadata);
-    video.pause();
+    video.muted = true;
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth < 1024;
+
+    // --- Mobile / touch path: scroll-scrub (video follows scroll, like desktop) -
+    // The footage is scrubbed to the scroll position so the truck drives exactly
+    // with the finger — same feel as desktop. We compute progress from scrollY
+    // ourselves and drive it from real scroll/touchmove events (throttled via
+    // rAF), NOT GSAP's onUpdate, which iOS throttles during momentum scrolling and
+    // would make the scrub freeze then jump. The decoder is primed once (muted
+    // play→pause) so iOS paints the seeked frames instead of showing black.
+    if (isMobile) {
+      video.pause();
+      const primed = video.play();
+      if (primed && typeof primed.then === 'function') {
+        primed.then(() => video.pause()).catch(() => {});
+      }
+      let raf = 0;
+      const sync = () => {
+        raf = 0;
+        const total = section.offsetHeight - window.innerHeight;
+        const scrolled = Math.min(Math.max(-section.getBoundingClientRect().top, 0), Math.max(total, 1));
+        const p = total > 0 ? scrolled / total : 0;
+        const t = Math.min(duration - 0.05, Math.max(0, duration * p));
+        if (Math.abs(video.currentTime - t) > 0.02) video.currentTime = t;
+        progress.style.transform = `scaleX(${p})`;
+        updateActiveScene(p);
+      };
+      const onScroll = () => {
+        if (!raf) raf = requestAnimationFrame(sync);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('touchmove', onScroll, { passive: true });
+      sync();
+
+      return () => {
+        if (raf) cancelAnimationFrame(raf);
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('touchmove', onScroll);
+        video.removeEventListener('loadedmetadata', handleMetadata);
+      };
+    }
+
+    // --- Desktop path: frame-accurate scrub ----------------------------------
+    video.pause();
+    video.style.transformOrigin = 'center 45%';
 
     const trigger = ScrollTrigger.create({
       trigger: section,
@@ -111,9 +183,8 @@ export default function ScrollRoute() {
           video.currentTime = nextTime;
         }
 
-        // Slow push-in: the frame settles from 1.10 → 1.0 across the section so
-        // the static-ish footage keeps a sense of forward depth.
         if (!reduceMotion) {
+          // Slow push-in keeps the static-ish desktop framing feeling forward.
           video.style.transform = `scale(${(1.1 - 0.1 * self.progress).toFixed(4)})`;
         }
 
@@ -128,7 +199,7 @@ export default function ScrollRoute() {
       video.removeEventListener('loadedmetadata', handleMetadata);
       trigger.kill();
     };
-  }, []);
+  }, [shouldLoadVideo]);
 
   const active = SCENES[activeScene];
 
@@ -138,19 +209,20 @@ export default function ScrollRoute() {
         <div className="absolute inset-0">
           <video
             ref={videoRef}
-            className="h-full w-full object-cover will-change-transform"
-            style={{ transformOrigin: 'center 45%', objectPosition: 'center 60%' }}
-            src="/assets/scroll-route-truck.mp4"
+            className="h-full w-full object-cover object-[38%_46%] will-change-transform lg:object-[center_60%]"
+            src={shouldLoadVideo ? ROUTE_VIDEO_SRC : undefined}
             poster="/assets/scroll-route-truck-poster.jpg"
-            preload="auto"
+            preload={shouldLoadVideo ? 'auto' : 'none'}
             muted
             playsInline
             aria-hidden
           />
           {/* Side scrims keep the copy legible over the footage */}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(13,18,50,0.9)_0%,rgba(13,18,50,0.34)_36%,rgba(13,18,50,0.16)_62%,rgba(13,18,50,0.86)_100%)]" />
-          {/* Bottom anchor so the scene rail + progress card sit on solid ground */}
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(11,15,42,0.92)_0%,rgba(11,15,42,0.45)_16%,transparent_42%)]" />
+          {/* Bottom anchor so the scene rail + progress card sit on solid ground.
+              Kept short (transparent by ~32%) so the truck riding mid-frame isn't
+              dimmed; the card carries its own backdrop-blur for legibility. */}
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(11,15,42,0.9)_0%,rgba(11,15,42,0.38)_13%,transparent_32%)]" />
           {/* Top fade smooths the seam from the hero */}
           <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(11,15,42,0.7)_0%,transparent_100%)]" />
           {/* Warm key glow on the truck + cinematic vignette */}
@@ -158,11 +230,17 @@ export default function ScrollRoute() {
           <div className="absolute inset-0 bg-[radial-gradient(125%_125%_at_50%_42%,transparent_52%,rgba(7,10,30,0.62)_100%)]" />
         </div>
 
-        <div className="relative z-[1] flex min-h-[100dvh] flex-col justify-between px-5 py-20 sm:px-8 lg:px-16">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(320px,0.9fr)_minmax(240px,0.8fr)_minmax(320px,0.72fr)] lg:items-start">
-            <div className="max-w-[560px] pt-7">
+        <div className="relative z-[1] flex min-h-[100dvh] flex-col justify-between px-5 pt-16 pb-4 sm:px-8 sm:pb-6 lg:px-16 lg:py-20">
+          {/* Mobile order: headline → fixed truck band → scrubber → card →
+              flexible road spacer. The truck band is a FIXED height so the card's
+              top edge is anchored: longer scenes grow the card DOWNWARD into the
+              road spacer below instead of creeping up over the truck.
+              On lg this becomes the 3-col grid (headline | spacer | card) with the
+              scrubber spanning a full-width bottom row. */}
+          <div className="flex flex-1 flex-col gap-3 lg:grid lg:grid-cols-[minmax(320px,0.9fr)_minmax(240px,0.8fr)_minmax(320px,0.72fr)] lg:grid-rows-[1fr_auto] lg:items-start lg:gap-x-8 lg:gap-y-0">
+            <div className="order-1 max-w-[560px] pt-1 lg:col-start-1 lg:row-start-1 lg:pt-7">
               <SectionChip onDark>{isAr ? 'تغيرات الطريق' : 'Scenery signals'}</SectionChip>
-              <h2 className="mt-5 font-display text-[34px] font-semibold leading-[0.98] tracking-[-0.025em] text-fa-classic-chalk sm:text-[50px] lg:text-[68px]">
+              <h2 className="mt-3 font-display text-[25px] font-semibold leading-[1.02] tracking-[-0.025em] text-fa-classic-chalk sm:mt-5 sm:text-[50px] sm:leading-[0.98] lg:text-[68px]">
                 {isAr ? (
                   <>
                     الطريق يتغيّر...{' '}
@@ -171,22 +249,28 @@ export default function ScrollRoute() {
                 ) : (
                   <>
                     When the scenery changes,{' '}
-                    <span className="text-fa-orange-soda">the signal changes</span>.
+                    <span className="text-fa-orange-soda">the signal changes</span>
                   </>
                 )}
               </h2>
-              <p className="mt-5 max-w-[34rem] font-body text-[14px] leading-[1.75] text-fa-classic-chalk/68 sm:text-base">
+              <p className="mt-5 hidden max-w-[34rem] font-body text-[14px] leading-[1.75] text-fa-classic-chalk/68 sm:block sm:text-base">
                 {isAr
                   ? 'بين المستودع وباب العميل، تمر شحنتك ببيئات وظروف مختلفة — وكل تغيّر يصير حولها يتحوّل عندنا إلى معلومة واضحة توصلك لحظيًا.'
                   : 'This is not another steps list. It is a live readout of what changes around the truck as it crosses each environment.'}
               </p>
             </div>
 
-            <div className="hidden min-h-[50vh] lg:block" aria-hidden />
+            {/* Fixed truck band (mobile): clear air for the footage; its fixed
+                height anchors the card top so the card grows downward, not up.
+                Sized so the card's top sits BELOW the truck (which rides at ~58%
+                of the frame) — keeping the truck visible the whole scroll. */}
+            <div className="order-2 h-[46vh] shrink-0 lg:hidden" aria-hidden />
 
-            <div className="route-active-panel mt-2 w-full max-w-[390px] justify-self-end overflow-hidden border border-fa-classic-chalk/18 bg-fa-liberty-blue/58 p-5 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl lg:mt-20">
+            <div className="hidden min-h-[50vh] lg:col-start-2 lg:row-start-1 lg:block" aria-hidden />
+
+            <div className="route-active-panel order-4 w-full max-w-[390px] overflow-hidden border border-fa-classic-chalk/18 bg-fa-liberty-blue/58 p-3 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:p-5 lg:col-start-3 lg:row-start-1 lg:mt-20 lg:justify-self-end">
               <div key={activeScene} className="route-panel">
-                <div className="route-panel__el flex items-center justify-between gap-4 border-b border-fa-classic-chalk/12 pb-4">
+                <div className="route-panel__el flex items-center justify-between gap-4 border-b border-fa-classic-chalk/12 pb-2.5 sm:pb-4">
                   <span className="font-ui text-[11px] font-semibold uppercase tracking-[0.16em] text-fa-orange-soda">
                     {active.time}
                   </span>
@@ -197,24 +281,23 @@ export default function ScrollRoute() {
                     <span className="ms-2">· {active.label[lang]}</span>
                   </span>
                 </div>
-                <h3 className="route-panel__el mt-5 font-display text-[24px] font-semibold leading-[1.05] text-fa-classic-chalk sm:text-[28px]">
+                <h3 className="route-panel__el mt-2.5 font-display text-[18px] font-semibold leading-[1.08] text-fa-classic-chalk sm:mt-5 sm:text-[28px] sm:leading-[1.05]">
                   {active.title[lang]}
                 </h3>
-                <p className="route-panel__el mt-4 font-body text-[13px] leading-[1.65] text-fa-classic-chalk/62 sm:text-sm">
+                <p className="route-panel__el mt-1.5 line-clamp-2 font-body text-[12.5px] leading-[1.5] text-fa-classic-chalk/62 sm:mt-4 sm:line-clamp-none sm:text-sm sm:leading-[1.65]">
                   {active.detail[lang]}
                 </p>
-                <div className="route-panel__el mt-6 inline-flex items-center gap-2 border border-fa-orange-soda/35 bg-fa-orange-soda/12 px-3 py-2 font-ui text-[12px] font-semibold uppercase tracking-[0.12em] text-fa-classic-chalk">
+                <div className="route-panel__el mt-2.5 inline-flex items-center gap-2 border border-fa-orange-soda/35 bg-fa-orange-soda/12 px-3 py-1.5 font-ui text-[12px] font-semibold uppercase tracking-[0.12em] text-fa-classic-chalk sm:mt-6 sm:py-2">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-fa-orange-soda" />
                   {active.metric[lang]}
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Slim scrubber pinned to the foreground road — kept low and
-              minimal so it never sits over the truck itself */}
-          <div className="pb-1">
-            <div className="flex items-center gap-4 sm:gap-6">
+            {/* Slim scrubber sits between the fixed truck band and the card; on lg
+                it spans a full-width bottom row beneath the headline + card grid. */}
+            <div className="order-3 pb-1 lg:col-span-3 lg:row-start-2 lg:mt-0">
+              <div className="flex items-center gap-4 sm:gap-6">
               <span className="hidden whitespace-nowrap font-ui text-[10px] font-semibold uppercase tracking-[0.16em] text-fa-classic-chalk/55 sm:inline">
                 {isAr ? 'تقدم المشهد' : 'Scenery scrub'}
               </span>
@@ -241,6 +324,11 @@ export default function ScrollRoute() {
                 {active.time}
               </span>
             </div>
+            </div>
+
+            {/* Flexible road spacer (mobile): absorbs leftover height so the card
+                above it grows downward into this space instead of pushing up. */}
+            <div className="order-5 min-h-[4vh] flex-1 lg:hidden" aria-hidden />
           </div>
         </div>
       </div>
