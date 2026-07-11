@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>{isAr ? 'الصفحة غير موجودة — Fast Access' : 'Page not found — Fast Access'}</title>
+        <title>{isAr ? 'الصفحة غير موجودة | فاست أكسس' : 'Page not found — Fast Access'}</title>
         <meta
           name="description"
           content="The page you requested could not be found. Return to Fast Access logistics and fulfillment services."

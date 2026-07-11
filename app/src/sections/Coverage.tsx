@@ -128,10 +128,10 @@ export default function Coverage() {
             </p>
 
             {/* Reach stats */}
-            <div className="grid grid-cols-3 gap-4 mt-9 pt-8 border-t border-fa-classic-chalk/10 max-w-[460px]" style={{ opacity: isInView ? 1 : 0, transition: 'opacity 600ms ease-out 300ms' }}>
+            <div className="grid grid-cols-3 gap-6 mt-9 pt-8 border-t border-fa-classic-chalk/10 max-w-[560px]" style={{ opacity: isInView ? 1 : 0, transition: 'opacity 600ms ease-out 300ms' }}>
               {stats.map((s) => (
                 <div key={s.label}>
-                  <div className="font-display font-semibold text-[34px] lg:text-[38px] text-fa-classic-chalk leading-none tracking-[-0.02em]">
+                  <div className={`font-display font-semibold ${isAr ? 'text-[26px] lg:text-[30px]' : 'text-[34px] lg:text-[38px]'} text-fa-classic-chalk leading-none tracking-[-0.02em]`}>
                     {s.value}
                   </div>
                   <div className="mt-2 text-[11px] font-semibold text-fa-classic-chalk/55 uppercase tracking-[0.08em] font-body leading-snug">

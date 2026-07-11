@@ -27,6 +27,11 @@ export default function Sectors() {
               {t('sectors.headlineB')}
             </h2>
           </Reveal>
+          <Reveal delay={140}>
+            <p className="font-body mt-5 text-base text-fa-ink-muted leading-[1.6] max-w-[560px]">
+              {t('sectors.body')}
+            </p>
+          </Reveal>
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10">

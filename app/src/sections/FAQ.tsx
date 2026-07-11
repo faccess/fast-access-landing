@@ -140,7 +140,7 @@ export default function FAQ() {
             <h2 className="font-display font-bold text-[30px] sm:text-[38px] lg:text-[46px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em]">
               {isAr ? (
                 <>
-                  تفاصيل أكثر ودك تعرفها عن <span className="text-fa-orange-soda">FAST ACCESS</span>
+                  تفاصيل أكثر ودك تعرفها عن <span className="text-fa-orange-soda">فاست أكسس</span>
                 </>
               ) : (
                 <>
