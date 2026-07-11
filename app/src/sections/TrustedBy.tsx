@@ -56,8 +56,8 @@ export default function TrustedBy() {
 
       <style>{`
         .fa-marquee {
-          animation: fa-marquee-scroll 136s linear infinite;
-          opacity: 0.4;
+          animation: fa-marquee-scroll 45s linear infinite;
+          opacity: 0.55;
         }
         .fa-marquee:hover { opacity: 0.85; }
         .fa-marquee__item:hover { opacity: 1; }
@@ -65,7 +65,14 @@ export default function TrustedBy() {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
-        html[dir='rtl'] .fa-marquee { animation-direction: reverse; }
+        /* RTL: the w-max track anchors right and overflows left, so the LTR
+           keyframes (0 → -50%) leave the viewport empty for most of the cycle.
+           Dedicated keyframes keep the visible window covered at all times. */
+        html[dir='rtl'] .fa-marquee { animation-name: fa-marquee-scroll-rtl; }
+        @keyframes fa-marquee-scroll-rtl {
+          from { transform: translateX(0); }
+          to   { transform: translateX(50%); }
+        }
         @media (prefers-reduced-motion: reduce) {
           .fa-marquee { animation: none; opacity: 0.5; flex-wrap: wrap; justify-content: center; }
         }

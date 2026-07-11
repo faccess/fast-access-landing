@@ -492,7 +492,7 @@ html[dir='rtl'] .fa-scroll-bar__fill { transform-origin: 100% 50%; }
   white-space: nowrap;
   width: max-content;
   will-change: transform;
-  animation: fa-kicker-scroll 110s linear infinite;
+  animation: fa-kicker-scroll 45s linear infinite;
 }
 .fa-kicker-bar:hover .fa-kicker-track { animation-play-state: paused; }
 .fa-kicker-item { display: inline-flex; align-items: center; gap: 36px; }
@@ -509,7 +509,13 @@ html[dir='rtl'] .fa-scroll-bar__fill { transform-origin: 100% 50%; }
   to   { transform: translate3d(0, 0, 0); }
 }
 @keyframes fa-kicker-spin { to { transform: rotate(360deg); } }
-html[dir='rtl'] .fa-kicker-track { animation-direction: reverse; }
+/* RTL-safe keyframes: keep the visible window covered for the whole cycle
+   (plain animation-direction:reverse left the strip off-screen most of the time). */
+html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
+@keyframes fa-kicker-scroll-rtl {
+  from { transform: translate3d(50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
 @media (prefers-reduced-motion: reduce) {
   .fa-kicker-track { animation: none; flex-wrap: wrap; justify-content: center; }
   .fa-kicker-star  { animation: none; }
