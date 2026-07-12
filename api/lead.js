@@ -41,7 +41,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, store, storeUrl, orders, message, locale } = req.body || {};
+    const { name, email, phone, store, orders, message, locale } = req.body || {};
+    // Accept bare domains like "oudana.sa" — normalize to a full URL
+    let storeUrl = (req.body?.storeUrl || '').trim();
+    if (storeUrl && !/^https?:\/\//i.test(storeUrl)) storeUrl = `https://${storeUrl}`;
     if (!name || !email) {
       return res.status(400).json({ ok: false, error: 'missing_fields' });
     }

@@ -118,7 +118,7 @@ export default function Contact() {
                     <input required name="store" className={field} placeholder={isAr ? 'اسم المتجر' : 'Store / company'} aria-label={isAr ? 'اسم المتجر' : 'Store / company'} />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <input name="storeUrl" type="url" dir="ltr" className={field} placeholder={isAr ? 'رابط المتجر (اختياري)' : 'Store URL (optional)'} aria-label={isAr ? 'رابط المتجر' : 'Store URL'} />
+                    <input name="storeUrl" type="text" inputMode="url" dir="ltr" className={field} placeholder={isAr ? 'رابط المتجر (اختياري)' : 'Store URL (optional)'} aria-label={isAr ? 'رابط المتجر' : 'Store URL'} />
                     <input required name="orders" className={field} placeholder={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} />
                   </div>
                   <textarea name="message" rows={3} className={field} placeholder={isAr ? 'ماذا تشحن؟ تفاصيل إضافية (اختياري)' : 'What do you ship? Extra details (optional)'} aria-label={isAr ? 'رسالتك' : 'Message'} />
