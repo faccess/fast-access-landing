@@ -57,8 +57,8 @@ const SCENES = [
   },
 ] as const;
 
-const VIDEO_DURATION = 12.041667;
-const ROUTE_VIDEO_SRC = '/assets/scroll-route-truck.mp4';
+const VIDEO_DURATION = 10.041667;
+const ROUTE_VIDEO_SRC = '/assets/scroll-route-van.mp4';
 
 export default function ScrollRoute() {
   const { locale } = useT();
@@ -215,7 +215,7 @@ export default function ScrollRoute() {
             ref={videoRef}
             className="h-full w-full object-cover object-[38%_46%] will-change-transform lg:object-[center_60%]"
             src={shouldLoadVideo ? ROUTE_VIDEO_SRC : undefined}
-            poster="/assets/scroll-route-truck-poster.jpg"
+            poster="/assets/scroll-route-van-poster.jpg"
             preload={shouldLoadVideo ? 'auto' : 'none'}
             muted
             playsInline
