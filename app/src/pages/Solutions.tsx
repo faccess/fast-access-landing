@@ -19,32 +19,32 @@ export default function Solutions() {
       step: '01',
       title: isAr ? 'نستلم مخزونك' : 'We take your stock',
       body: isAr
-        ? 'تصلنا بضاعتك إلى أقرب مركز، نفحصها ونرفّها ونسجّل كل صنف في نظامنا.'
+        ? 'ننسّق الاستلام من موقعك أو موردك مباشرة، نفحص البضاعة، وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
         : 'Your inventory arrives at the nearest centre — we inspect, shelve, and log every SKU into the system.',
     },
     {
       step: '02',
       title: isAr ? 'نربط متجرك' : 'We connect your store',
       body: isAr
-        ? 'تكامل مباشر مع سلة وزد وشوبيفاي، الطلبات تنزل إلينا تلقائيًا لحظة الشراء.'
+        ? 'سلة، زد، شوبيفاي، ووكومرس أو API، ربط بدقائق، وطلباتك تنسحب لنظامنا تلقائيًا بدون أي تدخل منك.'
         : 'Direct integration with Salla, Zid, and Shopify — orders flow to us automatically the moment a buyer checks out.',
     },
     {
       step: '03',
       title: isAr ? 'نشحن ونتابع' : 'We ship & track',
       body: isAr
-        ? 'نجهّز ونغلّف ونسلّم، وكل طلب متتبَّع من الرف حتى باب العميل في لوحة واحدة.'
+        ? 'كل طلب يتجهز ويتغلف بهويتك وينطلق، وأنت وعميلك تشوفونه لحظة بلحظة حتى باب البيت.'
         : 'We pick, pack, and deliver — every order tracked from shelf to doorstep in one live dashboard.',
     },
   ];
 
   const capabilities = [
-    { icon: Boxes, title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? 'مساحات تتمدد مع موسمك، مع تخزين مبرّد عند الحاجة.' : 'Space that expands with your season, with cold storage on demand.', metric: isAr ? '10+ مراكز' : '10+ centres' },
-    { icon: PackageCheck, title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'تغليف بهوية علامتك، جاهز لمواسم الذروة.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? '2 ساعة تجهيز' : '2-hr pick-pack' },
-    { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'شبكة نقل واسعة وتوصيل بنفس اليوم في المدن الكبرى.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '97% بالوقت' : '97% on-time' },
-    { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'كل حدث على الطلب يظهر مباشرة لك ولعميلك.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
-    { icon: Store, title: isAr ? 'المتاجر السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع حيث يطلب عملاؤك فعلاً.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
-    { icon: Headset, title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'فريق دعم يتابع الاستثناءات قبل أن تتحول لشكاوى.' : 'A team that catches exceptions before they become complaints.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
+    { icon: Boxes, title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? 'أكثر من 15,000 م² تتمدد مع موسمك، بمساحات مكيفة وتبريد مخصص (2-8°م) لمنتجاتك الحساسة.' : 'Space that expands with your season, with cold storage on demand.', metric: isAr ? '10+ مراكز' : '10+ centres' },
+    { icon: PackageCheck, title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'فريق مدرب يجهز طلبك بمواد متينة وهوية علامتك، كروت، إهداءات، وتغليف مخصص جاهز للمواسم.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? '2 ساعة تجهيز' : '2-hr pick-pack' },
+    { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '97% بالوقت' : '97% on-time' },
+    { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك، وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
+    { icon: Store, title: isAr ? 'المتاجر السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال 2 إلى 4 ساعات، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
+    { icon: Headset, title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'دعم على مدار الساعة يلتقط الاستثناءات ويحلها قبل لا تتحول شكوى توصلك.' : 'A team that catches exceptions before they become complaints.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
   ];
 
   const stack = ['Salla', 'Zid', 'Shopify', 'WooCommerce', 'Magento', 'Custom API'];
@@ -64,7 +64,7 @@ export default function Solutions() {
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[46px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px]">
               <RevealText accent={isAr ? 'منظومة واحدة' : 'one operation'} stagger={45}>
-                {isAr ? 'ثلاث خطوات تربط متجرك بمنظومة واحدة.' : 'Three steps connect your store to one operation.'}
+                {isAr ? 'ثلاث خطوات... وبعدها خلّها علينا.' : 'Three steps connect your store to one operation.'}
               </RevealText>
             </h2>
           </Reveal>
@@ -116,7 +116,7 @@ export default function Solutions() {
           <Reveal className="mb-4 flex justify-center"><SectionChip>{isAr ? 'يعمل مع أدواتك' : 'Works with your stack'}</SectionChip></Reveal>
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[26px] sm:text-[34px] lg:text-[42px] text-fa-liberty-blue leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto">
-              {isAr ? 'يتصل بمنصتك في دقائق، لا أسابيع.' : 'Connects to your platform in minutes, not weeks.'}
+              {isAr ? 'متجرك يرتبط بدقائق، مو أسابيع.' : 'Connects to your platform in minutes, not weeks.'}
             </h2>
           </Reveal>
           <Reveal delay={140}>
