@@ -230,7 +230,7 @@ const en = {
 const ar = {
   nav: {
     solutions: 'الحلول', journey: 'الرحلة', network: 'الشبكة', pricing: 'الباقات',
-    resources: 'المزيد', login: 'تسجيل الدخول', getQuote: 'اطلب عرض السعر',
+    resources: 'المزيد', login: 'تسجيل الدخول', getQuote: 'اطلب عرض السعر', track: 'تتبع شحنتك',
     about: 'من نحن', contact: 'تواصل', home: 'الرئيسية',
   },
   whatis: {

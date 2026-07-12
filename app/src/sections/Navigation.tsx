@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import BrandLogo from '../components/brand/BrandLogo';
 import BrandButton from '../components/brand/BrandButton';
 import LangToggle from '../components/brand/LangToggle';
+import TrackingModal from '../components/TrackingModal';
 import { useT } from '../i18n/I18nContext';
 
 export default function Navigation() {
@@ -16,6 +17,7 @@ export default function Navigation() {
   ];
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [trackOpen, setTrackOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -73,6 +75,13 @@ export default function Navigation() {
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-5">
           <LangToggle tone={scrolled ? 'light' : 'dark'} />
+          <button
+            onClick={() => setTrackOpen(true)}
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#F15B41]"
+            style={{ color: scrolled ? '#0D1232' : 'rgba(244,244,241,0.92)' }}
+          >
+            {t('nav.track')}
+          </button>
           <BrandButton variant="filled" href="/contact">
             {t('nav.getQuote')}
           </BrandButton>
@@ -125,13 +134,20 @@ export default function Navigation() {
               </NavLink>
             ))}
             <div className="pt-4 border-t border-[#e8e8e8]">
-              <BrandButton variant="filled" href="/contact">
+              <button
+              onClick={() => { setMobileOpen(false); setTrackOpen(true); }}
+              className="block w-full text-start py-3 text-base font-medium text-fa-liberty-blue"
+            >
+              {t('nav.track')}
+            </button>
+            <BrandButton variant="filled" href="/contact">
                 {t('nav.getQuote')}
               </BrandButton>
             </div>
           </div>
         </div>
       )}
+          <TrackingModal open={trackOpen} onClose={() => setTrackOpen(false)} />
     </nav>
   );
 }
