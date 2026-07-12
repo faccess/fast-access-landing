@@ -77,8 +77,10 @@ export default function Navigation() {
           <LangToggle tone={scrolled ? 'light' : 'dark'} />
           <button
             onClick={() => setTrackOpen(true)}
-            className="text-sm font-medium transition-colors duration-200 hover:text-[#F15B41]"
-            style={{ color: scrolled ? '#0D1232' : 'rgba(244,244,241,0.92)' }}
+            className="rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 shadow-sm"
+            style={{ backgroundColor: '#F15B41' }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#D8492F')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#F15B41')}
           >
             {t('nav.track')}
           </button>
@@ -136,7 +138,8 @@ export default function Navigation() {
             <div className="pt-4 border-t border-[#e8e8e8]">
               <button
               onClick={() => { setMobileOpen(false); setTrackOpen(true); }}
-              className="block w-full text-start py-3 text-base font-medium text-fa-liberty-blue"
+              className="block w-full text-center py-3 text-base font-semibold text-white rounded-xl"
+              style={{ backgroundColor: '#F15B41' }}
             >
               {t('nav.track')}
             </button>

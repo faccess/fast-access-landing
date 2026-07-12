@@ -4,9 +4,10 @@
  * leaving the landing site. Falls back to a "open in new tab" link.
  */
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useT } from '../i18n/I18nContext';
 
-const TRACKING_URL = 'https://tracking-three-brown.vercel.app';
+const TRACKING_BASE = 'https://tracking-three-brown.vercel.app';
 
 interface Props {
   open: boolean;
@@ -34,7 +35,9 @@ export default function TrackingModal({ open, onClose }: Props) {
 
   if (!open) return null;
 
-  return (
+  const TRACKING_URL = isAr ? TRACKING_BASE : `${TRACKING_BASE}/track?lang=en`;
+
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6"
       role="dialog"
@@ -98,6 +101,7 @@ export default function TrackingModal({ open, onClose }: Props) {
           onLoad={() => setLoaded(true)}
         />
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

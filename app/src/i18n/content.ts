@@ -8,7 +8,7 @@ export type Locale = 'en' | 'ar';
 const en = {
   nav: {
     solutions: 'Solutions', journey: 'Journey', network: 'Network', pricing: 'Pricing',
-    resources: 'Resources', login: 'Log in', getQuote: 'Get a quote',
+    resources: 'Resources', login: 'Log in', getQuote: 'Get a quote', track: 'Track shipment',
     about: 'About', contact: 'Contact', home: 'Home',
   },
   whatis: {
