@@ -16,7 +16,7 @@ export default function Footer() {
       { label: isAr ? 'التغليف' : 'Packing', to: '/solutions' },
       { label: isAr ? 'الشحن والتوصيل' : 'Shipping & Delivery', to: '/solutions' },
       { label: isAr ? 'المتابعة اللحظية' : 'Real-time Tracking', to: '/solutions' },
-      { label: isAr ? 'المتاجر السحابية' : 'Cloud Stores', to: '/solutions' },
+      { label: isAr ? 'المخازن السحابية' : 'Cloud Stores', to: '/solutions' },
     ],
     [t('footer.cols.Company')]: [
       { label: isAr ? 'من نحن' : 'About us', to: '/about' },

@@ -10,7 +10,7 @@ const proof = {
     { Icon: Route, label: 'One tracked operation', detail: 'Warehouse, carrier, and support activity stay visible in one flow.' },
   ],
   ar: [
-    { Icon: Clock3, label: 'توصيل داخل المدينة في نفس اليوم', detail: 'المتاجر السحابية تجعل الطلبات العاجلة قريبة من العميل.' },
+    { Icon: Clock3, label: 'توصيل داخل المدينة في نفس اليوم', detail: 'المخازن السحابية تجعل الطلبات العاجلة قريبة من العميل.' },
     { Icon: PackageCheck, label: 'تغليف بهوية علامتك', detail: 'كل خطوة تحمي المنتج وتجربة العميل مع علامتك.' },
     { Icon: Route, label: 'عملية واحدة متتبعة', detail: 'المستودع والناقل والدعم يظهرون في مسار واضح واحد.' },
   ],

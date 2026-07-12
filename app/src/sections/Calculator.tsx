@@ -138,7 +138,7 @@ export default function Calculator() {
                 </span>
                 <input type="checkbox" className="sr-only" checked={cloudStores} onChange={(e) => setCloudStores(e.target.checked)} />
                 <span className="font-body text-sm text-fa-liberty-blue/80">
-                  {isAr ? 'فعّل التوصيل من المتاجر السحابية (2–4 ساعات)' : 'Use cloud-store same-day delivery (2–4 hr)'}
+                  {isAr ? 'فعّل التوصيل من المخازن السحابية (2–4 ساعات)' : 'Use cloud-store same-day delivery (2–4 hr)'}
                 </span>
               </label>
               <p className="font-body text-[11px] text-fa-liberty-blue/45 leading-[1.5] -mt-3 pl-12">

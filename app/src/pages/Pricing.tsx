@@ -18,7 +18,7 @@ export default function Pricing() {
     { icon: Boxes, title: isAr ? 'حجم التخزين' : 'Storage footprint', body: isAr ? 'المساحة التي تشغلها بضاعتك ومدّة بقائها في المخزن.' : 'The space your stock occupies and how long it sits on the shelf.' },
     { icon: PackageCheck, title: isAr ? 'عدد الطلبات' : 'Order volume', body: isAr ? 'كم طلب نجهّزه ونغلّفه شهريًا، كلما زاد، انخفض سعر الوحدة.' : 'How many orders we pick & pack monthly — more volume, lower per-unit rate.' },
     { icon: Truck, title: isAr ? 'وزن ووجهة الشحن' : 'Weight & destination', body: isAr ? 'وزن الطرد والمسافة تحددان تكلفة الشحن الفعلية.' : 'Parcel weight and distance set the real shipping cost.' },
-    { icon: MapPin, title: isAr ? 'سرعة التوصيل' : 'Delivery speed', body: isAr ? 'قياسي أو نفس اليوم من المتاجر السحابية.' : 'Standard, or same-day from a cloud store.' },
+    { icon: MapPin, title: isAr ? 'سرعة التوصيل' : 'Delivery speed', body: isAr ? 'قياسي أو نفس اليوم من المخازن السحابية.' : 'Standard, or same-day from a cloud store.' },
   ];
 
   const included = [

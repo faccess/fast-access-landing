@@ -17,17 +17,17 @@ export default function Solutions() {
   const model = [
     {
       step: '01',
-      title: isAr ? 'نستلم مخزونك' : 'We take your stock',
-      body: isAr
-        ? 'ننسّق الاستلام من موقعك أو موردك مباشرة، نفحص البضاعة، وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
-        : 'Your inventory arrives at the nearest centre — we inspect, shelve, and log every SKU into the system.',
-    },
-    {
-      step: '02',
       title: isAr ? 'نربط متجرك' : 'We connect your store',
       body: isAr
         ? 'سلة، زد، شوبيفاي، ووكومرس أو API، ربط بدقائق، وطلباتك تنسحب لنظامنا تلقائيًا بدون أي تدخل منك.'
         : 'Direct integration with Salla, Zid, and Shopify — orders flow to us automatically the moment a buyer checks out.',
+    },
+    {
+      step: '02',
+      title: isAr ? 'نستلم مخزونك' : 'We take your stock',
+      body: isAr
+        ? 'ننسّق الاستلام من موقعك أو موردك مباشرة، نفحص البضاعة، وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
+        : 'Your inventory arrives at the nearest centre — we inspect, shelve, and log every SKU into the system.',
     },
     {
       step: '03',
@@ -41,9 +41,9 @@ export default function Solutions() {
   const capabilities = [
     { icon: Boxes, title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? 'أكثر من 15,000 م² تتمدد مع موسمك، بمساحات مكيفة وتبريد مخصص (2-8°م) لمنتجاتك الحساسة.' : 'Space that expands with your season, with cold storage on demand.', metric: isAr ? '10+ مراكز' : '10+ centres' },
     { icon: PackageCheck, title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'فريق مدرب يجهز طلبك بمواد متينة وهوية علامتك، كروت، إهداءات، وتغليف مخصص جاهز للمواسم.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? '2 ساعة تجهيز' : '2-hr pick-pack' },
-    { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '97% بالوقت' : '97% on-time' },
+    { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '90% بالوقت' : '90% on-time' },
     { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك، وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
-    { icon: Store, title: isAr ? 'المتاجر السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال 2 إلى 4 ساعات، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
+    { icon: Store, title: isAr ? 'المخازن السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال 2 إلى 4 ساعات، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
     { icon: Headset, title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'دعم على مدار الساعة يلتقط الاستثناءات ويحلها قبل لا تتحول شكوى توصلك.' : 'A team that catches exceptions before they become complaints.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
   ];
 
