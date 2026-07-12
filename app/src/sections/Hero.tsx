@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
+import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import TrackingModal from '../components/TrackingModal';
 import BrandPattern from '../components/brand/BrandPattern';
 import MagneticButton from '../components/brand/MagneticButton';
 import RevealText from '../components/brand/RevealText';
 import { useT } from '../i18n/I18nContext';
 
 export default function Hero() {
+  const [trackOpen, setTrackOpen] = useState(false);
   const { t, locale } = useT();
   const isAr = locale === 'ar';
 
@@ -86,6 +90,12 @@ export default function Hero() {
               <MagneticButton variant="on-dark" href="/pricing">
                 {t('hero.secondaryCta')}
               </MagneticButton>
+              <button onClick={() => setTrackOpen(true)} className="btn-brand btn-brand--track">
+                <span className="btn-brand__label">{t('nav.track')}</span>
+                <span className="btn-brand__arrow" aria-hidden>
+                  <ArrowRight size={14} strokeWidth={2.4} />
+                </span>
+              </button>
             </div>
 
             {/* Hero Stats */}
@@ -159,6 +169,7 @@ export default function Hero() {
           50%      { box-shadow: 0 0 14px rgba(241,91,65,0.95); }
         }
       `}</style>
+          <TrackingModal open={trackOpen} onClose={() => setTrackOpen(false)} />
     </section>
   );
 }

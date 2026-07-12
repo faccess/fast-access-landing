@@ -284,17 +284,17 @@
   .btn-brand--on-dark { background: transparent; color: var(--fa-classic-chalk) !important; border-color: rgba(244,244,241,0.3); }
   .btn-brand--on-dark .btn-brand__arrow { border-left: 1px solid rgba(244,244,241,0.3); }
 
-  /* Track-shipment variant: inverted brand button (orange body + navy arrow box) */
+  /* Track-shipment variant: navy body + orange arrow (signature look) */
   .btn-brand--track {
-    background: var(--fa-orange-soda);
-    color: #fff !important;
-    box-shadow: inset 0 0 0 1px rgba(244, 244, 241, 0.18);
+    background: var(--fa-liberty-blue);
+    color: var(--fa-classic-chalk) !important;
+    box-shadow: inset 0 0 0 1px rgba(244, 244, 241, 0.22);
   }
   .btn-brand--track .btn-brand__arrow {
-    background: var(--fa-liberty-blue);
-    border-left: 1px solid var(--fa-orange-soda);
+    background: var(--fa-orange-soda);
+    border-left: 1px solid var(--fa-liberty-blue);
   }
-  .btn-brand--track:hover .btn-brand__arrow { background: var(--fa-blue-rose); }
+  .btn-brand--track:hover .btn-brand__arrow { background: var(--accent-hover); }
 
   /* === Section eyebrow — editorial uppercase label. Replaced the white
      pill + orange square chip after client feedback ("AI design vibes"):
