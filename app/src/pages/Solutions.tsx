@@ -55,7 +55,12 @@ export default function Solutions() {
         <title>Solutions — Fast Access</title>
         <meta name="description" content="How Fast Access plugs into your store and runs fulfillment end to end — warehousing, pick & pack, shipping, live tracking, and same-day cloud-store delivery." />
       </Helmet>
-      <PageHeader chip={t('services.chip')} title={t('pages.solutions.title')} sub={t('pages.solutions.sub')} bg="/assets/hero-solutions.jpg" />
+      <PageHeader
+        chip={t('services.chip')}
+        title={isAr ? (<><span className="text-fa-orange-soda">حلولنا...</span> كل اللي تحتاجه عشان توصل طلباتك</>) : t('pages.solutions.title')}
+        sub={t('pages.solutions.sub')}
+        bg="/assets/hero-solutions.jpg"
+      />
 
       {/* Operating model — 3 steps */}
       <section className="relative bg-fa-cream section-padding overflow-hidden">

@@ -43,7 +43,12 @@ export default function Pricing() {
         <title>Pricing — Fast Access</title>
         <meta name="description" content="No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in one business day." />
       </Helmet>
-      <PageHeader chip={t('pricing.chip')} title={t('pages.pricing.title')} sub={t('pages.pricing.sub')} bg="/assets/hero-pricing.jpg" />
+      <PageHeader
+        chip={t('pricing.chip')}
+        title={isAr ? (<><span className="text-fa-orange-soda">كيف نسعّر؟</span> ببساطة... على قدّ شغلك.</>) : t('pages.pricing.title')}
+        sub={t('pages.pricing.sub')}
+        bg="/assets/hero-pricing.jpg"
+      />
 
       <Calculator />
 
