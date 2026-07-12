@@ -24,7 +24,15 @@ export default async function handler(req, res) {
       [[], ['id', 'name', 'type', 'email_from', 'create_date', 'team_id', 'user_id', 'active']],
       { limit: 5, order: 'id desc' },
     ]);
-    return res.status(200).json({ ok: true, uid, leads });
+    // discover the technical name of the "Expected Volume" custom field
+    const fields = await odooRpc(ODOO_URL, 'object', 'execute_kw', [
+      ODOO_DB, uid, ODOO_API_KEY,
+      'crm.lead', 'fields_get', [], { attributes: ['string', 'type'] },
+    ]);
+    const volumeFields = Object.entries(fields)
+      .filter(([k, v]) => /volume/i.test(k) || /volume/i.test(v.string || ''))
+      .map(([k, v]) => ({ field: k, label: v.string, type: v.type }));
+    return res.status(200).json({ ok: true, uid, volumeFields, leads });
   } catch (e) {
     return res.status(200).json({ ok: false, error: String(e.message || e) });
   }
