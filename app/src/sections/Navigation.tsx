@@ -73,7 +73,7 @@ export default function Navigation() {
         </div>
 
         {/* Right side */}
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-5 ms-10">
           <LangToggle tone={scrolled ? 'light' : 'dark'} />
           <button
             onClick={() => setTrackOpen(true)}
