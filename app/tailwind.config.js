@@ -83,9 +83,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['Clash Grotesk', 'Geist', 'sans-serif'],
-        body:    ['Inter Display', 'Geist', 'sans-serif'],
-        ui:      ['Geist', 'Inter Display', 'sans-serif'],
+        display: ['Geist', 'sans-serif'],
+        body:    ['Geist', 'sans-serif'],
+        ui:      ['Geist', 'sans-serif'],
         mono:    ['Geist Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {

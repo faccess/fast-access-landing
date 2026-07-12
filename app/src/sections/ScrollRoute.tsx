@@ -215,7 +215,7 @@ export default function ScrollRoute() {
             ref={videoRef}
             className="h-full w-full object-cover object-[38%_46%] will-change-transform lg:object-[center_60%]"
             src={shouldLoadVideo ? ROUTE_VIDEO_SRC : undefined}
-            poster="/assets/scroll-route-van-poster.jpg"
+            poster="/assets/scroll-route-van-poster.webp"
             preload={shouldLoadVideo ? 'auto' : 'none'}
             muted
             playsInline
@@ -320,7 +320,7 @@ export default function ScrollRoute() {
                     className={`absolute top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-fa-liberty-blue/70 transition-colors duration-300 ${
                       index <= activeScene ? 'bg-fa-orange-soda' : 'bg-fa-classic-chalk/35'
                     }`}
-                    aria-label={scene.label[lang]}
+                    aria-hidden
                   />
                 ))}
               </div>

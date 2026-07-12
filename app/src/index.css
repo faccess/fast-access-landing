@@ -1,7 +1,23 @@
+/* ── Self-hosted fonts (performance: no external CSS chains) ──
+   Zain: Arabic UI everywhere. Geist variable: Latin display+body.
+   Legacy family names (Clash Grotesk / Inter Display / IBM Plex Sans Arabic)
+   are aliased below so existing rules keep working without those downloads. */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-arabic-400-normal.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-arabic-700-normal.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-arabic-800-normal.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-arabic-900-normal.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; font-weight: 900; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-latin-800-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Zain'; src: url('/fonts/zain-latin-900-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; font-weight: 900; font-display: swap; }
+
 /* Inter Display + Clash Grotesk from Fontshare — must come before all other rules per CSS spec */
-@import url('https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=inter-display@300,400,500,600,700&display=swap');
 /* Arabic: IBM Plex Sans Arabic — pairs well with Geist/Inter and reads cleanly at all weights */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Zain:wght@300;400;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,26 +28,6 @@
    Primary UI: Geist · Secondary/Body: Inter Display · Display headlines: Clash Grotesk
    ========================================================================== */
 
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Regular.ttf') format('truetype');
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Medium.ttf') format('truetype');
-  font-weight: 500; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-SemiBold.ttf') format('truetype');
-  font-weight: 600; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Bold.ttf') format('truetype');
-  font-weight: 700; font-style: normal; font-display: swap;
-}
 
 @layer base {
   :root {
@@ -130,7 +126,7 @@
   html[data-theme='light'] .bg-fa-liberty-blue svg [fill="rgba(244,244,241,0.04)"] { fill: rgba(13,18,50,0.03) !important; }
 
   body {
-    font-family: 'Inter Display', 'IBM Plex Sans Arabic', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Geist', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-paper);
     color: var(--ink-primary);
     -webkit-font-smoothing: antialiased;
@@ -179,14 +175,14 @@
   html[dir='rtl'] body,
   html[dir='rtl'] .font-body,
   html[dir='rtl'] p, html[dir='rtl'] li {
-    font-family: 'Zain', 'IBM Plex Sans Arabic', 'Inter Display', sans-serif;
+    font-family: 'Zain', 'Geist', sans-serif;
     letter-spacing: 0;
   }
   html[dir='rtl'] h1, html[dir='rtl'] h2, html[dir='rtl'] h3,
   html[dir='rtl'] h4, html[dir='rtl'] h5, html[dir='rtl'] h6,
   html[dir='rtl'] .font-display,
   html[dir='rtl'] .font-ui {
-    font-family: 'Zain', 'IBM Plex Sans Arabic', 'Inter Display', sans-serif;
+    font-family: 'Zain', 'Geist', sans-serif;
     letter-spacing: 0;
   }
   /* Zain's tall ascenders/descenders need looser leading than the Latin
@@ -198,7 +194,7 @@
   html[dir='rtl'] .rv-space { width: 0.32em; }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Clash Grotesk', 'IBM Plex Sans Arabic', 'Geist', -apple-system, sans-serif;
+    font-family: 'Geist', -apple-system, sans-serif;
     letter-spacing: -0.02em;
     color: var(--ink-primary);
     text-wrap: balance;
@@ -211,9 +207,9 @@
 
 @layer components {
   /* === Brand fonts === */
-  .font-display { font-family: 'Clash Grotesk', 'Geist', sans-serif; letter-spacing: -0.02em; }
-  .font-body    { font-family: 'Inter Display', 'Geist', sans-serif; letter-spacing: -0.02em; }
-  .font-ui      { font-family: 'Geist', 'Inter Display', sans-serif; letter-spacing: -0.01em; }
+  .font-display { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
+  .font-body    { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
+  .font-ui      { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.01em; }
   .font-mono    { font-family: 'Geist Mono', ui-monospace, 'SF Mono', monospace; }
 
   /* === Layout === */
@@ -237,7 +233,7 @@
   .btn-brand {
     display: inline-flex;
     align-items: stretch;
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Geist', sans-serif;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -301,7 +297,7 @@
      plain tracked type reads designed, not templated. === */
   .section-chip {
     display: inline-flex; align-items: center;
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Geist', sans-serif;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -494,7 +490,7 @@ html[dir='rtl'] .fa-scroll-bar__fill { transform-origin: 100% 50%; }
   display: flex;
   align-items: center;
   gap: 36px;
-  font-family: var(--fa-font-display, 'Inter Display', system-ui, sans-serif);
+  font-family: var(--fa-font-display, 'Geist', system-ui, sans-serif);
   font-weight: 600;
   font-size: clamp(16px, 2vw, 22px);
   line-height: 1;
@@ -688,17 +684,17 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 
 .fa-reach-label {
   fill: rgba(244,244,241,0.62);
-  font: 600 13px/1 'Geist', 'Inter Display', sans-serif;
+  font: 600 13px/1 'Geist', 'Geist', sans-serif;
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 .fa-reach-country {
   fill: rgba(255,255,255,0.9);
-  font: 600 15px/1 'Geist', 'Inter Display', sans-serif;
+  font: 600 15px/1 'Geist', 'Geist', sans-serif;
   letter-spacing: 0.18em;
 }
 .fa-reach-hub {
   fill: #fff;
-  font: 600 13px/1 'Geist', 'Inter Display', sans-serif;
+  font: 600 13px/1 'Geist', 'Geist', sans-serif;
   letter-spacing: 0.02em;
   paint-order: stroke; stroke: rgba(7,10,31,0.7); stroke-width: 3px;
 }
@@ -722,3 +718,6 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 @media (prefers-reduced-motion: reduce) {
   .fa-reach-arrow, .fa-reach-ping { animation: none; }
 }
+
+/* Keep raster logos at their intrinsic aspect ratio wherever a fixed height is applied */
+img[src*='/brand/'], img[src*='logo'] { object-fit: contain; }

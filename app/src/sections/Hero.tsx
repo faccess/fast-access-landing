@@ -32,9 +32,12 @@ export default function Hero() {
       {/* Background photograph — softened, behind everything */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/assets/hero-bg.jpg"
+          src="/assets/hero-bg.webp"
           alt=""
-          aria-hidden
+          width={1344}
+          height={768}
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover opacity-[0.62]"
         />
         {/* Lighter on the right so the photo reads clearly; darker left + bottom for headline legibility and the seam into the next section */}

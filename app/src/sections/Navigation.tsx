@@ -21,9 +21,16 @@ export default function Navigation() {
   const [trackOpen, setTrackOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
+    let raf = 0;
+    const handleScroll = () => {
+      if (raf) return; // batch: one state read/write per frame
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        setScrolled(window.scrollY > 80);
+      });
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => { window.removeEventListener('scroll', handleScroll); if (raf) cancelAnimationFrame(raf); };
   }, []);
 
   // At the top of every page the nav sits over a dark band (hero / page header),
