@@ -78,7 +78,7 @@ export default async function handler(req, res) {
           partner_name: store || false,
           email_from: email,
           description: descriptionLines.join('\n'),
-          type: 'lead',
+          type: 'opportunity',
         },
       ],
     ]);
