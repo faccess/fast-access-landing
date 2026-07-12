@@ -11,12 +11,14 @@ export default function Contact() {
   const { locale } = useT();
   const isAr = locale === 'ar';
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const methods = [
-    { icon: Mail, label: isAr ? 'البريد' : 'Email', value: 'support@fastaccess.sa' },
-    { icon: Phone, label: isAr ? 'الهاتف' : 'Phone', value: '+966 92 000 1234' },
+    { icon: Mail, label: isAr ? 'البريد' : 'Email', value: 'info@faccess.co' },
+    { icon: Phone, label: isAr ? 'الهاتف' : 'Phone', value: '+966 920 032 768', dir: 'ltr' },
     { icon: MapPin, label: isAr ? 'المقر' : 'Head office', value: isAr ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia' },
-    { icon: Clock, label: isAr ? 'ساعات العمل' : 'Hours', value: isAr ? 'الأحد–الخميس · 9ص–6م · دعم 24/7' : 'Sun–Thu · 9am–6pm · 24/7 support' },
+    { icon: Clock, label: isAr ? 'ساعات العمل' : 'Hours', value: isAr ? 'الأحد إلى الخميس، 9 صباحًا إلى 5 مساءً (دعم 24/7)' : 'Sun–Thu, 9am–5pm (24/7 support)' },
   ];
 
   const field = 'w-full rounded-xl border border-fa-liberty-blue/12 bg-white/70 px-4 py-3 font-body text-[15px] text-fa-liberty-blue placeholder:text-fa-liberty-blue/35 outline-none transition focus:border-fa-orange-soda/60 focus:ring-2 focus:ring-fa-orange-soda/15';
@@ -46,7 +48,7 @@ export default function Contact() {
                     <span className="fa-iconchip shrink-0"><m.icon size={20} strokeWidth={1.8} /></span>
                     <div className="text-left rtl:text-right">
                       <div className="font-ui text-[11px] font-semibold uppercase tracking-[0.1em] text-fa-orange-soda">{m.label}</div>
-                      <div className="font-body mt-1 text-[15px] text-fa-liberty-blue">{m.value}</div>
+                      <div className="font-body mt-1 text-[15px] text-fa-liberty-blue" dir={(m as any).dir || undefined} style={(m as any).dir ? { unicodeBidi: 'isolate' } : undefined}>{m.value}</div>
                     </div>
                   </div>
                 </Reveal>
@@ -71,24 +73,57 @@ export default function Contact() {
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    if (sending) return;
+                    setSending(true);
+                    setSendError(false);
+                    const f = e.currentTarget as HTMLFormElement;
+                    const data = {
+                      name: (f.elements.namedItem('name') as HTMLInputElement)?.value,
+                      email: (f.elements.namedItem('email') as HTMLInputElement)?.value,
+                      store: (f.elements.namedItem('store') as HTMLInputElement)?.value,
+                      orders: (f.elements.namedItem('orders') as HTMLInputElement)?.value,
+                      message: (f.elements.namedItem('message') as HTMLTextAreaElement)?.value,
+                      locale,
+                    };
+                    try {
+                      const res = await fetch('/api/lead', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                      });
+                      const out = await res.json();
+                      if (out.ok) setSent(true);
+                      else setSendError(true);
+                    } catch {
+                      setSendError(true);
+                    } finally {
+                      setSending(false);
+                    }
+                  }}
                   className="space-y-4"
                 >
                   <h3 className="font-display text-[22px] lg:text-[26px] font-bold text-fa-liberty-blue tracking-[-0.02em]">
                     {isAr ? 'اطلب عرض سعر' : 'Request a quote'}
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                    <input required className={field} placeholder={isAr ? 'الاسم' : 'Full name'} aria-label={isAr ? 'الاسم' : 'Full name'} />
-                    <input required type="email" className={field} placeholder={isAr ? 'البريد الإلكتروني' : 'Email'} aria-label={isAr ? 'البريد الإلكتروني' : 'Email'} />
+                    <input required name="name" className={field} placeholder={isAr ? 'الاسم' : 'Full name'} aria-label={isAr ? 'الاسم' : 'Full name'} />
+                    <input required name="email" type="email" className={field} placeholder={isAr ? 'البريد الإلكتروني' : 'Email'} aria-label={isAr ? 'البريد الإلكتروني' : 'Email'} />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <input className={field} placeholder={isAr ? 'اسم المتجر' : 'Store / company'} aria-label={isAr ? 'اسم المتجر' : 'Store / company'} />
-                    <input className={field} placeholder={isAr ? 'الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'الطلبات شهريًا' : 'Orders / month'} />
+                    <input name="store" className={field} placeholder={isAr ? 'اسم المتجر' : 'Store / company'} aria-label={isAr ? 'اسم المتجر' : 'Store / company'} />
+                    <input name="orders" className={field} placeholder={isAr ? 'الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'الطلبات شهريًا' : 'Orders / month'} />
                   </div>
-                  <textarea rows={4} className={field} placeholder={isAr ? 'ماذا تشحن؟ أخبرنا بالتفاصيل.' : 'What do you ship? Tell us a bit.'} aria-label={isAr ? 'رسالتك' : 'Message'} />
-                  <button type="submit" className="btn-brand btn-brand--filled w-full justify-center">
-                    <span className="btn-brand__label">{isAr ? 'أرسل الطلب... وخلّها علينا' : 'Send request'}</span>
+                  <textarea name="message" rows={4} className={field} placeholder={isAr ? 'ماذا تشحن؟ أخبرنا بالتفاصيل.' : 'What do you ship? Tell us a bit.'} aria-label={isAr ? 'رسالتك' : 'Message'} />
+                  <button type="submit" disabled={sending} className="btn-brand btn-brand--filled w-full justify-center disabled:opacity-60">
+                    <span className="btn-brand__label">{sending ? (isAr ? 'جاري الإرسال...' : 'Sending...') : isAr ? 'أرسل الطلب... وخلّها علينا' : 'Send request'}</span>
                   </button>
+                  {sendError && (
+                    <p className="font-body text-[13px] text-red-600 text-center">
+                      {isAr ? 'تعذّر إرسال الطلب. جرّب مرة ثانية أو كلمنا واتساب على 968 032 920.' : 'Could not send your request. Please try again or reach us on WhatsApp.'}
+                    </p>
+                  )}
                   <p className="font-body text-[12px] text-fa-ink-muted/80 text-center">
                     {isAr ? 'نرد خلال يوم عمل واحد. لا رسائل مزعجة.' : 'We reply within one business day. No spam.'}
                   </p>
