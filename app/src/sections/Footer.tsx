@@ -34,8 +34,8 @@ export default function Footer() {
     [t('footer.cols.Contact')]: [
       { label: isAr ? 'اطلب عرض سعر' : 'Get a quote', to: '/contact' },
       { label: isAr ? 'تحدث مع المبيعات' : 'Talk to sales', to: '/contact' },
-      { label: isAr ? 'واتساب' : 'WhatsApp', to: 'https://wa.me/966500000000' },
-      { label: 'support@faccess.co', to: 'mailto:support@faccess.co' },
+      { label: isAr ? 'واتساب' : 'WhatsApp', to: 'https://wa.me/966920032768' },
+      { label: 'info@faccess.co', to: 'mailto:info@faccess.co' },
     ],
   };
 
