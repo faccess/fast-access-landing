@@ -85,7 +85,7 @@ export default function Contact() {
                       store: (f.elements.namedItem('store') as HTMLInputElement)?.value,
                       phone: (f.elements.namedItem('phone') as HTMLInputElement)?.value,
                       storeUrl: (f.elements.namedItem('storeUrl') as HTMLInputElement)?.value,
-                      orders: (f.elements.namedItem('orders') as HTMLInputElement)?.value,
+                      orders: (f.elements.namedItem('orders') as HTMLSelectElement)?.value,
                       message: (f.elements.namedItem('message') as HTMLTextAreaElement)?.value,
                       locale,
                     };
@@ -119,7 +119,20 @@ export default function Contact() {
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <input name="storeUrl" type="text" inputMode="url" dir="ltr" className={field} placeholder={isAr ? 'رابط المتجر (اختياري)' : 'Store URL (optional)'} aria-label={isAr ? 'رابط المتجر' : 'Store URL'} />
-                    <input required name="orders" className={field} placeholder={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} />
+                    <select
+                      required
+                      name="orders"
+                      defaultValue=""
+                      className={`${field} cursor-pointer appearance-none invalid:text-fa-ink-muted/60`}
+                      aria-label={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'}
+                    >
+                      <option value="" disabled>{isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'}</option>
+                      <option value="0-100">{isAr ? 'من 0 إلى 100' : '0–100'}</option>
+                      <option value="101-500">{isAr ? 'من 101 إلى 500' : '101–500'}</option>
+                      <option value="501-2000">{isAr ? 'من 501 إلى 2,000' : '501–2,000'}</option>
+                      <option value="2001-10000">{isAr ? 'من 2,001 إلى 10,000' : '2,001–10,000'}</option>
+                      <option value="10000+">{isAr ? '10 آلاف أو أكثر' : '10,000+'}</option>
+                    </select>
                   </div>
                   <textarea name="message" rows={3} className={field} placeholder={isAr ? 'ماذا تشحن؟ تفاصيل إضافية (اختياري)' : 'What do you ship? Extra details (optional)'} aria-label={isAr ? 'رسالتك' : 'Message'} />
                   <button type="submit" disabled={sending} className="btn-brand btn-brand--filled w-full justify-center disabled:opacity-60">
