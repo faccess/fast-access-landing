@@ -31,8 +31,8 @@ export default function Contact() {
       </Helmet>
       <PageHeader
         chip={isAr ? 'تواصل' : 'Contact'}
-        title={isAr ? 'لنبدأ تشغيل طلباتك.' : 'Let’s get your orders moving.'}
-        sub={isAr ? 'شاركنا تفاصيل شحنك، ونعود إليك بخطة مخصّصة خلال يوم عمل واحد.' : 'Share your shipping profile and we’ll come back with a tailored plan within one business day.'}
+        title={isAr ? (<>جاهز تخلّيها <span className="text-fa-orange-soda">علينا؟</span></>) : 'Let’s get your orders moving.'}
+        sub={isAr ? 'عطنا تفاصيل شحنك بدقيقتين، ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد.' : 'Share your shipping profile and we’ll come back with a tailored plan within one business day.'}
         bg="/assets/hero-contact.jpg"
       />
 
