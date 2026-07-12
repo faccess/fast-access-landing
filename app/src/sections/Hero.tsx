@@ -93,7 +93,7 @@ export default function Hero() {
               {[
                 { value: '97', unit: '%', label: t('hero.statOnTime') },
                 { value: '2', unit: isAr ? 'ساعة' : 'hr', label: t('hero.statPickPack') },
-                { value: '10', unit: '+', label: t('hero.statCenters') },
+                { value: t('hero.statCentersValue'), unit: '', label: t('hero.statCenters') },
               ].map((stat, i) => (
                 <div key={stat.label} className="flex items-stretch">
                   <div className="pe-3 sm:pe-8">
