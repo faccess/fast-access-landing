@@ -135,15 +135,15 @@ export default function Navigation() {
                 {link.label}
               </NavLink>
             ))}
-            <div className="pt-4 border-t border-[#e8e8e8]">
+            <div className="pt-4 border-t border-[#e8e8e8] flex flex-col items-stretch gap-3">
               <button
-              onClick={() => { setMobileOpen(false); setTrackOpen(true); }}
-              className="block w-full text-center py-3 text-base font-semibold text-white rounded-xl"
-              style={{ backgroundColor: '#F15B41' }}
-            >
-              {t('nav.track')}
-            </button>
-            <BrandButton variant="filled" href="/contact">
+                onClick={() => { setMobileOpen(false); setTrackOpen(true); }}
+                className="btn-brand w-full justify-center text-white"
+                style={{ backgroundColor: '#F15B41' }}
+              >
+                <span className="btn-brand__label">{t('nav.track')}</span>
+              </button>
+              <BrandButton variant="filled" href="/contact" className="w-full justify-center">
                 {t('nav.getQuote')}
               </BrandButton>
             </div>
