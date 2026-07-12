@@ -26,7 +26,7 @@ export default function Footer() {
     ],
     [t('footer.cols.Resources')]: [
       { label: isAr ? 'الأسئلة الشائعة' : 'FAQ', to: '/resources' },
-      { label: isAr ? 'التسعير' : 'Pricing', to: '/pricing' },
+      { label: isAr ? 'كيف نسعّر' : 'Pricing', to: '/pricing' },
       { label: isAr ? 'مركز المساعدة' : 'Help center', to: '/resources' },
       { label: isAr ? 'الخصوصية' : 'Privacy', to: '/resources#privacy' },
       { label: isAr ? 'الشروط' : 'Terms', to: '/resources#terms' },
