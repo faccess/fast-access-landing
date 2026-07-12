@@ -21,10 +21,11 @@ export default function Calculator() {
   const isAr = locale === 'ar';
 
   const [orders, setOrders] = useState(2000);
-  const [costPerOrder, setCostPerOrder] = useState(30);
+  const [costPerOrder, setCostPerOrder] = useState(20);
   const [weeklyHours, setWeeklyHours] = useState(20);
-  const [deliveryDays, setDeliveryDays] = useState(3);
+  const [deliveryDays, setDeliveryDays] = useState(2);
   const [cloudStores, setCloudStores] = useState(false);
+  const [showHow, setShowHow] = useState(false);
 
   const results = useMemo(() => {
     const monthlyCost = orders * costPerOrder;
@@ -50,9 +51,16 @@ export default function Calculator() {
     });
   }, []);
 
-  const fmt = (n: number) => new Intl.NumberFormat(isAr ? 'ar-EG' : 'en-US').format(n);
+  // Western digits with grouping (matches the site's numeral style), then
+  // Arabic unit words appended after the number per brand copy rules.
+  const fmt = (n: number) => new Intl.NumberFormat('en-US').format(n);
   const fmtCurrency = (n: number) =>
-    new Intl.NumberFormat(isAr ? 'ar-SA' : 'en-SA', { style: 'currency', currency: 'SAR', maximumFractionDigits: 0 }).format(n);
+    isAr
+      ? `${new Intl.NumberFormat('en-US').format(n)} ر.س`
+      : new Intl.NumberFormat('en-SA', { style: 'currency', currency: 'SAR', maximumFractionDigits: 0 }).format(n);
+  // Arabic day pluralization: 2 = يومين, 3-10 = أيام, otherwise يوم
+  const fmtDaysAr = (v: number) =>
+    v === 2 ? 'يومين' : v >= 3 && v <= 10 && Number.isInteger(v) ? `${v} أيام` : `${v} يوم`;
 
   return (
     <section className="relative bg-fa-paper overflow-hidden py-20 lg:py-28">
@@ -71,7 +79,7 @@ export default function Calculator() {
             <h2 className="calc-fade font-display font-semibold text-[28px] sm:text-[34px] lg:text-[40px] text-fa-liberty-blue leading-[1.1] tracking-[-0.02em]">
               {isAr ? (
                 <>
-                  كم تخسر <span className="text-fa-orange-soda">شهرياً</span> على الشحن؟
+                  احسب كم تقدر <span className="text-fa-orange-soda">توفّر</span> على الشحن والتشغيل
                 </>
               ) : (
                 <>
@@ -83,51 +91,56 @@ export default function Calculator() {
 
             <p className="calc-fade font-body mt-4 text-[15px] lg:text-base text-fa-liberty-blue/65 max-w-[500px] leading-[1.55]">
               {isAr
-                ? 'حرّك المؤشرات لتشاهد كم توفّر من المال والوقت، وكم يتحسّن وقت التوصيل، مع فاست أكسس.'
+                ? 'أدخل بيانات متجرك وشاهد تقديرًا فوريًا للتوفير في التكلفة والوقت، وتحسّن سرعة التوصيل مع فاست أكسس.'
                 : 'Slide the inputs to see how much money and time you save — and how much faster your customers get their orders — with Fast Access.'}
             </p>
 
             {/* Inputs */}
             <div className="calc-fade mt-10 space-y-7">
               <RangeField
-                label={isAr ? 'الطلبات الشهرية' : 'Monthly orders'}
+                label={isAr ? 'عدد الطلبات شهريًا' : 'Monthly orders'}
                 value={orders}
                 onChange={setOrders}
                 min={100}
                 max={50000}
                 step={100}
-                format={(v) => fmt(v)}
+                format={(v) => (isAr ? `${fmt(v)} طلب` : fmt(v))}
               />
               <RangeField
-                label={isAr ? 'تكلفة الشحن لكل طلب (ريال)' : 'Current cost per order (SAR)'}
+                label={isAr ? 'متوسط تكلفة الشحن للطلب' : 'Current cost per order (SAR)'}
                 value={costPerOrder}
                 onChange={setCostPerOrder}
-                min={8}
+                min={20}
                 max={100}
                 step={1}
                 format={(v) => (isAr ? `${v} ر.س` : `${v} SAR`)}
               />
               <RangeField
-                label={isAr ? 'الساعات الأسبوعية على العمليات' : 'Hours/week on shipping ops'}
+                label={isAr ? 'ساعات العمل الأسبوعية على تجهيز الطلبات' : 'Hours/week on shipping ops'}
                 value={weeklyHours}
                 onChange={setWeeklyHours}
                 min={2}
                 max={80}
                 step={1}
-                format={(v) => `${v} h`}
+                format={(v) => (isAr ? `${v} ساعة` : `${v} h`)}
               />
               <RangeField
-                label={isAr ? 'وقت التوصيل الحالي (أيام)' : 'Current avg delivery time (days)'}
+                label={isAr ? 'متوسط مدة التوصيل الحالية' : 'Current avg delivery time (days)'}
                 value={deliveryDays}
                 onChange={setDeliveryDays}
-                min={1}
+                min={2}
                 max={10}
                 step={0.5}
-                format={(v) => (isAr ? `${v} يوم` : `${v} d`)}
+                format={(v) => (isAr ? fmtDaysAr(v) : `${v} d`)}
               />
               <label className="flex items-center gap-3 cursor-pointer select-none">
                 <span
-                  className="relative inline-flex w-10 h-5 rounded-full transition-colors"
+                  role="switch"
+                  aria-checked={cloudStores}
+                  aria-label={isAr ? 'أضف خيار التوصيل السريع خلال 2–4 ساعات' : 'Use cloud-store same-day delivery (2–4 hr)'}
+                  tabIndex={0}
+                  onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setCloudStores(!cloudStores))}
+                  className="relative inline-flex w-10 h-5 rounded-full transition-colors shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fa-orange-soda"
                   style={{ backgroundColor: cloudStores ? '#F15B41' : 'rgba(13,18,50,0.16)' }}
                   onClick={() => setCloudStores(!cloudStores)}
                 >
@@ -138,7 +151,7 @@ export default function Calculator() {
                 </span>
                 <input type="checkbox" className="sr-only" checked={cloudStores} onChange={(e) => setCloudStores(e.target.checked)} />
                 <span className="font-body text-sm text-fa-liberty-blue/80">
-                  {isAr ? 'فعّل التوصيل من المخازن السحابية (2–4 ساعات)' : 'Use cloud-store same-day delivery (2–4 hr)'}
+                  {isAr ? 'أضف خيار التوصيل السريع خلال 2–4 ساعات' : 'Use cloud-store same-day delivery (2–4 hr)'}
                 </span>
               </label>
               <p className="font-body text-[11px] text-fa-liberty-blue/45 leading-[1.5] -mt-3 pl-12">
@@ -162,19 +175,19 @@ export default function Calculator() {
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-fa-orange-soda" style={{ animation: 'pulse-glow 2s infinite' }} />
                 <span className="font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-fa-orange-soda">
-                  {isAr ? 'تقدير لحظي' : 'Live estimate'}
+                  {isAr ? 'تقدير التوفير' : 'Savings estimate'}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-6 lg:gap-8">
                 <Stat
                   icon={<Wallet size={18} strokeWidth={1.7} />}
-                  label={isAr ? 'وفرت شهرياً' : 'Saved per month'}
+                  label={isAr ? 'التوفير الشهري' : 'Saved per month'}
                   value={fmtCurrency(results.savedCostMonthly)}
                 />
                 <Stat
                   icon={<Clock size={18} strokeWidth={1.7} />}
-                  label={isAr ? 'ساعات وفرتها أسبوعياً' : 'Hours saved/week'}
+                  label={isAr ? 'الوقت الموفّر أسبوعيًا' : 'Hours saved/week'}
                   value={`${fmt(results.savedHoursWeekly)} ${isAr ? 'ساعة' : 'hrs'}`}
                 />
               </div>
@@ -182,39 +195,58 @@ export default function Calculator() {
               <div className="mt-8 grid gap-6 sm:grid-cols-[minmax(0,1.35fr)_minmax(130px,0.65fr)] items-end">
                 <Stat
                   icon={<TrendingUp size={18} strokeWidth={1.7} />}
-                  label={isAr ? 'العائد السنوي' : 'Annual ROI'}
+                  label={isAr ? 'إجمالي التوفير السنوي' : 'Total annual savings'}
                   value={fmtCurrency(results.annualROI)}
                   highlight
                   className="min-w-0"
                 />
                 <Stat
                   icon={<Sparkles size={18} strokeWidth={1.7} />}
-                  label={isAr ? 'وقت التوصيل الجديد' : 'New delivery time'}
+                  label={isAr ? 'مدة التوصيل المتوقعة' : 'Expected delivery time'}
                   value={
                     results.newDeliveryDays < 0.25
                       ? isAr
                         ? '2–4 ساعات'
                         : '2–4 hrs'
                       : isAr
-                      ? `${results.newDeliveryDays} يوم`
+                      ? fmtDaysAr(results.newDeliveryDays)
                       : `${results.newDeliveryDays} d`
                   }
                 />
               </div>
 
+              {/* How-is-it-calculated expandable */}
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={() => setShowHow(!showHow)}
+                  aria-expanded={showHow}
+                  className="font-body text-[12px] font-semibold text-fa-classic-chalk/70 hover:text-fa-classic-chalk underline underline-offset-4 decoration-fa-orange-soda/60 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-fa-orange-soda rounded-sm"
+                >
+                  {isAr ? 'كيف تم احتساب التوفير؟' : 'How are savings calculated?'}
+                </button>
+                {showHow && (
+                  <p className="font-body mt-3 text-[12px] text-fa-classic-chalk/60 leading-[1.65] rounded-xl p-4" style={{ backgroundColor: 'rgba(244,244,241,0.06)' }}>
+                    {isAr
+                      ? 'يتم احتساب النتائج بناءً على عدد الطلبات، ومتوسط تكلفة الشحن، وساعات العمل التشغيلية، ومدة التوصيل الحالية. النتائج تقديرية وقد تختلف حسب المدن، والأوزان، وحجم المنتجات، والخدمات المطلوبة.'
+                      : 'Results are calculated from your order volume, average shipping cost, weekly operating hours, and current delivery time. Estimates may vary by cities, weights, product sizes, and requested services.'}
+                  </p>
+                )}
+              </div>
+
               <div className="mt-8 pt-7 border-t border-fa-classic-chalk/10 flex flex-wrap items-center gap-3 justify-between">
                 <span className="font-body text-[12px] text-fa-classic-chalk/55 max-w-[260px] leading-[1.5]">
-                  {isAr ? 'احصل على عرض سعر مخصص بناءً على هذه الأرقام.' : 'Get a tailored quote based on these numbers.'}
+                  {isAr ? 'احصل على عرض مخصص بناءً على حجم طلباتك واحتياجات متجرك.' : 'Get a tailored quote based on your order volume and store needs.'}
                 </span>
                 <BrandButton variant="filled" href="/contact">
-                  {isAr ? 'اطلب عرضي' : 'Get my quote'}
+                  {isAr ? 'احصل على عرض سعر' : 'Get a quote'}
                 </BrandButton>
               </div>
             </div>
 
             <div className="mt-4 font-body text-[11px] text-fa-liberty-blue/45 text-center">
               {isAr
-                ? 'تقديرات تعتمد على متوسط نتائج تجار فاست أكسس. النتائج الفعلية تختلف.'
+                ? 'النتائج تقديرية وتعتمد على البيانات المدخلة، وقد تختلف حسب طبيعة العمليات والخدمات المطلوبة.'
                 : 'Estimates based on average Fast Access merchant outcomes. Actual results vary.'}
             </div>
           </div>
@@ -249,7 +281,7 @@ function RangeField({
 }) {
   return (
     <div>
-      <div className="flex justify-between items-baseline mb-2">
+      <div className="flex flex-wrap justify-between items-baseline gap-x-3 gap-y-1 mb-2">
         <label className="font-body text-[12px] uppercase tracking-[0.08em] text-fa-liberty-blue/55 font-semibold">{label}</label>
         <span className="font-display text-[20px] font-semibold text-fa-orange-soda tracking-[-0.01em]">{format(value)}</span>
       </div>
@@ -261,11 +293,16 @@ function RangeField({
         value={value}
         onChange={(e) => onChange(parseFloat(e.target.value))}
         className="w-full calc-range"
+        aria-label={label}
+        aria-valuetext={format(value)}
       />
       <style>{`
         .calc-range { -webkit-appearance: none; appearance: none; height: 2px; background: rgba(13,18,50,0.16); border-radius: 999px; outline: none; }
         .calc-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; background: #F15B41; border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(241,91,65,0.18); transition: box-shadow 150ms; }
         .calc-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(241,91,65,0.28); }
+        .calc-range:focus-visible { outline: none; }
+        .calc-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px rgba(241,91,65,0.38); }
+        .calc-range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 6px rgba(241,91,65,0.38); }
         .calc-range::-moz-range-thumb { width: 18px; height: 18px; background: #F15B41; border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(241,91,65,0.18); }
       `}</style>
     </div>
