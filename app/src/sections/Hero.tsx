@@ -84,9 +84,6 @@ export default function Hero() {
             </p>
 
             <div className="hero-fade flex flex-wrap items-center gap-3 mt-8">
-              <MagneticButton variant="filled" href="/contact">
-                {t('hero.primaryCta')}
-              </MagneticButton>
               <MagneticButton variant="on-dark" href="/pricing">
                 {t('hero.secondaryCta')}
               </MagneticButton>
