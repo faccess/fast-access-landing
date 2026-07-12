@@ -4,6 +4,7 @@ import BrandLogo from '../components/brand/BrandLogo';
 import BrandButton from '../components/brand/BrandButton';
 import LangToggle from '../components/brand/LangToggle';
 import TrackingModal from '../components/TrackingModal';
+import { ArrowRight } from 'lucide-react';
 import { useT } from '../i18n/I18nContext';
 
 export default function Navigation() {
@@ -75,14 +76,11 @@ export default function Navigation() {
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-4 ms-6">
           <LangToggle tone={scrolled ? 'light' : 'dark'} />
-          <button
-            onClick={() => setTrackOpen(true)}
-            className="rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 shadow-sm whitespace-nowrap me-2"
-            style={{ backgroundColor: '#F15B41' }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#D8492F')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#F15B41')}
-          >
-            {t('nav.track')}
+          <button onClick={() => setTrackOpen(true)} className="btn-brand btn-brand--track me-2">
+            <span className="btn-brand__label">{t('nav.track')}</span>
+            <span className="btn-brand__arrow" aria-hidden>
+              <ArrowRight size={14} strokeWidth={2.4} />
+            </span>
           </button>
           <BrandButton variant="filled" href="/contact">
             {t('nav.getQuote')}
@@ -138,10 +136,12 @@ export default function Navigation() {
             <div className="pt-4 border-t border-[#e8e8e8] flex flex-wrap items-center gap-3">
               <button
                 onClick={() => { setMobileOpen(false); setTrackOpen(true); }}
-                className="btn-brand text-white"
-                style={{ backgroundColor: '#F15B41' }}
+                className="btn-brand btn-brand--track"
               >
                 <span className="btn-brand__label">{t('nav.track')}</span>
+                <span className="btn-brand__arrow" aria-hidden>
+                  <ArrowRight size={14} strokeWidth={2.4} />
+                </span>
               </button>
               <BrandButton variant="filled" href="/contact">
                 {t('nav.getQuote')}
