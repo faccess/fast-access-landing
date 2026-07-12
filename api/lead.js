@@ -41,7 +41,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, store, orders, message, locale } = req.body || {};
+    const { name, email, phone, store, storeUrl, orders, message, locale } = req.body || {};
     if (!name || !email) {
       return res.status(400).json({ ok: false, error: 'missing_fields' });
     }
@@ -58,6 +58,7 @@ export default async function handler(req, res) {
     // 2) Create the lead
     const descriptionLines = [
       `الطلبات الشهرية: ${orders || '—'}`,
+      `رابط المتجر: ${storeUrl || '—'}`,
       '',
       'تفاصيل الشحن:',
       message || '—',
@@ -77,6 +78,8 @@ export default async function handler(req, res) {
           contact_name: name,
           partner_name: store || false,
           email_from: email,
+          phone: phone || false,
+          website: storeUrl || false,
           description: descriptionLines.join('\n'),
           type: 'opportunity',
         },

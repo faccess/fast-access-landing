@@ -83,6 +83,8 @@ export default function Contact() {
                       name: (f.elements.namedItem('name') as HTMLInputElement)?.value,
                       email: (f.elements.namedItem('email') as HTMLInputElement)?.value,
                       store: (f.elements.namedItem('store') as HTMLInputElement)?.value,
+                      phone: (f.elements.namedItem('phone') as HTMLInputElement)?.value,
+                      storeUrl: (f.elements.namedItem('storeUrl') as HTMLInputElement)?.value,
                       orders: (f.elements.namedItem('orders') as HTMLInputElement)?.value,
                       message: (f.elements.namedItem('message') as HTMLTextAreaElement)?.value,
                       locale,
@@ -109,13 +111,17 @@ export default function Contact() {
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4 pt-2">
                     <input required name="name" className={field} placeholder={isAr ? 'الاسم' : 'Full name'} aria-label={isAr ? 'الاسم' : 'Full name'} />
-                    <input required name="email" type="email" className={field} placeholder={isAr ? 'البريد الإلكتروني' : 'Email'} aria-label={isAr ? 'البريد الإلكتروني' : 'Email'} />
+                    <input required name="phone" type="tel" dir="ltr" className={field} placeholder={isAr ? 'رقم التواصل (جوال)' : 'Phone number'} aria-label={isAr ? 'رقم التواصل' : 'Phone number'} />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <input name="store" className={field} placeholder={isAr ? 'اسم المتجر' : 'Store / company'} aria-label={isAr ? 'اسم المتجر' : 'Store / company'} />
-                    <input name="orders" className={field} placeholder={isAr ? 'الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'الطلبات شهريًا' : 'Orders / month'} />
+                    <input required name="email" type="email" dir="ltr" className={field} placeholder={isAr ? 'البريد الإلكتروني' : 'Email'} aria-label={isAr ? 'البريد الإلكتروني' : 'Email'} />
+                    <input required name="store" className={field} placeholder={isAr ? 'اسم المتجر' : 'Store / company'} aria-label={isAr ? 'اسم المتجر' : 'Store / company'} />
                   </div>
-                  <textarea name="message" rows={4} className={field} placeholder={isAr ? 'ماذا تشحن؟ أخبرنا بالتفاصيل.' : 'What do you ship? Tell us a bit.'} aria-label={isAr ? 'رسالتك' : 'Message'} />
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <input name="storeUrl" type="url" dir="ltr" className={field} placeholder={isAr ? 'رابط المتجر (اختياري)' : 'Store URL (optional)'} aria-label={isAr ? 'رابط المتجر' : 'Store URL'} />
+                    <input required name="orders" className={field} placeholder={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} aria-label={isAr ? 'عدد الطلبات شهريًا' : 'Orders / month'} />
+                  </div>
+                  <textarea name="message" rows={3} className={field} placeholder={isAr ? 'ماذا تشحن؟ تفاصيل إضافية (اختياري)' : 'What do you ship? Extra details (optional)'} aria-label={isAr ? 'رسالتك' : 'Message'} />
                   <button type="submit" disabled={sending} className="btn-brand btn-brand--filled w-full justify-center disabled:opacity-60">
                     <span className="btn-brand__label">{sending ? (isAr ? 'جاري الإرسال...' : 'Sending...') : isAr ? 'أرسل الطلب... وخلّها علينا' : 'Send request'}</span>
                   </button>
