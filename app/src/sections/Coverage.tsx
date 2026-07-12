@@ -179,11 +179,11 @@ export default function Coverage() {
                 {/* ── Saudi Arabia (hero layer) ── */}
                 <path d="M245.1,508.7L241.4,495.3L232.8,485.9L230.6,473.4L215.8,462.2L200.6,436.0L192.6,410.4L172.8,388.9L160.0,383.8L141.1,353.9L137.8,332.2L139.0,313.6L122.7,278.9L109.3,266.7L93.8,260.2L84.4,242.3L86.0,235.2L78.0,219.0L69.7,212.0L58.5,188.7L41.1,163.5L26.6,142.0L12.4,142.1L16.8,125.0L18.1,114.0L21.6,101.5L53.4,106.5L65.7,96.9L72.6,85.6L94.4,81.3L99.1,70.8L108.5,65.5L80.1,34.2L137.3,18.5L142.7,13.7L177.1,22.2L219.7,44.1L300.3,107.1L353.4,109.6L378.9,112.6L386.0,127.5L406.2,126.7L417.4,153.7L431.4,160.8L436.3,171.8L455.8,185.0L457.5,197.9L454.7,208.3L458.3,218.8L466.5,227.6L470.3,237.9L474.6,245.6L483.2,251.8L491.1,249.5L496.6,261.5L497.6,268.7L508.6,300.4L594.5,316.2L600.2,309.6L613.3,331.8L594.3,394.4L508.6,425.7L426.2,437.7L399.5,451.8L379.0,484.6L365.7,489.8L358.6,479.4L347.6,481.0L320.0,477.8L314.8,474.7L281.8,475.4L274.0,478.3L262.3,470.1L254.7,485.5L257.7,498.7L245.1,508.7Z" fill="url(#ksaFill)" stroke="#F15B41" strokeWidth="1.6" strokeLinejoin="round" />
 
-                {/* ── GCC routes: Riyadh/Dammam -> capitals (strong, glowing) ── */}
+                {/* ── GCC routes: all radiating from Riyadh (strong, glowing) ── */}
                 <g stroke="#F15B41" strokeWidth="1.6" fill="none" opacity="0.85" filter="url(#glowLine)" strokeLinecap="round">
-                  <path d="M454.3,193.1 Q423.85,133.1 393.4,101.1" />
-                  <path d="M454.3,193.1 Q461.15,190.39999999999998 468.0,199.7" />
-                  <path d="M454.3,193.1 Q474.70000000000005,201.1 495.1,229.1" />
+                  <path d="M356.6,247.0 Q375.0,152.05 393.4,101.1" />
+                  <path d="M356.6,247.0 Q412.3,203.35 468.0,199.7" />
+                  <path d="M356.6,247.0 Q425.85,222.05 495.1,229.1" />
                   <path d="M356.6,247.0 Q479.3,205.3 602.0,231.6" />
                   <path d="M356.6,247.0 Q524.0,212.2 691.4,281.4" />
                 </g>
@@ -205,15 +205,15 @@ export default function Coverage() {
 
                 {/* ── labels ── */}
                 <g fontFamily="inherit" fontSize="15" fontWeight="700" fill="#F4F4F1">
-                  <text x="356.6" y="235.0" textAnchor="middle">{isAr ? 'الرياض' : 'Riyadh'}</text>
-                  <text x="150.6" y="369.7" textAnchor="middle">{isAr ? 'جدة' : 'Jeddah'}</text>
-                  <text x="454.3" y="181.1" textAnchor="middle">{isAr ? 'الدمام' : 'Dammam'}</text>
+                  <text x="344" y="253" textAnchor="end">{isAr ? 'الرياض' : 'Riyadh'}</text>
+                  <text x="132" y="352" textAnchor="end">{isAr ? 'جدة' : 'Jeddah'}</text>
+                  <text x="444" y="188" textAnchor="end">{isAr ? 'الدمام' : 'Dammam'}</text>
                 </g>
                 <g fontFamily="inherit" fontSize="12" fontWeight="600" fill="rgba(244,244,241,0.62)">
                   <text x="294.3" y="300.5" textAnchor="middle" fontSize="16" fontWeight="700" fill="rgba(244,244,241,0.8)">{isAr ? 'السعودية' : 'Saudi Arabia'}</text>
                   <text x="382.9" y="84.5" textAnchor="middle">{isAr ? 'الكويت' : 'Kuwait'}</text>
-                  <text x="495.1" y="184.7" textAnchor="start">{isAr ? 'البحرين' : 'Bahrain'}</text>
-                  <text x="496.0" y="264.0" textAnchor="start">{isAr ? 'قطر' : 'Qatar'}</text>
+                  <text x="480" y="176" textAnchor="start">{isAr ? 'البحرين' : 'Bahrain'}</text>
+                  <text x="504" y="252" textAnchor="start">{isAr ? 'قطر' : 'Qatar'}</text>
                   <text x="582.9" y="297.7" textAnchor="middle">{isAr ? 'الإمارات' : 'UAE'}</text>
                   <text x="640.0" y="353.7" textAnchor="middle">{isAr ? 'عُمان' : 'Oman'}</text>
                 </g>
