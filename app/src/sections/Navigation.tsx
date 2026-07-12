@@ -47,12 +47,12 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <NavLink
               key={link.label}
               to={link.to}
-              className="relative text-sm font-medium transition-colors duration-200 group"
+              className="relative text-sm font-medium transition-colors duration-200 group whitespace-nowrap"
             >
               {({ isActive }) => (
                 <>
@@ -73,11 +73,11 @@ export default function Navigation() {
         </div>
 
         {/* Right side */}
-        <div className="hidden lg:flex items-center gap-5 ms-10">
+        <div className="hidden lg:flex items-center gap-4 ms-6">
           <LangToggle tone={scrolled ? 'light' : 'dark'} />
           <button
             onClick={() => setTrackOpen(true)}
-            className="rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 shadow-sm"
+            className="rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 shadow-sm whitespace-nowrap me-2"
             style={{ backgroundColor: '#F15B41' }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#D8492F')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#F15B41')}
