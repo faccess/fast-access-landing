@@ -58,6 +58,10 @@ export default async function handler(req, res) {
     ]);
     if (!uid) throw new Error('Odoo authentication failed');
 
+    // Map the orders bracket to its upper bound for the Expected Volume field
+    const VOLUME_MAP = { '0-100': 100, '101-500': 500, '501-2000': 2000, '2001-10000': 10000, '10000+': 10000 };
+    const expectedVolume = VOLUME_MAP[orders] || 0;
+
     // 2) Create the lead
     const descriptionLines = [
       `الطلبات الشهرية: ${orders || '—'}`,
@@ -83,6 +87,7 @@ export default async function handler(req, res) {
           email_from: email,
           phone: phone || false,
           website: storeUrl || false,
+          expected_revenue: expectedVolume,
           description: descriptionLines.join('\n'),
           type: 'opportunity',
         },
