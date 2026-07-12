@@ -148,6 +148,7 @@ export default function Coverage() {
               <svg
                 viewBox="0 0 760 560"
                 className="w-full h-auto block"
+                style={{ direction: 'ltr' }}
                 role="img"
                 aria-label={isAr ? 'خريطة تغطية: السعودية والخليج وشحن دولي' : 'Coverage map: Saudi Arabia, the GCC, and international shipping'}>
                 <defs>
@@ -205,15 +206,15 @@ export default function Coverage() {
 
                 {/* ── labels ── */}
                 <g fontFamily="inherit" fontSize="15" fontWeight="700" fill="#F4F4F1">
-                  <text x="344" y="253" textAnchor="end">{isAr ? 'الرياض' : 'Riyadh'}</text>
-                  <text x="132" y="352" textAnchor="end">{isAr ? 'جدة' : 'Jeddah'}</text>
-                  <text x="444" y="188" textAnchor="end">{isAr ? 'الدمام' : 'Dammam'}</text>
+                  <text x="342" y="253" textAnchor="end">{isAr ? 'الرياض' : 'Riyadh'}</text>
+                  <text x="128" y="352" textAnchor="end">{isAr ? 'جدة' : 'Jeddah'}</text>
+                  <text x="454" y="174" textAnchor="middle">{isAr ? 'الدمام' : 'Dammam'}</text>
                 </g>
                 <g fontFamily="inherit" fontSize="12" fontWeight="600" fill="rgba(244,244,241,0.62)">
                   <text x="294.3" y="300.5" textAnchor="middle" fontSize="16" fontWeight="700" fill="rgba(244,244,241,0.8)">{isAr ? 'السعودية' : 'Saudi Arabia'}</text>
                   <text x="382.9" y="84.5" textAnchor="middle">{isAr ? 'الكويت' : 'Kuwait'}</text>
-                  <text x="480" y="176" textAnchor="start">{isAr ? 'البحرين' : 'Bahrain'}</text>
-                  <text x="504" y="252" textAnchor="start">{isAr ? 'قطر' : 'Qatar'}</text>
+                  <text x="479" y="212" textAnchor="start">{isAr ? 'البحرين' : 'Bahrain'}</text>
+                  <text x="506" y="248" textAnchor="start">{isAr ? 'قطر' : 'Qatar'}</text>
                   <text x="582.9" y="297.7" textAnchor="middle">{isAr ? 'الإمارات' : 'UAE'}</text>
                   <text x="640.0" y="353.7" textAnchor="middle">{isAr ? 'عُمان' : 'Oman'}</text>
                 </g>
@@ -225,14 +226,14 @@ export default function Coverage() {
                   {/* mini abstract world: KSA node + dotted routes */}
                   <circle cx="118" cy="102" r="5" fill="#F15B41" filter="url(#glowDot)" />
                   <g stroke="rgba(241,91,65,0.55)" strokeWidth="1.1" strokeDasharray="2.5 4" fill="none" strokeLinecap="round">
-                    <path d="M118,102 Q95,72 62,58" />
-                    <path d="M118,102 Q84,58 38,44" />
-                    <path d="M118,102 Q165,78 204,58" />
+                    <path d="M118,102 Q106,88 88,74" />
+                    <path d="M118,102 Q84,72 46,52" />
+                    <path d="M118,102 Q160,84 192,62" />
                   </g>
                   <g fill="rgba(244,244,241,0.72)" fontSize="10.5" fontWeight="600">
-                    <circle cx="62" cy="58" r="2.6" /><text x="62" y="46" textAnchor="middle">{isAr ? 'تركيا' : 'Turkey'}</text>
-                    <circle cx="38" cy="44" r="2.6" /><text x="38" y="32" textAnchor="middle">{isAr ? 'أوروبا' : 'Europe'}</text>
-                    <circle cx="204" cy="58" r="2.6" /><text x="204" y="46" textAnchor="middle">{isAr ? 'شرق آسيا' : 'East Asia'}</text>
+                    <circle cx="88" cy="74" r="2.6" /><text x="88" y="62" textAnchor="middle">{isAr ? 'تركيا' : 'Turkey'}</text>
+                    <circle cx="46" cy="52" r="2.6" /><text x="50" y="40" textAnchor="middle">{isAr ? 'أوروبا' : 'Europe'}</text>
+                    <circle cx="192" cy="62" r="2.6" /><text x="192" y="50" textAnchor="middle">{isAr ? 'شرق آسيا' : 'East Asia'}</text>
                   </g>
                   <text x="118" y="138" textAnchor="middle" fontSize="10" fill="rgba(244,244,241,0.45)">{isAr ? '+220 دولة' : '220+ countries'}</text>
                 </g>
