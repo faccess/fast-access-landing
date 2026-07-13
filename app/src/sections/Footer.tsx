@@ -25,11 +25,11 @@ export default function Footer() {
       { label: isAr ? 'المصادر' : 'Resources', to: '/resources' },
     ],
     [t('footer.cols.Resources')]: [
-      { label: isAr ? 'الأسئلة الشائعة' : 'FAQ', to: '/resources' },
+      { label: isAr ? 'الأسئلة الشائعة' : 'FAQ', to: '/faq' },
       { label: isAr ? 'كيف نسعّر' : 'Pricing', to: '/pricing' },
-      { label: isAr ? 'مركز المساعدة' : 'Help center', to: '/resources' },
-      { label: isAr ? 'الخصوصية' : 'Privacy', to: '/resources#privacy' },
-      { label: isAr ? 'الشروط' : 'Terms', to: '/resources#terms' },
+      { label: isAr ? 'مركز المساعدة' : 'Help center', to: 'https://wa.me/966920032768' },
+      { label: isAr ? 'الخصوصية' : 'Privacy', to: '/privacy' },
+      { label: isAr ? 'الشروط' : 'Terms', to: '/terms' },
     ],
     [t('footer.cols.Contact')]: [
       { label: isAr ? 'اطلب عرض سعر' : 'Get a quote', to: '/contact' },
@@ -114,10 +114,10 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-6">
             {[
-              { label: isAr ? 'الخصوصية' : 'Privacy', to: '/resources#privacy' },
-              { label: isAr ? 'الشروط' : 'Terms', to: '/resources#terms' },
-              { label: isAr ? 'الأمان' : 'Security', to: '/resources#security' },
-              { label: isAr ? 'ملفات الارتباط' : 'Cookies', to: '/resources#cookies' },
+              { label: isAr ? 'الخصوصية' : 'Privacy', to: '/privacy' },
+              { label: isAr ? 'الشروط' : 'Terms', to: '/terms' },
+              { label: isAr ? 'الأمان' : 'Security', to: '/privacy#security' },
+              { label: isAr ? 'ملفات الارتباط' : 'Cookies', to: '/privacy#cookies' },
             ].map((item) => (
               <Link
                 key={item.label}
