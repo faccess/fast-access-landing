@@ -224,7 +224,7 @@ const en = {
       Resources: 'Resources',
       Contact: 'Contact',
     },
-    copyright: '© 2026 Fast Access Logistics, Inc.',
+    copyright: '© 2026 Fast Access Fulfillment Services.',
   },
 } as const;
 
@@ -447,7 +447,7 @@ const ar = {
       Resources: 'المزيد',
       Contact: 'تواصل',
     },
-    copyright: '© 2026 Fast Access Logistics, Inc.',
+    copyright: '© 2026 Fast Access Fulfillment Services.',
   },
 } as const;
 

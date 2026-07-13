@@ -71,7 +71,7 @@ export default function Privacy() {
           ) : (
             <>
               <S title="Introduction">
-                <p>This policy explains how Fast Access Logistics ("Fast Access", "we") handles personal data collected through faccess.co and our services, in line with the Saudi Personal Data Protection Law.</p>
+                <p>This policy explains how Fast Access Fulfillment Services ("Fast Access", "we") handles personal data collected through faccess.co and our services, in line with the Saudi Personal Data Protection Law.</p>
               </S>
               <S title="Data we collect">
                 <p>We collect data you provide directly when requesting a quote or contacting us: name, phone, email, brand/company name, store URL, monthly order volume, and any details you share. We also automatically collect limited technical data (browser, device, pages visited) to operate and improve the site.</p>
