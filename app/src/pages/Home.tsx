@@ -10,6 +10,7 @@ import Sectors from '../sections/Sectors';
 import Coverage from '../sections/Coverage';
 import StatStrip from '../sections/StatStrip';
 import Results from '../sections/Results';
+import AppPromo from '../sections/AppPromo';
 import Pricing from '../sections/Pricing';
 import FAQ from '../sections/FAQ';
 import CTA from '../sections/CTA';
@@ -44,6 +45,7 @@ export default function Home() {
       <Coverage />
       <StatStrip />
       <Results />
+      <AppPromo />
       <Pricing />
       <FAQ />
       <CTA />

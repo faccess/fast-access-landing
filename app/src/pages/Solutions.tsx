@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
-import { PackageCheck, Boxes, Truck, Radar, Store, Headset, Ship } from 'lucide-react';
+import { PackageCheck, Boxes, Truck, Radar, Store, Headset, Ship, Smartphone } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import DashboardPreview from '../sections/DashboardPreview';
 import SectionChip from '../components/brand/SectionChip';
@@ -47,9 +47,10 @@ export default function Solutions() {
     { icon: Boxes, title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? 'أكثر من 15,000 م² تتمدد مع موسمك، بمساحات مكيفة وتبريد مخصص (2-8°م) لمنتجاتك الحساسة.' : 'Space that expands with your season, with cold storage on demand.', metric: isAr ? '10+ مراكز' : '10+ centres' },
     { icon: PackageCheck, title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'فريق مدرب يجهز طلبك بمواد متينة وهوية علامتك، كروت، إهداءات، وتغليف مخصص جاهز للمواسم.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? 'ساعة ونص تجهيز' : '1.5-hr pick-pack' },
     { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '98% بالوقت' : '98% on-time' },
-    { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك، وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
+    { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك — وقريبًا تطبيق جوال للتجار — وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
     { icon: Store, title: isAr ? 'المخازن السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال 2 إلى 4 ساعات، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
     { icon: Headset, title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'دعم على مدار الساعة يلتقط الاستثناءات ويحلها قبل لا تتحول شكوى توصلك.' : 'A team that catches exceptions before they become complaints.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
+    { icon: Smartphone, wide: true, title: isAr ? 'تطبيق فاست أكسس للتجار' : 'Fast Access merchant app', body: isAr ? 'تجارتك بجيبك: متابعة الطلبات، تحليلات المبيعات والمخزون، وتنبيهات لحظية توصلك أول بأول — قريبًا على App Store وGoogle Play.' : 'Your business in your pocket: order tracking, sales & inventory analytics, and instant alerts — soon on the App Store and Google Play.', metric: isAr ? 'قريبًا' : 'Coming soon' },
     { icon: Ship, wide: true, title: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs clearance', body: isAr ? 'نستورد بضاعتك من موردك — شحن بحري وجوي — ونخلّصها جمركيًا بدون عناء، وتدخل مستودعاتنا جاهزة للبيع مباشرة.' : 'We import your goods from your supplier — sea and air freight — clear customs end to end, and your stock enters our warehouses ready to sell.', metric: isAr ? 'من الباب للرف' : 'Door to shelf' },
   ];
 
