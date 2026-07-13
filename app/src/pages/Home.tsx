@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import Hero from '../sections/Hero';
 import WhatIsFA from '../sections/WhatIsFA';
 import TrustedBy from '../sections/TrustedBy';
@@ -14,6 +15,10 @@ import FAQ from '../sections/FAQ';
 import CTA from '../sections/CTA';
 
 export default function Home() {
+  usePageMeta(
+    { title: 'فاست أكسس — تخزين وتجهيز وشحن لمتاجر التجارة الإلكترونية', desc: 'شريكك اللوجستي في السعودية: تخزين، تجهيز طلبات بهوية علامتك، شحن وتتبع لحظي، وتوصيل بنفس اليوم من المخازن السحابية. خلّها علينا.' },
+    { title: 'Fast Access — Fulfillment & Shipping for E-commerce', desc: 'Your logistics partner in Saudi Arabia: storage, branded fulfillment, live-tracked shipping, and same-day delivery from cloud warehouses.' }
+  );
   return (
     <>
       <Helmet>

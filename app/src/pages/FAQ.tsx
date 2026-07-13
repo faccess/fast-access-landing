@@ -1,8 +1,13 @@
 import PageHeader from '../components/PageHeader';
+import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
 
 /** الأسئلة الشائعة — general FAQ page (footer link). */
 export default function FAQ() {
+  usePageMeta(
+    { title: 'الأسئلة الشائعة | فاست أكسس', desc: 'أجوبة مباشرة على أكثر أسئلة التجار: الربط، التسعير، سرعة التجهيز، التغطية، المرتجعات، والبداية مع فاست أكسس.' },
+    { title: 'FAQ | Fast Access', desc: 'Straight answers to merchants\' top questions: integration, pricing, prep speed, coverage, returns, and getting started.' }
+  );
   const { locale } = useT();
   const isAr = locale === 'ar';
 

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import { Mail, Phone, MapPin, Clock, Check } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import QuoteForm from '../components/QuoteForm';
@@ -8,6 +9,10 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 export default function Contact() {
+  usePageMeta(
+    { title: 'اطلب عرض سعر — جاهز تخلّيها علينا؟ | فاست أكسس', desc: 'عطنا تفاصيل شحنك بدقيقتين ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد. واتساب وهاتف موحد ودعم 24/7.' },
+    { title: 'Request a Quote | Fast Access', desc: 'Share your shipping profile in two minutes and get a tailored plan within one business day. WhatsApp, unified phone, 24/7 support.' }
+  );
   const { locale } = useT();
   const isAr = locale === 'ar';
 

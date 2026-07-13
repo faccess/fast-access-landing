@@ -1,4 +1,5 @@
 import PageHeader from '../components/PageHeader';
+import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
 
 /**
@@ -7,6 +8,10 @@ import { useT } from '../i18n/I18nContext';
  * Draft for legal review.
  */
 export default function Privacy() {
+  usePageMeta(
+    { title: 'سياسة الخصوصية | فاست أكسس', desc: 'كيف نجمع بياناتك ونستخدمها ونحميها وفق نظام حماية البيانات الشخصية السعودي — بلغة واضحة.' },
+    { title: 'Privacy Policy | Fast Access', desc: 'How we collect, use and protect your data under the Saudi Personal Data Protection Law.' }
+  );
   const { locale } = useT();
   const isAr = locale === 'ar';
 

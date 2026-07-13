@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import { Boxes, PackageCheck, Truck, MapPin, Check } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Calculator from '../sections/Calculator';
@@ -10,6 +11,10 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 export default function Pricing() {
+  usePageMeta(
+    { title: 'كيف نسعّر — عرض على قدّ شغلك | فاست أكسس', desc: 'ما عندنا باقات جاهزة. احسب توفيرك بالحاسبة، وخذ عرض سعر مفصّل على أرقامك الفعلية خلال يوم عمل واحد — بدون رسوم خفية.' },
+    { title: 'How We Price — A Quote Built On Your Numbers | Fast Access', desc: 'No ready-made bundles. Use the savings calculator and get a detailed quote built on your real numbers within one business day.' }
+  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
 

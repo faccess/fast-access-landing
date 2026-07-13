@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import { Target, Telescope, Gauge, ShieldCheck, HeartHandshake, TrendingUp } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import SectionChip from '../components/brand/SectionChip';
@@ -9,6 +10,10 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 export default function About() {
+  usePageMeta(
+    { title: 'من نحن — قصة فاست أكسس', desc: 'تعرف على فاست أكسس: شركة لوجستية سعودية تشغّل التخزين والتجهيز والشحن لمئات المتاجر، بمراكز في الرياض وجدة والدمام.' },
+    { title: 'About Fast Access', desc: 'Meet Fast Access: a Saudi logistics company running storage, fulfillment and shipping for hundreds of stores from Riyadh, Jeddah and Dammam.' }
+  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
 

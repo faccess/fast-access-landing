@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import { BookOpen, Truck, Boxes, RotateCcw, CalendarDays, Plug, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import SectionChip from '../components/brand/SectionChip';
@@ -9,6 +10,10 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 export default function Resources() {
+  usePageMeta(
+    { title: 'المصادر — أدلة وشروحات | فاست أكسس', desc: 'أدلة عملية للتجار: ربط متجرك بفاست أكسس، تجهيز مخزونك، وفهم رحلة الطلب من الشراء للتسليم.' },
+    { title: 'Resources — Guides | Fast Access', desc: 'Practical merchant guides: connecting your store, preparing inventory, and understanding the order journey.' }
+  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
 

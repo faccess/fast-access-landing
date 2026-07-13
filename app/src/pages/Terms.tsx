@@ -1,8 +1,13 @@
 import PageHeader from '../components/PageHeader';
+import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
 
 /** شروط الاستخدام — draft for legal review. */
 export default function Terms() {
+  usePageMeta(
+    { title: 'شروط الاستخدام | فاست أكسس', desc: 'القواعد التي تحكم استخدام موقع فاست أكسس وخدماته.' },
+    { title: 'Terms of Use | Fast Access', desc: 'The rules governing use of the Fast Access website and services.' }
+  );
   const { locale } = useT();
   const isAr = locale === 'ar';
 

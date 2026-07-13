@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../hooks/usePageMeta';
 import { PackageCheck, Boxes, Truck, Radar, Store, Headset } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import DashboardPreview from '../sections/DashboardPreview';
@@ -10,6 +11,10 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 export default function Solutions() {
+  usePageMeta(
+    { title: 'حلولنا — تخزين وتجهيز وشحن وتتبع | فاست أكسس', desc: 'كل اللي تحتاجه عشان توصل طلباتك: ربط متجرك، تخزين مرن مرخص، تجهيز بدقة 99.7%، شحن لكل المملكة والخليج، ولوحة تتبع موحدة.' },
+    { title: 'Solutions — Storage, Fulfillment & Shipping | Fast Access', desc: 'Everything to deliver your orders: store integration, licensed flexible storage, 99.7% picking accuracy, KSA & GCC shipping, unified tracking.' }
+  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
 
