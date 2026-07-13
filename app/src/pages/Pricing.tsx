@@ -47,7 +47,7 @@ export default function Pricing() {
         chip={t('pricing.chip')}
         title={isAr ? (<><span className="text-fa-orange-soda">كيف نسعّر؟</span> ببساطة... على قدّ شغلك.</>) : t('pages.pricing.title')}
         sub={t('pages.pricing.sub')}
-        bg="/assets/hero-pricing.jpg"
+        bg="/assets/hero-pricing.webp"
       />
 
       <Calculator />

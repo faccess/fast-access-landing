@@ -32,7 +32,7 @@ export default function About() {
         <title>About — Fast Access</title>
         <meta name="description" content="Fast Access is an operational logistics company — the current that drives e-commerce growth across Saudi Arabia and the Gulf." />
       </Helmet>
-      <PageHeader title={t('pages.about.title')} sub={t('pages.about.sub')} bg="/assets/hero-about.jpg" />
+      <PageHeader title={t('pages.about.title')} sub={t('pages.about.sub')} bg="/assets/hero-about.webp" />
 
       {/* Who we are */}
       <section className="relative bg-fa-cream section-padding overflow-hidden">

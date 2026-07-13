@@ -27,7 +27,7 @@ export default function Resources() {
         <title>Resources — Fast Access</title>
         <meta name="description" content="Guides on shipping, storage, returns, peak season, and integrations — everything merchants need to grow with Fast Access." />
       </Helmet>
-      <PageHeader title={t('pages.resources.title')} sub={t('pages.resources.sub')} bg="/assets/hero-resources.jpg" />
+      <PageHeader title={t('pages.resources.title')} sub={t('pages.resources.sub')} bg="/assets/hero-resources.webp" />
 
       {/* Guides library */}
       <section className="relative bg-fa-cream section-padding overflow-hidden">

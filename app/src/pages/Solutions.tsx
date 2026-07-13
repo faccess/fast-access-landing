@@ -59,7 +59,7 @@ export default function Solutions() {
         chip={t('services.chip')}
         title={isAr ? (<><span className="text-fa-orange-soda">حلولنا...</span> كل اللي تحتاجه عشان توصل طلباتك</>) : t('pages.solutions.title')}
         sub={t('pages.solutions.sub')}
-        bg="/assets/hero-solutions.jpg"
+        bg="/assets/hero-solutions.webp"
       />
 
       {/* Operating model — 3 steps */}

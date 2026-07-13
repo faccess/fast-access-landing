@@ -29,7 +29,7 @@ export default function Contact() {
         chip={isAr ? 'تواصل' : 'Contact'}
         title={isAr ? (<>جاهز تخلّيها <span className="text-fa-orange-soda">علينا؟</span></>) : 'Let’s get your orders moving.'}
         sub={isAr ? 'عطنا تفاصيل شحنك بدقيقتين، ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد.' : 'Share your shipping profile and we’ll come back with a tailored plan within one business day.'}
-        bg="/assets/hero-contact.jpg"
+        bg="/assets/hero-contact.webp"
       />
 
       <section className="relative bg-fa-cream section-padding overflow-hidden">
