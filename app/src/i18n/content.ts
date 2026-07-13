@@ -209,9 +209,9 @@ const en = {
     headlineHighlight: 'فاست أكسس',
     headlineB: '?',
     items: [
-      { name: 'Fashion brand, Riyadh', before: 'Orders took 3–5 days and packing ate every evening.', after: 'Same-day delivery in the city; the founder hasn’t touched a box since.' },
-      { name: 'Beauty store, Jeddah', before: 'Returns piled up from damaged, poorly-packed parcels.', after: 'Branded, protective packing cut returns to almost zero.' },
-      { name: 'Supplements brand, Dammam', before: 'No visibility — customers asked “where’s my order?” daily.', after: 'A live dashboard answers it before they ask.' },
+      { name: 'A matcha store', before: 'Orders kept outpacing capacity — every surge meant pausing sales.', after: 'We absorbed the wave: orders grew and operations never stopped for a day.' },
+      { name: 'A cosmetics store', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates — orders ship right the first time.' },
+      { name: 'A perfume store', before: 'High returns and parcels arriving broken from weak packing and random bundling.', after: 'Protective packaging worthy of perfume and smart merging — returns hit their lowest.' },
     ],
   },
   footer: {
@@ -431,9 +431,9 @@ const ar = {
     headlineHighlight: 'فاست أكسس',
     headlineB: '؟',
     items: [
-      { name: 'علامة أزياء، الرياض', before: 'الطلب ياخذ ٣ إلى ٥ أيام، والتغليف ياكل كل مساء.', after: 'توصيل بنفس اليوم داخل المدينة... والمؤسس ما لمس صندوقًا من يومها.' },
-      { name: 'متجر تجميل، جدة', before: 'المرتجعات تتكدس بسبب طرود تالفة وتغليف ضعيف.', after: 'تغليف محكم بهوية العلامة نزّل المرتجعات لأدنى حد.' },
-      { name: 'علامة مكمّلات، الدمام', before: 'صفر رؤية للطلبات، والعملاء يسألون «وين طلبي؟» كل يوم.', after: 'لوحة تحكم لحظية تجاوب قبل لا يسألون.' },
+      { name: 'متجر ماتشا', before: 'الطلبات تسبق الطاقة... وكل ما زادت، اضطروا يوقفون الاستقبال.', after: 'استوعبنا الموجة — الطلبات زادت، والعمليات ما وقفت ولا يوم.' },
+      { name: 'متجر كوزمتكس', before: 'مخزون كبير بدون وضوح: تواريخ انتهاء غايبة، وطلبات تطلع غلط.', after: 'رؤية كاملة للمخزون وتواريخ الصلاحية... والطلب يطلع صح من أول مرة.' },
+      { name: 'متجر عطور', before: 'مرتجعات مرتفعة، وطرود توصل مكسورة بسبب التغليف والدمج العشوائي.', after: 'تغليف محكم يليق بالعطور، ودمج ذكي للطلبات — المرتجعات نزلت لأدنى حد.' },
     ],
   },
   footer: {

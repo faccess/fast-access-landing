@@ -19,14 +19,14 @@ interface Item { name: string; before: string; after: string }
 // numbers when their case study is signed off).
 const metrics: Record<'en' | 'ar', Array<[string, string]>> = {
   en: [
-    ['3.4×', 'order volume in 90 days'],
-    ['−87%', 'damage returns'],
-    ['98%',  'tickets self-resolved'],
+    ['2×', 'sales after joining'],
+    ['99.7%', 'order accuracy'],
+    ['−85%', 'damage returns'],
   ],
   ar: [
-    ['×3.4', 'حجم الطلبات في 90 يومًا'],
-    ['87%−', 'مرتجعات تالفة'],
-    ['98%',  'حلّ تلقائي للتذاكر'],
+    ['2x', 'تضاعفت المبيعات'],
+    ['99.7%', 'دقة تجهيز الطلبات'],
+    ['85%−', 'مرتجعات تالفة'],
   ],
 };
 
