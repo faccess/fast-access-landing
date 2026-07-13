@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
-import { PackageCheck, Boxes, Truck, Radar, Store, Headset } from 'lucide-react';
+import { PackageCheck, Boxes, Truck, Radar, Store, Headset, Ship } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import DashboardPreview from '../sections/DashboardPreview';
 import SectionChip from '../components/brand/SectionChip';
