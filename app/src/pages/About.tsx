@@ -41,11 +41,27 @@ export default function About() {
 
       {/* Who we are */}
       <section className="relative bg-fa-cream section-padding overflow-hidden">
-        <div className="container-main relative z-10 max-w-[740px] text-left rtl:text-right">
-          <Reveal className="mb-6"><SectionChip>{t('pages.whoTitle')}</SectionChip></Reveal>
+        <div className="container-main relative z-10 max-w-[780px] text-left rtl:text-right">
+          <Reveal className="mb-6"><SectionChip>{isAr ? 'قصتنا' : 'Our story'}</SectionChip></Reveal>
           <Reveal delay={80}>
-            <p className="font-display font-normal text-[22px] sm:text-[27px] lg:text-[33px] text-fa-liberty-blue leading-[1.6] tracking-[-0.01em] text-justify">
-              {t('pages.whoBody')}
+            <p className="font-display font-normal text-[22px] sm:text-[26px] lg:text-[31px] text-fa-liberty-blue leading-[1.55] tracking-[-0.01em]">
+              {isAr
+                ? 'بدأنا في 2023 بملاحظة بسيطة: التجارة الإلكترونية في السعودية تنمو بسرعة، والخدمات اللوجستية ما كانت تلحق عليها. شفنا الفجوة واضحة — تجّار يكبرون، وعمليات تشدّهم لتحت.'
+                : 'We started in 2023 with a simple observation: e-commerce in Saudi Arabia was growing fast, and logistics wasn\u2019t keeping up. The gap was clear — merchants scaling up, and operations dragging them down.'}
+            </p>
+          </Reveal>
+          <Reveal delay={140}>
+            <p className="font-body mt-6 text-[16px] lg:text-[17px] text-fa-ink-muted leading-[1.85]">
+              {isAr
+                ? 'فدخلنا السوق برهانين ما تنازلنا عنهما يوم: خدمة جبارة تعامل كل طلب كأنه يحمل اسمنا، وتقنية نطوّرها بأيدينا — منصة تربط متجرك، تجهّز، تشحن، وتتبّع، عشان تشوف كل شي وتتفرغ لنموك.'
+                : 'So we entered the market with two bets we\u2019ve never compromised on: exceptional service that treats every order as if it carries our name, and technology we build ourselves — a platform that connects your store, fulfills, ships, and tracks, so you see everything and focus on growth.'}
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="font-body mt-4 text-[16px] lg:text-[17px] text-fa-ink-muted leading-[1.85]">
+              {isAr
+                ? 'وفي 2025 جات النقلة: موجة عملاء جدد اختاروا يخلّونها علينا، وتوسّعت عملياتنا عبر المملكة. واليوم نكمل على نفس الطريق — نكبر مع تجّارنا، ونطوّر قبل ما يحتاجون.'
+                : 'Then 2025 brought the leap: a wave of new clients chose to hand it over to us, and our operations expanded across the Kingdom. Today we\u2019re on the same road — growing with our merchants, and building ahead of their needs.'}
             </p>
           </Reveal>
         </div>
