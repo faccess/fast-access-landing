@@ -61,6 +61,12 @@ export default function FAQ() {
         : 'We receive the return, inspect it, and restock it if it\'s in good condition — or report its state and you decide. Everything shows in your dashboard in real time.',
     },
     {
+      q: isAr ? 'بضاعتي تجي من الصين — تقدرون تستوردونها؟' : 'My goods come from China — can you import them?',
+      a: isAr
+        ? 'نعم. نرتب الشحن الدولي (بحري أو جوي) من موردك، ونتولى التخليص الجمركي كاملًا، وتوصل بضاعتك مستودعاتنا جاهزة للبيع — أنت ما تلمس ورقة وحدة.'
+        : 'Yes. We arrange international freight (sea or air) from your supplier, handle customs clearance end to end, and your goods arrive at our warehouses ready to sell — you never touch a single document.',
+    },
+    {
       q: isAr ? 'كيف تحسبون الأسعار؟' : 'How do you price?',
       a: isAr
         ? 'ما عندنا باقات جاهزة — عرضك يُبنى على أربعة عوامل: حجم التخزين، عدد الطلبات، وزن ووجهة الشحن، وسرعة التوصيل. جرّب حاسبة التوفير بصفحة «كيف نسعّر» وخذ عرضك المفصّل خلال يوم عمل واحد.'

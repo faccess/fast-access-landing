@@ -31,8 +31,8 @@ export default function Solutions() {
       step: '02',
       title: isAr ? 'نستلم مخزونك' : 'We take your stock',
       body: isAr
-        ? 'ننسّق الاستلام من موقعك أو موردك مباشرة، نفحص البضاعة، وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
-        : 'Your inventory arrives at the nearest centre — we inspect, shelve, and log every SKU into the system.',
+        ? 'ننسّق الاستلام من موقعك أو موردك — حتى لو كان خارج المملكة، نتولى الشحن الدولي والتخليص الجمركي — نفحص البضاعة وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
+        : 'From your site or your supplier — even overseas, we handle international freight and customs — we inspect, shelve, and log every SKU.',
     },
     {
       step: '03',
@@ -49,6 +49,7 @@ export default function Solutions() {
     { icon: Truck, title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '98% بالوقت' : '98% on-time' },
     { icon: Radar, title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك، وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
     { icon: Store, title: isAr ? 'المخازن السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال 2 إلى 4 ساعات، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
+    { icon: Ship, wide: true, title: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs clearance', body: isAr ? 'نستورد بضاعتك من موردك — شحن بحري وجوي — ونخلّصها جمركيًا بدون عناء، وتدخل مستودعاتنا جاهزة للبيع مباشرة.' : 'We import your goods from your supplier — sea and air freight — clear customs end to end, and your stock enters our warehouses ready to sell.', metric: isAr ? 'من الباب للرف' : 'Door to shelf' },
     { icon: Headset, title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'دعم على مدار الساعة يلتقط الاستثناءات ويحلها قبل لا تتحول شكوى توصلك.' : 'A team that catches exceptions before they become complaints.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
   ];
 
@@ -103,7 +104,7 @@ export default function Solutions() {
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {capabilities.map((c, i) => (
-              <Reveal key={c.title} delay={i * 70} className="h-full">
+              <Reveal key={c.title} delay={i * 70} className={`h-full ${(c as any).wide ? 'sm:col-span-2' : ''}`}>
                 <SpotlightCard className="fa-card fa-card--glow group h-full p-7 lg:p-8 text-left rtl:text-right">
                   <span className="fa-iconchip"><c.icon size={22} strokeWidth={1.8} /></span>
                   <h3 className="font-display mt-5 text-[19px] lg:text-[21px] font-bold text-fa-liberty-blue tracking-[-0.02em]">{c.title}</h3>
