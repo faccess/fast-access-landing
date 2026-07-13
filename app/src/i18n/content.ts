@@ -71,6 +71,7 @@ const en = {
       { title: 'Real-time Tracking', body: 'A clean, easy dashboard tracks every shipment from receipt to handover — with performance reports that give you the data to grow.' },
       { title: 'Cloud Stores', body: 'Cloud warehouses in city centers deliver in 2 to 4 hours, same day. Built for urgent daily orders, peak hours, and holidays.' },
       { title: 'Customer Support', body: '24/7 customer service for questions, urgent supply-chain issues, and operational advice on the logistics you run with us.' },
+      { title: 'International freight & customs', body: 'We import your goods from your supplier by sea and air, and handle customs clearance end to end — factory door to warehouse shelf, ready to sell.' },
     ],
   },
   journey: {
@@ -293,6 +294,7 @@ const ar = {
       { title: 'المتابعة اللحظية', body: 'لوحة تحكم سهلة تتابع منها كل شحنة من الاستلام إلى التسليم، مع تقارير أداء تعطيك أرقامًا تبني عليها قرارات نموك.' },
       { title: 'المخازن السحابية', body: 'مخازن في وسط المدن توصّل خلال 2 إلى 4 ساعات في نفس اليوم، مصممة للطلبات العاجلة وساعات الذروة والإجازات.' },
       { title: 'خدمة العملاء', body: 'دعم على مدار الساعة، يجاوب أسئلتك، يحل طوارئ سلسلة الإمداد، ويقدم لك استشارات تشغيلية وقت ما تحتاجها.' },
+      { title: 'الشحن الدولي والتخليص الجمركي', body: 'نستورد بضاعتك من موردك بشحن بحري وجوي، ونتولى التخليص الجمركي كاملًا — من باب المصنع إلى رف المستودع، جاهزة للبيع مباشرة.' },
     ],
   },
   journey: {
