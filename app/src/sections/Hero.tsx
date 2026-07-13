@@ -92,7 +92,7 @@ export default function Hero() {
               <MagneticButton variant="on-dark" href="/pricing">
                 {t('hero.secondaryCta')}
               </MagneticButton>
-              <button onClick={() => setTrackOpen(true)} className="btn-brand btn-brand--track">
+              <button onClick={() => setTrackOpen(true)} className="btn-brand btn-brand--track btn-brand--track-ghost">
                 <span className="btn-brand__label">{t('nav.track')}</span>
                 <span className="btn-brand__arrow" aria-hidden>
                   <ArrowRight size={14} strokeWidth={2.4} />
