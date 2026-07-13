@@ -106,6 +106,19 @@
     --input: 50 10% 88%;
     --ring: 11 86% 60%;
     --radius: 0.5rem;
+
+    /* Font stacks — single source of truth. RTL flips these to Zain below,
+       so every component (incl. ones declaring their own font-family via
+       these vars) follows automatically. */
+    --fa-font-display: 'Geist', -apple-system, sans-serif;
+    --fa-font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --fa-font-ui: 'Geist', sans-serif;
+  }
+
+  html[dir='rtl'] {
+    --fa-font-display: 'Zain', 'Geist', sans-serif;
+    --fa-font-body: 'Zain', 'Geist', sans-serif;
+    --fa-font-ui: 'Zain', 'Geist', sans-serif;
   }
 
   * { @apply border-border; }
@@ -126,7 +139,7 @@
   html[data-theme='light'] .bg-fa-liberty-blue svg [fill="rgba(244,244,241,0.04)"] { fill: rgba(13,18,50,0.03) !important; }
 
   body {
-    font-family: 'Geist', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--fa-font-body);
     background-color: var(--bg-paper);
     color: var(--ink-primary);
     -webkit-font-smoothing: antialiased;
@@ -194,7 +207,7 @@
   html[dir='rtl'] .rv-space { width: 0.32em; }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Geist', -apple-system, sans-serif;
+    font-family: var(--fa-font-display);
     letter-spacing: -0.02em;
     color: var(--ink-primary);
     text-wrap: balance;
@@ -207,9 +220,9 @@
 
 @layer components {
   /* === Brand fonts === */
-  .font-display { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
-  .font-body    { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
-  .font-ui      { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.01em; }
+  .font-display { font-family: var(--fa-font-display); letter-spacing: -0.02em; }
+  .font-body    { font-family: var(--fa-font-body); letter-spacing: -0.02em; }
+  .font-ui      { font-family: var(--fa-font-ui); letter-spacing: -0.01em; }
 
   /* RTL: Arabic renders in Zain. These MUST live in the components layer —
      the base-layer copies lose to the utilities above by cascade-layer order,
@@ -246,7 +259,7 @@
   .btn-brand {
     display: inline-flex;
     align-items: stretch;
-    font-family: 'Geist', sans-serif;
+    font-family: var(--fa-font-ui);
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -325,7 +338,7 @@
      plain tracked type reads designed, not templated. === */
   .section-chip {
     display: inline-flex; align-items: center;
-    font-family: 'Geist', sans-serif;
+    font-family: var(--fa-font-ui);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -338,7 +351,7 @@
 
   /* Legacy eyebrow label (for places not yet migrated to chip) */
   .eyebrow-label {
-    font-family: 'Geist', monospace;
+    font-family: var(--fa-font-ui);
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
@@ -356,7 +369,7 @@
     color: #fff;
     padding: 10px 14px;
     border-radius: 4px;
-    font-family: 'Geist', sans-serif;
+    font-family: var(--fa-font-ui);
     font-size: 13px;
     font-weight: 600;
     transition: transform 180ms ease;
@@ -712,17 +725,17 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 
 .fa-reach-label {
   fill: rgba(244,244,241,0.62);
-  font: 600 13px/1 'Geist', 'Geist', sans-serif;
+  font: 600 13px/1 var(--fa-font-ui);
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 .fa-reach-country {
   fill: rgba(255,255,255,0.9);
-  font: 600 15px/1 'Geist', 'Geist', sans-serif;
+  font: 600 15px/1 var(--fa-font-ui);
   letter-spacing: 0.18em;
 }
 .fa-reach-hub {
   fill: #fff;
-  font: 600 13px/1 'Geist', 'Geist', sans-serif;
+  font: 600 13px/1 var(--fa-font-ui);
   letter-spacing: 0.02em;
   paint-order: stroke; stroke: rgba(7,10,31,0.7); stroke-width: 3px;
 }
