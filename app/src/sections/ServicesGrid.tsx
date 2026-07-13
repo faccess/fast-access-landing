@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Warehouse, Package, Truck, Activity, Zap, Headphones, ArrowRight } from 'lucide-react';
+import { Warehouse, Package, Truck, Activity, Zap, Headphones, Ship, ArrowRight } from 'lucide-react';
 import SectionChip from '../components/brand/SectionChip';
 import BrandPattern from '../components/brand/BrandPattern';
 import SpotlightCard from '../components/brand/SpotlightCard';
@@ -13,12 +13,15 @@ const serviceIcons = [
   { icon: Activity, number: '04' },
   { icon: Zap, number: '05' },
   { icon: Headphones, number: '06' },
+  { icon: Ship, number: '07' },
 ];
 
 // Bento rhythm on the lg 3-col grid: the wide tiles (0, 3, 4) span two columns
 // so each of the three rows fills cleanly as big-left / big-right / big-left.
 // On md it falls back to an even 2-col grid, on mobile a single column.
 const wideTiles = new Set([0, 3, 4]);
+// The freight tile closes the grid as a full-width featured row.
+const fullTiles = new Set([6]);
 
 export default function ServicesGrid() {
   const { t } = useT();
@@ -60,6 +63,7 @@ export default function ServicesGrid() {
           {serviceIcons.map((item, i) => {
             const Icon = item.icon;
             const isWide = wideTiles.has(i);
+            const isFull = fullTiles.has(i);
             const learnMore = (
               <Link
                 to="/solutions"
@@ -78,7 +82,7 @@ export default function ServicesGrid() {
               <Reveal
                 key={item.number}
                 delay={i * 70}
-                className={isWide ? 'lg:col-span-2' : ''}
+                className={isFull ? 'md:col-span-2 lg:col-span-3' : isWide ? 'lg:col-span-2' : ''}
               >
                 <SpotlightCard className="fa-card fa-card--glow group relative h-full overflow-hidden p-8 lg:p-9 text-left rtl:text-right">
                   {/* Editorial ghost number — adds depth on the wide tiles. */}
