@@ -12,7 +12,7 @@ const SCENES = [
     time: '11:00 ص',
     timeEn: '11:00 AM',
     label: { en: 'Order in', ar: 'الطلب وصل' },
-    title: { en: 'Your customer hit "Buy" — and it became ours to handle.', ar: 'عميلك ضغط «اشتري»... وخلاص، صارت علينا.' },
+    title: { en: 'Your customer hit "Buy" — and it became ours to handle.', ar: 'عميلك اشترى... وخلاص، صارت علينا.' },
     metric: { en: 'New order', ar: 'طلب جديد' },
     detail: {
       en: 'The order flows from your store into our system automatically. No emails, no spreadsheets, no follow-ups.',
@@ -24,7 +24,7 @@ const SCENES = [
     time: '11:30 ص',
     timeEn: '11:30 AM',
     label: { en: 'Pick & pack', ar: 'التجهيز' },
-    title: { en: 'Picked, packed, and wearing your brand.', ar: 'انتقاء، تغليف، وهوية علامتك على الصندوق.' },
+    title: { en: 'Picked, packed, and wearing your brand.', ar: 'تجهيز، تغليف، وهوية علامتك على الصندوق.' },
     metric: { en: 'Ready to ship', ar: 'جاهز للشحن' },
     detail: {
       en: 'Our team packs every order in your branding, not ours. Your customer receives an experience, not a box.',
@@ -36,7 +36,7 @@ const SCENES = [
     time: '2:00 م',
     timeEn: '2:00 PM',
     label: { en: 'On the road', ar: 'على الطريق' },
-    title: { en: 'The truck is moving, and tracking is in everyone\u2019s hands.', ar: 'الشاحنة تحركت... والتتبع بيدك وبيد عميلك.' },
+    title: { en: 'The order is out for shipping, and tracking is in everyone\u2019s hands.', ar: 'الطلب طلع للشحن... والتتبع بيدك وبيد عميلك.' },
     metric: { en: 'Live tracking', ar: 'تتبع مباشر' },
     detail: {
       en: 'A live tracking link reaches your customer automatically. They know where their order is without asking you, and you see every shipment in one dashboard.',
