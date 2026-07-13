@@ -210,6 +210,19 @@
   .font-display { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
   .font-body    { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.02em; }
   .font-ui      { font-family: 'Geist', 'Geist', sans-serif; letter-spacing: -0.01em; }
+
+  /* RTL: Arabic renders in Zain. These MUST live in the components layer —
+     the base-layer copies lose to the utilities above by cascade-layer order,
+     which is exactly the bug that made Arabic fall back to Geist. */
+  html[dir='rtl'] .font-display,
+  html[dir='rtl'] .font-body,
+  html[dir='rtl'] .font-ui,
+  html[dir='rtl'] .btn-brand,
+  html[dir='rtl'] .section-chip,
+  html[dir='rtl'] .eyebrow-label {
+    font-family: 'Zain', 'Geist', sans-serif;
+    letter-spacing: 0;
+  }
   .font-mono    { font-family: 'Geist Mono', ui-monospace, 'SF Mono', monospace; }
 
   /* === Layout === */
@@ -275,6 +288,15 @@
   .hero-fade .btn-brand--filled {
     background: var(--fa-blue-rose);
   }
+  /* Accent (orange) fill — wins over the dark-section blue-rose lift */
+  .btn-brand--accent,
+  .bg-fa-liberty-blue .btn-brand--accent,
+  .hero-fade .btn-brand--accent {
+    background: var(--fa-orange-soda);
+    color: var(--fa-classic-chalk) !important;
+    box-shadow: none;
+  }
+  .btn-brand--accent:hover { background: var(--accent-hover); }
   .btn-brand--outline { background: transparent; color: var(--fa-liberty-blue) !important; }
   .btn-brand--outline .btn-brand__arrow { border-left: 1px solid var(--fa-liberty-blue); }
   .btn-brand--on-dark { background: transparent; color: var(--fa-classic-chalk) !important; border-color: rgba(244,244,241,0.3); }

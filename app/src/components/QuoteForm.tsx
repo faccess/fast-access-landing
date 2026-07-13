@@ -109,7 +109,7 @@ export default function QuoteForm({ dark = false }: { dark?: boolean }) {
         </select>
       </div>
       <textarea name="message" rows={3} className={field} placeholder={isAr ? 'ماذا تشحن؟ تفاصيل إضافية (اختياري)' : 'What do you ship? Extra details (optional)'} aria-label={isAr ? 'رسالتك' : 'Message'} />
-      <button type="submit" disabled={sending} className="btn-brand btn-brand--filled w-full justify-center disabled:opacity-60">
+      <button type="submit" disabled={sending} className="btn-brand btn-brand--filled btn-brand--accent w-full justify-center disabled:opacity-60">
         <span className="btn-brand__label">{sending ? (isAr ? 'جاري الإرسال...' : 'Sending...') : isAr ? 'أرسل الطلب... وخلّها علينا' : 'Send request'}</span>
       </button>
       {sendError && (
