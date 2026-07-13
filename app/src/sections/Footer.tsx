@@ -17,7 +17,7 @@ export default function Footer() {
       { label: isAr ? 'الشحن والتوصيل' : 'Shipping & Delivery', to: '/solutions' },
       { label: isAr ? 'المتابعة اللحظية' : 'Real-time Tracking', to: '/solutions' },
       { label: isAr ? 'المخازن السحابية' : 'Cloud Stores', to: '/solutions' },
-      { label: isAr ? 'الفريت والتخليص الجمركي' : 'Freight & customs', to: '/solutions' },
+      { label: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs', to: '/solutions' },
     ],
     [t('footer.cols.Company')]: [
       { label: isAr ? 'من نحن' : 'About us', to: '/about' },
@@ -110,7 +110,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-[13px] text-[#8a8a9a]">
+          <div className="text-[13px] text-[#8a8a9a]" dir="ltr" style={{ unicodeBidi: 'isolate' }}>
             {t('footer.copyright')}
           </div>
           <div className="flex items-center gap-6">
