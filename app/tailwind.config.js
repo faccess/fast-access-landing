@@ -83,9 +83,13 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['Geist', 'sans-serif'],
-        body:    ['Geist', 'sans-serif'],
-        ui:      ['Geist', 'sans-serif'],
+        // Resolve through the CSS variables so RTL (Zain) applies even in
+        // Tailwind's utilities layer — that layer outranks our components
+        // layer and was silently forcing Geist on every element carrying
+        // font-display/font-body/font-ui classes.
+        display: ['var(--fa-font-display)'],
+        body:    ['var(--fa-font-body)'],
+        ui:      ['var(--fa-font-ui)'],
         mono:    ['Geist Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
