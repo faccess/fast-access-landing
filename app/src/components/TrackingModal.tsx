@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useT } from '../i18n/I18nContext';
 
-const TRACKING_BASE = 'https://tracking-three-brown.vercel.app';
+const TRACKING_BASE = 'https://track.faccess.co';
 
 interface Props {
   open: boolean;
