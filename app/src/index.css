@@ -749,6 +749,17 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 }
 
 /* Inner vignette ring */
+.fa-netmap-caption {
+  margin: 18px auto 0;
+  max-width: 560px;
+  text-align: center;
+  font-family: var(--fa-font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: rgba(244, 244, 241, 0.55);
+}
+
 .fa-netmap-vignette {
   position: absolute; inset: 0; pointer-events: none; z-index: 2;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(13,18,50,0.55) 100%);

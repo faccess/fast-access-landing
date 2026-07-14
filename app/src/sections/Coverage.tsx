@@ -219,27 +219,14 @@ export default function Coverage() {
                   <text x="691" y="300" textAnchor="middle">{isAr ? 'عُمان' : 'Oman'}</text>
                 </g>
 
-                {/* ── world inset: international coverage (tertiary) ── */}
-                <g transform="translate(14, 388)">
-                  <rect x="0" y="0" width="236" height="156" rx="14" fill="rgba(13,18,50,0.55)" stroke="rgba(244,244,241,0.14)" strokeWidth="1" />
-                  <text x="118" y="24" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="rgba(244,244,241,0.7)">{isAr ? 'تغطية دولية عبر شركاء موثوقين' : 'International via trusted partners'}</text>
-                  {/* mini abstract world: KSA node + dotted routes */}
-                  <circle cx="118" cy="102" r="5" fill="#F15B41" filter="url(#glowDot)" />
-                  <g stroke="rgba(241,91,65,0.55)" strokeWidth="1.1" strokeDasharray="2.5 4" fill="none" strokeLinecap="round">
-                    <path d="M118,102 Q106,88 88,74" />
-                    <path d="M118,102 Q84,72 46,52" />
-                    <path d="M118,102 Q160,84 192,62" />
-                  </g>
-                  <g fill="rgba(244,244,241,0.72)" fontSize="10.5" fontWeight="600">
-                    <circle cx="88" cy="74" r="2.6" /><text x="88" y="62" textAnchor="middle">{isAr ? 'تركيا' : 'Turkey'}</text>
-                    <circle cx="46" cy="52" r="2.6" /><text x="50" y="40" textAnchor="middle">{isAr ? 'أوروبا' : 'Europe'}</text>
-                    <circle cx="192" cy="62" r="2.6" /><text x="192" y="50" textAnchor="middle">{isAr ? 'شرق آسيا' : 'East Asia'}</text>
-                  </g>
-                  <text x="118" y="138" textAnchor="middle" fontSize="10" fill="rgba(244,244,241,0.45)">{isAr ? '+220 دولة' : '220+ countries'}</text>
-                </g>
               </svg>
               <div className="fa-netmap-vignette" aria-hidden />
             </div>
+            <p className="fa-netmap-caption">
+              {isAr
+                ? 'وتغطية دولية لأكثر من 220 دولة عبر شركاء موثوقين — أوروبا، تركيا، وشرق آسيا.'
+                : 'Plus international coverage to 220+ countries via trusted partners — Europe, Turkey, and East Asia.'}
+            </p>
           </div>
         </div>
       </div>
