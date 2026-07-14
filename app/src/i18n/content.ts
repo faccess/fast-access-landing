@@ -13,7 +13,7 @@ const en = {
   },
   whatis: {
     chip: 'What is Fast Access',
-    headlineA: 'We store, pack, and ship your orders —',
+    headlineA: 'We store, pack, and ship your orders,',
     headlineHighlight: 'you just sell',
     body: 'Fast Access is an end-to-end fulfillment partner for online brands in Saudi Arabia. Send us your inventory and we warehouse it, pack every order with your branding, and deliver across the Kingdom and the Gulf — with same-day delivery from cloud stores inside major cities. One partner, one dashboard, every order tracked from receipt to doorstep.',
     point1: 'Storage, packing & shipping in one place',
@@ -207,7 +207,7 @@ const en = {
   results: {
     chip: 'Before & after',
     headlineA: 'What changed after they chose',
-    headlineHighlight: 'فاست أكسس',
+    headlineHighlight: 'Fast Access',
     headlineB: '?',
     items: [
       { name: 'A matcha store', before: 'Orders kept outpacing capacity — every surge meant pausing sales.', after: 'We absorbed the wave: orders grew and operations never stopped for a day.' },
