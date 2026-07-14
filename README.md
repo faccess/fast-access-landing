@@ -234,3 +234,12 @@ When introducing a new icon: pick the matching Lucide glyph, render it at 20 or 
 ## SKILL
 
 See [`SKILL.md`](SKILL.md) — this design system is also a portable Claude Code skill.
+
+## Iconography
+
+**Phosphor Icons** (https://phosphoricons.com) is the official icon system for all Fast Access projects.
+
+- Package: `@phosphor-icons/react` (installed)
+- Usage: `import { Package, Truck } from '@phosphor-icons/react'`
+- Default weight: `regular`; use `bold` for emphasis, `duotone` sparingly for feature highlights
+- Note: some existing components still use `lucide-react`; new icons should use Phosphor, and old ones migrate opportunistically.
