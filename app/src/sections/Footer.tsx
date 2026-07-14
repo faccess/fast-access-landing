@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import type { ComponentType } from 'react';
+import { WhatsappLogo, EnvelopeSimple, Phone } from '@phosphor-icons/react';
 import BrandLogo from '../components/brand/BrandLogo';
 import { useT } from '../i18n/I18nContext';
 
-type FooterLink = { label: string; to: string };
+type FooterLink = { label: string; to: string; icon?: ComponentType<any> };
 
 export default function Footer() {
   const { t, locale } = useT();
@@ -34,24 +36,26 @@ export default function Footer() {
     ],
     [t('footer.cols.Contact')]: [
       { label: isAr ? 'اطلب عرض سعر' : 'Get a quote', to: '/contact' },
-      { label: isAr ? 'تحدث مع المبيعات' : 'Talk to sales', to: '/contact' },
-      { label: isAr ? 'واتساب' : 'WhatsApp', to: 'https://wa.me/966920032768' },
-      { label: 'info@faccess.co', to: 'mailto:info@faccess.co' },
+      { label: isAr ? 'واتساب' : 'WhatsApp', to: 'https://wa.me/966920032768', icon: WhatsappLogo },
+      { label: isAr ? 'اتصل بنا' : 'Call us', to: 'tel:+966920032768', icon: Phone },
+      { label: 'info@faccess.co', to: 'mailto:info@faccess.co', icon: EnvelopeSimple },
     ],
   };
 
   // Subtle "slide on hover" feedback on every link so the column feels alive.
   const linkClass =
     'inline-flex items-center gap-1.5 text-sm text-[#8a8a9a] hover:text-[#F4F4F1] transition-all duration-200 rtl:flex-row-reverse hover:translate-x-0.5 rtl:hover:-translate-x-0.5';
-  const renderLink = ({ label, to }: FooterLink) =>
+  const renderLink = ({ label, to, icon: Icon }: FooterLink) =>
     to.startsWith('/') ? (
       <Link to={to} className={linkClass}>
         <span className="opacity-0 -translate-x-1 transition-all duration-200 group-hover/li:opacity-60 group-hover/li:translate-x-0 rtl:translate-x-1 rtl:group-hover/li:-translate-x-0 text-fa-orange-soda">›</span>
+        {Icon && <Icon size={16} aria-hidden />}
         <span>{label}</span>
       </Link>
     ) : (
       <a href={to} className={linkClass}>
         <span className="opacity-0 -translate-x-1 transition-all duration-200 group-hover/li:opacity-60 group-hover/li:translate-x-0 rtl:translate-x-1 rtl:group-hover/li:-translate-x-0 text-fa-orange-soda">›</span>
+        {Icon && <Icon size={16} aria-hidden />}
         <span>{label}</span>
       </a>
     );
