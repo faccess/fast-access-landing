@@ -1,7 +1,7 @@
 import { useT } from '../i18n/I18nContext';
 import SectionChip from '../components/brand/SectionChip';
 import Reveal from '../components/Reveal';
-import { Bell, LineChart, PackageSearch, Boxes } from 'lucide-react';
+import { Bell, LineChart, PackageSearch, Boxes, PackagePlus, Undo2 } from 'lucide-react';
 
 /**
  * AppPromo — merchant mobile app section (app launching soon).
@@ -21,6 +21,11 @@ export default function AppPromo() {
       icon: LineChart,
       title: isAr ? 'تحليلات الطلبات والمخزون' : 'Orders & inventory analytics',
       body: isAr ? 'أرقامك قدامك: مبيعات، مخزون، وتنبؤات تبني عليها قراراتك.' : 'Your numbers at a glance: sales, stock, and forecasts to act on.',
+    },
+    {
+      icon: PackagePlus,
+      title: isAr ? 'إنشاء طلب أو استرجاع' : 'Create orders & returns',
+      body: isAr ? 'أنشئ طلب شحن جديد أو طلب استرجاع من جوالك بثواني — بدون ما تفتح اللابتوب.' : 'Create a new shipment or a return request from your phone in seconds.',
     },
     {
       icon: Bell,
@@ -85,12 +90,12 @@ export default function AppPromo() {
 
         {/* Phone mockup — pure CSS, brand identity */}
         <Reveal delay={200}>
-          <div className="relative mx-auto w-[290px] sm:w-[320px]" aria-hidden>
+          <div className="relative mx-auto w-[260px] sm:w-[290px]" aria-hidden>
             {/* glow */}
             <div className="absolute -inset-10 rounded-full bg-fa-orange-soda/15 blur-3xl" />
             {/* frame */}
             <div className="relative rounded-[42px] border border-fa-classic-chalk/20 bg-[#0A0E28] p-3 shadow-[0_40px_80px_rgba(0,0,0,0.45)]">
-              <div className="rounded-[32px] bg-fa-classic-chalk overflow-hidden">
+              <div className="rounded-[32px] bg-fa-classic-chalk overflow-hidden aspect-[9/18] flex flex-col">
                 {/* status bar + header */}
                 <div className="bg-fa-liberty-blue px-5 pt-4 pb-5">
                   <div className="flex items-center justify-between">
@@ -118,7 +123,7 @@ export default function AppPromo() {
                   ))}
                 </div>
                 {/* mini bar chart */}
-                <div className="mx-4 mb-3 rounded-2xl bg-white p-3.5 shadow-sm">
+                <div className="mx-4 mb-3 rounded-2xl bg-white p-3.5 shadow-sm flex-1 flex flex-col justify-center">
                   <div className="flex items-center justify-between">
                     <span className="font-ui text-[10px] font-semibold text-fa-ink-muted">{isAr ? 'مبيعات الأسبوع' : 'This week\u2019s sales'}</span>
                     <span className="font-ui text-[10px] font-bold text-fa-orange-soda" dir="ltr">+18%</span>
@@ -127,6 +132,17 @@ export default function AppPromo() {
                     {[34, 48, 40, 62, 55, 78, 92].map((h, i) => (
                       <div key={i} className={`flex-1 rounded-t-md ${i === 6 ? 'bg-fa-orange-soda' : 'bg-fa-liberty-blue/15'}`} style={{ height: `${h}%` }} />
                     ))}
+                  </div>
+                </div>
+                {/* quick actions: create order / return */}
+                <div className="mx-4 mb-3 grid grid-cols-2 gap-2.5">
+                  <div className="flex items-center justify-center gap-1.5 rounded-xl bg-fa-orange-soda px-2 py-2.5 shadow-sm">
+                    <PackagePlus size={13} className="text-white" />
+                    <span className="font-ui text-[10.5px] font-bold text-white">{isAr ? 'طلب جديد' : 'New order'}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 rounded-xl bg-white px-2 py-2.5 shadow-sm ring-1 ring-fa-liberty-blue/10">
+                    <Undo2 size={13} className="text-fa-liberty-blue" />
+                    <span className="font-ui text-[10.5px] font-bold text-fa-liberty-blue">{isAr ? 'استرجاع' : 'Return'}</span>
                   </div>
                 </div>
                 {/* alert toast */}
