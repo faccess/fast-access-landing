@@ -174,7 +174,7 @@ export default function Coverage() {
                   <path d="M474.6,245.6L472.7,222.8L480.4,206.4L488.2,203.0L496.8,212.8L497.3,231.1L491.1,249.5L483.2,251.8L474.6,245.6Z" />
                   <path d="M496.6,261.5L501.6,260.0L502.7,268.6L525.1,263.6L548.7,264.4L565.9,265.4L585.5,244.2L606.8,224.1L624.9,204.8L630.3,215.5L634.2,240.2L619.6,240.4L617.3,260.7L622.3,265.1L609.4,271.3L609.3,284.0L601.0,297.0L600.2,309.6L594.5,316.2L508.6,300.4L497.6,268.7L496.6,261.5Z" />
                   <path d="M704.6,359.5L693.9,380.9L681.0,379.3L675.0,386.8L670.5,402.6L674.0,423.6L671.3,427.4L658.1,427.3L640.3,439.0L637.5,454.2L631.0,460.9L613.2,460.6L602.0,468.5L602.1,481.1L588.3,489.8L572.6,486.9L553.4,497.4L540.2,499.2L530.9,477.3L508.6,425.7L594.3,394.4L613.3,331.8L600.2,309.6L601.0,297.0L609.3,284.0L609.4,271.3L622.3,265.1L617.3,260.7L619.6,240.4L634.2,240.2L647.0,261.6L663.0,273.0L683.9,277.1L700.8,282.8L713.7,300.7L721.4,311.1L731.7,315.1L731.6,322.1L721.2,340.7L716.6,349.5L704.6,359.5Z M634.0,209.8L630.3,215.5L624.9,204.8L633.2,194.2L636.7,196.9L634.0,209.8Z" />
-                  <ellipse cx="467.1" cy="205.0" rx="4.5" ry="7" />
+                  <ellipse cx="464.0" cy="221.0" rx="4.5" ry="7" />
                 </g>
 
                 {/* ── Saudi Arabia (hero layer) ── */}
@@ -183,7 +183,7 @@ export default function Coverage() {
                 {/* ── GCC routes: all radiating from Riyadh (strong, glowing) ── */}
                 <g stroke="#F15B41" strokeWidth="1.6" fill="none" opacity="0.85" filter="url(#glowLine)" strokeLinecap="round">
                   <path d="M356.6,247.0 Q375.0,152.05 393.4,101.1" />
-                  <path d="M356.6,247.0 Q412.3,203.35 468.0,199.7" />
+                  <path d="M356.6,247.0 Q409.0,212.0 464.5,219.0" />
                   <path d="M356.6,247.0 Q425.85,222.05 495.1,229.1" />
                   <path d="M356.6,247.0 Q479.3,205.3 602.0,231.6" />
                   <path d="M356.6,247.0 Q524.0,212.2 691.4,281.4" />
@@ -196,7 +196,7 @@ export default function Coverage() {
 
                 {/* ── GCC capital dots ── */}
                 <g fill="#F4F4F1" opacity="0.9">
-                  <circle cx="393.4" cy="101.1" r="3.4" /><circle cx="468.0" cy="199.7" r="3.4" /><circle cx="495.1" cy="229.1" r="3.4" /><circle cx="602.0" cy="231.6" r="3.4" /><circle cx="691.4" cy="281.4" r="3.4" />
+                  <circle cx="393.4" cy="101.1" r="3.4" /><circle cx="464.5" cy="219.0" r="3.4" /><circle cx="495.1" cy="229.1" r="3.4" /><circle cx="602.0" cy="231.6" r="3.4" /><circle cx="691.4" cy="281.4" r="3.4" />
                 </g>
 
                 {/* ── main operational hubs ── */}
@@ -213,10 +213,10 @@ export default function Coverage() {
                 <g fontFamily="inherit" fontSize="12" fontWeight="600" fill="rgba(244,244,241,0.62)">
                   <text x="294.3" y="300.5" textAnchor="middle" fontSize="16" fontWeight="700" fill="rgba(244,244,241,0.8)">{isAr ? 'السعودية' : 'Saudi Arabia'}</text>
                   <text x="382.9" y="84.5" textAnchor="middle">{isAr ? 'الكويت' : 'Kuwait'}</text>
-                  <text x="479" y="212" textAnchor="start">{isAr ? 'البحرين' : 'Bahrain'}</text>
-                  <text x="506" y="248" textAnchor="start">{isAr ? 'قطر' : 'Qatar'}</text>
-                  <text x="582.9" y="297.7" textAnchor="middle">{isAr ? 'الإمارات' : 'UAE'}</text>
-                  <text x="640.0" y="353.7" textAnchor="middle">{isAr ? 'عُمان' : 'Oman'}</text>
+                  <text x="456" y="225" textAnchor="end">{isAr ? 'البحرين' : 'Bahrain'}</text>
+                  <text x="486" y="196" textAnchor="middle">{isAr ? 'قطر' : 'Qatar'}</text>
+                  <text x="572" y="265" textAnchor="middle">{isAr ? 'الإمارات' : 'UAE'}</text>
+                  <text x="655" y="408" textAnchor="middle">{isAr ? 'عُمان' : 'Oman'}</text>
                 </g>
 
                 {/* ── world inset: international coverage (tertiary) ── */}
