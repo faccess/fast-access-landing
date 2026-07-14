@@ -749,6 +749,9 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 }
 
 /* Inner vignette ring */
+/* Zain everywhere this class appears — Latin subset covers English text */
+.font-zain { font-family: 'Zain', 'Geist', sans-serif; letter-spacing: 0; }
+
 .fa-netmap-caption {
   margin: 18px auto 0;
   max-width: 560px;

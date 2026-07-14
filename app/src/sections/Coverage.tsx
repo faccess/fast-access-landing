@@ -224,8 +224,8 @@ export default function Coverage() {
             </div>
             <p className="fa-netmap-caption">
               {isAr
-                ? 'وتغطية دولية لأكثر من 220 دولة عبر شركاء موثوقين — أوروبا، تركيا، وشرق آسيا.'
-                : 'Plus international coverage to 220+ countries via trusted partners — Europe, Turkey, and East Asia.'}
+                ? 'وتغطية دولية لأكثر من 220 دولة عبر شركاء موثوقين.'
+                : 'Plus international coverage to 220+ countries via trusted partners.'}
             </p>
           </div>
         </div>

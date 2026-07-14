@@ -60,7 +60,7 @@ export default function Navigation() {
             <NavLink
               key={link.label}
               to={link.to}
-              className="relative text-sm font-medium transition-colors duration-200 group whitespace-nowrap"
+              className="font-zain relative text-sm font-semibold transition-colors duration-200 group whitespace-nowrap"
             >
               {({ isActive }) => (
                 <>
@@ -134,7 +134,7 @@ export default function Navigation() {
               <NavLink
                 key={link.label}
                 to={link.to}
-                className="text-base font-medium transition-colors hover:text-[#F15B41] text-[#0D1232]"
+                className="font-zain text-base font-semibold transition-colors hover:text-[#F15B41] text-[#0D1232]"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
