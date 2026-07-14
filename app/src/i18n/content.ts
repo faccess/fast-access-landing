@@ -211,7 +211,7 @@ const en = {
     headlineB: '?',
     items: [
       { name: 'A matcha store', before: 'Orders kept outpacing capacity — every surge meant pausing sales.', after: 'We absorbed the wave: orders grew and operations never stopped for a day.' },
-      { name: 'A cosmetics store', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates — orders ship right the first time.' },
+      { name: 'A skincare store', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates — orders ship right the first time.' },
       { name: 'A perfume store', before: 'High returns and parcels arriving broken from weak packing and random bundling.', after: 'Protective packaging worthy of perfume and smart merging — returns hit their lowest.' },
     ],
   },
@@ -434,7 +434,7 @@ const ar = {
     headlineB: '؟',
     items: [
       { name: 'متجر ماتشا', before: 'الطلبات تسبق الطاقة... وكل ما زادت، اضطروا يوقفون الاستقبال.', after: 'استوعبنا الموجة — الطلبات زادت، والعمليات ما وقفت ولا يوم.' },
-      { name: 'متجر كوزمتكس', before: 'مخزون كبير بدون وضوح: تواريخ انتهاء غايبة، وطلبات تطلع غلط.', after: 'رؤية كاملة للمخزون وتواريخ الصلاحية... والطلب يطلع صح من أول مرة.' },
+      { name: 'متجر روتين للعناية', before: 'مخزون كبير بدون وضوح: تواريخ انتهاء غايبة، وطلبات تطلع غلط.', after: 'رؤية كاملة للمخزون وتواريخ الصلاحية... والطلب يطلع صح من أول مرة.' },
       { name: 'متجر عطور', before: 'مرتجعات مرتفعة، وطرود توصل مكسورة بسبب التغليف والدمج العشوائي.', after: 'تغليف محكم يليق بالعطور، ودمج ذكي للطلبات — المرتجعات نزلت لأدنى حد.' },
     ],
   },
