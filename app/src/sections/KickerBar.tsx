@@ -1,7 +1,7 @@
 /**
  * KickerBar — editorial marquee between WhatIsFA and Services. Big display
  * type that scrolls "Store ★ Pack ★ Ship ★ Track ★ Deliver" continuously,
- * with a slowly spinning orange star between verbs. Pauses on hover, reverses
+ * with the brand Package icon (Phosphor) in orange between verbs. Pauses on hover, reverses
  * under RTL, no animation under prefers-reduced-motion.
  *
  * Direct port of the design's <KickerBar/> — the "brand moment" of the page.
@@ -14,17 +14,18 @@ const verbsByLocale: Record<'en' | 'ar', string[]> = {
   ar: ['نخزّن', 'نجهّز', 'نشحن', 'نتتبع', 'نوصّل', 'خلّها علينا'],
 };
 
-function Star() {
+/** Phosphor "Package" — the brand iconography set. Rendered in brand orange. */
+function PackageMark() {
   return (
     <svg
       className="fa-kicker-star"
-      viewBox="0 0 24 24"
-      width={18}
-      height={18}
+      viewBox="0 0 256 256"
+      width={19}
+      height={19}
       fill="currentColor"
       aria-hidden
     >
-      <path d="M12 1.5 13.85 9.21 21.5 11.05 14.61 14.91 16.04 22.66 12 18 7.96 22.66 9.39 14.91 2.5 11.05 10.15 9.21Z" />
+      <path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z" />
     </svg>
   );
 }
@@ -44,7 +45,7 @@ export default function KickerBar() {
             {verbs.map((v, i) => (
               <span key={`${s}-${i}`} className="fa-kicker-item">
                 {v}
-                <Star />
+                <PackageMark />
               </span>
             ))}
           </div>

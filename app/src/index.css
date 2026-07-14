@@ -547,10 +547,10 @@ html[dir='rtl'] .fa-scroll-bar__fill { transform-origin: 100% 50%; }
 .fa-kicker-item { display: inline-flex; align-items: center; gap: 36px; }
 .fa-kicker-star {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 18px; height: 18px;
+  width: 19px; height: 19px;
   color: var(--fa-orange-soda);
   flex-shrink: 0;
-  animation: fa-kicker-spin 14s linear infinite;
+  /* no spin: the Package icon reads as a real object, rotation felt wrong */
 }
 /* Runs left→right — deliberately opposite to the integrations strip above */
 @keyframes fa-kicker-scroll {
