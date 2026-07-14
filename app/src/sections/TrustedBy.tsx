@@ -3,7 +3,7 @@ import { useT } from '../i18n/I18nContext';
 
 type Platform =
   | { kind: 'text'; label: { ar: string; en: string }; weight: number; letter: string; color: string }
-  | { kind: 'lockup'; name: string; icon: string; color: string }
+  | { kind: 'lockup'; name: string; icon: string; color: string; iconOnly?: boolean; vb?: string; svgClass?: string }
   | { kind: 'img'; name: string; src: string; h: number }
   | { kind: 'api' };
 
@@ -20,9 +20,9 @@ const platforms: Platform[] = [
   { kind: 'text', label: { ar: 'سلة', en: 'Salla' }, weight: 700, letter: '-0.02em', color: '#00B68C' },
   { kind: 'text', label: { ar: 'زد', en: 'Zid' }, weight: 600, letter: '0.01em', color: '#5A2C85' },
   { kind: 'lockup', name: 'Shopify', icon: 'shopify', color: '#7AB55C' },
-  { kind: 'lockup', name: 'WooCommerce', icon: 'woocommerce', color: '#96588A' },
+  { kind: 'lockup', name: 'WooCommerce', icon: 'woocommerce', color: '#96588A', iconOnly: true, vb: '0 9.3 24 5.4', svgClass: 'h-[26px] lg:h-[30px] w-auto shrink-0' },
   { kind: 'lockup', name: 'Magento', icon: 'magento', color: '#EE6723' },
-  { kind: 'lockup', name: 'Amazon', icon: 'amazon', color: '#FF9900' },
+  { kind: 'lockup', name: 'Amazon', icon: 'amazon', color: '#FF9900', iconOnly: true, vb: '0 1.1 24 21.8', svgClass: 'h-8 lg:h-9 w-auto shrink-0' },
   { kind: 'text', label: { ar: 'noon', en: 'noon' }, weight: 800, letter: '-0.03em', color: '#D4B800' },
   { kind: 'img', name: 'Jahez', src: '/brand/platforms/jahez.png', h: 30 },
   { kind: 'api' },
@@ -73,10 +73,19 @@ export default function TrustedBy() {
               )}
               {p.kind === 'lockup' && (
                 <>
-                  <svg viewBox="0 0 24 24" className="h-6 w-6 lg:h-7 lg:w-7 shrink-0" fill="currentColor" aria-hidden>
+                  <svg
+                    viewBox={p.vb ?? '0 0 24 24'}
+                    className={p.svgClass ?? 'h-6 w-6 lg:h-7 lg:w-7 shrink-0'}
+                    fill="currentColor"
+                    role={p.iconOnly ? 'img' : undefined}
+                    aria-label={p.iconOnly ? p.name : undefined}
+                    aria-hidden={p.iconOnly ? undefined : true}
+                  >
                     <path d={ICONS[p.icon]} />
                   </svg>
-                  <span className="font-display text-[21px] lg:text-[25px] font-semibold" style={{ letterSpacing: '-0.02em' }}>{p.name}</span>
+                  {!p.iconOnly && (
+                    <span className="font-display text-[21px] lg:text-[25px] font-semibold" style={{ letterSpacing: '-0.02em' }}>{p.name}</span>
+                  )}
                 </>
               )}
               {p.kind === 'img' && (
