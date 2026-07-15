@@ -20,8 +20,8 @@ export default function About() {
   const values = [
     { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نقيس أنفسنا بالساعات، لا الأيام، لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
     { icon: ShieldCheck, title: isAr ? 'موثوقية مطلقة' : 'Radical reliability', body: isAr ? 'كل طلب يُعامل كأنه يحمل اسمك، لأنه فعلًا يحمله.' : 'Every order is handled as if it carries your name — because it does.' },
-    { icon: HeartHandshake, title: isAr ? 'شريك لا مورّد' : 'Partner, not vendor', body: isAr ? 'ننجح حين تنجح أنت، فنبني حولك لا حول أنفسنا.' : 'We win when you win, so we build around you — not us.' },
-    { icon: TrendingUp, title: isAr ? 'مبنيّ للنمو' : 'Built for growth', body: isAr ? 'نمتص قفزات الطلب حتى لا يتحوّل التوسّع إلى فوضى.' : 'We absorb demand spikes so expansion never turns into chaos.' },
+    { icon: HeartHandshake, title: isAr ? 'شريك لا مورّد' : 'Partner, not vendor', body: isAr ? 'نجاحك هو مقياسنا الوحيد — لو ما نما متجرك، ما سوّينا شغلنا.' : 'Your growth is our only metric — if your store didn\u2019t grow, we didn\u2019t do our job.' },
+    { icon: TrendingUp, title: isAr ? 'مبنيّ للنمو' : 'Built for growth', body: isAr ? 'من ١٠٠ طلب إلى ١٠,٠٠٠ — نفس الدقة، نفس السرعة، بدون ما تحس بالفرق.' : 'From 100 orders to 10,000 — same accuracy, same speed, and you won\u2019t feel the difference.' },
   ];
 
   const numbers = [

@@ -128,7 +128,7 @@ export default function DashboardPreview() {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <span className="text-[11px] text-[#8a8a9a] bg-white/80 px-3 py-0.5 rounded-md font-mono">
-                    app.fastaccess.io / operations
+                    app.faccess.co / operations
                   </span>
                 </div>
               </div>
