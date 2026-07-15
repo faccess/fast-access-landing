@@ -95,13 +95,14 @@ export default function AppPromo() {
                   ),
                 },
               ].map((b) => (
-                <div key={b.store} className="flex items-center justify-center gap-3 rounded-xl border border-fa-classic-chalk/25 bg-white/5 px-4 py-3 select-none">
+                <div key={b.store} className="relative flex items-center justify-center gap-3 rounded-xl border border-fa-classic-chalk/25 bg-white/5 px-4 py-3.5 select-none">
+                  {/* floating soon-tag on the card edge — never competes with the text */}
+                  <span className="absolute -top-2.5 end-3 rounded-full bg-fa-orange-soda px-2.5 py-0.5 font-ui text-[9.5px] font-bold text-white shadow-sm">{isAr ? 'قريبًا' : 'Soon'}</span>
                   <span className="text-fa-classic-chalk">{b.logo}</span>
                   <div className="text-left rtl:text-right min-w-0">
                     <div className="font-ui text-[10px] uppercase tracking-[0.08em] text-fa-classic-chalk/55 whitespace-nowrap">{b.sub}</div>
                     <div className="font-display text-[15px] font-bold text-fa-classic-chalk leading-tight whitespace-nowrap">{b.store}</div>
                   </div>
-                  <span className="rounded-full bg-fa-orange-soda px-2 py-0.5 font-ui text-[9.5px] font-bold text-white shrink-0">{isAr ? 'قريبًا' : 'Soon'}</span>
                 </div>
               ))}
             </div>
