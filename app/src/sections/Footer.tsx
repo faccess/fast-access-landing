@@ -132,6 +132,13 @@ export default function Footer() {
         {/* Divider */}
         <div className="my-12 h-px bg-[rgba(244,244,241,0.1)]" />
 
+        {/* Legal entity + registered address */}
+        <div className="mb-4 text-center sm:text-start font-body text-[12.5px] leading-[1.8] text-[#8a8a9a]">
+          {isAr
+            ? 'شركة مدخل السرعة للخدمات اللوجستية — الرياض، حي الوادي، شارع عثمان بن عفان'
+            : 'Madkhal Alsura Company for Logistics — Othman bin Affan St., Al Wadi District, Riyadh'}
+        </div>
+
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-[13px] text-[#8a8a9a]" dir="ltr" style={{ unicodeBidi: 'isolate' }}>
