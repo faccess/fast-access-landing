@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { ComponentType } from 'react';
-import { WhatsappLogo, EnvelopeSimple, Phone, FileText } from '@phosphor-icons/react';
+import { WhatsappLogo, EnvelopeSimple, Phone, FileText, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import BrandLogo from '../components/brand/BrandLogo';
 import { useT } from '../i18n/I18nContext';
 
@@ -39,6 +39,8 @@ export default function Footer() {
       { label: isAr ? 'واتساب' : 'WhatsApp', to: 'https://wa.me/966920032768', icon: WhatsappLogo, accent: true },
       { label: isAr ? 'اتصل بنا' : 'Call us', to: 'tel:+966920032768', icon: Phone, accent: true },
       { label: 'info@faccess.co', to: 'mailto:info@faccess.co', icon: EnvelopeSimple, accent: true },
+      { label: isAr ? 'إنستقرام' : 'Instagram', to: 'https://www.instagram.com/faccess.co', icon: InstagramLogo, accent: true },
+      { label: isAr ? 'لينكدإن' : 'LinkedIn', to: 'https://www.linkedin.com/company/faccess-co', icon: LinkedinLogo, accent: true },
     ],
   };
 
@@ -55,9 +57,10 @@ export default function Footer() {
           <span>{label}</span>
         </>
       );
+      const external = to.startsWith('http');
       return to.startsWith('/')
         ? <Link to={to} className={accentClass}>{inner}</Link>
-        : <a href={to} className={accentClass}>{inner}</a>;
+        : <a href={to} className={accentClass} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{inner}</a>;
     }
     return to.startsWith('/') ? (
       <Link to={to} className={linkClass}>
