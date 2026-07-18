@@ -24,7 +24,7 @@ function asyncCss() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/',
   plugins: [inspectAttr(), react(), asyncCss()],
   server: {
     port: 3000,

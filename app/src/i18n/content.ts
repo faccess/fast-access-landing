@@ -8,7 +8,7 @@ export type Locale = 'en' | 'ar';
 const en = {
   nav: {
     solutions: 'Solutions', journey: 'Journey', network: 'Network', pricing: 'Pricing',
-    resources: 'Resources', login: 'Log in', getQuote: 'Get a quote', track: 'Track shipment',
+    resources: 'Resources', blog: 'Blog', login: 'Log in', getQuote: 'Get a quote', track: 'Track shipment',
     about: 'About', contact: 'Contact', home: 'Home',
   },
   whatis: {
@@ -32,8 +32,8 @@ const en = {
   },
   hero: {
     eyebrow: 'The fastest partner for your business growth',
-    headlineA: 'The driving force behind',
-    headlineHighlight: 'e‑commerce growth',
+    headlineA: 'Storage, fulfillment & shipping for your online store —',
+    headlineHighlight: 'leave it to us',
     headlineB: '',
     sub: 'Everything your store needs — storage, packing, shipping, live tracking, and same-day delivery — at your command.',
     primaryCta: 'Start shipping', secondaryCta: 'See how we price',
@@ -231,13 +231,13 @@ const en = {
 const ar = {
   nav: {
     solutions: 'الحلول', journey: 'الرحلة', network: 'الشبكة', pricing: 'كيف نسعّر',
-    resources: 'المزيد', login: 'تسجيل الدخول', getQuote: 'اطلب عرض السعر', track: 'تتبع شحنتك',
+    resources: 'المزيد', blog: 'المدونة', login: 'تسجيل الدخول', getQuote: 'اطلب عرض السعر', track: 'تتبع شحنتك',
     about: 'من نحن', contact: 'تواصل', home: 'الرئيسية',
   },
   whatis: {
     chip: 'ما هي فاست أكسس',
-    headlineA: 'نخزّن، نغلّف، ونوصّل براندك لعملائه',
-    headlineHighlight: 'وأنت تتفرّغ للبيع.',
+    headlineA: 'فاست أكسس — شركة فلفلمنت سعودية',
+    headlineHighlight: 'تخزّن وتغلّف وتوصّل باسم براندك.',
     body: 'فاست أكسس شريك لوجستي متكامل للمتاجر الإلكترونية في السعودية. أرسل لنا مخزونك، ونتولى عنك كل شي بعدها: تخزين آمن، تغليف بهوية علامتك، وتوصيل لكل مناطق المملكة والخليج، مع توصيل بنفس اليوم من المخازن السحابية داخل المدن الكبرى. شريك واحد، لوحة تحكم واحدة، وكل طلب تشوفه من لحظة الاستلام حتى باب عميلك.',
     point1: 'تخزين وتغليف وشحن... كلها من مكان واحد',
     point2: 'توصيل بنفس اليوم خلال 2 إلى 4 ساعات',
@@ -255,9 +255,9 @@ const ar = {
   },
   hero: {
     eyebrow: 'الشريك الأسرع لنموك التجاري',
-    headlineA: '',
+    headlineA: 'تخزين وتجهيز وشحن لمتجرك الإلكتروني —',
     headlineHighlight: 'خلّها علينا',
-    headlineB: 'وتفرّغ لنمو تجارتك',
+    headlineB: '',
     sub: 'تخزين، تجهيز، شحن، ومتابعة لحظية لمتجرك، كلها من مكان واحد، ومربوطة بمنصتك مباشرة.',
     primaryCta: 'ابدأ الشحن', secondaryCta: 'شوف كيف نسعّر',
     statOnTime: 'الطلبات المشحونة ضمن الوقت المحدد', statPickPack: 'متوسط تجهيز الطلب', statCenters: 'دقة تجهيز الطلبات',
@@ -347,7 +347,7 @@ const ar = {
     secondary: 'احجز جولة',
   },
   integrations: {
-    title: 'متجرك على سلة أو زد أو شوبيفاي أو ووكومرس أو ماجينتو؟ اربط وخلاص، الطلبات تنسحب لنظامنا تلقائيًا.',
+    title: 'تكامل مباشر مع سلة وزد وشوبيفاي — اربط متجرك بدقايق',
     platforms: ['سلة', 'زد', 'شوبيفاي', 'ووكومرس', 'ماجينتو'],
   },
   pain: {

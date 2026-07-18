@@ -14,6 +14,7 @@ export default function Navigation() {
     { label: t('nav.solutions'), to: '/solutions' },
     { label: t('nav.pricing'), to: '/pricing' },
     { label: t('nav.resources'), to: '/resources' },
+    { label: t('nav.blog'), to: '/blog' },
     { label: t('nav.about'), to: '/about' },
   ];
   const [scrolled, setScrolled] = useState(false);

@@ -36,12 +36,12 @@ export default function TrustedBy() {
   const loop = Array.from({ length: 8 }, () => platforms).flat();
 
   return (
-    <section className="bg-fa-cream py-16 lg:py-20 overflow-hidden">
+    <section id="integrations" className="bg-fa-cream py-16 lg:py-20 overflow-hidden">
       <div className="container-main">
         <Reveal>
-          <p className="text-center text-[12px] font-semibold text-fa-ink-faint uppercase tracking-[0.16em] mb-10 font-body">
+          <h2 className="text-center text-[12px] font-semibold text-fa-ink-faint uppercase tracking-[0.16em] mb-10 font-body">
             {t('integrations.title')}
-          </p>
+          </h2>
         </Reveal>
       </div>
 
