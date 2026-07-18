@@ -35,6 +35,28 @@ export default function Blog() {
 
       <div className="container-main py-14 space-y-6">
         <Link
+          to="/blog/returns-management-ecommerce"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل تشغيلي · 18 يوليو 2026' : 'Operations guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'إدارة المرتجعات للمتاجر الإلكترونية: من صداع يومي إلى ولاء عملاء'
+              : 'Returns Management: From Daily Headache to Customer Loyalty'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'أسباب الإرجاع وعلاجها من المصدر، بناء سياسة إرجاع تبيع، رحلة المرتجع بأربع محطات، والمؤشرات الأربعة اللي تحطك بالسيطرة.'
+              : 'Return causes and their cures at the source, a return policy that sells, the four-station returns journey, and the four metrics that keep you in control.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
           to="/blog/fulfillment-cost-calculation"
           className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
           dir={isAr ? 'rtl' : 'ltr'}
