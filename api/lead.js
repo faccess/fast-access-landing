@@ -62,6 +62,31 @@ export default async function handler(req, res) {
     const VOLUME_MAP = { '0-100': 100, '101-500': 500, '501-2000': 2000, '2001-10000': 10000, '10000+': 10000 };
     const expectedVolume = VOLUME_MAP[orders] || 0;
 
+    // 1.5) Resolve the "Website" UTM source (create it once if missing) so
+    // every website lead lands with Source = Website — filterable in CRM.
+    let sourceId = false;
+    try {
+      const found = await odooRpc(ODOO_URL, 'object', 'execute_kw', [
+        ODOO_DB, uid, ODOO_API_KEY,
+        'utm.source', 'search',
+        [[['name', '=', 'Website']]],
+        { limit: 1 },
+      ]);
+      if (found && found.length) {
+        sourceId = found[0];
+      } else {
+        sourceId = await odooRpc(ODOO_URL, 'object', 'execute_kw', [
+          ODOO_DB, uid, ODOO_API_KEY,
+          'utm.source', 'create',
+          [{ name: 'Website' }],
+        ]);
+      }
+    } catch (e) {
+      // Source is nice-to-have — never block lead creation over it.
+      console.error('utm.source resolution failed (lead will be created without source):', e.message);
+      sourceId = false;
+    }
+
     // 2) Create the lead
     const descriptionLines = [
       `الطلبات الشهرية: ${orders || '—'}`,
@@ -90,6 +115,7 @@ export default async function handler(req, res) {
           expected_revenue: expectedVolume,
           description: descriptionLines.join('\n'),
           type: 'opportunity',
+          ...(sourceId ? { source_id: sourceId } : {}),
         },
       ],
     ]);
