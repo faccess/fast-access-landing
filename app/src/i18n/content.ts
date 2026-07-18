@@ -32,8 +32,8 @@ const en = {
   },
   hero: {
     eyebrow: 'The fastest partner for your business growth',
-    headlineA: 'Storage, fulfillment & shipping for your online store —',
-    headlineHighlight: 'leave it to us',
+    headlineA: 'The driving force behind',
+    headlineHighlight: 'e‑commerce growth',
     headlineB: '',
     sub: 'Everything your store needs — storage, packing, shipping, live tracking, and same-day delivery — at your command.',
     primaryCta: 'Start shipping', secondaryCta: 'See how we price',
@@ -255,9 +255,9 @@ const ar = {
   },
   hero: {
     eyebrow: 'الشريك الأسرع لنموك التجاري',
-    headlineA: 'تخزين وتجهيز وشحن لمتجرك الإلكتروني —',
+    headlineA: '',
     headlineHighlight: 'خلّها علينا',
-    headlineB: '',
+    headlineB: 'وتفرّغ لنمو تجارتك',
     sub: 'تخزين، تجهيز، شحن، ومتابعة لحظية لمتجرك، كلها من مكان واحد، ومربوطة بمنصتك مباشرة.',
     primaryCta: 'ابدأ الشحن', secondaryCta: 'شوف كيف نسعّر',
     statOnTime: 'الطلبات المشحونة ضمن الوقت المحدد', statPickPack: 'متوسط تجهيز الطلب', statCenters: 'دقة تجهيز الطلبات',
