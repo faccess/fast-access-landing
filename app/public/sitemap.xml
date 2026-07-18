@@ -9,6 +9,7 @@
   <url><loc>https://faccess.co/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://faccess.co/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://faccess.co/blog/what-is-fulfillment</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://faccess.co/blog/how-to-choose-fulfillment-company</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://faccess.co/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://faccess.co/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

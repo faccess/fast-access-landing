@@ -33,7 +33,26 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="container-main py-14">
+      <div className="container-main py-14 space-y-6">
+        <Link
+          to="/blog/how-to-choose-fulfillment-company"
+          className="fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 text-right"
+          dir="rtl"
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل عملي' : 'Practical guide'} · 18 يوليو 2026
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            كيف تختار شركة تخزين وشحن لمتجرك؟ 12 معيار قبل ما توقّع
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            12 معيار أساسي تقيّم فيها أي شركة فلفلمنت، الأسئلة اللي تطرحها قبل التعاقد، جدول تقييم جاهز
+            للطباعة، وعلامات حمراء تحذّرك من الشركة الغلط.
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
         <Link
           to="/blog/what-is-fulfillment"
           className="fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 text-right"
