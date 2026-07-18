@@ -19,6 +19,11 @@ const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const BlogArticle2 = lazy(() => import('./pages/BlogArticle2'));
 const BlogArticle3 = lazy(() => import('./pages/BlogArticle3'));
 const BlogArticle4 = lazy(() => import('./pages/BlogArticle4'));
+const BlogArticle5 = lazy(() => import('./pages/BlogArticle5'));
+const BlogArticle6 = lazy(() => import('./pages/BlogArticle6'));
+const BlogArticle7 = lazy(() => import('./pages/BlogArticle7'));
+const BlogArticle8 = lazy(() => import('./pages/BlogArticle8'));
+const BlogArticle9 = lazy(() => import('./pages/BlogArticle9'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +45,11 @@ export default function App() {
             <Route path="/blog/how-to-choose-fulfillment-company" element={<BlogArticle2 />} />
             <Route path="/blog/fulfillment-cost-calculation" element={<BlogArticle3 />} />
             <Route path="/blog/returns-management-ecommerce" element={<BlogArticle4 />} />
+            <Route path="/blog/dark-store-same-day-delivery" element={<BlogArticle5 />} />
+            <Route path="/blog/cash-on-delivery-guide" element={<BlogArticle6 />} />
+            <Route path="/blog/3pl-vs-4pl-difference" element={<BlogArticle7 />} />
+            <Route path="/blog/peak-season-preparation" element={<BlogArticle8 />} />
+            <Route path="/blog/inventory-management-basics" element={<BlogArticle9 />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />

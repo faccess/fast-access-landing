@@ -35,6 +35,116 @@ export default function Blog() {
 
       <div className="container-main py-14 space-y-6">
         <Link
+          to="/blog/inventory-management-basics"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل مخزون · 18 يوليو 2026' : 'Inventory guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'إدارة المخزون للمتاجر الإلكترونية: 7 مفاهيم تضبط فلوسك'
+              : 'Inventory Management: 7 Concepts That Keep Your Money in Check'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'SKU، مخزون الأمان، نقطة إعادة الطلب، معدل الدوران، تصنيف ABC، الجرد الدوّار، والتعامل مع الراكد — بأمثلة عملية لكل مفهوم.'
+              : 'SKUs, safety stock, the reorder point, turnover rate, ABC classification, cycle counting, and dead stock — with practical examples for each.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
+          to="/blog/peak-season-preparation"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل موسمي · 18 يوليو 2026' : 'Seasonal guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'جهّز متجرك لمواسم الذروة: خطة 6 أسابيع كاملة'
+              : 'Get Your Store Peak-Season Ready: The Full 6-Week Plan'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'توقع الطلب، تأمين المخزون، رفع الطاقة التشغيلية، تجهيز الواجهة وخدمة العملاء، وخطة الطوارئ — عشان الموسم يرفعك مو يكسرك.'
+              : 'Demand forecasting, securing inventory, raising operational capacity, storefront and support readiness, and a contingency plan — so the season lifts you.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
+          to="/blog/3pl-vs-4pl-difference"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'مفاهيم · 18 يوليو 2026' : 'Concepts guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'الفرق بين 3PL و4PL؟ وأين يقف الدروبشيبينغ من كل هذا'
+              : '3PL vs 4PL: What&apos;s the Difference? And Where Does Dropshipping Fit?'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'مستويات الخدمات اللوجستية من 1PL إلى 4PL بمثال واحد، الفرق الجوهري بينها، ومقارنة صريحة بين الفلفلمنت والدروبشيبينغ.'
+              : 'Logistics levels from 1PL to 4PL in a single example, the core differences, and an honest fulfillment-vs-dropshipping comparison.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
+          to="/blog/cash-on-delivery-guide"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل COD · 18 يوليو 2026' : 'COD guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'الدفع عند الاستلام (COD): دليل التاجر لإدارته بدون خسائر'
+              : 'Cash on Delivery (COD): Managing It Without Losses'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'تقليل رفض الاستلام، ضبط دورة التحصيل، دورة COD المثالية من الطلب للتحويل، والمؤشرات اللي تحميك من الخسائر.'
+              : 'Cutting delivery refusals, tightening the remittance cycle, the ideal COD flow from checkout to payout, and the metrics that protect you.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
+          to="/blog/dark-store-same-day-delivery"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دارك ستور · 18 يوليو 2026' : 'Dark store guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'الدارك ستور: كيف توصّل طلبات متجرك بنفس اليوم؟'
+              : 'Dark Stores: How to Deliver Your Store&apos;s Orders Same-Day'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'فكرة الدارك ستور والفرق عن المستودع المركزي، المنتجات المناسبة له، وأثر «يوصلك اليوم» على مبيعاتك وإلغاءاتك.'
+              : 'The dark-store concept vs the central warehouse, which products fit, and what &quot;arrives today&quot; does to your sales and cancellations.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
           to="/blog/returns-management-ecommerce"
           className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
           dir={isAr ? 'rtl' : 'ltr'}
