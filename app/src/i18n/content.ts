@@ -190,7 +190,7 @@ const en = {
     body: 'Because every order our team receives reaches the customer — safely.',
     items: [
       { value: 500, suffix: '+', label: 'Merchants we’ve helped grow' },
-      { value: 25, suffix: 'K', label: 'Products received daily' },
+      { value: 15, suffix: 'K', label: 'Units handled daily' },
       { value: 1.2, suffix: 'M', label: 'Orders delivered safely' },
       { value: 98, suffix: '%', label: 'Positive customer reviews' },
       { value: 1, prefix: '<', suffix: '%', label: 'Returns & error rate' },
@@ -413,7 +413,7 @@ const ar = {
     body: 'كل طلب يستلمه فريقنا... يوصل ومعه رضا العميل.',
     items: [
       { value: 500, suffix: '+', label: 'تاجر كبرت تجارته معنا' },
-      { value: 25, suffix: 'K', label: 'منتج نستقبله يوميًا' },
+      { value: 15, suffix: 'K', label: 'وحدة يتم التعامل معها يوميًا' },
       { value: 1.2, suffix: 'M', label: 'طلب وصل بالسلامة' },
       { value: 98, suffix: '%', label: 'تقييمات إيجابية من العملاء' },
       { value: 1, prefix: '<', suffix: '%', label: 'نسبة المرتجعات والأخطاء' },

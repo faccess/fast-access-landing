@@ -77,6 +77,19 @@ export default function ServicesGrid() {
                 />
               </Link>
             );
+            const learnMoreCentered = (
+              <Link
+                to="/solutions"
+                className="group/link inline-flex items-center gap-1.5 mt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
+              >
+                {t('services.learnMore')}
+                <ArrowRight
+                  size={13}
+                  strokeWidth={2.4}
+                  className="transition-transform duration-200 group-hover/link:translate-x-1 rtl:rotate-180 rtl:group-hover/link:-translate-x-1"
+                />
+              </Link>
+            );
 
             return (
               <Reveal
@@ -84,7 +97,7 @@ export default function ServicesGrid() {
                 delay={i * 70}
                 className={isFull ? 'md:col-span-2 lg:col-span-3' : isWide ? 'lg:col-span-2' : ''}
               >
-                <SpotlightCard className="fa-card fa-card--glow group relative h-full overflow-hidden p-8 lg:p-9 text-left rtl:text-right">
+                <SpotlightCard className="fa-card fa-card--glow group relative h-full overflow-hidden p-7 lg:p-8 text-left rtl:text-right">
                   {/* Editorial ghost number — adds depth on the wide tiles. */}
                   {isWide && (
                     <span
@@ -110,11 +123,11 @@ export default function ServicesGrid() {
                         </h3>
                         <span className="hidden lg:block font-display text-[13px] text-fa-orange-soda/70 font-semibold tracking-[0.12em] mt-auto pt-6">{item.number}</span>
                       </div>
-                      <div className="flex flex-col mt-3 lg:mt-0 lg:flex-1 lg:border-s lg:border-fa-liberty-blue/[0.07] lg:ps-10">
+                      <div className="flex flex-col mt-3 lg:mt-0 lg:flex-1 lg:justify-center lg:border-s lg:border-fa-liberty-blue/[0.07] lg:ps-10">
                         <p className="font-body text-sm lg:text-[15px] text-fa-ink-muted leading-[1.65]">
                           {t(`services.items.${i}.body`)}
                         </p>
-                        {learnMore}
+                        {learnMoreCentered}
                       </div>
                     </div>
                   ) : (
