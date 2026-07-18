@@ -29,6 +29,18 @@ export default function usePageMeta(ar: { title: string; desc: string }, en: { t
     };
     og('title', m.title);
     og('description', m.desc);
+    // canonical + og:url follow the route (single canonical per page; the
+    // AR/EN toggle shares one URL so the canonical does not change with locale)
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const url = `https://faccess.co${path || '/'}` === 'https://faccess.co/' ? 'https://faccess.co/' : `https://faccess.co${path}`;
+    let canon = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canon) {
+      canon = document.createElement('link');
+      canon.rel = 'canonical';
+      document.head.appendChild(canon);
+    }
+    canon.href = url;
+    og('url', url);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale, ar.title, en.title]);
 }

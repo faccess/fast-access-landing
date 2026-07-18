@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd app && npm install && npx vite build",
+  "buildCommand": "cd app && npm install && npx vite build && npx vite build --config scripts/vite.prerender.config.mjs && node scripts/prerender.mjs",
   "outputDirectory": "app/dist",
   "redirects": [
     { "source": "/order-tracking", "destination": "/", "permanent": true },
