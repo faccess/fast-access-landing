@@ -110,7 +110,7 @@ export default function Footer() {
               {t('footer.body')}
             </p>
             <p className="mt-4 font-ui text-[12px] font-semibold text-[#8a8a9a]">
-              {isAr ? '📱 تطبيق فاست أكسس للتجار — قريبًا على App Store وGoogle Play' : '📱 Fast Access merchant app — soon on the App Store & Google Play'}
+              {isAr ? '📱 تطبيق فاست أكسس للتجار — قريبًا على App Store و Google Play' : '📱 Fast Access merchant app — soon on the App Store & Google Play'}
             </p>
           </div>
 

@@ -217,7 +217,7 @@ const en = {
   },
   footer: {
     tagline: 'The fastest partner for your business growth.',
-    body: 'Storage, packing, shipping, real-time tracking, and same-day cloud-store delivery — built around the way your business actually ships.',
+    body: 'Storage, fulfillment, delivery, and live tracking — sized to how your store actually ships.',
     cols: {
       Solutions: 'Solutions',
       Company: 'Company',
@@ -440,7 +440,7 @@ const ar = {
   },
   footer: {
     tagline: 'الشريك الأسرع لنموك التجاري.',
-    body: 'تخزين، تجهيز، شحن، متابعة لحظية، وتوصيل في نفس اليوم من المخازن السحابية، مصممة على مقاس شحن تجارتك الفعلي.',
+    body: 'تخزين، تجهيز، توصيل، ومتابعة لحظية — مصممة على مقاس شحن تجارتك الفعلي.',
     cols: {
       Solutions: 'الحلول',
       Company: 'الشركة',
