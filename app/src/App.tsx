@@ -17,6 +17,7 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const BlogArticle2 = lazy(() => import('./pages/BlogArticle2'));
+const BlogArticle3 = lazy(() => import('./pages/BlogArticle3'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/what-is-fulfillment" element={<BlogArticle />} />
             <Route path="/blog/how-to-choose-fulfillment-company" element={<BlogArticle2 />} />
+            <Route path="/blog/fulfillment-cost-calculation" element={<BlogArticle3 />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />

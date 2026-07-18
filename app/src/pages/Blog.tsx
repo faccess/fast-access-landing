@@ -35,6 +35,28 @@ export default function Blog() {
 
       <div className="container-main py-14 space-y-6">
         <Link
+          to="/blog/fulfillment-cost-calculation"
+          className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
+          dir={isAr ? 'rtl' : 'ltr'}
+        >
+          <div className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
+            {isAr ? 'دليل بالأرقام · 18 يوليو 2026' : 'Numbers guide · July 18, 2026'}
+          </div>
+          <h2 className="font-display mt-3 text-[21px] lg:text-[25px] font-bold text-fa-liberty-blue leading-[1.3] group-hover:text-fa-orange-soda transition-colors duration-200">
+            {isAr
+              ? 'تكلفة التخزين والشحن للمتاجر الإلكترونية: طريقة الحساب بالأرقام'
+              : 'Storage & Shipping Costs: How to Calculate Them, With Numbers'}
+          </h2>
+          <p className="font-body mt-3 text-[14.5px] text-fa-ink-muted leading-[1.75]">
+            {isAr
+              ? 'مكونات التسعير الثلاثة، التكاليف المخفية للتجهيز الذاتي، مثال عملي كامل بالأرقام، ومعادلة تكلفة الطلب المكتمل اللي تقارن فيها أي عرضين.'
+              : 'The three pricing components, the hidden costs of self-fulfillment, a full worked example, and the cost-per-completed-order formula for comparing any two offers.'}
+          </p>
+          <span className="font-ui mt-5 inline-block text-[13px] font-semibold text-fa-orange-soda">
+            {isAr ? 'اقرأ المقال ←' : 'Read the article →'}
+          </span>
+        </Link>
+        <Link
           to="/blog/how-to-choose-fulfillment-company"
           className={`fa-card fa-card--glow group block max-w-[680px] overflow-hidden p-7 lg:p-8 ${isAr ? 'text-right' : 'text-left'}`}
           dir={isAr ? 'rtl' : 'ltr'}
