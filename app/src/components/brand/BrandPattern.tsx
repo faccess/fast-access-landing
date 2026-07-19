@@ -33,9 +33,9 @@ interface Props {
 }
 
 const SRC: Record<Pattern, string> = {
-  ribbon:    '/brand/patterns/pattern-1.png',
-  lozenge:   '/brand/patterns/pattern-3.png',
-  isometric: '/brand/patterns/pattern-5.png',
+  ribbon:    '/brand/patterns/pattern-1.webp',
+  lozenge:   '/brand/patterns/pattern-3.webp',
+  isometric: '/brand/patterns/pattern-5.webp',
 };
 
 /**

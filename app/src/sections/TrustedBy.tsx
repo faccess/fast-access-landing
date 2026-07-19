@@ -24,7 +24,7 @@ const platforms: Platform[] = [
   { kind: 'lockup', name: 'Magento', icon: 'magento', color: '#EE6723' },
   { kind: 'lockup', name: 'Amazon', icon: 'amazon', color: '#FF9900', iconOnly: true, vb: '0 1.1 24 21.8', svgClass: 'h-8 lg:h-9 w-auto shrink-0' },
   { kind: 'text', label: { ar: 'noon', en: 'noon' }, weight: 800, letter: '-0.03em', color: '#D4B800' },
-  { kind: 'img', name: 'Jahez', src: '/brand/platforms/jahez.png', h: 30 },
+  { kind: 'img', name: 'Jahez', src: '/brand/platforms/jahez.webp', h: 30 },
   { kind: 'api' },
 ];
 

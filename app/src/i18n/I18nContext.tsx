@@ -36,11 +36,15 @@ function lookup(obj: unknown, path: string): string {
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === 'undefined') return 'ar';
+  // First render is always 'ar' so it matches the prerendered HTML exactly
+  // (hydration requires identical markup); the saved preference is applied
+  // immediately after mount below.
+  const [locale, setLocaleState] = useState<Locale>('ar');
+
+  useEffect(() => {
     const saved = window.localStorage.getItem('fa-locale') as Locale | null;
-    return saved === 'ar' || saved === 'en' ? saved : 'ar';
-  });
+    if (saved === 'en') setLocaleState('en');
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;

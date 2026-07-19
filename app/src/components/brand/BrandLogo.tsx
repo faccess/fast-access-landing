@@ -21,12 +21,12 @@ interface Props {
 }
 
 const SOURCES = {
-  'horizontal-light': '/brand/logo-horizontal-light.png',  // Logo 4
-  'horizontal-dark':  '/brand/logo-horizontal-dark.png',   // Logo 3
-  'horizontal-mono':  '/brand/logo-full-mono-dark.png',    // fallback
-  'full-light':       '/brand/logo-horizontal-light.png',  // light has same colored lockup (no separate tagline asset)
-  'full-dark':        '/brand/logo-full-dark.png',         // Logo 11
-  'full-mono':        '/brand/logo-full-mono-dark.png',    // Logo 9
+  'horizontal-light': '/brand/logo-horizontal-light.webp',  // Logo 4
+  'horizontal-dark':  '/brand/logo-horizontal-dark.webp',   // Logo 3
+  'horizontal-mono':  '/brand/logo-full-mono-dark.webp',    // fallback
+  'full-light':       '/brand/logo-horizontal-light.webp',  // light has same colored lockup (no separate tagline asset)
+  'full-dark':        '/brand/logo-full-dark.webp',         // Logo 11
+  'full-mono':        '/brand/logo-full-mono-dark.webp',    // Logo 9
   'mark-light':       '/brand/logo-mark.svg',
   'mark-dark':        '/brand/logo-mark.svg',
   'mark-mono':        '/brand/logo-mark.svg',

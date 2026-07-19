@@ -74,7 +74,10 @@ export default function ScrollRoute() {
   const progressRef = useRef<HTMLDivElement>(null);
   const [activeScene, setActiveScene] = useState(0);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [useMobileCut] = useState(isMobileViewport);
+  // false on first render to match prerendered markup; real viewport
+  // measured right after mount (video src loads lazily anyway).
+  const [useMobileCut, setUseMobileCut] = useState(false);
+  useEffect(() => { setUseMobileCut(isMobileViewport()); }, []);
 
   useEffect(() => {
     const section = sectionRef.current;

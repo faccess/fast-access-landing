@@ -5,10 +5,12 @@ interface Ctx { theme: Theme; setTheme: (t: Theme) => void; toggle: () => void }
 const ThemeContext = createContext<Ctx | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark';
-    return (localStorage.getItem('fa-theme') as Theme) || 'dark';
-  });
+  // Deterministic first render for hydration; stored choice applied on mount.
+  const [theme, setTheme] = useState<Theme>('dark');
+  useEffect(() => {
+    const saved = localStorage.getItem('fa-theme') as Theme | null;
+    if (saved && saved !== 'dark') setTheme(saved);
+  }, []);
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('fa-theme', theme);
