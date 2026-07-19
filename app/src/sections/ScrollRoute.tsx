@@ -59,6 +59,11 @@ const SCENES = [
 
 const VIDEO_DURATION = 10.041667;
 const ROUTE_VIDEO_SRC = '/assets/scroll-route-van.mp4';
+// Portrait cut of the same footage, window centered on the van (mobile
+// object-cover on the wide master pushed the van outside the visible area)
+const ROUTE_VIDEO_SRC_MOBILE = '/assets/scroll-route-van-mobile.mp4';
+const isMobileViewport = () =>
+  typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches;
 
 export default function ScrollRoute() {
   const { locale } = useT();
@@ -69,6 +74,7 @@ export default function ScrollRoute() {
   const progressRef = useRef<HTMLDivElement>(null);
   const [activeScene, setActiveScene] = useState(0);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [useMobileCut] = useState(isMobileViewport);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -213,9 +219,13 @@ export default function ScrollRoute() {
         <div className="absolute inset-0">
           <video
             ref={videoRef}
-            className="h-full w-full object-cover object-[38%_46%] will-change-transform lg:object-[center_60%]"
-            src={shouldLoadVideo ? ROUTE_VIDEO_SRC : undefined}
-            poster="/assets/scroll-route-van-poster.webp"
+            className={
+              useMobileCut
+                ? 'h-full w-full object-cover object-center will-change-transform'
+                : 'h-full w-full object-cover object-[38%_46%] will-change-transform lg:object-[center_60%]'
+            }
+            src={shouldLoadVideo ? (useMobileCut ? ROUTE_VIDEO_SRC_MOBILE : ROUTE_VIDEO_SRC) : undefined}
+            poster={useMobileCut ? '/assets/scroll-route-van-mobile-poster.webp' : '/assets/scroll-route-van-poster.webp'}
             preload={shouldLoadVideo ? 'auto' : 'none'}
             muted
             playsInline
