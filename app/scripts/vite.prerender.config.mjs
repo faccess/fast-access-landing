@@ -18,6 +18,10 @@ export default defineConfig({
       lenis: join(__dirname, 'prerender-lenis-stub.mjs'),
     },
   },
+  ssr: {
+    // bundle CJS packages so rollup handles named-export interop everywhere
+    noExternal: ['react-helmet-async'],
+  },
   build: {
     ssr: join(appRoot, 'src/prerender-entry.tsx'),
     outDir: join(appRoot, 'dist-ssr'),

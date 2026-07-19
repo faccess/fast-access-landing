@@ -24,6 +24,14 @@ const appRoot = join(__dirname, '..');
 const distDir = join(appRoot, 'dist');
 
 const ROUTES = [
+  // Core pages — '/' overwrites the SPA shell copy in dist with full home HTML
+  // (the shell template is read into memory before the loop, so ordering is safe)
+  { path: '/', out: 'index.html', mustContain: 'خلّها علينا' },
+  { path: '/solutions', mustContain: 'الحلول' },
+  { path: '/pricing', mustContain: 'السعر' },
+  { path: '/about', mustContain: 'فاست أكسس' },
+  { path: '/faq', mustContain: 'الأسئلة' },
+  { path: '/contact', mustContain: 'تواصل' },
   { path: '/blog', out: 'blog/index.html', mustContain: 'المدونة' },
   { path: '/blog/what-is-fulfillment', mustContain: 'الدليل الشامل' },
   { path: '/blog/how-to-choose-fulfillment-company', mustContain: 'معيار' },
@@ -118,7 +126,7 @@ const Root = entry.default;
     let html = '<!doctype html>\n' + window.document.documentElement.outerHTML;
 
     // Home FAQPage schema belongs to / only — strip it from the shared @graph.
-    html = html.replace(
+    if (route.path !== '/') html = html.replace(
       /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
       (full, body) => {
         try {
@@ -133,14 +141,16 @@ const Root = entry.default;
     );
 
     // ── Sanity checks (fail the build loudly rather than ship bad SEO) ──
-    const url = 'https://faccess.co' + route.path;
+    const isBlogArticle = route.path.startsWith('/blog/');
+    const url = route.path === '/' ? 'https://faccess.co/' : 'https://faccess.co' + route.path;
     const checks = [
       [html.includes(`<link rel="canonical" href="${url}"`), 'canonical'],
       [html.includes(`property="og:url" content="${url}"`), 'og:url'],
       [/lang="ar"/.test(html) && /dir="rtl"/.test(html), 'lang/dir'],
-      [!html.includes('ما هي خدمة الفلفلمنت اللي تقدمها فاست أكسس؟'), 'home FAQ removed'],
-      [route.path === '/blog' || html.includes('"@type":"Article"'), 'Article schema'],
-      [route.path === '/blog' || html.includes('"@type":"FAQPage"'), 'article FAQPage schema'],
+      [(route.path === '/') === html.includes('ما هي خدمة الفلفلمنت اللي تقدمها فاست أكسس؟'), 'home FAQ scoping'],
+      [!isBlogArticle || html.includes('"@type":"Article"'), 'Article schema'],
+      [!isBlogArticle || html.includes('"@type":"FAQPage"'), 'article FAQPage schema'],
+      [html.includes('<h1'), 'h1 present'],
     ];
     const failed = checks.filter(([ok]) => !ok).map(([, name]) => name);
     if (failed.length) throw new Error(`prerender: ${route.path} failed checks: ${failed.join(', ')}`);

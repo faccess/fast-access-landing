@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
 import Hero from '../sections/Hero';
 import WhatIsFA from '../sections/WhatIsFA';
@@ -17,18 +16,11 @@ import CTA from '../sections/CTA';
 
 export default function Home() {
   usePageMeta(
-    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: 'فاست أكسس شريكك اللوجستي في السعودية: تخزين آمن، تجهيز طلبات بهوية علامتك، شحن لكل المملكة، وتوصيل بنفس اليوم من الدارك ستور. تكامل مباشر مع سلة وزد وشوبيفاي — خلّها علينا.' },
+    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: 'فاست أكسس شريكك اللوجستي في السعودية: تخزين، تجهيز بهوية علامتك، شحن لكل المملكة، وتوصيل بنفس اليوم. تكامل مباشر مع سلة وزد وشوبيفاي — خلّها علينا.' },
     { title: 'Fast Access — Fulfillment & Shipping for E-commerce', desc: 'Your logistics partner in Saudi Arabia: storage, branded fulfillment, live-tracked shipping, and same-day delivery from cloud warehouses.' }
   );
   return (
     <>
-      <Helmet>
-        <title>Fast Access — Fulfillment & same-day delivery in Saudi Arabia</title>
-        <meta
-          name="description"
-          content="Fast Access stores, packs, and ships your orders across Saudi Arabia and the Gulf — with same-day delivery from cloud stores. One partner, every order tracked."
-        />
-      </Helmet>
       <Hero />
       {/* Plain-language value prop first: tell visitors what we do */}
       <WhatIsFA />
