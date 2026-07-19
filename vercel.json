@@ -12,7 +12,11 @@
     { "source": "/request-quote", "destination": "/contact", "permanent": true },
     { "source": "/request-a-quote", "destination": "/contact", "permanent": true },
     { "source": "/e-commerce", "destination": "/solutions", "permanent": true },
-    { "source": "/en_GB/:rest*", "destination": "/", "permanent": true }
+    { "source": "/en_GB/:rest*", "destination": "/", "permanent": true },
+    { "source": "/ar", "destination": "/", "permanent": true },
+    { "source": "/ar/:rest*", "destination": "/:rest*", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:rest*", "destination": "/:rest*", "permanent": true }
   ],
   "rewrites": [{ "source": "/((?!api/)(?!.*\\.).*)", "destination": "/index.html" }]
 }
