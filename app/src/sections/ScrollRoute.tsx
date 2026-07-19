@@ -268,11 +268,11 @@ export default function ScrollRoute() {
                 height anchors the card top so the card grows downward, not up.
                 Sized so the card's top sits BELOW the truck (which rides at ~58%
                 of the frame) — keeping the truck visible the whole scroll. */}
-            <div className="order-2 h-[46vh] shrink-0 lg:hidden" aria-hidden />
+            <div className="order-2 min-h-[150px] flex-1 lg:hidden" aria-hidden />
 
             <div className="hidden min-h-[50vh] lg:col-start-2 lg:row-start-1 lg:block" aria-hidden />
 
-            <div className="route-active-panel order-4 w-full max-w-[390px] overflow-hidden border border-fa-classic-chalk/18 bg-fa-liberty-blue/58 p-3 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:p-5 lg:col-start-3 lg:row-start-1 lg:mt-20 lg:justify-self-end">
+            <div className="route-active-panel order-4 w-full max-w-[390px] overflow-hidden border border-fa-classic-chalk/18 bg-fa-liberty-blue/78 p-3 sm:bg-fa-liberty-blue/58 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:p-5 lg:col-start-3 lg:row-start-1 lg:mt-20 lg:justify-self-end">
               <div key={activeScene} className="route-panel">
                 <div className="route-panel__el flex items-center justify-between gap-4 border-b border-fa-classic-chalk/12 pb-2.5 sm:pb-4">
                   <span className="font-ui text-[11px] font-semibold uppercase tracking-[0.16em] text-fa-orange-soda">
