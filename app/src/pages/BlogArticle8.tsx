@@ -150,8 +150,9 @@ export default function BlogArticle8() {
         <p className={p}>
           مواسم الذروة في السوق السعودي معروفة بالتقويم: رمضان والعيدين، اليوم الوطني ويوم التأسيس، الجمعة
           البيضاء، ومواسم العودة للمدارس — وكل تاجر يعرف إنها جاية. ومع كذا، كل موسم نشوف متاجر تنهار فيه:
-          مخزون خلص ثاني يوم، طلبات تأخرت أسبوعين، تقييمات سلبية تمسح مجهود سنة. الفرق بين اللي يطلع من
-          الموسم بقفزة واللي يطلع بجروح مو الحظ — هو التجهيز. هذي خطة الستة أسابيع.
+          مخزون خلص من ثاني يوم، طلبات تأخرت أسبوعين، وتقييمات سلبية مسحت مجهود سنة كاملة. متجر يطلع
+          من الموسم بأرقام قياسية، ومتجر ثاني يطلع بخسائر وتقييمات تلاحقه — والفرق بينهما ما هو حظ، الفرق تجهيز
+          مسبق. وهذا اللي بنسويه هنا: خطة عملية تبدأ قبل الموسم بستة أسابيع، خطوة بخطوة.
         </p>
 
         <h2 className={h2}>خلاصة سريعة</h2>
@@ -319,8 +320,10 @@ function ArticleEn() {
           Saudi peak seasons are on the calendar: Ramadan and the two Eids, National Day and Founding Day,
           White Friday, and back-to-school — every merchant knows they're coming. And yet every season we
           watch stores collapse into them: inventory gone by day two, orders delayed two weeks, negative
-          reviews wiping out a year's effort. The difference between leaving the season with a leap and
-          leaving it with wounds isn't luck — it's preparation. Here's the six-week plan.
+          reviews wiping out a year's effort. One store exits the season with record numbers; another
+          exits with losses and reviews that follow it around — and the difference between them isn't luck, it's preparation
+          done in advance. That's what this article is for: a practical plan that starts six weeks before
+          the season, step by step.
         </p>
 
         <h2 className={h2}>Quick summary</h2>
