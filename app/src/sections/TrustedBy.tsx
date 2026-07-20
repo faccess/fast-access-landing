@@ -89,7 +89,7 @@ export default function TrustedBy() {
                 </>
               )}
               {p.kind === 'img' && (
-                <img src={p.src} alt={p.name} style={{ height: p.h }} className={p.noGray ? 'w-auto opacity-90' : 'w-auto grayscale opacity-80'} loading="lazy" />
+                <img src={p.src} alt={p.name} style={{ height: p.h }} className={p.noGray ? 'w-auto fa-mark' : 'w-auto grayscale opacity-80'} loading="lazy" />
               )}
               {p.kind === 'api' && (
                 <>

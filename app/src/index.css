@@ -776,3 +776,18 @@ html[dir='rtl'] .fa-kicker-track { animation-name: fa-kicker-scroll-rtl; }
 
 /* Keep raster logos at their intrinsic aspect ratio wherever a fixed height is applied */
 img[src*='/brand/'], img[src*='logo'] { object-fit: contain; }
+
+/* Platform marks in the TrustedBy marquee: monochrome at rest (black on the
+   light theme, white on the dark theme), original brand colors on hover. */
+.fa-mark {
+  filter: brightness(0);
+  opacity: 0.72;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+html[data-theme='dark'] .fa-mark {
+  filter: brightness(0) invert(1);
+}
+.fa-mark:hover {
+  filter: none;
+  opacity: 1;
+}
