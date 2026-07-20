@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
 import { Mail, Phone, MapPin, Clock, Check } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -15,6 +14,10 @@ export default function Contact() {
   );
   const { locale } = useT();
   const isAr = locale === 'ar';
+  usePageMeta(
+    { title: 'تواصل معنا — خطة فلفلمنت مخصصة خلال يوم عمل | فاست أكسس', desc: 'قل لنا وش تشحن، ونرجع لك بخطة فلفلمنت مفصلة على مقاس متجرك خلال يوم عمل. كلم فريق فاست أكسس مباشرة.' },
+    { title: "Contact Fast Access — a tailored plan in one business day | Fast Access", desc: "Tell us what you ship and we'll come back with a tailored fulfillment plan within one business day. Talk to the Fast Access team." },
+  );
 
   const methods = [
     { icon: Mail, label: isAr ? 'البريد' : 'Email', value: 'info@faccess.co' },
@@ -26,10 +29,6 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>Contact — Fast Access</title>
-        <meta name="description" content="Tell us what you ship and we'll come back with a tailored fulfillment plan within one business day. Talk to the Fast Access team." />
-      </Helmet>
       <PageHeader
         chip={isAr ? 'تواصل' : 'Contact'}
         title={isAr ? (<>جاهز تخلّيها <span className="text-fa-orange-soda">علينا؟</span></>) : 'Let’s get your orders moving.'}

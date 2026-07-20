@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import usePageMeta from '../hooks/usePageMeta';
 import { PackageCheck, Boxes, Truck, Radar, Store, Headset, Ship, Smartphone } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -17,6 +17,10 @@ export default function Solutions() {
   );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
+  usePageMeta(
+    { title: 'حلول الفلفلمنت المتكاملة للمتاجر الإلكترونية | فاست أكسس', desc: 'كيف تربط فاست أكسس متجرك وتدير الفلفلمنت كاملًا: تخزين، تجهيز بهويتك، شحن ذكي، متابعة لحظية، وتوصيل بنفس اليوم من المخازن السحابية.' },
+    { title: "End-to-end fulfillment solutions for e-commerce | Fast Access", desc: "How Fast Access plugs into your store and runs fulfillment end to end — warehousing, pick & pack, shipping, live tracking, and same-day cloud-store delivery." },
+  );
 
   // How Fast Access plugs into a merchant's operation — page-specific, not on home
   const model = [
@@ -58,10 +62,6 @@ export default function Solutions() {
 
   return (
     <>
-      <Helmet>
-        <title>Solutions — Fast Access</title>
-        <meta name="description" content="How Fast Access plugs into your store and runs fulfillment end to end — warehousing, pick & pack, shipping, live tracking, and same-day cloud-store delivery." />
-      </Helmet>
       <PageHeader
         chip={t('services.chip')}
         title={isAr ? (<><span className="text-fa-orange-soda">حلولنا...</span> كل اللي تحتاجه عشان توصل طلباتك</>) : t('pages.solutions.title')}
@@ -111,8 +111,13 @@ export default function Solutions() {
                   <span className="fa-iconchip"><c.icon size={22} strokeWidth={1.8} /></span>
                   <h3 className="font-display mt-5 text-[19px] lg:text-[21px] font-bold text-fa-liberty-blue tracking-[-0.02em]">{c.title}</h3>
                   <p className="font-body mt-2.5 text-[14px] text-fa-ink-muted leading-[1.65]">{c.body}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 border-t border-fa-liberty-blue/10 pt-3 font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">
-                    {c.metric}
+                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-fa-liberty-blue/10 pt-3">
+                    <span className="font-ui text-[12px] font-semibold uppercase tracking-[0.08em] text-fa-orange-soda">{c.metric}</span>
+                    {(c as any).id && (c as any).id !== 'merchant-app' && (
+                      <Link to={`/solutions/${(c as any).id}`} className="font-ui text-[12px] font-semibold text-fa-liberty-blue/70 hover:text-fa-orange-soda transition-colors whitespace-nowrap">
+                        {isAr ? 'التفاصيل الكاملة ←' : 'Full details →'}
+                      </Link>
+                    )}
                   </div>
                 </SpotlightCard>
               </Reveal>

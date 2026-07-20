@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
 import { Boxes, PackageCheck, Truck, MapPin, Check } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -17,6 +16,10 @@ export default function Pricing() {
   );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
+  usePageMeta(
+    { title: 'أسعار الفلفلمنت — عرض سعر مفصل خلال يوم عمل | فاست أكسس', desc: 'بدون باقات مبهمة ولا رسوم مخفية — تسعير مبني على اللي تشحنه فعليًا. اعرف مكونات السعر ووش يشمل، واستلم عرضك المفصل خلال يوم عمل.' },
+    { title: "Fulfillment pricing — exact quote in one business day | Fast Access", desc: "No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in one business day." },
+  );
 
   // What actually moves the price — pricing-page specific
   const drivers = [
@@ -44,10 +47,6 @@ export default function Pricing() {
 
   return (
     <>
-      <Helmet>
-        <title>Pricing — Fast Access</title>
-        <meta name="description" content="No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in one business day." />
-      </Helmet>
       <PageHeader
         chip={t('pricing.chip')}
         title={isAr ? (<><span className="text-fa-orange-soda">كيف نسعّر؟</span> ببساطة... على قدّ شغلك.</>) : t('pages.pricing.title')}

@@ -66,7 +66,7 @@ export default function ServicesGrid() {
             const isFull = fullTiles.has(i);
             const learnMore = (
               <Link
-                to={`/solutions#${item.slug}`}
+                to={`/solutions/${item.slug}`}
                 className="group/link inline-flex items-center gap-1.5 mt-6 lg:mt-auto lg:pt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
               >
                 {t('services.learnMore')}
@@ -79,7 +79,7 @@ export default function ServicesGrid() {
             );
             const learnMoreCentered = (
               <Link
-                to={`/solutions#${item.slug}`}
+                to={`/solutions/${item.slug}`}
                 className="group/link inline-flex items-center gap-1.5 mt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
               >
                 {t('services.learnMore')}

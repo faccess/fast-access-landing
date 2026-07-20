@@ -8,6 +8,7 @@ import {
   Home, Solutions, Pricing, About, Resources, Contact, NotFound, FAQ,
   Privacy, Terms, Blog, BlogArticle, BlogArticle2, BlogArticle3, BlogArticle4,
   BlogArticle5, BlogArticle6, BlogArticle7, BlogArticle8, BlogArticle9,
+  ServicePage,
 } from './routeLoaders';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +21,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/:slug" element={<ServicePage />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />

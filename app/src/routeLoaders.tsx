@@ -34,6 +34,7 @@ export const NotFound = lazyRoute(() => import('./pages/NotFound'));
 export const FAQ = lazyRoute(() => import('./pages/FAQ'));
 export const Privacy = lazyRoute(() => import('./pages/Privacy'));
 export const Terms = lazyRoute(() => import('./pages/Terms'));
+export const ServicePage = lazyRoute(() => import('./pages/ServicePage'));
 export const Blog = lazyRoute(() => import('./pages/Blog'));
 export const BlogArticle = lazyRoute(() => import('./pages/BlogArticle'));
 export const BlogArticle2 = lazyRoute(() => import('./pages/BlogArticle2'));
@@ -55,6 +56,13 @@ const byPath: Record<string, Preloadable> = {
   '/faq': FAQ,
   '/privacy': Privacy,
   '/terms': Terms,
+  '/solutions/storage': ServicePage,
+  '/solutions/packing': ServicePage,
+  '/solutions/shipping': ServicePage,
+  '/solutions/tracking': ServicePage,
+  '/solutions/cloud-stores': ServicePage,
+  '/solutions/support': ServicePage,
+  '/solutions/freight': ServicePage,
   '/blog': Blog,
   '/blog/what-is-fulfillment': BlogArticle,
   '/blog/how-to-choose-fulfillment-company': BlogArticle2,

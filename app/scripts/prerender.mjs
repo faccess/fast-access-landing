@@ -28,6 +28,13 @@ const ROUTES = [
   // (the shell template is read into memory before the loop, so ordering is safe)
   { path: '/', out: 'index.html', mustContain: 'خلّها علينا' },
   { path: '/solutions', mustContain: 'الحلول' },
+  { path: '/solutions/storage', mustContain: 'تخزين يتمدد' },
+  { path: '/solutions/packing', mustContain: 'يستلم تجربة' },
+  { path: '/solutions/shipping', mustContain: 'أفضل طريق' },
+  { path: '/solutions/tracking', mustContain: 'وين كل طلب' },
+  { path: '/solutions/cloud-stores', mustContain: 'جوّا المدينة' },
+  { path: '/solutions/support', mustContain: 'يشوف المشكلة' },
+  { path: '/solutions/freight', mustContain: 'مصنع موردك' },
   { path: '/pricing', mustContain: 'السعر' },
   { path: '/about', mustContain: 'فاست أكسس' },
   { path: '/faq', mustContain: 'الأسئلة' },

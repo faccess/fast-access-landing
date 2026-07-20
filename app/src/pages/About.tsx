@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
 import { Target, Telescope, Gauge, ShieldCheck, HeartHandshake, TrendingUp } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -16,6 +15,10 @@ export default function About() {
   );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
+  usePageMeta(
+    { title: 'من نحن — قصة فاست أكسس اللوجستية | فاست أكسس', desc: 'فاست أكسس شركة لوجستية تشغيلية سعودية — التيار اللي يحرك نمو التجارة الإلكترونية في المملكة والخليج. تعرف على قصتنا وأرقامنا.' },
+    { title: "About Fast Access — our logistics story | Fast Access", desc: "Fast Access is an operational logistics company — the current that drives e-commerce growth across Saudi Arabia and the Gulf." },
+  );
 
   const values = [
     { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نقيس أنفسنا بالساعات، لا الأيام، لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
@@ -33,10 +36,6 @@ export default function About() {
 
   return (
     <>
-      <Helmet>
-        <title>About — Fast Access</title>
-        <meta name="description" content="Fast Access is an operational logistics company — the current that drives e-commerce growth across Saudi Arabia and the Gulf." />
-      </Helmet>
       <PageHeader title={t('pages.about.title')} sub={t('pages.about.sub')} bg="/assets/hero-about.webp" />
 
       {/* Who we are */}
