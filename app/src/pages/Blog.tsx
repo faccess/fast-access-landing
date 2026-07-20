@@ -20,8 +20,21 @@ export default function Blog() {
 
   return (
     <main className="bg-fa-classic-chalk min-h-screen">
-      <div className="bg-fa-liberty-blue pt-32 pb-14">
-        <div className="container-main text-left rtl:text-right">
+      <div className="relative bg-fa-liberty-blue pt-32 pb-14 overflow-hidden">
+        <div className="absolute inset-0" aria-hidden>
+          <img
+            src="/assets/hero-blog.webp"
+            alt=""
+            className="h-full w-full object-cover object-center opacity-[0.5]"
+            loading="eager"
+            decoding="async"
+          />
+          {/* Navy wash + vignette, same treatment as PageHeader on the other
+              inner pages, so the headline stays legible in RTL and LTR. */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,18,50,0.62)_0%,rgba(13,18,50,0.82)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_50%_0%,transparent_28%,rgba(13,18,50,0.72)_100%)]" />
+        </div>
+        <div className="container-main relative z-10 text-left rtl:text-right">
           <h1 className="font-display text-[32px] sm:text-[42px] font-bold text-fa-classic-chalk leading-[1.15]">
             {isAr ? 'المدونة' : 'Blog'}
           </h1>
