@@ -7,13 +7,13 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 
 const serviceIcons = [
-  { icon: Warehouse, number: '01' },
-  { icon: Package, number: '02' },
-  { icon: Truck, number: '03' },
-  { icon: Activity, number: '04' },
-  { icon: Zap, number: '05' },
-  { icon: Headphones, number: '06' },
-  { icon: Ship, number: '07' },
+  { icon: Warehouse, number: '01', slug: 'storage' },
+  { icon: Package, number: '02', slug: 'packing' },
+  { icon: Truck, number: '03', slug: 'shipping' },
+  { icon: Activity, number: '04', slug: 'tracking' },
+  { icon: Zap, number: '05', slug: 'cloud-stores' },
+  { icon: Headphones, number: '06', slug: 'support' },
+  { icon: Ship, number: '07', slug: 'freight' },
 ];
 
 // Bento rhythm on the lg 3-col grid: the wide tiles (0, 3, 4) span two columns
@@ -66,7 +66,7 @@ export default function ServicesGrid() {
             const isFull = fullTiles.has(i);
             const learnMore = (
               <Link
-                to="/solutions"
+                to={`/solutions#${item.slug}`}
                 className="group/link inline-flex items-center gap-1.5 mt-6 lg:mt-auto lg:pt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
               >
                 {t('services.learnMore')}
@@ -79,7 +79,7 @@ export default function ServicesGrid() {
             );
             const learnMoreCentered = (
               <Link
-                to="/solutions"
+                to={`/solutions#${item.slug}`}
                 className="group/link inline-flex items-center gap-1.5 mt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
               >
                 {t('services.learnMore')}

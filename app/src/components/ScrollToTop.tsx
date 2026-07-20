@@ -14,15 +14,23 @@ export default function ScrollToTop() {
     if (hash) {
       // Hash navigation (e.g. /#integrations from the blog): scroll to the
       // target section once the page has painted.
-      const id = window.setTimeout(() => {
+      // The target page is code-split, so the anchor may not exist yet on a
+      // cross-page hash navigation — retry briefly until it appears.
+      let tries = 0;
+      const id = window.setInterval(() => {
         const el = document.querySelector(hash) as HTMLElement | null;
+        tries += 1;
         if (el) {
+          window.clearInterval(id);
           if (lenis?.scrollTo) lenis.scrollTo(el, { immediate: false });
           else el.scrollIntoView({ behavior: 'smooth' });
+          ScrollTrigger.refresh();
+        } else if (tries >= 20) {
+          window.clearInterval(id);
+          ScrollTrigger.refresh();
         }
-        ScrollTrigger.refresh();
       }, 120);
-      return () => window.clearTimeout(id);
+      return () => window.clearInterval(id);
     }
     // Lenis owns the scroll position; reset it immediately if present.
     if (lenis?.scrollTo) lenis.scrollTo(0, { immediate: true });
