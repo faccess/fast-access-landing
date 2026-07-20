@@ -32,6 +32,8 @@ const ROUTES = [
   { path: '/about', mustContain: 'فاست أكسس' },
   { path: '/faq', mustContain: 'الأسئلة' },
   { path: '/contact', mustContain: 'تواصل' },
+  { path: '/privacy', mustContain: 'الخصوصية' },
+  { path: '/terms', mustContain: 'الشروط' },
   { path: '/blog', out: 'blog/index.html', mustContain: 'المدونة' },
   { path: '/blog/what-is-fulfillment', mustContain: 'الدليل الشامل' },
   { path: '/blog/how-to-choose-fulfillment-company', mustContain: 'معيار' },
@@ -91,12 +93,14 @@ globalThis.matchMedia = window.matchMedia;
 
 // ── Load the prebuilt SSR bundle (built by vite.prerender.config.mjs) ──
 console.log('[pre] importing framework + ssr bundle…');
-const [{ default: React, act }, { createRoot }, entry] = await Promise.all([
+const [{ default: React, act }, { createRoot }, { renderToString }, entry] = await Promise.all([
   import('react'),
   import('react-dom/client'),
+  import('react-dom/server'),
   import(join(appRoot, 'dist-ssr/prerender-entry.js')),
 ]);
 const Root = entry.default;
+const preloadRoute = entry.preloadRoute;
 
 {
   console.log('[pre] app modules loaded, rendering routes');
@@ -123,7 +127,22 @@ const Root = entry.default;
     }
 
     // ── Serialize + post-process ──
+    // The BODY comes from renderToString: canonical SSR markup with proper
+    // Suspense boundary markers and server-format ids, which is the only
+    // shape hydrateRoot fully adopts. The HEAD keeps the jsdom result, where
+    // effects have injected title/meta/OG/canonical/schema. The route chunk
+    // is preloaded first so nothing suspends and the markup is complete.
+    await preloadRoute(route.path);
+    const ssrBody = renderToString(React.createElement(Root));
+    // Swap the container's content textually AFTER serialization — the live
+    // DOM stays untouched so React can unmount cleanly, and the head keeps
+    // the effect-injected tags (schema effects clean up on unmount).
     let html = '<!doctype html>\n' + window.document.documentElement.outerHTML;
+    const liveOuter = container.outerHTML;
+    const openTag = liveOuter.slice(0, liveOuter.indexOf('>') + 1);
+    const stamped = openTag.replace('<div ', `<div data-prerender-path="${route.path}" `);
+    if (!html.includes(liveOuter)) throw new Error('prerender: container swap anchor not found for ' + route.path);
+    html = html.replace(liveOuter, stamped + ssrBody + '</div>');
 
     // Home FAQPage schema belongs to / only — strip it from the shared @graph.
     if (route.path !== '/') html = html.replace(

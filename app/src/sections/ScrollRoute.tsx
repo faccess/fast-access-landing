@@ -230,7 +230,6 @@ export default function ScrollRoute() {
             src={shouldLoadVideo ? (useMobileCut ? ROUTE_VIDEO_SRC_MOBILE : ROUTE_VIDEO_SRC) : undefined}
             poster={useMobileCut ? '/assets/scroll-route-van-mobile-poster.webp' : '/assets/scroll-route-van-poster.webp'}
             preload={shouldLoadVideo ? 'auto' : 'none'}
-            muted
             playsInline
             aria-hidden
           />

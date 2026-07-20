@@ -4,26 +4,11 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Layout from './components/Layout';
 
-const Home = lazy(() => import('./pages/Home'));
-const Solutions = lazy(() => import('./pages/Solutions'));
-const Pricing = lazy(() => import('./pages/Pricing'));
-const About = lazy(() => import('./pages/About'));
-const Resources = lazy(() => import('./pages/Resources'));
-const Contact = lazy(() => import('./pages/Contact'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-const FAQ = lazy(() => import('./pages/FAQ'));
-const Privacy = lazy(() => import('./pages/Privacy'));
-const Terms = lazy(() => import('./pages/Terms'));
-const Blog = lazy(() => import('./pages/Blog'));
-const BlogArticle = lazy(() => import('./pages/BlogArticle'));
-const BlogArticle2 = lazy(() => import('./pages/BlogArticle2'));
-const BlogArticle3 = lazy(() => import('./pages/BlogArticle3'));
-const BlogArticle4 = lazy(() => import('./pages/BlogArticle4'));
-const BlogArticle5 = lazy(() => import('./pages/BlogArticle5'));
-const BlogArticle6 = lazy(() => import('./pages/BlogArticle6'));
-const BlogArticle7 = lazy(() => import('./pages/BlogArticle7'));
-const BlogArticle8 = lazy(() => import('./pages/BlogArticle8'));
-const BlogArticle9 = lazy(() => import('./pages/BlogArticle9'));
+import {
+  Home, Solutions, Pricing, About, Resources, Contact, NotFound, FAQ,
+  Privacy, Terms, Blog, BlogArticle, BlogArticle2, BlogArticle3, BlogArticle4,
+  BlogArticle5, BlogArticle6, BlogArticle7, BlogArticle8, BlogArticle9,
+} from './routeLoaders';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -16,11 +16,21 @@ const tree = (
   </HelmetProvider>
 );
 
-// Prerendered pages (home, core pages, blog) ship full HTML — hydrate to
-// adopt it in place, so the first paint of the static markup IS the LCP.
-// Unknown routes fall back to the empty shell and mount from scratch.
-if (container.hasChildNodes()) {
-  hydrateRoot(container, tree);
-} else {
-  createRoot(container).render(tree);
+// Prerendered pages ship full HTML — adopt it in place (hydrate) so the
+// static first paint IS the LCP. Hydration only happens when the served
+// markup provably belongs to this URL (data-prerender-path marker) and the
+// route's lazy chunk is loaded first, so the first render pass matches.
+const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+const prerenderedFor = container.getAttribute('data-prerender-path');
+
+async function mount() {
+  if (container.hasChildNodes() && prerenderedFor === currentPath) {
+    const { preloadRoute } = await import('./routeLoaders');
+    await preloadRoute(currentPath);
+    hydrateRoot(container, tree);
+  } else {
+    container.innerHTML = '';
+    createRoot(container).render(tree);
+  }
 }
+void mount();

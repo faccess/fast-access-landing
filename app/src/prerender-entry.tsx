@@ -4,6 +4,7 @@
  * time (blog SSG). Keep in sync with main.tsx if providers change.
  */
 import App from './App';
+export { preloadRoute } from './routeLoaders';
 import { I18nProvider } from './i18n/I18nContext';
 import { ThemeProvider } from './i18n/ThemeContext';
 import { HelmetProvider } from 'react-helmet-async';
