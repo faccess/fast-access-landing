@@ -4,7 +4,7 @@ import { useT } from '../i18n/I18nContext';
 type Platform =
   | { kind: 'text'; label: { ar: string; en: string }; weight: number; letter: string; color: string }
   | { kind: 'lockup'; name: string; icon: string; color: string; iconOnly?: boolean; vb?: string; svgClass?: string }
-  | { kind: 'img'; name: string; src: string; h: number }
+  | { kind: 'img'; name: string; src: string; h: number; noGray?: boolean }
   | { kind: 'api' };
 
 const ICONS: Record<string, string> = {
@@ -17,8 +17,8 @@ const ICONS: Record<string, string> = {
 /** Arabic wordmarks for the Saudi platforms; official marks + English names
  *  for the international ones; Jahez raster logo; Custom API lockup. */
 const platforms: Platform[] = [
-  { kind: 'text', label: { ar: 'سلة', en: 'Salla' }, weight: 700, letter: '-0.02em', color: '#00B68C' },
-  { kind: 'text', label: { ar: 'زد', en: 'Zid' }, weight: 600, letter: '0.01em', color: '#5A2C85' },
+  { kind: 'img', name: 'Salla — سلة', src: '/brand/platforms/salla.webp', h: 32, noGray: true },
+  { kind: 'img', name: 'Zid — زد', src: '/brand/platforms/zid.webp', h: 26, noGray: true },
   { kind: 'lockup', name: 'Shopify', icon: 'shopify', color: '#7AB55C' },
   { kind: 'lockup', name: 'WooCommerce', icon: 'woocommerce', color: '#96588A', iconOnly: true, vb: '0 9.3 24 5.4', svgClass: 'h-[26px] lg:h-[30px] w-auto shrink-0' },
   { kind: 'lockup', name: 'Magento', icon: 'magento', color: '#EE6723' },
@@ -89,7 +89,7 @@ export default function TrustedBy() {
                 </>
               )}
               {p.kind === 'img' && (
-                <img src={p.src} alt={p.name} style={{ height: p.h }} className="w-auto grayscale opacity-80" loading="lazy" />
+                <img src={p.src} alt={p.name} style={{ height: p.h }} className={p.noGray ? 'w-auto opacity-90' : 'w-auto grayscale opacity-80'} loading="lazy" />
               )}
               {p.kind === 'api' && (
                 <>
