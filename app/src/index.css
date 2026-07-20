@@ -784,9 +784,6 @@ img[src*='/brand/'], img[src*='logo'] { object-fit: contain; }
   opacity: 0.72;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
-html[data-theme='dark'] .fa-mark {
-  filter: brightness(0) invert(1);
-}
 .fa-mark:hover {
   filter: none;
   opacity: 1;
