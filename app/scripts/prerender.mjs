@@ -159,6 +159,24 @@ const preloadRoute = entry.preloadRoute;
       },
     );
 
+    // ── Inline the full stylesheet: on slow mobile networks the extra
+    //    render-blocking CSS round-trip costs ~1.5s of first paint. 24KB
+    //    inlined per page is the cheaper trade for a marketing site. ──
+    const cssLink = html.match(/<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/);
+    if (cssLink) {
+      const cssText = readFileSync(join(distDir, cssLink[1].replace(/^\//, '')), 'utf-8');
+      html = html.replace(cssLink[0], '<style>' + cssText + '</style>');
+    }
+
+    // ── Home only: preload the LCP hero image so the fetch starts with the
+    //    document instead of after CSS/layout discovery ──
+    if (route.path === '/') {
+      html = html.replace(
+        '</title>',
+        '</title>\n    <link rel="preload" as="image" imagesrcset="/assets/hero-bg-768.webp 768w, /assets/hero-bg.webp 1344w" imagesizes="100vw" fetchpriority="high">',
+      );
+    }
+
     // ── Sanity checks (fail the build loudly rather than ship bad SEO) ──
     const isBlogArticle = route.path.startsWith('/blog/');
     const url = route.path === '/' ? 'https://faccess.co/' : 'https://faccess.co' + route.path;
