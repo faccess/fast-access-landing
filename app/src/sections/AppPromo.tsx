@@ -1,7 +1,7 @@
 import { useT } from '../i18n/I18nContext';
 import SectionChip from '../components/brand/SectionChip';
 import Reveal from '../components/Reveal';
-import { Bell, LineChart, PackageSearch, Boxes, PackagePlus, Undo2 } from 'lucide-react';
+import { Bell, LineChart, PackageSearch, Boxes, PackagePlus, } from 'lucide-react';
 
 /**
  * AppPromo — merchant mobile app section (app launching soon).
@@ -116,64 +116,16 @@ export default function AppPromo() {
             <div className="absolute -inset-10 rounded-full bg-fa-orange-soda/15 blur-3xl" />
             {/* frame */}
             <div className="relative rounded-[42px] border border-fa-classic-chalk/20 bg-[#0A0E28] p-3 shadow-[0_40px_80px_rgba(0,0,0,0.45)]">
-              <div className="rounded-[32px] bg-fa-classic-chalk overflow-hidden aspect-[9/18] flex flex-col">
-                {/* status bar + header */}
-                <div className="bg-fa-liberty-blue px-5 pt-4 pb-5">
-                  <div className="flex items-center justify-between">
-                    <span className="font-display text-[13px] font-extrabold text-fa-classic-chalk tracking-wide">FAST ACCESS</span>
-                    <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-fa-classic-chalk">
-                      <Bell size={13} />
-                      <span className="absolute -top-0.5 -end-0.5 h-2.5 w-2.5 rounded-full bg-fa-orange-soda ring-2 ring-fa-liberty-blue" />
-                    </span>
-                  </div>
-                  <div className="font-body mt-3 text-[11px] text-fa-classic-chalk/60">{isAr ? 'أهلًا، متجر النخبة' : 'Hi, Elite Store'}</div>
-                  <div className="font-display text-[18px] font-bold text-fa-classic-chalk leading-snug">{isAr ? 'طلبات اليوم: 142' : 'Today\u2019s orders: 142'}</div>
-                </div>
-                {/* stat cards */}
-                <div className="grid grid-cols-2 gap-2.5 p-4">
-                  {[
-                    { l: isAr ? 'قيد التجهيز' : 'Preparing', v: '38', accent: false },
-                    { l: isAr ? 'خارج للتوصيل' : 'Out for delivery', v: '54', accent: true },
-                    { l: isAr ? 'تم التسليم' : 'Delivered', v: '47', accent: false },
-                    { l: isAr ? 'مرتجعات' : 'Returns', v: '3', accent: false },
-                  ].map((s) => (
-                    <div key={s.l} className={`rounded-2xl p-3 ${s.accent ? 'bg-fa-orange-soda text-white' : 'bg-white text-fa-liberty-blue'} shadow-sm`}>
-                      <div className={`font-ui text-[9.5px] font-semibold ${s.accent ? 'text-white/80' : 'text-fa-ink-muted'}`}>{s.l}</div>
-                      <div className="font-display text-[22px] font-extrabold leading-tight">{s.v}</div>
-                    </div>
-                  ))}
-                </div>
-                {/* mini bar chart */}
-                <div className="mx-4 mb-3 rounded-2xl bg-white p-3.5 shadow-sm flex-1 flex flex-col justify-center">
-                  <div className="flex items-center justify-between">
-                    <span className="font-ui text-[10px] font-semibold text-fa-ink-muted">{isAr ? 'مبيعات الأسبوع' : 'This week\u2019s sales'}</span>
-                    <span className="font-ui text-[10px] font-bold text-fa-orange-soda" dir="ltr">+18%</span>
-                  </div>
-                  <div className="mt-2.5 flex items-end gap-1.5 h-[52px]" style={{ direction: 'ltr' }}>
-                    {[34, 48, 40, 62, 55, 78, 92].map((h, i) => (
-                      <div key={i} className={`flex-1 rounded-t-md ${i === 6 ? 'bg-fa-orange-soda' : 'bg-fa-liberty-blue/15'}`} style={{ height: `${h}%` }} />
-                    ))}
-                  </div>
-                </div>
-                {/* quick actions: create order / return */}
-                <div className="mx-4 mb-3 grid grid-cols-2 gap-2.5">
-                  <div className="flex items-center justify-center gap-1.5 rounded-xl bg-fa-orange-soda px-2 py-2.5 shadow-sm">
-                    <PackagePlus size={13} className="text-white" />
-                    <span className="font-ui text-[10.5px] font-bold text-white">{isAr ? 'طلب جديد' : 'New order'}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 rounded-xl bg-white px-2 py-2.5 shadow-sm ring-1 ring-fa-liberty-blue/10">
-                    <Undo2 size={13} className="text-fa-liberty-blue" />
-                    <span className="font-ui text-[10.5px] font-bold text-fa-liberty-blue">{isAr ? 'استرجاع' : 'Return'}</span>
-                  </div>
-                </div>
-                {/* alert toast */}
-                <div className="mx-4 mb-5 flex items-center gap-2.5 rounded-2xl bg-fa-liberty-blue px-3.5 py-3 shadow-md">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-fa-orange-soda/20 text-fa-orange-soda"><Boxes size={15} /></span>
-                  <div className="min-w-0">
-                    <div className="font-display text-[11.5px] font-bold text-fa-classic-chalk truncate">{isAr ? 'تنبيه مخزون' : 'Stock alert'}</div>
-                    <div className="font-body text-[10px] text-fa-classic-chalk/60 truncate">{isAr ? 'عطر العود الملكي — باقي 12 قطعة' : 'Royal Oud — 12 units left'}</div>
-                  </div>
-                </div>
+              <div className="rounded-[32px] bg-[#0B0B10] overflow-hidden aspect-[9/18]">
+                {/* Real merchant-app screen (approved capture, out-of-stock card
+                    re-worded in-image to the approved copy) */}
+                <img
+                  src="/assets/app-screen.webp"
+                  alt={isAr ? 'شاشة تطبيق فاست أكسس للتجار' : 'Fast Access merchant app screen'}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
