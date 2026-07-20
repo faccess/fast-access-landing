@@ -11,7 +11,7 @@ const faqItems = [
   {
     qEn: 'What services does Fast Access provide?',
     qAr: 'وش الخدمات اللي تقدمها فاست أكسس؟',
-    aEn: 'We provide end-to-end logistics solutions including storage, professional packaging, shipping, real-time tracking, cloud store fulfillment (2-4hr same-day delivery), and 24/7 customer support.',
+    aEn: 'We provide end-to-end logistics solutions including storage, professional packaging, shipping, real-time tracking, cloud store fulfillment (1-2hr same-day delivery), and 24/7 customer support.',
     aAr: 'منظومة لوجستية متكاملة: تخزين، تجهيز وتغليف، شحن وتوصيل، متابعة لحظية، متاجر سحابية توصّل خلال 2-4 ساعات، ودعم على مدار الساعة.',
   },
   {
@@ -84,13 +84,13 @@ const faqItems = [
     qEn: 'Is there refrigerated storage?',
     qAr: 'هل يوجد تخزين مبرّد؟',
     aEn: 'Yes, we have specialized climate-controlled zones built to store temperature-sensitive products under perfect conditions.',
-    aAr: 'نعم، مساحات مكيّفة (18-22°م) ومناطق تبريد مخصصة (2-8°م) للمنتجات الحساسة.',
+    aAr: 'نعم، مساحات مكيّفة بدرجات حرارة مضبوطة (16-21°م) تحفظ المنتجات الحساسة بحالة مثالية.',
   },
   {
-    qEn: 'What is the temperature of the refrigerated storage?',
-    qAr: 'كم درجة حرارة المستودع المبرد؟',
-    aEn: 'We maintain controlled room temperatures (18°C - 22°C) for cosmetics, vitamins, and electronics, and cold-chain zones (2°C - 8°C) for pharmaceutical or sensitive goods.',
-    aAr: 'نحافظ على درجات حرارة مكيفة (18-22 درجة مئوية) للعطور ومستحضرات التجميل والإلكترونيات، ونوفر مناطق تبريد مخصصة (2-8 درجات مئوية) للمنتجات الأكثر حساسية.',
+    qEn: 'What temperature are your warehouses kept at?',
+    qAr: 'كم درجة حرارة المستودعات عندكم؟',
+    aEn: 'We maintain controlled temperatures between 16°C and 21°C, protecting cosmetics, vitamins, electronics, and other temperature-sensitive goods.',
+    aAr: 'نحافظ على درجات حرارة مضبوطة بين 16 و21 درجة مئوية، تحمي العطور ومستحضرات التجميل والإلكترونيات وكل المنتجات الحساسة للحرارة.',
   },
   {
     qEn: 'How is inventory picked up from me and how much do I pay?',

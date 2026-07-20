@@ -33,8 +33,8 @@ export default function FAQ() {
     {
       q: isAr ? 'كم تاخذون وقت لتجهيز الطلب؟' : 'How fast do you prepare orders?',
       a: isAr
-        ? 'متوسط تجهيز الطلب عندنا 1.3 ساعة، وبدقة تجهيز 99.7%. والطلبات العاجلة داخل المدن الرئيسية توصل خلال 2 إلى 4 ساعات من المخازن السحابية.'
-        : 'Our average prep time is 1.3 hours with 99.7% picking accuracy. Urgent orders in major cities arrive within 2–4 hours from our cloud warehouses.',
+        ? 'متوسط تجهيز الطلب عندنا 1.3 ساعة، وبدقة تجهيز 99.7%. والطلبات العاجلة داخل المدن الرئيسية توصل خلال ساعة إلى ساعتين من المخازن السحابية.'
+        : 'Our average prep time is 1.3 hours with 99.7% picking accuracy. Urgent orders in major cities arrive within 1–2 hours from our cloud warehouses.',
     },
     {
       q: isAr ? 'وين تغطون؟' : 'Where do you cover?',
@@ -45,8 +45,8 @@ export default function FAQ() {
     {
       q: isAr ? 'منتجاتي تحتاج تخزين مبرد — عندكم؟' : 'My products need temperature-controlled storage — do you have it?',
       a: isAr
-        ? 'نعم. مستودعاتنا مرخصة من هيئة الغذاء والدواء وفيها مساحات مكيفة وتبريد مخصص (2–8°م) للمنتجات الحساسة مثل التجميل والمكملات.'
-        : 'Yes. Our warehouses are SFDA-licensed with climate-controlled areas and dedicated cooling (2–8°C) for sensitive products like cosmetics and supplements.',
+        ? 'نعم. مستودعاتنا مرخصة من هيئة الغذاء والدواء وفيها مساحات مكيفة بدرجات حرارة مضبوطة (16-21°م) للمنتجات الحساسة مثل التجميل والمكملات.'
+        : 'Yes. Our warehouses are SFDA-licensed with climate-controlled areas (16-21°C) for sensitive products like cosmetics and supplements.',
     },
     {
       q: isAr ? 'كيف يتابع عميلي طلبه؟' : 'How does my customer track their order?',

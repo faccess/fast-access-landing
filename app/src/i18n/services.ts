@@ -21,34 +21,36 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'storage',
     meta: {
-      ar: { title: 'تخزين المنتجات للمتاجر الإلكترونية في السعودية | فاست أكسس', desc: 'مستودعات مرخّصة بمساحة 15,000 م² في الرياض: مساحات مكيفة، تبريد 2-8°م، جرد دوري، ومخزونك مربوط بمنصتك لحظيًا. ادفع على الاستخدام الفعلي.' },
-      en: { title: 'E-commerce warehousing in Saudi Arabia | Fast Access', desc: 'Licensed warehouses with 15,000 m² in Riyadh: climate-controlled space, 2-8°C cold storage, cycle counts, and live inventory sync. Pay for what you use.' },
+      ar: { title: 'تخزين المنتجات للمتاجر الإلكترونية في السعودية | فاست أكسس', desc: 'مستودعات مرخّصة بمساحة 15,000 م² في الرياض: مساحات مكيفة بدرجات مضبوطة من 16 إلى 21°م، جرد دوري، تتبع صلاحية بنظام FEFO، ومخزونك مربوط بمنصتك لحظيًا. ادفع على الاستخدام الفعلي.' },
+      en: { title: 'E-commerce warehousing in Saudi Arabia | Fast Access', desc: 'Licensed warehouses with 15,000 m² in Riyadh: climate-controlled space, a controlled 16-21°C climate, FEFO expiry tracking, cycle counts, and live inventory sync. Pay for what you use.' },
     },
     chip: { ar: 'التخزين', en: 'Warehousing' },
-    h1: { ar: 'تخزين يتمدد مع تجارتك — وينكمش مع فاتورتك', en: 'Warehousing that scales with your store' },
+    h1: { ar: 'تخزين يتمدد مع تجارتك وينكمش مع فاتورتك', en: 'Warehousing that scales with your store' },
     intro: {
       ar: 'مستودعات مرخّصة بمساحة تتجاوز 15,000 م² في مواقع استراتيجية، مجهزة بأحدث أنظمة المراقبة والسلامة. تدفع على المساحة اللي تستخدمها فعليًا، وتتوسع بموسمك بدون عقود طويلة ولا التزامات ثابتة.',
       en: 'Licensed warehouses exceeding 15,000 m² in strategic locations, equipped with modern monitoring and safety systems. You pay for the space you actually use, and scale with your season with no long contracts.',
     },
     features: {
       ar: [
-        { title: 'مساحات مكيفة وتبريد مخصص', body: 'قاعات تخزين بدرجات حرارة مضبوطة، وغرف تبريد من 2 إلى 8°م لمنتجات العناية والتجميل والمكملات وكل ما يتأثر بحرارة الصيف.' },
-        { title: 'مخزونك مربوط بمنصتك', body: 'كل قطعة تدخل المستودع تنعكس في نظامنا وفي متجرك لحظيًا — سلة أو زد أو شوبيفاي — فما تبيع منتج نافد ولا توقف منتج متوفر.' },
-        { title: 'استلام وفحص منظم', body: 'شحنتك توصلنا من موردك أو من ميناء التخليص، نستلمها بمحضر موثق، نفحص الكميات والحالة، ونصورها قبل ما ترتب على الرفوف.' },
-        { title: 'جرد دوري بدون إغلاق', body: 'جرد متواصل بتقنية العد الدوري — دقة مخزونك محفوظة على مدار السنة بدون ما نوقف طلباتك يوم كامل للجرد.' },
-        { title: 'أمان على مدار الساعة', body: 'كاميرات مراقبة، أنظمة إنذار وإطفاء، وصلاحيات دخول محددة — بضاعتك مؤمّنة فعليًا وورقيًا.' },
+        { title: 'مساحات مكيفة بدرجات مضبوطة', body: 'قاعات تخزين مكيفة بدرجات حرارة مضبوطة من 16 إلى 21°م، تحمي منتجات العناية والتجميل والمكملات وكل ما يتأثر بحرارة الصيف.' },
+        { title: 'مخزونك مربوط بمنصتك', body: 'كل قطعة تدخل المستودع تنعكس في نظامنا وفي متجرك لحظيًا، سواء سلة أو زد أو شوبيفاي، فما تبيع منتج خالص من المخزون ولا توقف منتج متوفر.' },
+        { title: 'استلام وفحص منظم', body: 'شحنتك توصلنا من موردك أو من ميناء التخليص، نستلمها بمحضر موثق، نفحص الكميات والحالة، ونصورها قبل ما تترتب على الرفوف.' },
+        { title: 'جرد دوري بدون إغلاق', body: 'جرد متواصل بتقنية العد الدوري، فدقة مخزونك محفوظة على مدار السنة بدون ما نوقف طلباتك يوم كامل للجرد.' },
+        { title: 'أمان على مدار الساعة', body: 'كاميرات مراقبة، أنظمة إنذار وإطفاء، وصلاحيات دخول محددة، فبضاعتك مؤمّنة فعليًا وورقيًا.' },
+        { title: 'تواريخ الصلاحية ونظام FEFO', body: 'نسجل تاريخ انتهاء كل دفعة عند الاستلام، ونصرف الطلبات بنظام FEFO: الأقرب انتهاءً يطلع أولًا. مخزونك يدور بذكاء، والتوالف بسبب انتهاء الصلاحية ينخفض لأدنى حد، مع تنبيهات مبكرة للدفعات اللي تقترب من نهايتها.' },
       ],
       en: [
-        { title: 'Climate control and cold rooms', body: 'Temperature-managed halls plus 2-8°C cold rooms for beauty, supplements, and anything summer heat can damage.' },
+        { title: 'Controlled-climate halls', body: 'Air-conditioned halls kept between 16 and 21°C, protecting beauty products, supplements, and anything summer heat can damage.' },
         { title: 'Inventory synced to your platform', body: 'Every unit that enters the warehouse reflects instantly in our system and your store — Salla, Zid, or Shopify — so you never oversell or pause a product that is actually in stock.' },
         { title: 'Documented receiving and inspection', body: 'Your shipment arrives from your supplier or customs, we receive it against a documented record, verify counts and condition, and photograph before shelving.' },
         { title: 'Cycle counting, no shutdowns', body: 'Continuous cycle counts keep inventory accuracy high all year — without freezing your orders for a full-day stock take.' },
         { title: 'Around-the-clock security', body: 'CCTV, alarm and fire systems, and restricted access — your goods are protected physically and on paper.' },
+        { title: 'Expiry dates and FEFO', body: 'Every batch\'s expiry date is logged at receiving, and orders pick FEFO: first expired, first out. Your stock rotates intelligently, expiry write-offs drop to a minimum, and you get early alerts for batches approaching their end date.' },
       ],
     },
     steps: {
       ar: [
-        { title: 'أرسل بضاعتك', body: 'من موردك مباشرة أو من مستودعك الحالي — ننسق الاستلام ونستقبل الشحنة بمحضر موثق.' },
+        { title: 'أرسل بضاعتك', body: 'من موردك مباشرة أو من مستودعك الحالي، ننسق الاستلام ونستقبل الشحنة بمحضر موثق.' },
         { title: 'نفحص ونرتب', body: 'عدّ وفحص وتصوير، ثم ترتيب على مواقع تخزين مرقّمة يعرفها النظام قطعة قطعة.' },
         { title: 'مخزونك حي بمنصتك', body: 'الأرصدة تتزامن لحظيًا مع متجرك، وتقارير المخزون بين يديك من أي مكان.' },
       ],
@@ -60,16 +62,18 @@ export const SERVICES: ServiceContent[] = [
     },
     stats: [
       { value: '15,000 م²+', ar: 'مساحة تخزين مرخّصة', en: 'Licensed storage space' },
-      { value: '2-8°م', ar: 'غرف تبريد مخصصة', en: 'Dedicated cold rooms' },
+      { value: '16-21°م', ar: 'بيئة تخزين مضبوطة', en: 'Controlled storage climate' },
       { value: '10+', ar: 'مراكز تخزين', en: 'Storage centres' },
     ],
     faqs: {
       ar: [
-        { q: 'هل فيه حد أدنى للكمية أو مدة التخزين؟', a: 'لا — تبدأ بالكمية اللي عندك وتدفع على الاستخدام الفعلي. نمو مخزونك بالمواسم ما يحتاج عقد جديد، والمساحة تتوسع معك تلقائيًا.' },
+        { q: 'هل تتبعون تواريخ صلاحية منتجاتي؟', a: 'نعم، نسجل تاريخ انتهاء كل دفعة لحظة استلامها، والنظام يصرف الطلبات بمنهجية FEFO (الأقرب انتهاءً أولًا)، مع تنبيهات مبكرة قبل اقتراب أي دفعة من نهايتها. مناسب تمامًا لمنتجات التجميل والمكملات والأغذية.' },
+        { q: 'هل فيه حد أدنى للكمية أو مدة التخزين؟', a: 'لا، تبدأ بالكمية اللي عندك وتدفع على الاستخدام الفعلي. نمو مخزونك بالمواسم ما يحتاج عقد جديد، والمساحة تتوسع معك تلقائيًا.' },
         { q: 'كيف أتابع مخزوني عندكم؟', a: 'من لوحة تحكم تعرض الأرصدة لحظيًا لكل منتج ومقاس ولون، مع تقارير حركة المخزون. والأرصدة نفسها متزامنة مع متجرك على سلة أو زد أو شوبيفاي.' },
-        { q: 'هل تستقبلون بضاعة قادمة من الصين أو الخارج مباشرة؟', a: 'نعم — عبر خدمة الشحن الدولي والتخليص الجمركي نستورد بضاعتك من موردك ونخلصها ونستلمها بمستودعاتنا مباشرة، فتدخل المخزون جاهزة للبيع بدون أي خطوة منك.' },
+        { q: 'هل تستقبلون بضاعة قادمة من الصين أو الخارج مباشرة؟', a: 'نعم، عبر خدمة الشحن الدولي والتخليص الجمركي نستورد بضاعتك من موردك ونخلصها ونستلمها بمستودعاتنا مباشرة، فتدخل المخزون جاهزة للبيع بدون أي خطوة منك.' },
       ],
       en: [
+        { q: 'Do you track my products\' expiry dates?', a: 'Yes — every batch\'s expiry is logged at receiving, orders pick FEFO (first expired, first out), and you get early alerts before any batch approaches its end. Ideal for beauty, supplements, and food products.' },
         { q: 'Is there a minimum quantity or storage period?', a: 'No — start with what you have and pay for actual usage. Seasonal growth expands your space automatically with no new contract.' },
         { q: 'How do I monitor my inventory with you?', a: 'Through a dashboard showing live balances per SKU, size, and colour, with movement reports. The same balances sync to your Salla, Zid, or Shopify store.' },
         { q: 'Can you receive stock arriving from China or abroad directly?', a: 'Yes — through our international freight and customs service we import from your supplier, clear customs, and receive at our warehouses, so stock enters ready to sell with zero steps on your side.' },
@@ -84,18 +88,18 @@ export const SERVICES: ServiceContent[] = [
       en: { title: 'Branded pick, pack & fulfillment | Fast Access', desc: 'A trained team packs your orders within hours in durable materials carrying your brand: thank-you cards, gift options, seasonal packaging.' },
     },
     chip: { ar: 'التجهيز والتغليف', en: 'Pick & pack' },
-    h1: { ar: 'عميلك يستلم تجربة تحمل اسمك — مو كرتون', en: 'Your customer unboxes your brand' },
+    h1: { ar: 'عميلك يستلم تجربة تحمل اسمك، مو كرتون', en: 'Your customer unboxes your brand' },
     intro: {
-      ar: 'لحظة فتح الطلب هي أول لقاء حقيقي بين عميلك وعلامتك. فريقنا المدرّب يلتقط الطلب من الرف، يفحصه، ويغلفه بمواد متينة تحمل هويتك — بمتوسط تجهيز ساعتين من وصول الطلب.',
-      en: 'Unboxing is the first real meeting between your customer and your brand. Our trained team picks, inspects, and packs in durable materials carrying your identity — averaging two hours from order arrival.',
+      ar: 'لحظة فتح الطلب هي أول لقاء حقيقي بين عميلك وعلامتك. فريقنا المدرّب يلتقط الطلب من الرف، يفحصه، ويغلفه بمواد متينة تحمل هويتك.',
+      en: 'Unboxing is the first real meeting between your customer and your brand. Our trained team picks, inspects, and packs in durable materials carrying your identity.',
     },
     features: {
       ar: [
-        { title: 'تغليف بهوية علامتك', body: 'كراتين وأشرطة وستيكرات بشعارك وألوانك — نخزنها عندنا ونستخدمها لكل طلب، فتجربة الاستلام امتداد لمتجرك مو نهاية له.' },
-        { title: 'كروت وإهداءات', body: 'كروت شكر، رسائل مخصصة، وخيارات تغليف هدايا يختارها عميلك عند الطلب — كلها تنفذ تلقائيًا بدون تدخل منك.' },
-        { title: 'فحص جودة قبل الإغلاق', body: 'كل طلب يمر بنقطة فحص: المنتج الصح، المقاس الصح، الحالة سليمة — قبل ما يقفل الكرتون ويطلع للشحن. أخطاء التجهيز عندنا أقل من 0.5%.' },
-        { title: 'جاهزية المواسم', body: 'رمضان، الجمعة البيضاء، مواسم الإهداء — نرفع الطاقة التجهيزية مسبقًا ونجهز مواد تغليف موسمية، فذروتك تمر وكأنها يوم عادي.' },
-        { title: 'مواد متينة تحمي منتجك', body: 'حشوات وتغليف داخلي يناسب طبيعة منتجك — زجاج، سوائل، إلكترونيات — فنسبة التوالف بالشحن تنخفض لأدنى حد.' },
+        { title: 'تغليف بهوية علامتك', body: 'كراتين وأشرطة وستيكرات بشعارك وألوانك، نخزنها عندنا ونستخدمها لكل طلب، فتجربة الاستلام امتداد لمتجرك مو نهاية له.' },
+        { title: 'كروت وإهداءات', body: 'كروت شكر، رسائل مخصصة، وخيارات تغليف هدايا يختارها عميلك عند الطلب، وكلها تنفذ تلقائيًا بدون تدخل منك.' },
+        { title: 'فحص جودة قبل الإغلاق', body: 'كل طلب يمر بنقطة فحص: المنتج الصح، المقاس الصح، الحالة سليمة، قبل ما يقفل الكرتون ويطلع للشحن. أخطاء التجهيز عندنا أقل من 0.5%.' },
+        { title: 'جاهزية المواسم', body: 'رمضان، الجمعة البيضاء، مواسم الإهداء: نرفع الطاقة التجهيزية مسبقًا ونجهز مواد تغليف موسمية، فذروتك تمر وكأنها يوم عادي.' },
+        { title: 'مواد متينة تحمي منتجك', body: 'حشوات وتغليف داخلي يناسب طبيعة منتجك، سواء زجاج أو سوائل أو إلكترونيات، فنسبة التوالف بالشحن تنخفض لأدنى حد.' },
       ],
       en: [
         { title: 'Packaging in your identity', body: 'Boxes, tapes, and stickers in your logo and colours — stored with us and used for every order, so unboxing extends your store rather than ending it.' },
@@ -107,9 +111,9 @@ export const SERVICES: ServiceContent[] = [
     },
     steps: {
       ar: [
-        { title: 'الطلب يوصلنا تلقائيًا', body: 'من متجرك مباشرة عبر التكامل — بدون إدخال يدوي ولا نسخ أرقام.' },
+        { title: 'الطلب يوصلنا تلقائيًا', body: 'من متجرك مباشرة عبر التكامل، بدون إدخال يدوي ولا نسخ أرقام.' },
         { title: 'التقاط وفحص وتغليف', body: 'الفريق يلتقط القطع من مواقعها، يفحصها، ويغلفها بهويتك مع أي إضافات طلبها العميل.' },
-        { title: 'جاهز للشحن خلال ساعات', body: 'الطلب يسلم لشريك الشحن الأنسب بنفس اليوم، ورابط التتبع يوصل عميلك تلقائيًا.' },
+        { title: 'جاهز للشحن بنفس اليوم', body: 'الطلب يسلم لشريك الشحن الأنسب بنفس اليوم، ورابط التتبع يوصل عميلك تلقائيًا.' },
       ],
       en: [
         { title: 'Orders flow in automatically', body: 'Straight from your store via the integration — no manual entry.' },
@@ -118,15 +122,15 @@ export const SERVICES: ServiceContent[] = [
       ],
     },
     stats: [
-      { value: 'ساعتان', ar: 'متوسط تجهيز الطلب', en: 'Average packing time' },
+      { value: 'دقائق', ar: 'متوسط تجهيز الطلب', en: 'Average packing time' },
       { value: '<0.5%', ar: 'نسبة أخطاء التجهيز', en: 'Packing error rate' },
       { value: '100%', ar: 'طلبات بهوية علامتك', en: 'Orders in your branding' },
     ],
     faqs: {
       ar: [
-        { q: 'أقدر أستخدم مواد التغليف الخاصة فيني؟', a: 'أكيد — ترسل لنا كراتينك وستيكراتك وموادك، نخزنها ضمن مخزونك، ونستخدمها بكل طلب حسب دليل التغليف اللي نتفق عليه.' },
+        { q: 'أقدر أستخدم مواد التغليف الخاصة فيني؟', a: 'أكيد، ترسل لنا كراتينك وستيكراتك وموادك، نخزنها ضمن مخزونك، ونستخدمها بكل طلب حسب دليل التغليف اللي نتفق عليه.' },
         { q: 'وش يصير لو طلب العميل تغليف هدية؟', a: 'خيارات الإهداء اللي يختارها العميل بمتجرك توصلنا مع الطلب وتنفذ تلقائيًا: تغليف هدية، إخفاء الفاتورة، وكرت برسالة مخصصة.' },
-        { q: 'كيف تضمنون عدم خلط الطلبات بالمواسم؟', a: 'كل قطعة لها موقع مرقّم وكل طلب يمر بفحص باركود قبل الإغلاق — النظام ما يسمح بإقفال طلب فيه قطعة غلط. وبالمواسم نرفع عدد الفريق مسبقًا حسب توقعاتك.' },
+        { q: 'كيف تضمنون عدم خلط الطلبات بالمواسم؟', a: 'كل قطعة لها موقع مرقّم وكل طلب يمر بفحص باركود قبل الإغلاق، النظام ما يسمح بإقفال طلب فيه قطعة غلط. وبالمواسم نرفع عدد الفريق مسبقًا حسب توقعاتك.' },
       ],
       en: [
         { q: 'Can I use my own packaging materials?', a: 'Absolutely — send us your boxes, stickers, and materials; we store them as part of your inventory and use them per the packing guide we agree on.' },
@@ -139,22 +143,22 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'shipping',
     meta: {
-      ar: { title: 'شحن وتوصيل الطلبات لكل السعودية والخليج | فاست أكسس', desc: 'شبكة تضم أفضل شركات الشحن المحلية والدولية مع +42 مركز توزيع: توصيل بنفس اليوم داخل المدن الكبرى، تغطية الخليج، ووصول لأكثر من 220 دولة — بالتزام 98% بالمواعيد.' },
+      ar: { title: 'شحن وتوصيل الطلبات لكل السعودية والخليج | فاست أكسس', desc: 'شبكة تضم أفضل شركات الشحن المحلية والدولية مع +42 مركز توزيع: توصيل بنفس اليوم داخل المدن الكبرى، تغطية الخليج، ووصول لأكثر من 220 دولة، بالتزام 98% بالمواعيد.' },
       en: { title: 'Shipping & delivery across Saudi Arabia and the GCC | Fast Access', desc: 'A network of the best local and international carriers with 42+ distribution centres: same-day in major cities, GCC coverage, and reach to 220+ countries at 98% on-time.' },
     },
     chip: { ar: 'الشحن والتوصيل', en: 'Shipping & delivery' },
-    h1: { ar: 'كل طلب ياخذ أفضل طريق — سعرًا وسرعة', en: 'Every order takes the best route' },
+    h1: { ar: 'كل طلب ياخذ أفضل طريق سعرًا وسرعة', en: 'Every order takes the best route' },
     intro: {
-      ar: 'ما فيه شركة شحن واحدة مثالية لكل الطلبات. نظامنا يختار لكل شحنة الناقل الأنسب من شبكة شركائنا المحليين والدوليين — حسب الوجهة والوزن والسرعة المطلوبة — فتحصل على أفضل توازن بين التكلفة وسرعة الوصول، طلبًا بطلب.',
+      ar: 'ما فيه شركة شحن واحدة مثالية لكل الطلبات. نظامنا يختار لكل شحنة الناقل الأنسب من شبكة شركائنا المحليين والدوليين، حسب الوجهة والوزن والسرعة المطلوبة، فتحصل على أفضل توازن بين التكلفة وسرعة الوصول، طلبًا بطلب.',
       en: 'No single carrier is ideal for every order. Our system picks the best-fit carrier per shipment from our local and international partner network — by destination, weight, and required speed — so you get the best cost-speed balance, order by order.',
     },
     features: {
       ar: [
-        { title: 'اختيار الناقل الأذكى لكل طلب', body: 'خوارزمية توجيه توزن السعر والسرعة والتغطية لكل شحنة — طلب الرياض العاجل ياخذ مسار، وطلب القرية البعيدة ياخذ مسار أوفر.' },
-        { title: 'نفس اليوم بالمدن الكبرى', body: 'بالتكامل مع مخازننا السحابية داخل المدن، طلبات الرياض وجدة والدمام توصل بنفس اليوم — طلب الصباح يوصل قبل المغرب.' },
-        { title: 'تغطية خليجية ودولية', body: 'شحن مباشر لدول الخليج، ووصول لأكثر من 220 دولة عبر شركائنا الدوليين — توسعك الإقليمي ما يحتاج مستودع جديد.' },
-        { title: 'الدفع عند الاستلام مُدار بالكامل', body: 'نغطي التحصيل عند الباب، متابعة الرفض، وإعادة المحاولة — وتحويل المبالغ لحسابك بجدول واضح.' },
-        { title: 'توصيل لنقاط ريدبوكس', body: 'خيار الاستلام من النقاط الذكية لعملائك اللي يفضلون المرونة — يخفض تكلفة التوصيل ويرفع نسبة نجاح التسليم.' },
+        { title: 'اختيار الناقل الأذكى لكل طلب', body: 'خوارزمية توجيه توزن السعر والسرعة والتغطية لكل شحنة: طلب الرياض العاجل ياخذ مسار، وطلب القرية البعيدة ياخذ مسار أوفر.' },
+        { title: 'نفس اليوم بالمدن الكبرى', body: 'بالتكامل مع مخازننا السحابية داخل المدن، طلبات الرياض وجدة والدمام توصل بنفس اليوم، فطلب الصباح يوصل قبل المغرب.' },
+        { title: 'تغطية خليجية ودولية', body: 'شحن مباشر لدول الخليج، ووصول لأكثر من 220 دولة عبر شركائنا الدوليين، فتوسعك الإقليمي ما يحتاج مستودع جديد.' },
+        { title: 'الدفع عند الاستلام مُدار بالكامل', body: 'نغطي التحصيل عند الباب، متابعة الرفض، وإعادة المحاولة، مع تحويل المبالغ لحسابك بجدول واضح.' },
+        { title: 'توصيل لنقاط ريدبوكس', body: 'خيار الاستلام من النقاط الذكية لعملائك اللي يفضلون المرونة، يخفض تكلفة التوصيل ويرفع نسبة نجاح التسليم.' },
       ],
       en: [
         { title: 'Smart carrier selection per order', body: 'A routing logic weighs price, speed, and coverage per shipment — an urgent Riyadh order takes one path, a remote-village order takes a cheaper one.' },
@@ -166,7 +170,7 @@ export const SERVICES: ServiceContent[] = [
     },
     steps: {
       ar: [
-        { title: 'الطلب يجهز ويوزن', body: 'بعد التغليف، النظام يقرأ وجهة الطلب ووزنه ومتطلباته.' },
+        { title: 'الطلب جاهز للانطلاق', body: 'بعد التغليف، النظام يقرأ وجهة الطلب وحجمه ومتطلباته.' },
         { title: 'التوجيه للناقل الأنسب', body: 'الخوارزمية تختار الشريك الأمثل وتصدر بوليصة الشحن تلقائيًا.' },
         { title: 'تتبع حتى الباب', body: 'رابط التتبع يوصل عميلك، وفريقنا يراقب الشحنة ويتدخل عند أي تعثر.' },
       ],
@@ -183,9 +187,9 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: {
       ar: [
-        { q: 'مين شركات الشحن اللي تتعاملون معها؟', a: 'شبكة تضم كبرى شركات الشحن المحلية والدولية العاملة بالمملكة. الميزة إنك ما ترتبط بشركة واحدة — النظام يوجه كل طلب للأنسب، وإذا تعثر ناقل بموسم معين نحوّل الحمل لغيره فورًا.' },
+        { q: 'مين شركات الشحن اللي تتعاملون معها؟', a: 'شبكة تضم كبرى شركات الشحن المحلية والدولية العاملة بالمملكة. الميزة إنك ما ترتبط بشركة واحدة، النظام يوجه كل طلب للأنسب، وإذا تعثر ناقل بموسم معين نحوّل الحمل لغيره فورًا.' },
         { q: 'كم تكلفة الشحن للطلب الواحد؟', a: 'تعتمد على الوجهة والوزن والسرعة، وبحكم أحجام شحننا نحصل على أسعار تفاوضية أفضل من التعاقد المباشر غالبًا. اطلب عرض سعر ونرسل لك جدول تكلفة واضح حسب مناطقك ومتوسط أوزانك.' },
-        { q: 'وش يصير إذا رفض العميل الاستلام؟', a: 'ندير محاولة التواصل وإعادة الجدولة، وإذا تأكد الرفض ترجع الشحنة لمستودعنا، تفحص، وتدخل مخزونك من جديد — وتظهر لك بتقرير المرتجعات مع سبب الرفض.' },
+        { q: 'وش يصير إذا رفض العميل الاستلام؟', a: 'ندير محاولة التواصل وإعادة الجدولة، وإذا تأكد الرفض ترجع الشحنة لمستودعنا، تفحص، وتدخل مخزونك من جديد، وتظهر لك بتقرير المرتجعات مع سبب الرفض.' },
       ],
       en: [
         { q: 'Which carriers do you work with?', a: 'A network of the major local and international carriers operating in the Kingdom. The advantage: you are not tied to one — the system routes each order to the best fit, and if a carrier struggles in a season we shift volume instantly.' },
@@ -202,18 +206,18 @@ export const SERVICES: ServiceContent[] = [
       en: { title: 'Live tracking for every shipment, one dashboard | Fast Access', desc: 'One dashboard for every shipment across 5 stages, automatic customer tracking links, and performance reports you can act on.' },
     },
     chip: { ar: 'المتابعة اللحظية', en: 'Live tracking' },
-    h1: { ar: 'تعرف وين كل طلب — قبل ما يسألك عميلك', en: 'Know where every order is, before your customer asks' },
+    h1: { ar: 'تعرف وين كل طلب، قبل ما يسألك عميلك', en: 'Know where every order is, before your customer asks' },
     intro: {
-      ar: 'أكثر سؤال يستهلك خدمة عملاء المتاجر: "وين طلبي؟". لوحتنا تجاوب عنه قبل ما يُطرح — كل شحنة مرئية عبر خمس مراحل من الاستلام للتسليم، وعميلك يستلم رابط تتبع تلقائي يحدث نفسه لحظة بلحظة.',
+      ar: 'أكثر سؤال يستهلك خدمة عملاء المتاجر: "وين طلبي؟". لوحتنا تجاوب عنه قبل ما يُطرح: كل شحنة مرئية عبر خمس مراحل من الاستلام للتسليم، وعميلك يستلم رابط تتبع تلقائي يحدث نفسه لحظة بلحظة.',
       en: 'The question that consumes store support the most: "Where is my order?" Our dashboard answers it before it is asked — every shipment visible across five stages, and your customer receives an auto-updating tracking link.',
     },
     features: {
       ar: [
-        { title: 'خمس مراحل واضحة', body: 'استلام الطلب، التجهيز، التسليم للناقل، بالطريق، تم التسليم — كل انتقال يسجل بوقته، فما فيه شحنة "مختفية" بين مرحلتين.' },
-        { title: 'روابط تتبع تلقائية لعملائك', body: 'لحظة شحن الطلب، عميلك يستلم رابط تتبع بهوية متجرك يحدث نفسه تلقائيًا — مكالمات "وين طلبي" تنخفض بشكل ملموس.' },
-        { title: 'تقارير تبني عليها قرارات', body: 'متوسط زمن التسليم بمنطقة، أداء كل ناقل، نسب نجاح التسليم من أول محاولة — أرقام حقيقية توجه اختياراتك التشغيلية والتسويقية.' },
-        { title: 'تنبيهات الاستثناءات', body: 'تأخر شحنة عن نافذتها، تعثر تسليم، عنوان ناقص — تظهر لك كاستثناء يحتاج قرار، مو رقم ضايع وسط جدول.' },
-        { title: 'تطبيق التجار — قريبًا', body: 'تجارتك بجيبك: متابعة الطلبات وتحليلات المبيعات والمخزون وتنبيهات لحظية، قريبًا على App Store وGoogle Play.' },
+        { title: 'خمس مراحل واضحة', body: 'استلام الطلب، التجهيز، التسليم للناقل، بالطريق، تم التسليم. كل انتقال يسجل بوقته، فما فيه شحنة "مختفية" بين مرحلتين.' },
+        { title: 'روابط تتبع تلقائية لعملائك', body: 'لحظة شحن الطلب، عميلك يستلم رابط تتبع بهوية متجرك يحدث نفسه تلقائيًا، ومكالمات "وين طلبي" تنخفض بشكل ملموس.' },
+        { title: 'تقارير تبني عليها قرارات', body: 'متوسط زمن التسليم بمنطقة، أداء كل ناقل، نسب نجاح التسليم من أول محاولة: أرقام حقيقية توجه اختياراتك التشغيلية والتسويقية.' },
+        { title: 'تنبيهات الاستثناءات', body: 'تأخر شحنة عن نافذتها، تعثر تسليم، عنوان ناقص: تظهر لك كاستثناء يحتاج قرار، مو رقم ضايع وسط جدول.' },
+        { title: 'تطبيق التجار، قريبًا', body: 'تجارتك بجيبك: متابعة الطلبات وتحليلات المبيعات والمخزون وتنبيهات لحظية، قريبًا على App Store وGoogle Play.' },
       ],
       en: [
         { title: 'Five clear stages', body: 'Received, packed, handed to carrier, in transit, delivered — every transition timestamped, so no shipment goes dark between stages.' },
@@ -225,9 +229,9 @@ export const SERVICES: ServiceContent[] = [
     },
     steps: {
       ar: [
-        { title: 'كل حدث يسجل تلقائيًا', body: 'من دخول الطلب إلى تسليمه — بدون إدخال يدوي من أحد.' },
+        { title: 'كل حدث يسجل تلقائيًا', body: 'من دخول الطلب إلى تسليمه، بدون إدخال يدوي من أحد.' },
         { title: 'اللوحة تجمع الصورة', body: 'كل شحناتك، بكل الناقلين، بشاشة واحدة بدل خمس بوابات متفرقة.' },
-        { title: 'أنت وعميلك بنفس الصورة', body: 'هو يتابع برابطه، وأنت تتابع بلوحتك — وما أحد يحتاج يسأل الثاني.' },
+        { title: 'أنت وعميلك بنفس الصورة', body: 'هو يتابع برابطه، وأنت تتابع بلوحتك، وما أحد يحتاج يسأل الثاني.' },
       ],
       en: [
         { title: 'Every event logs automatically', body: 'From order entry to delivery — no manual input from anyone.' },
@@ -242,9 +246,9 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: {
       ar: [
-        { q: 'هل رابط التتبع بهوية متجري أو باسمكم؟', a: 'رابط التتبع اللي يوصل عميلك يعرض تجربة نظيفة تركز على طلبه ومراحله — عميلك يتعامل مع متجرك، وإحنا المحرك بالخلفية.' },
-        { q: 'أقدر أربط التتبع بنظامي الخاص؟', a: 'نعم — بيانات الشحنات متاحة عبر التكامل، فتقدر تعرضها بلوحتك الداخلية أو تبني عليها أتمتة خاصة بمتجرك.' },
-        { q: 'كيف أعرف إن فيه شحنة متأخرة؟', a: 'ما تحتاج تدور — الشحنات المتأخرة عن نافذتها تظهر كتنبيه استثناء بلوحتك، وفريقنا يكون غالبًا باشر التدخل مع الناقل قبل ما تفتح اللوحة أصلًا.' },
+        { q: 'هل رابط التتبع بهوية متجري أو باسمكم؟', a: 'رابط التتبع اللي يوصل عميلك يعرض تجربة نظيفة تركز على طلبه ومراحله، عميلك يتعامل مع متجرك، وإحنا المحرك بالخلفية.' },
+        { q: 'أقدر أربط التتبع بنظامي الخاص؟', a: 'نعم، بيانات الشحنات متاحة عبر التكامل، فتقدر تعرضها بلوحتك الداخلية أو تبني عليها أتمتة خاصة بمتجرك.' },
+        { q: 'كيف أعرف إن فيه شحنة متأخرة؟', a: 'ما تحتاج تدور، الشحنات المتأخرة عن نافذتها تظهر كتنبيه استثناء بلوحتك، وفريقنا يكون غالبًا باشر التدخل مع الناقل قبل ما تفتح اللوحة أصلًا.' },
       ],
       en: [
         { q: 'Is the tracking link branded to my store or yours?', a: 'The link your customer receives presents a clean experience focused on their order and its stages — your customer deals with your store; we are the engine behind it.' },
@@ -257,25 +261,25 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'cloud-stores',
     meta: {
-      ar: { title: 'المخازن السحابية: توصيل بنفس اليوم من قلب المدينة | فاست أكسس', desc: 'مخزونك موزع بمخازن داخل 6 مدن، فالطلب العاجل يوصل خلال 2-4 ساعات حتى بذروة المواسم. ارفع تحويل متجرك بوعد توصيل ينافس المتاجر الفورية.' },
-      en: { title: 'Cloud stores: same-day delivery from inside the city | Fast Access', desc: 'Inventory pre-positioned in 6 cities so urgent orders arrive in 2-4 hours even at peak. Win conversions with quick-commerce delivery promises.' },
+      ar: { title: 'المخازن السحابية: توصيل بنفس اليوم من قلب المدينة | فاست أكسس', desc: 'مخزونك موزع بمخازن داخل 6 مدن، فالطلب العاجل يوصل خلال ساعة إلى ساعتين حتى بذروة المواسم. ارفع تحويل متجرك بوعد توصيل ينافس المتاجر الفورية.' },
+      en: { title: 'Cloud stores: same-day delivery from inside the city | Fast Access', desc: 'Inventory pre-positioned in 6 cities so urgent orders arrive within 1-2 hours even at peak. Win conversions with quick-commerce delivery promises.' },
     },
     chip: { ar: 'المخازن السحابية', en: 'Cloud stores' },
-    h1: { ar: 'مخزونك جوّا المدينة — وطلبك عند العميل خلال ساعات', en: 'Stock inside the city, orders delivered in hours' },
+    h1: { ar: 'مخزونك جوّا المدينة، وطلبك عند العميل خلال ساعة إلى ساعتين', en: 'Stock inside the city, orders delivered within two hours' },
     intro: {
-      ar: 'العميل اللي يبي منتجه اليوم ما ينتظر توصيل بكرة — يشتري من منافسك الأسرع. المخازن السحابية تحط مخزونك المختار داخل أحياء المدن، فطلب الظهر يوصل العصر، ووعد "توصيل اليوم" بمتجرك يصير حقيقة تشغيلية مو شعار.',
+      ar: 'العميل اللي يبي منتجه اليوم ما ينتظر توصيل بكرة، يشتري من منافسك الأسرع. المخازن السحابية تحط مخزونك المختار داخل أحياء المدن، فطلب الظهر يوصل العصر، ووعد "توصيل اليوم" بمتجرك يصير حقيقة تشغيلية مو شعار.',
       en: 'A customer who wants it today will not wait for tomorrow — they buy from your faster competitor. Cloud stores position selected inventory inside city districts, so a noon order arrives by afternoon and "same-day delivery" becomes an operational fact, not a slogan.',
     },
     features: {
       ar: [
-        { title: 'توصيل خلال 2-4 ساعات', body: 'المسافة أقصر فالوصول أسرع — الطلبات العاجلة داخل المدينة توصل بنفس اليوم، غالبًا خلال ساعات من الضغط على "اشتر".' },
+        { title: 'توصيل خلال ساعة إلى ساعتين', body: 'المسافة أقصر فالوصول أسرع، فالطلبات العاجلة داخل المدينة توصل خلال ساعة إلى ساعتين من الضغط على "اشتر".' },
         { title: 'توزيع ذكي للمخزون', body: 'نحلل مبيعاتك ونحدد المنتجات الأعلى دورانًا لكل مدينة، فتتقدم بمخزونها للمخزن السحابي وتبقى الأصناف البطيئة بالمستودع المركزي.' },
-        { title: 'صمود بذروة المواسم', body: 'لما تزدحم شبكات الشحن برمضان والجمعة البيضاء، طلباتك السحابية تكمل مسارها القصير بشكل طبيعي — ميزة تنافسية بأصعب أسابيع السنة.' },
+        { title: 'صمود بذروة المواسم', body: 'لما تزدحم شبكات الشحن برمضان والجمعة البيضاء، طلباتك السحابية تكمل مسارها القصير بشكل طبيعي، ميزة تنافسية بأصعب أسابيع السنة.' },
         { title: 'ست مدن وتتوسع', body: 'تغطية المدن الرئيسية بالمملكة، والشبكة تكبر حسب خريطة طلبات عملائنا.' },
-        { title: 'مخزون واحد بنظام واحد', body: 'المخزون السحابي والمركزي بنفس اللوحة وبنفس المزامنة مع متجرك — النظام يوجه كل طلب تلقائيًا لأقرب نقطة فيها المنتج.' },
+        { title: 'مخزون واحد بنظام واحد', body: 'المخزون السحابي والمركزي بنفس اللوحة وبنفس المزامنة مع متجرك، والنظام يوجه كل طلب تلقائيًا لأقرب نقطة فيها المنتج.' },
       ],
       en: [
-        { title: '2-4 hour delivery', body: 'Shorter distance, faster arrival — urgent in-city orders land the same day, often within hours of checkout.' },
+        { title: '1-2 hour delivery', body: 'Shorter distance, faster arrival: urgent in-city orders land within one to two hours of checkout.' },
         { title: 'Smart inventory distribution', body: 'We analyse your sales and forward-position your fastest movers per city, keeping slow SKUs at the central warehouse.' },
         { title: 'Peak-season resilience', body: 'When carrier networks jam in Ramadan and White Friday, your cloud orders keep their short route — a competitive edge in the hardest weeks.' },
         { title: 'Six cities and growing', body: 'Coverage across the Kingdom\'s major cities, expanding with our merchants\' demand map.' },
@@ -285,8 +289,8 @@ export const SERVICES: ServiceContent[] = [
     steps: {
       ar: [
         { title: 'نحلل خريطة مبيعاتك', body: 'وين عملاؤك؟ وش أسرع منتجاتك؟ نحدد التشكيلة الأنسب لكل مدينة.' },
-        { title: 'نوزع المخزون مقدمًا', body: 'الأصناف المختارة تتقدم للمخازن السحابية قبل الطلب — مو بعده.' },
-        { title: 'الطلب يوصل بساعات', body: 'النظام يوجه الطلب لأقرب مخزن فيه المنتج، والتوصيل ينطلق فورًا.' },
+        { title: 'نوزع المخزون مقدمًا', body: 'الأصناف المختارة تتقدم للمخازن السحابية قبل الطلب، مو بعده.' },
+        { title: 'الطلب يوصل خلال ساعة إلى ساعتين', body: 'النظام يوجه الطلب لأقرب مخزن فيه المنتج، والتوصيل ينطلق فورًا.' },
       ],
       en: [
         { title: 'We analyse your demand map', body: 'Where are your customers? What moves fastest? We define the right assortment per city.' },
@@ -295,15 +299,15 @@ export const SERVICES: ServiceContent[] = [
       ],
     },
     stats: [
-      { value: '2-4', ar: 'ساعات للتوصيل العاجل', en: 'Hours for urgent delivery' },
+      { value: 'ساعة إلى ساعتين', ar: 'للتوصيل العاجل داخل المدينة', en: 'Urgent in-city delivery' },
       { value: '6', ar: 'مدن مغطاة', en: 'Cities covered' },
       { value: 'يوميًا', ar: 'تغذية المخزون من المركز', en: 'Daily replenishment' },
     ],
     faqs: {
       ar: [
-        { q: 'هل أحتاج أنقل كل مخزوني للمخازن السحابية؟', a: 'لا — الفكرة عكس ذلك: نسبة صغيرة مختارة بعناية (الأصناف الأسرع لكل مدينة) تتقدم للمخازن السحابية، والباقي يبقى بالمستودع المركزي الأوفر.' },
-        { q: 'وش يصير إذا نفد المنتج من المخزن السحابي؟', a: 'الطلب يتوجه تلقائيًا للمستودع المركزي ويشحن بالمسار العادي، والنظام يعيد تغذية المخزن السحابي حسب سرعة السحب — بدون تدخل منك.' },
-        { q: 'هل الخدمة تناسب المتاجر الصغيرة؟', a: 'إذا كانت مبيعاتك تتركز بمدينة أو مدينتين، فالمخازن السحابية غالبًا أول ميزة تنافسية كبيرة تقدر تنافس فيها المتاجر الكبيرة — تبدأ بمدينة وحدة وبتشكيلة صغيرة وتتوسع مع النتائج.' },
+        { q: 'هل أحتاج أنقل كل مخزوني للمخازن السحابية؟', a: 'لا، الفكرة عكس ذلك: نسبة صغيرة مختارة بعناية (الأصناف الأسرع لكل مدينة) تتقدم للمخازن السحابية، والباقي يبقى بالمستودع المركزي الأوفر.' },
+        { q: 'وش يصير إذا نفد المنتج من المخزن السحابي؟', a: 'الطلب يتوجه تلقائيًا للمستودع المركزي ويشحن بالمسار العادي، والنظام يعيد تغذية المخزن السحابي حسب سرعة السحب، بدون تدخل منك.' },
+        { q: 'هل الخدمة تناسب المتاجر الصغيرة؟', a: 'إذا كانت مبيعاتك تتركز بمدينة أو مدينتين، فالمخازن السحابية غالبًا أول ميزة تنافسية كبيرة تقدر تنافس فيها المتاجر الكبيرة، تبدأ بمدينة وحدة وبتشكيلة صغيرة وتتوسع مع النتائج.' },
       ],
       en: [
         { q: 'Do I need to move all my inventory to cloud stores?', a: 'No — the opposite: a small, carefully chosen share (your fastest movers per city) goes forward, and the rest stays at the more economical central warehouse.' },
@@ -320,17 +324,17 @@ export const SERVICES: ServiceContent[] = [
       en: { title: 'Logistics support watching your shipments 24/7 | Fast Access', desc: 'A team monitoring your shipments in real time and intervening before escalation — most issues resolve before you hear about them.' },
     },
     chip: { ar: 'خدمة العملاء', en: 'Customer care' },
-    h1: { ar: 'فريق يشوف المشكلة قبلك — ويحلها قبل ما تكبر', en: 'A team that sees the problem before you do' },
+    h1: { ar: 'فريق يشوف المشكلة قبلك، ويحلها قبل ما تكبر', en: 'A team that sees the problem before you do' },
     intro: {
-      ar: 'الفرق بين مشغل لوجستي عادي وشريك حقيقي يظهر لحظة الخلل: شحنة تأخرت، عنوان ناقص، عميل ما رد. فريقنا يراقب الاستثناءات على مدار الساعة ويباشرها فورًا — فأغلب المشاكل تنحل وتوصلك خبرًا منتهيًا، مو أزمة مفتوحة.',
+      ar: 'الفرق بين مشغل لوجستي عادي وشريك حقيقي يظهر لحظة الخلل: شحنة تأخرت، عنوان ناقص، عميل ما رد. فريقنا يراقب الاستثناءات على مدار الساعة ويباشرها فورًا، فأغلب المشاكل تنحل وتوصلك خبرًا منتهيًا، مو أزمة مفتوحة.',
       en: 'The difference between an ordinary operator and a real partner shows the moment something breaks: a delayed shipment, a missing address, an unreachable customer. Our team monitors exceptions around the clock and acts immediately — most issues reach you as a resolved note, not an open crisis.',
     },
     features: {
       ar: [
-        { title: 'مراقبة استباقية للشحنات', body: 'ما ننتظر شكوى — النظام يرصد أي شحنة خرجت عن مسارها الزمني، والفريق يباشر مع الناقل فورًا.' },
-        { title: 'حل المشاكل من جذرها', body: 'عنوان غير مكتمل؟ نتواصل مع عميلك ونصححه. عميل ما يرد؟ نعيد الجدولة. رفض استلام؟ ندير الإرجاع — كل سيناريو له مسار جاهز.' },
-        { title: 'استشارات تشغيلية', body: 'مو بس نجاوب أسئلتك — نراجع معك أرقامك ونقترح تحسينات: تغليف أوفر، توزيع مخزون أذكى، مواسم مجهزة أفضل.' },
-        { title: 'قناة واحدة لكل شي', body: 'مخزون، شحن، مرتجعات، فواتير — فريق واحد يعرف حسابك ويجاوبك بدل تحويلك بين خمس جهات.' },
+        { title: 'مراقبة استباقية للشحنات', body: 'ما ننتظر شكوى: النظام يرصد أي شحنة خرجت عن مسارها الزمني، والفريق يباشر مع الناقل فورًا.' },
+        { title: 'حل المشاكل من جذرها', body: 'عنوان غير مكتمل؟ نتواصل مع عميلك ونصححه. عميل ما يرد؟ نعيد الجدولة. رفض استلام؟ ندير الإرجاع. كل سيناريو له مسار جاهز.' },
+        { title: 'استشارات تشغيلية', body: 'مو بس نجاوب أسئلتك، نراجع معك أرقامك ونقترح تحسينات: تغليف أوفر، توزيع مخزون أذكى، مواسم مجهزة أفضل.' },
+        { title: 'قناة واحدة لكل شي', body: 'مخزون، شحن، مرتجعات، فواتير: فريق واحد يعرف حسابك ويجاوبك بدل تحويلك بين خمس جهات.' },
         { title: 'دعم طوارئ سلسلة الإمداد', body: 'شحنة استيراد علقت؟ ذروة مفاجئة؟ الفريق يفزع معك بخطة بديلة بنفس اليوم.' },
       ],
       en: [
@@ -360,9 +364,9 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: {
       ar: [
-        { q: 'كيف أتواصل مع الدعم؟', a: 'قناة مباشرة عبر الواتساب والإيميل والهاتف — وفريقك يعرف حسابك، فما تعيد شرح وضعك من الصفر بكل مرة.' },
-        { q: 'هل الدعم يتعامل مع عملائي مباشرة؟', a: 'عند الحاجة نعم — لتصحيح عنوان أو إعادة جدولة تسليم مثلًا — وبأسلوب يمثل متجرك. سياسة التواصل مع عملائك تحددها أنت من البداية.' },
-        { q: 'وش تشمل الاستشارات التشغيلية؟', a: 'مراجعات دورية لأرقامك: تكلفة الطلب، نسب الإرجاع، أداء المناطق — مع اقتراحات عملية. عملاؤنا اللي طبقوا التوصيات وفروا بالتغليف والشحن مبالغ ملموسة.' },
+        { q: 'كيف أتواصل مع الدعم؟', a: 'قناة مباشرة عبر الواتساب والإيميل والهاتف، وفريقك يعرف حسابك، فما تعيد شرح وضعك من الصفر بكل مرة.' },
+        { q: 'هل الدعم يتعامل مع عملائي مباشرة؟', a: 'عند الحاجة نعم، لتصحيح عنوان أو إعادة جدولة تسليم مثلًا، وبأسلوب يمثل متجرك. سياسة التواصل مع عملائك تحددها أنت من البداية.' },
+        { q: 'وش تشمل الاستشارات التشغيلية؟', a: 'مراجعات دورية لأرقامك: تكلفة الطلب، نسب الإرجاع، أداء المناطق، مع اقتراحات عملية. عملاؤنا اللي طبقوا التوصيات وفروا بالتغليف والشحن مبالغ ملموسة.' },
       ],
       en: [
         { q: 'How do I reach support?', a: 'A direct channel via WhatsApp, email, and phone — and your team knows your account, so you never re-explain your setup from scratch.' },
@@ -375,22 +379,22 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'freight',
     meta: {
-      ar: { title: 'الشحن الدولي والتخليص الجمركي للمتاجر | فاست أكسس', desc: 'نستورد بضاعتك من موردك — شحن بحري وجوي — ونتولى التخليص الجمركي والمستندات كاملة، وتدخل مستودعاتنا جاهزة للبيع مباشرة. من الباب للرف بدون عناء.' },
+      ar: { title: 'الشحن الدولي والتخليص الجمركي للمتاجر | فاست أكسس', desc: 'نستورد بضاعتك من موردك، شحن بحري وجوي، ونتولى التخليص الجمركي والمستندات كاملة، وتدخل مستودعاتنا جاهزة للبيع مباشرة. من الباب للرف بدون عناء.' },
       en: { title: 'International freight & customs clearance for merchants | Fast Access', desc: 'We import from your supplier — sea and air freight — handle customs and documentation end to end, and your stock enters our warehouses ready to sell.' },
     },
     chip: { ar: 'الشحن الدولي والتخليص', en: 'Freight & customs' },
-    h1: { ar: 'من مصنع موردك إلى رف مستودعنا — بدون ما تلمس ورقة', en: 'From your supplier\'s factory to our shelf' },
+    h1: { ar: 'من مصنع موردك إلى رف مستودعنا، بدون ما تلمس ورقة', en: 'From your supplier\'s factory to our shelf' },
     intro: {
-      ar: 'الاستيراد هو أكثر مرحلة تستنزف وقت التاجر: متابعة مورد، حجز شحن، مستندات، جمارك، ثم نقل داخلي. نختصرها لك كلها: نستلم بضاعتك من موردك في الصين أو أي مصدر، نشحنها بحرًا أو جوًا، نخلصها جمركيًا، وتدخل مستودعاتنا مباشرة — فتتحول من شحنة استيراد إلى مخزون جاهز للبيع بخطوة واحدة.',
+      ar: 'الاستيراد هو أكثر مرحلة تستنزف وقت التاجر: متابعة مورد، حجز شحن، مستندات، جمارك، ثم نقل داخلي. نختصرها لك كلها: نستلم بضاعتك من موردك في الصين أو أي مصدر، نشحنها بحرًا أو جوًا، نخلصها جمركيًا، وتدخل مستودعاتنا مباشرة، فتتحول من شحنة استيراد إلى مخزون جاهز للبيع بخطوة واحدة.',
       en: 'Importing drains more merchant time than anything else: supplier follow-up, freight booking, documents, customs, then domestic transport. We compress it all: we collect from your supplier in China or any origin, ship by sea or air, clear customs, and receive directly at our warehouses — turning an import shipment into sellable inventory in one step.',
     },
     features: {
       ar: [
-        { title: 'شحن بحري وجوي حسب أولويتك', body: 'البحري للكميات الكبيرة بأقل تكلفة، والجوي للبضاعة العاجلة أو الموسمية — ونساعدك تختار المزيج الأمثل حسب هامشك وتوقيت موسمك.' },
-        { title: 'تخليص جمركي كامل', body: 'التصنيف الجمركي، المستندات، الرسوم، ومتطلبات الجهات — ملف كامل يُدار عنك من مختصين يعرفون تفاصيل الأنظمة السعودية.' },
-        { title: 'من الميناء إلى المستودع مباشرة', body: 'بضاعتك ما تلف على مستودع وسيط — من التخليص إلى مستودعاتنا، تُستلم وتُفحص وتدخل مخزونك القابل للبيع بنفس السلسلة.' },
-        { title: 'رؤية كاملة للشحنة', body: 'تتابع شحنة الاستيراد بمراحلها — من استلامها عند المورد حتى دخولها المخزون — بنفس اللوحة اللي تتابع فيها طلباتك.' },
-        { title: 'تكلفة إجمالية واضحة مقدمًا', body: 'عرض سعر يشمل الشحن والتخليص والرسوم المتوقعة — تعرف تكلفة وصول البضاعة للرف قبل ما تدفع لموردك.' },
+        { title: 'شحن بحري وجوي حسب أولويتك', body: 'البحري للكميات الكبيرة بأقل تكلفة، والجوي للبضاعة العاجلة أو الموسمية، ونساعدك تختار المزيج الأمثل حسب هامشك وتوقيت موسمك.' },
+        { title: 'تخليص جمركي كامل', body: 'التصنيف الجمركي، المستندات، الرسوم، ومتطلبات الجهات: ملف كامل يُدار عنك من مختصين يعرفون تفاصيل الأنظمة السعودية.' },
+        { title: 'من الميناء إلى المستودع مباشرة', body: 'بضاعتك ما تلف على مستودع وسيط: من التخليص إلى مستودعاتنا، تُستلم وتُفحص وتدخل مخزونك القابل للبيع بنفس السلسلة.' },
+        { title: 'رؤية كاملة للشحنة', body: 'تتابع شحنة الاستيراد بمراحلها، من استلامها عند المورد حتى دخولها المخزون، بنفس اللوحة اللي تتابع فيها طلباتك.' },
+        { title: 'تكلفة إجمالية واضحة مقدمًا', body: 'عرض سعر يشمل الشحن والتخليص والرسوم المتوقعة، فتعرف تكلفة وصول البضاعة للرف قبل ما تدفع لموردك.' },
       ],
       en: [
         { title: 'Sea and air by your priority', body: 'Sea for large volumes at lowest cost, air for urgent or seasonal goods — and we help you choose the optimal mix for your margin and season timing.' },
@@ -419,9 +423,9 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: {
       ar: [
-        { q: 'أستورد من الصين — من وين تبدأ خدمتكم؟', a: 'من باب موردك: ننسق معه الاستلام، ونتولى الشحن والتخليص والنقل حتى مستودعاتنا. أنت تتفاوض مع موردك على البضاعة، وإحنا نتولى كل ما بعد ذلك.' },
-        { q: 'كم تستغرق شحنة الاستيراد؟', a: 'الجوي عادة أيام قليلة من الاستلام للتخليص، والبحري أسابيع حسب الميناء والموسم — نعطيك جدولًا متوقعًا مع عرض السعر، وننصح بجدولة شحنات المواسم مبكرًا (راجع مقال خطة الستة أسابيع).' },
-        { q: 'هل تتعاملون مع البضائع اللي تحتاج فسوحات خاصة؟', a: 'نتعامل مع متطلبات الجهات المختلفة حسب نوع المنتج — أخبرنا وش تستورد بالضبط ضمن طلب عرض السعر، ونؤكد لك المتطلبات والمدة قبل أي التزام.' },
+        { q: 'أستورد من الصين، من وين تبدأ خدمتكم؟', a: 'من باب موردك: ننسق معه الاستلام، ونتولى الشحن والتخليص والنقل حتى مستودعاتنا. أنت تتفاوض مع موردك على البضاعة، وإحنا نتولى كل ما بعد ذلك.' },
+        { q: 'كم تستغرق شحنة الاستيراد؟', a: 'الجوي عادة أيام قليلة من الاستلام للتخليص، والبحري أسابيع حسب الميناء والموسم، نعطيك جدولًا متوقعًا مع عرض السعر، وننصح بجدولة شحنات المواسم مبكرًا (راجع مقال خطة الستة أسابيع).' },
+        { q: 'هل تتعاملون مع البضائع اللي تحتاج فسوحات خاصة؟', a: 'نتعامل مع متطلبات الجهات المختلفة حسب نوع المنتج، أخبرنا وش تستورد بالضبط ضمن طلب عرض السعر، ونؤكد لك المتطلبات والمدة قبل أي التزام.' },
       ],
       en: [
         { q: 'I import from China — where does your service start?', a: 'At your supplier\'s door: we coordinate pickup, then handle freight, clearance, and transport to our warehouses. You negotiate the goods with your supplier; we handle everything after.' },
@@ -429,7 +433,7 @@ export const SERVICES: ServiceContent[] = [
         { q: 'Do you handle goods needing special permits?', a: 'We work with the various authorities\' requirements by product type — tell us exactly what you import in the quote request and we confirm requirements and timeline before any commitment.' },
       ],
     },
-    related: { slug: '3pl-vs-4pl-difference', ar: 'الفرق بين 3PL و4PL — وأين يقف الدروبشيبينغ', en: '3PL vs 4PL explained' },
+    related: { slug: '3pl-vs-4pl-difference', ar: 'الفرق بين 3PL و4PL، وأين يقف الدروبشيبينغ', en: '3PL vs 4PL explained' },
   },
 ];
 

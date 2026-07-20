@@ -17,7 +17,7 @@ const en = {
     headlineHighlight: 'you just sell',
     body: 'Fast Access is an end-to-end fulfillment partner for online brands in Saudi Arabia. Send us your inventory and we warehouse it, pack every order with your branding, and deliver across the Kingdom and the Gulf — with same-day delivery from cloud stores inside major cities. One partner, one dashboard, every order tracked from receipt to doorstep.',
     point1: 'Storage, packing & shipping in one place',
-    point2: 'Same-day delivery in 2–4 hours',
+    point2: 'Same-day delivery within 1–2 hours',
     point3: 'Kingdom-wide coverage + the Gulf',
   },
   pages: {
@@ -46,7 +46,7 @@ const en = {
   cloud: {
     chip: 'Cloud Stores · Same-Day Delivery',
     headlineA: '~⅓ of Saudi consumers want it next day',
-    headlineB: 'We deliver in 2–4 hours',
+    headlineB: 'We deliver within 1–2 hours',
     body: 'Cloud warehouses inside Saudi cities — purpose-built for urgent daily orders, peak hours, and holidays. The fastest way to win a new customer’s loyalty on their very first order.',
     bullet1: 'Best option for urgent daily orders',
     bullet2: 'Wins customer loyalty from the first order',
@@ -69,7 +69,7 @@ const en = {
       { title: 'Packing & Preparation', body: 'A trained team packs every order in durable materials and stamps it with your brand identity — custom inserts, cards, and gift options on request.' },
       { title: 'Shipping & Delivery', body: 'Fast delivery across every region of Saudi Arabia and beyond, through the best local and international carrier partners.' },
       { title: 'Real-time Tracking', body: 'A clean, easy dashboard tracks every shipment from receipt to handover — with performance reports that give you the data to grow. Merchant mobile app coming soon.' },
-      { title: 'Cloud Stores', body: 'Cloud warehouses in city centers deliver in 2 to 4 hours, same day. Built for urgent daily orders, peak hours, and holidays.' },
+      { title: 'Cloud Stores', body: 'Cloud warehouses in city centers deliver within 1 to 2 hours, same day. Built for urgent daily orders, peak hours, and holidays.' },
       { title: 'Customer Support', body: '24/7 customer service for questions, urgent supply-chain issues, and operational advice on the logistics you run with us.' },
       { title: 'International freight & customs', body: 'We import your goods from your supplier by sea and air, and handle customs clearance end to end — factory door to warehouse shelf, ready to sell.' },
     ],
@@ -240,7 +240,7 @@ const ar = {
     headlineHighlight: 'تخزّن وتغلّف وتوصّل باسم براندك.',
     body: 'فاست أكسس شريك لوجستي متكامل للمتاجر الإلكترونية في السعودية. أرسل لنا مخزونك، ونتولى عنك كل شي بعدها: تخزين آمن، تغليف بهوية علامتك، وتوصيل لكل مناطق المملكة والخليج، مع توصيل بنفس اليوم من المخازن السحابية داخل المدن الكبرى. شريك واحد، لوحة تحكم واحدة، وكل طلب تشوفه من لحظة الاستلام حتى باب عميلك.',
     point1: 'تخزين وتغليف وشحن... كلها من مكان واحد',
-    point2: 'توصيل بنفس اليوم خلال 2 إلى 4 ساعات',
+    point2: 'توصيل بنفس اليوم خلال ساعة إلى ساعتين',
     point3: 'تغطية تشمل كل المملكة والخليج',
   },
   pages: {
@@ -269,7 +269,7 @@ const ar = {
   cloud: {
     chip: 'المخازن السحابية · توصيل في نفس اليوم',
     headlineA: 'حوالي ثلث المستهلكين في السعودية يفضلون التوصيل في اليوم التالي',
-    headlineB: 'نحن نوصل في 2 إلى 4 ساعات',
+    headlineB: 'نحن نوصل خلال ساعة إلى ساعتين',
     body: 'مخازن سحابية داخل المدن السعودية، مصممة للطلبات اليومية العاجلة، ساعات الذروة، والإجازات. أسرع طريقة لكسب ولاء العميل من أول طلب.',
     bullet1: 'الخيار الأمثل للطلبات اليومية العاجلة',
     bullet2: 'تكسب ولاء العميل من أول طلب',
@@ -292,7 +292,7 @@ const ar = {
       { title: 'التجهيز والتغليف', body: 'فريق مدرّب يغلّف كل طلب بمواد متينة ويضيف عليه هوية علامتك، تغليف مخصص، كروت، وخيارات إهداء عند الطلب.' },
       { title: 'الشحن والتوصيل', body: 'توصيل سريع لكل مناطق المملكة وخارجها، بالتعاون مع أفضل شركاء الشحن المحليين والدوليين، بالسرعة والتكلفة الأنسب لكل طلب.' },
       { title: 'المتابعة اللحظية', body: 'لوحة تحكم سهلة تتابع منها كل شحنة من الاستلام إلى التسليم، مع تقارير أداء تعطيك أرقامًا تبني عليها قرارات نموك — وقريبًا عبر تطبيق فاست أكسس للجوال.' },
-      { title: 'المخازن السحابية', body: 'مخازن في وسط المدن توصّل خلال 2 إلى 4 ساعات في نفس اليوم، مصممة للطلبات العاجلة وساعات الذروة والإجازات.' },
+      { title: 'المخازن السحابية', body: 'مخازن في وسط المدن توصّل خلال ساعة إلى ساعتين في نفس اليوم، مصممة للطلبات العاجلة وساعات الذروة والإجازات.' },
       { title: 'خدمة العملاء', body: 'دعم على مدار الساعة، يجاوب أسئلتك، يحل طوارئ سلسلة الإمداد، ويقدم لك استشارات تشغيلية وقت ما تحتاجها.' },
       { title: 'الشحن الدولي والتخليص الجمركي', body: 'نستورد بضاعتك من موردك بشحن بحري وجوي، ونتولى التخليص الجمركي كاملًا — من باب المصنع إلى رف المستودع، جاهزة للبيع مباشرة.' },
     ],
@@ -384,7 +384,7 @@ const ar = {
     headlineB: '',
     items: [
       { title: 'وقت أكبر، طلبات أكثر', body: 'تفرّغ لتطوير منتجاتك وعلامتك، واترك التخزين والتغليف والشحن علينا.' },
-      { title: 'مخازن تكفي وزيادة', body: 'مستودعات متعددة تلبّي تزايد الطلبات وتوفّر تبريدًا بدرجات حرارة مثالية.' },
+      { title: 'مخازن تكفي وزيادة', body: 'مستودعات متعددة تلبّي تزايد الطلبات وتوفّر بيئة مضبوطة بدرجات حرارة مثالية.' },
       { title: 'فريق جاهز عشانك', body: 'أيادٍ مدرّبة لتجهيز وتغليف المنتجات، ومستعدة للمواسم وأوقات الضغط.' },
       { title: 'أسعار مرنة توفّر أرباحك', body: 'بوالص بأسعار مخفّضة حسب حجم الطلبات وبدون عقود طويلة المدة.' },
       { title: 'ما في شي بعيد عن عينك', body: 'لوحة تحكم لحظية تتابع رحلة الطلب من الاستلام حتى يد العميل.' },

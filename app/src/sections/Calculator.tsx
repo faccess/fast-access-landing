@@ -14,7 +14,7 @@ import { useT } from '../i18n/I18nContext';
  *  - 18% reduction on per-order cost (Fast Access bulk carrier rates)
  *  - 70% reduction in weekly hours (we handle pick/pack/ship/ track)
  *  - Average delivery drops from N days to 1.5 days, or to 0.15 days
- *    (2-4hr) when same-day cloud stores are toggled on.
+ *    (1-2hr) when same-day cloud stores are toggled on.
  */
 export default function Calculator() {
   const { locale } = useT();
@@ -137,7 +137,7 @@ export default function Calculator() {
                 <span
                   role="switch"
                   aria-checked={cloudStores}
-                  aria-label={isAr ? 'أضف خيار التوصيل السريع خلال 2–4 ساعات' : 'Use cloud-store same-day delivery (2–4 hr)'}
+                  aria-label={isAr ? 'أضف خيار التوصيل السريع خلال ساعة إلى ساعتين' : 'Use cloud-store same-day delivery (1–2 hr)'}
                   tabIndex={0}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setCloudStores(!cloudStores))}
                   className="relative inline-flex w-10 h-5 rounded-full transition-colors shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fa-orange-soda"
@@ -151,12 +151,12 @@ export default function Calculator() {
                 </span>
                 <input type="checkbox" className="sr-only" checked={cloudStores} onChange={(e) => setCloudStores(e.target.checked)} />
                 <span className="font-body text-sm text-fa-liberty-blue/80">
-                  {isAr ? 'أضف خيار التوصيل السريع خلال 2–4 ساعات' : 'Use cloud-store same-day delivery (2–4 hr)'}
+                  {isAr ? 'أضف خيار التوصيل السريع خلال ساعة إلى ساعتين' : 'Use cloud-store same-day delivery (1–2 hr)'}
                 </span>
               </label>
               <p className="font-body text-[11px] text-fa-liberty-blue/45 leading-[1.5] -mt-3 pl-12">
                 {isAr
-                  ? 'حوالي ⅓ من المستهلكين في السعودية يفضلون التوصيل في اليوم التالي. متاجرنا السحابية توصل خلال 2–4 ساعات.'
+                  ? 'حوالي ⅓ من المستهلكين في السعودية يفضلون التوصيل في اليوم التالي. متاجرنا السحابية توصل خلال ساعة إلى ساعتين.'
                   : '~⅓ of Saudi consumers want it next day. Our cloud stores ship in 2–4 hours.'}
               </p>
             </div>
