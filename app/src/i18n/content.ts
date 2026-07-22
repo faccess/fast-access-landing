@@ -62,7 +62,7 @@ const en = {
     headlineA: 'Everything your business needs to',
     headlineHighlight: 'grow',
     headlineB: ', in one place',
-    body: 'Stop juggling vendors. Fast Access runs storage, packing, shipping, tracking, and customer support as one tightly-coordinated operation — so every order arrives the way you sold it.',
+    body: "Don't spread yourself across multiple companies — everything your logistics needs is right here.",
     learnMore: 'Learn more',
     items: [
       { title: 'Storage', body: 'Spacious warehouses equipped with the latest monitoring and safety systems to keep your products in perfect condition.' },
@@ -285,7 +285,7 @@ const ar = {
     headlineA: 'كل اللي تحتاجه تجارتك',
     headlineHighlight: 'عشان تنمو',
     headlineB: '... في مكان واحد.',
-    body: 'لا تضيّع وقتك بين خمس شركات. تخزين، تجهيز، شحن، متابعة، ودعم عملاء، منظومة واحدة متكاملة تضمن إن كل طلب يوصل لعميلك مثل ما بعته بالضبط.',
+    body: 'لا تضيع نفسك مع أكثر من شركة، عندنا كل اللي تحتاجه من الخدمات اللوجستية.',
     learnMore: 'اعرف المزيد',
     items: [
       { title: 'التخزين', body: 'نوفر مستودعات تخزين واسعة ومجهزة بأحدث أنظمة المراقبة والسلامة لضمان حفظ جودة المنتجات.' },
