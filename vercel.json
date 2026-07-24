@@ -2,21 +2,97 @@
   "buildCommand": "cd app && npm install && npx vite build && npx vite build --config scripts/vite.prerender.config.mjs && node scripts/prerender.mjs",
   "outputDirectory": "app/dist",
   "redirects": [
-    { "source": "/order-tracking", "destination": "/", "permanent": true },
-    { "source": "/order-tracking/:rest*", "destination": "/", "permanent": true },
-    { "source": "/about-us", "destination": "/about", "permanent": true },
-    { "source": "/about-company", "destination": "/about", "permanent": true },
-    { "source": "/services", "destination": "/solutions", "permanent": true },
-    { "source": "/services/:rest*", "destination": "/solutions", "permanent": true },
-    { "source": "/contact-us", "destination": "/contact", "permanent": true },
-    { "source": "/request-quote", "destination": "/contact", "permanent": true },
-    { "source": "/request-a-quote", "destination": "/contact", "permanent": true },
-    { "source": "/e-commerce", "destination": "/solutions", "permanent": true },
-    { "source": "/en_GB/:rest*", "destination": "/", "permanent": true },
-    { "source": "/ar", "destination": "/", "permanent": true },
-    { "source": "/ar/:rest*", "destination": "/:rest*", "permanent": true },
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/:rest*", "destination": "/:rest*", "permanent": true }
+    {
+      "source": "/order-tracking",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/order-tracking/:rest*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-company",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/:rest*",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/request-quote",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/request-a-quote",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/e-commerce",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/en_GB/:rest*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/:rest*",
+      "destination": "/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:rest*",
+      "destination": "/:rest*",
+      "permanent": true
+    }
   ],
-  "rewrites": [{ "source": "/((?!api/)(?!.*\\.).*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/((?!api/)(?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "trailingSlash": false
 }
