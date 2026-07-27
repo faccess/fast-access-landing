@@ -70,7 +70,7 @@ const en = {
       { title: 'Shipping & Delivery', body: 'Fast delivery across every region of Saudi Arabia and beyond, through the best local and international carrier partners.' },
       { title: 'Real-time Tracking', body: 'A modern, easy-to-use tracking system gives you live visibility over every shipment and delivery.' },
       { title: 'Cloud Stores', body: 'Multiple cloud warehouses in city centers guarantee instant delivery within 1 to 2 hours.' },
-      { title: 'Customer Support', body: '24/7 customer service for questions, urgent supply-chain issues, and operational advice on the logistics you run with us.' },
+      { title: 'Customer Support', body: 'Around-the-clock support that answers your questions, resolves issues before they grow, and offers operational advice whenever you need it.' },
       { title: 'International freight & customs', body: 'We import your goods from your supplier by sea and air, and handle customs clearance end to end — factory door to warehouse shelf, ready to sell.' },
     ],
   },
@@ -124,14 +124,14 @@ const en = {
     secondary: 'Book a tour',
   },
   integrations: {
-    title: 'Connect your store platform and start shipping faster',
+    title: 'Seamless technical integration with the leading local and global sales channels',
     platforms: ['Salla', 'Zid', 'Shopify', 'WooCommerce', 'Magento'],
   },
   pain: {
     chip: 'We get it',
     headlineA: 'Shipping headaches stealing your focus from',
-    headlineHighlight: 'growth',
-    headlineB: '?',
+    headlineHighlight: 'growth?',
+    headlineB: '',
     items: [
       'Orders are growing, but I’m out of storage space.',
       'I don’t have the time or expertise to pack orders.',
@@ -207,12 +207,12 @@ const en = {
   results: {
     chip: 'Before & after',
     headlineA: 'What changed after they chose',
-    headlineHighlight: 'Fast Access',
-    headlineB: '?',
+    headlineHighlight: 'Fast Access?',
+    headlineB: '',
     items: [
       { name: 'A matcha store', before: 'Orders kept outpacing capacity — every surge meant pausing sales.', after: 'We absorbed the wave: orders grew and operations never stopped for a day.' },
       { name: 'A skincare store', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates — orders ship right the first time.' },
-      { name: 'A perfume store', before: 'High returns and parcels arriving broken from weak packing and random bundling.', after: 'Protective packaging worthy of perfume and smart merging — returns hit their lowest.' },
+      { name: 'A perfume store', before: 'High returns, and orders arriving damaged because the packaging didn\u2019t protect the product.', after: 'Secure packaging worthy of perfumes, and returns dropped to a minimum.' },
     ],
   },
   footer: {
@@ -237,7 +237,7 @@ const ar = {
   whatis: {
     chip: 'ما هي فاست أكسس',
     headlineA: 'فاست أكسس شركة سعودية لإدارة الطلبات،',
-    headlineHighlight: 'تخزّن وتغلّف وتوصّل باسم براندك.',
+    headlineHighlight: 'تخزّن وتغلّف وتوصّل لباب عميلك.',
     body: 'فاست أكسس شريك لوجستي متكامل للمتاجر الإلكترونية في السعودية. أرسل لنا مخزونك، ونتولى عنك كل شي بعدها: تخزين آمن، تغليف بهوية علامتك، وتوصيل لكل مناطق المملكة والخليج، مع توصيل بنفس اليوم من المخازن السحابية داخل المدن الكبرى. شريك واحد، لوحة تحكم واحدة، وكل طلب تشوفه من لحظة الاستلام حتى باب عميلك.',
     point1: 'تخزين وتغليف وشحن... كلها من مكان واحد',
     point2: 'توصيل بنفس اليوم خلال ساعة إلى ساعتين',
@@ -293,8 +293,8 @@ const ar = {
       { title: 'الشحن والتوصيل', body: 'نقدّم توصيل سريع شامل جميع مناطق المملكة بالتعاون مع أفضل شركات الشحن المحلية والدولية.' },
       { title: 'المتابعة اللحظية', body: 'نعتمد نظام تتبع حديث وسهل الاستخدام يوفر لك متابعة عمليات الشحن والتوصيل للطلبات.' },
       { title: 'المخازن السحابية', body: 'نملك مخازن سحابية متعددة في وسط المدينة تضمن توصيل فوري خلال ساعة إلى ساعتين.' },
-      { title: 'خدمة العملاء', body: 'دعم على مدار الساعة، يجاوب أسئلتك، يحل طوارئ سلسلة الإمداد، ويقدم لك استشارات تشغيلية وقت ما تحتاجها.' },
-      { title: 'الشحن الدولي والتخليص الجمركي', body: 'نستورد بضاعتك من موردك بشحن بحري وجوي، ونتولى التخليص الجمركي كاملًا — من باب المصنع إلى رف المستودع، جاهزة للبيع مباشرة.' },
+      { title: 'خدمة العملاء', body: 'دعم على مدار الساعة، يرد على أسئلتك، يعالج المشاكل قبل ما تكبر، ويقدم لك استشارات تشغيلية وقت ما تحتاجها.' },
+      { title: 'الشحن الدولي والتخليص الجمركي', body: 'نستورد بضاعتك من موردك بشحن بحري وجوي، ونتولى التخليص الجمركي كاملًا، من باب المصنع إلى باب عميلك.' },
     ],
   },
   journey: {
@@ -320,8 +320,8 @@ const ar = {
   pricing: {
     chip: 'الباقات والأسعار',
     headlineA: 'تسعير واضح من أول يوم...',
-    headlineHighlight: 'بدون رسوم تطلع لك فجأة',
-    headlineB: '.',
+    headlineHighlight: 'بدون رسوم تطلع لك فجأة.',
+    headlineB: '',
     body: 'تعرف تكلفتك الحقيقية قبل ما توقّع. نصمم لك عرضًا مخصصًا مبنيًا على اللي تشحنه فعلًا، مو على باقة جاهزة ما تشبه تجارتك.',
     howTitle: 'أربعة عوامل، عرض سعر واحد شفاف.',
     howEyebrow: 'كيف نسعّر',
@@ -340,21 +340,21 @@ const ar = {
   cta: {
     chip: 'جاهزون متى ما كنت جاهزاً',
     headlineA: 'جاهز',
-    headlineHighlight: 'تخلّيها علينا',
-    headlineB: '؟',
+    headlineHighlight: 'تخلّيها علينا؟',
+    headlineB: '',
     body: 'حدّثنا عن تجارتك، وش تبيع، وكم تشحن، ونرد عليك بخطة مخصصة خلال يوم عمل واحد.',
     primary: 'تواصل معنا',
     secondary: 'احجز جولة',
   },
   integrations: {
-    title: 'تكامل مباشر مع سلة وزد وشوبيفاي — اربط متجرك بدقايق',
+    title: 'ربط تقني متكامل وسهل مع مجموعة من أشهر قنوات البيع المحلية والعالمية',
     platforms: ['سلة', 'زد', 'شوبيفاي', 'ووكومرس', 'ماجينتو'],
   },
   pain: {
     chip: 'نعرف همومك',
     headlineA: 'مشاكل الشحن ما تخليك تركّز في',
-    headlineHighlight: 'نمو تجارتك',
-    headlineB: '؟',
+    headlineHighlight: 'نمو تجارتك؟',
+    headlineB: '',
     items: [
       'الطلبات تزيد وما عندي مساحة للتخزين.',
       'ما عندي الوقت ولا الخبرة لتجهيز وتغليف الطلبات.',
@@ -408,8 +408,8 @@ const ar = {
   stats: {
     chip: 'الأرقام تتكلم',
     headlineA: 'من اليوم... لا تشيل هم',
-    headlineHighlight: 'كيف أشحن طلبات متجري',
-    headlineB: '؟',
+    headlineHighlight: 'كيف أشحن طلبات متجري؟',
+    headlineB: '',
     body: 'كل طلب يستلمه فريقنا... يوصل ومعه رضا العميل.',
     items: [
       { value: 500, suffix: '+', label: 'تاجر كبرت تجارته معنا' },
@@ -422,20 +422,20 @@ const ar = {
   sectors: {
     chip: 'القطاعات',
     headlineA: 'وش ما كان نشاطك...',
-    headlineHighlight: 'عندنا طريقة نخدمك فيها',
-    headlineB: '.',
+    headlineHighlight: 'عندنا طريقة نخدمك فيها.',
+    headlineB: '',
     body: 'كل قطاع له متطلبات تخزين وتغليف مختلفة، وفريقنا يعرف فروقاتها.',
     items: ['الأزياء والملابس', 'التجميل والعناية', 'الإلكترونيات والإكسسوارات', 'الصحة والمكمّلات', 'الأغذية والمشروبات', 'المنزل ونمط الحياة'],
   },
   results: {
     chip: 'قبل وبعد',
     headlineA: 'وش تغيّر في تجارتهم بعد اختيار',
-    headlineHighlight: 'فاست أكسس',
-    headlineB: '؟',
+    headlineHighlight: 'فاست أكسس؟',
+    headlineB: '',
     items: [
-      { name: 'متجر ماتشا', before: 'الطلبات تسبق الطاقة... وكل ما زادت، اضطروا يوقفون الاستقبال.', after: 'استوعبنا الموجة — الطلبات زادت، والعمليات ما وقفت ولا يوم.' },
+      { name: 'متجر ماتشا', before: 'الطلبات تفوق الطاقة... وكل ما زادت، اضطروا يوقفون الاستقبال.', after: 'استوعبنا الموجة، الطلبات زادت، والعمليات ما وقفت ولا يوم.' },
       { name: 'متجر عناية', before: 'مخزون كبير بدون وضوح: تواريخ انتهاء غايبة، وطلبات تطلع غلط.', after: 'رؤية كاملة للمخزون وتواريخ الصلاحية... والطلب يطلع صح من أول مرة.' },
-      { name: 'متجر عطور', before: 'مرتجعات مرتفعة، وطرود توصل مكسورة بسبب التغليف والدمج العشوائي.', after: 'تغليف محكم يليق بالعطور، ودمج ذكي للطلبات — المرتجعات نزلت لأدنى حد.' },
+      { name: 'متجر عطور', before: 'مرتجعات مرتفعة، وطلبات توصل مكسورة بسبب تغليف ما يحمي المنتج.', after: 'تغليف محكم يليق بالعطور، والمرتجعات نزلت لأدنى حد.' },
     ],
   },
   footer: {

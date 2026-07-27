@@ -16,7 +16,7 @@ const SCENES = [
     metric: { en: 'New order', ar: 'طلب جديد' },
     detail: {
       en: 'The order flows from your store into our system automatically. No emails, no spreadsheets, no follow-ups.',
-      ar: 'الطلب انسحب من متجرك لنظامنا تلقائيًا. بدون إيميل، بدون إكسل، بدون «أبشر أرسله لك».',
+      ar: 'الطلب وصلنا من متجرك تلقائيًا. بدون إيميل، بدون إكسل، بدون «أبشر أرسله لك».',
     },
   },
   {
@@ -24,7 +24,7 @@ const SCENES = [
     time: '11:30 ص',
     timeEn: '11:30 AM',
     label: { en: 'Pick & pack', ar: 'التجهيز' },
-    title: { en: 'Picked, packed, and wearing your brand.', ar: 'تجهيز، تغليف، وهوية علامتك على الصندوق.' },
+    title: { en: 'Picked, packed, and wearing your brand.', ar: 'تجهيز، تغليف، وهوية علامتك على الطلب.' },
     metric: { en: 'Ready to ship', ar: 'جاهز للشحن' },
     detail: {
       en: 'Our team packs every order in your branding, not ours. Your customer receives an experience, not a box.',
@@ -260,7 +260,7 @@ export default function ScrollRoute() {
                 {isAr ? (
                   <>
                     طلب الصباح...{' '}
-                    <span className="text-fa-orange-soda">يوصل نفس اليوم</span>.
+                    <span className="text-fa-orange-soda">يوصل نفس اليوم.</span>
                   </>
                 ) : (
                   <>
@@ -314,9 +314,6 @@ export default function ScrollRoute() {
                 it spans a full-width bottom row beneath the headline + card grid. */}
             <div className="order-3 pb-1 lg:col-span-3 lg:row-start-2 lg:mt-0">
               <div className="flex items-center gap-4 sm:gap-6">
-              <span className="hidden whitespace-nowrap font-ui text-[10px] font-semibold uppercase tracking-[0.16em] text-fa-classic-chalk/55 sm:inline">
-                {isAr ? 'تقدم المشهد' : 'Scenery scrub'}
-              </span>
               <div className="relative flex-1">
                 <div className="h-[3px] origin-left overflow-hidden rounded-full bg-fa-classic-chalk/16">
                   <div
