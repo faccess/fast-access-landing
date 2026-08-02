@@ -11,8 +11,9 @@ export interface ServiceContent {
   h1: { ar: string; en: string };
   intro: { ar: string; en: string };
   features: { ar: { title: string; body: string }[]; en: { title: string; body: string }[] };
+  featuresHeading?: { ar: string; en: string };
   steps: { ar: { title: string; body: string }[]; en: { title: string; body: string }[] };
-  stats: { value: string; ar: string; en: string }[];
+  stats: { value: string; valueEn?: string; ar: string; en: string }[];
   faqs: { ar: { q: string; a: string }[]; en: { q: string; a: string }[] };
   related: { slug: string; ar: string; en: string };
 }
@@ -51,19 +52,19 @@ export const SERVICES: ServiceContent[] = [
     steps: {
       ar: [
         { title: 'أرسل بضاعتك', body: 'من موردك مباشرة أو من مستودعك الحالي، ننسق الاستلام ونستقبل الشحنة بمحضر موثق.' },
-        { title: 'نفحص ونرتب', body: 'عدّ وفحص وتصوير، ثم ترتيب على مواقع تخزين مرقّمة يعرفها النظام قطعة قطعة.' },
-        { title: 'مخزونك حي بمنصتك', body: 'الأرصدة تتزامن لحظيًا مع متجرك، وتقارير المخزون بين يديك من أي مكان.' },
+        { title: 'نفحص ونصنّف', body: 'عدّ وفحص وتصوير، ثم ترتيب على مواقع تخزين مرقّمة يعرفها النظام قطعة قطعة.' },
+        { title: 'مخزونك أمامك لحظة بلحظة', body: 'كل حركة مخزون تنعكس فورًا على متجرك، مع تقارير جاهزة من أي مكان.' },
       ],
       en: [
         { title: 'Send your stock', body: 'Direct from your supplier or your current warehouse — we coordinate receiving with a documented record.' },
-        { title: 'We inspect and shelve', body: 'Count, inspect, photograph, then place into numbered locations the system tracks piece by piece.' },
-        { title: 'Live inventory in your store', body: 'Balances sync to your storefront in real time, with inventory reports available anywhere.' },
+        { title: 'Inspect & classify', body: 'Count, inspect, photograph, then place into numbered locations the system tracks piece by piece.' },
+        { title: 'Your inventory, live in real time', body: 'Every stock movement reflects instantly in your store, with reports ready from anywhere.' },
       ],
     },
     stats: [
       { value: '15,000 م²+', ar: 'مساحة تخزين مرخّصة', en: 'Licensed storage space' },
-      { value: '16-21°م', ar: 'بيئة تخزين مضبوطة', en: 'Controlled storage climate' },
-      { value: '10+', ar: 'مراكز تخزين', en: 'Storage centres' },
+      { value: '16-21 درجة مئوية', valueEn: '16–21°C', ar: 'بيئة تخزين مضبوطة', en: 'Controlled storage climate' },
+      { value: '10+', ar: 'مستودعات ومراكز', en: 'Warehouses & hubs' },
     ],
     faqs: {
       ar: [
@@ -90,8 +91,8 @@ export const SERVICES: ServiceContent[] = [
     chip: { ar: 'التجهيز والتغليف', en: 'Pick & pack' },
     h1: { ar: 'عميلك يستلم تجربة تحمل اسمك، مو كرتون', en: 'Your customer unboxes your brand' },
     intro: {
-      ar: 'لحظة فتح الطلب هي أول لقاء حقيقي بين عميلك وعلامتك. فريقنا المدرّب يلتقط الطلب من الرف، يفحصه، ويغلفه بمواد متينة تحمل هويتك.',
-      en: 'Unboxing is the first real meeting between your customer and your brand. Our trained team picks, inspects, and packs in durable materials carrying your identity.',
+      ar: 'لحظة فتح الطلب هي أول لقاء حقيقي بين عميلك وعلامتك. فريقنا المدرّب يجهّز الطلب من الرف، يفحصه، ويغلفه بتغليف متين يعكس هويتك.',
+      en: 'Unboxing is the first real meeting between your customer and your brand. Our trained team prepares each order from the shelf, inspects it, and packs it in durable packaging that reflects your brand.',
     },
     features: {
       ar: [
@@ -112,12 +113,12 @@ export const SERVICES: ServiceContent[] = [
     steps: {
       ar: [
         { title: 'الطلب يوصلنا تلقائيًا', body: 'من متجرك مباشرة عبر التكامل، بدون إدخال يدوي ولا نسخ أرقام.' },
-        { title: 'التقاط وفحص وتغليف', body: 'الفريق يلتقط القطع من مواقعها، يفحصها، ويغلفها بهويتك مع أي إضافات طلبها العميل.' },
+        { title: 'تجهيز وفحص وتغليف', body: 'الفريق يجهّز القطع من مواقعها، يفحصها، ويغلفها بهويتك مع أي إضافات طلبها العميل.' },
         { title: 'جاهز للشحن بنفس اليوم', body: 'الطلب يسلم لشريك الشحن الأنسب بنفس اليوم، ورابط التتبع يوصل عميلك تلقائيًا.' },
       ],
       en: [
         { title: 'Orders flow in automatically', body: 'Straight from your store via the integration — no manual entry.' },
-        { title: 'Pick, inspect, pack', body: 'The team picks from numbered locations, inspects, and packs in your identity with any customer add-ons.' },
+        { title: 'Prepare, inspect & pack', body: 'The team prepares items from their locations, inspects, and packs in your identity with any customer add-ons.' },
         { title: 'Ready to ship in hours', body: 'Handed to the best-fit carrier the same day, with the tracking link sent to your customer automatically.' },
       ],
     },
@@ -142,6 +143,7 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: 'shipping',
+    featuresHeading: { ar: 'كل قرار شحن مبني على بيانات تشغيل فعلية.', en: 'Every shipping decision is built on real operational data.' },
     meta: {
       ar: { title: 'شحن وتوصيل الطلبات لكل السعودية والخليج | فاست أكسس', desc: 'شبكة تضم أفضل شركات الشحن المحلية والدولية مع +42 مركز توزيع: توصيل بنفس اليوم داخل المدن الكبرى، تغطية الخليج، ووصول لأكثر من 220 دولة، بالتزام 98% بالمواعيد.' },
       en: { title: 'Shipping & delivery across Saudi Arabia and the GCC | Fast Access', desc: 'A network of the best local and international carriers with 42+ distribution centres: same-day in major cities, GCC coverage, and reach to 220+ countries at 98% on-time.' },
@@ -213,14 +215,14 @@ export const SERVICES: ServiceContent[] = [
     },
     features: {
       ar: [
-        { title: 'خمس مراحل واضحة', body: 'استلام الطلب، التجهيز، التسليم للناقل، بالطريق، تم التسليم. كل انتقال يسجل بوقته، فما فيه شحنة "مختفية" بين مرحلتين.' },
+        { title: 'خمس مراحل واضحة', body: 'استلام الطلب، التجهيز، الخروج للشحن، بالطريق، تم التسليم. كل انتقال يسجل بوقته، فما فيه شحنة "مختفية" بين مرحلتين.' },
         { title: 'روابط تتبع تلقائية لعملائك', body: 'لحظة شحن الطلب، عميلك يستلم رابط تتبع بهوية متجرك يحدث نفسه تلقائيًا، ومكالمات "وين طلبي" تنخفض بشكل ملموس.' },
         { title: 'تقارير تبني عليها قرارات', body: 'متوسط زمن التسليم بمنطقة، أداء كل ناقل، نسب نجاح التسليم من أول محاولة: أرقام حقيقية توجه اختياراتك التشغيلية والتسويقية.' },
         { title: 'تنبيهات الاستثناءات', body: 'تأخر شحنة عن نافذتها، تعثر تسليم، عنوان ناقص: تظهر لك كاستثناء يحتاج قرار، مو رقم ضايع وسط جدول.' },
-        { title: 'تطبيق التجار، قريبًا', body: 'تجارتك بجيبك: متابعة الطلبات وتحليلات المبيعات والمخزون وتنبيهات لحظية، قريبًا على App Store وGoogle Play.' },
+        { title: 'تطبيق التجار، قريبًا', body: 'تجارتك بجيبك: متابعة الطلبات وتحليلات المبيعات والمخزون وتنبيهات لحظية، قريبًا على App Store و Google Play.' },
       ],
       en: [
-        { title: 'Five clear stages', body: 'Received, packed, handed to carrier, in transit, delivered — every transition timestamped, so no shipment goes dark between stages.' },
+        { title: 'Five clear stages', body: 'Received, packed, out for shipping, in transit, delivered — every transition timestamped, so no shipment goes dark between stages.' },
         { title: 'Automatic customer tracking links', body: 'The moment an order ships, your customer receives a branded self-updating tracking link — "where is my order" contacts drop measurably.' },
         { title: 'Reports you can act on', body: 'Average delivery time per region, per-carrier performance, first-attempt success rates — real numbers guiding operational and marketing choices.' },
         { title: 'Exception alerts', body: 'A shipment past its window, a failed delivery, a missing address — surfaced as an exception needing a decision, not a lost row in a table.' },
@@ -230,17 +232,17 @@ export const SERVICES: ServiceContent[] = [
     steps: {
       ar: [
         { title: 'كل حدث يسجل تلقائيًا', body: 'من دخول الطلب إلى تسليمه، بدون إدخال يدوي من أحد.' },
-        { title: 'اللوحة تجمع الصورة', body: 'كل شحناتك، بكل الناقلين، بشاشة واحدة بدل خمس بوابات متفرقة.' },
-        { title: 'أنت وعميلك بنفس الصورة', body: 'هو يتابع برابطه، وأنت تتابع بلوحتك، وما أحد يحتاج يسأل الثاني.' },
+        { title: 'لوحة تحكم شاملة', body: 'كل شحناتك، بكل الناقلين، بشاشة واحدة بدل خمس بوابات متفرقة.' },
+        { title: 'شفافية كاملة لك ولعميلك', body: 'هو يتابع برابطه، وأنت تتابع بلوحتك، وما أحد يحتاج يسأل الثاني.' },
       ],
       en: [
         { title: 'Every event logs automatically', body: 'From order entry to delivery — no manual input from anyone.' },
-        { title: 'The dashboard assembles the picture', body: 'All shipments, all carriers, one screen instead of five separate portals.' },
-        { title: 'You and your customer see the same truth', body: 'They follow their link, you follow your dashboard — nobody needs to ask.' },
+        { title: 'One dashboard for everything', body: 'All shipments, all carriers, one screen instead of five separate portals.' },
+        { title: 'Full transparency for you and your customer', body: 'They follow their link, you follow your dashboard — nobody needs to ask.' },
       ],
     },
     stats: [
-      { value: '5', ar: 'مراحل تتبع موثقة', en: 'Documented stages' },
+      { value: '5', ar: 'مراحل موثقة لكل طلب', en: 'Documented stages per order' },
       { value: '100%', ar: 'من الشحنات مرئية لحظيًا', en: 'Shipments visible live' },
       { value: '24/7', ar: 'مراقبة الاستثناءات', en: 'Exception monitoring' },
     ],

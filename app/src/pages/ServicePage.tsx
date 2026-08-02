@@ -91,7 +91,9 @@ export default function ServicePage() {
           <Reveal className="mb-4"><SectionChip>{isAr ? 'وش تشمل الخدمة' : 'What is included'}</SectionChip></Reveal>
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[44px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px]">
-              {isAr ? 'كل تفصيلة مبنية على تشغيل حقيقي.' : 'Every detail built on real operations.'}
+              {svc.featuresHeading
+                ? (isAr ? svc.featuresHeading.ar : svc.featuresHeading.en)
+                : (isAr ? 'كل تفصيلة مبنية على تشغيل حقيقي.' : 'Every detail built on real operations.')}
             </h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -131,7 +133,7 @@ export default function ServicePage() {
             {svc.stats.map((st, i) => (
               <Reveal key={st.value + i} delay={i * 70}>
                 <div className="fa-card p-6 text-center">
-                  <div className="font-display text-[26px] lg:text-[32px] font-bold text-fa-orange-soda tracking-[-0.02em]">{st.value}</div>
+                  <div className="font-display text-[26px] lg:text-[32px] font-bold text-fa-orange-soda tracking-[-0.02em]">{isAr ? st.value : (st.valueEn ?? st.value)}</div>
                   <div className="font-ui mt-1.5 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-fa-ink-muted">{isAr ? st.ar : st.en}</div>
                 </div>
               </Reveal>
