@@ -110,7 +110,7 @@ export default function Footer() {
               {t('footer.body')}
             </p>
             <p className="mt-4 font-ui text-[12px] font-semibold text-[#8a8a9a]">
-              {isAr ? '📱 تطبيق فاست أكسس للتجار — قريبًا على App Store و Google Play' : '📱 Fast Access merchant app — soon on the App Store & Google Play'}
+              {isAr ? '📱 تطبيق فاست أكسس للتجار: قريبًا على App Store و Google Play' : '📱 Fast Access merchant app — soon on the App Store & Google Play'}
             </p>
           </div>
 
@@ -135,7 +135,7 @@ export default function Footer() {
         {/* Legal entity + registered address */}
         <div className="mb-4 text-center sm:text-start font-body text-[12.5px] leading-[1.8] text-[#8a8a9a]">
           {isAr
-            ? 'شركة مدخل السرعة للخدمات اللوجستية — الرياض، حي الوادي، شارع عثمان بن عفان'
+            ? 'شركة مدخل السرعة للخدمات اللوجستية، الرياض، حي الوادي، شارع عثمان بن عفان'
             : 'Madkhal Alsura Company for Logistics — Othman bin Affan St., Al Wadi District, Riyadh'}
         </div>
 

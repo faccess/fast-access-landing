@@ -15,22 +15,22 @@ export default function AppPromo() {
     {
       icon: PackageSearch,
       title: isAr ? 'متابعة الطلبات' : 'Order tracking',
-      body: isAr ? 'كل شحناتك لحظة بلحظة، من التجهيز إلى باب العميل.' : 'Every shipment live, from prep to your customer\u2019s door.',
+      body: isAr ? 'تابع كل شحناتك لحظة بلحظة، من التجهيز إلى باب العميل.' : 'Track every shipment live, from prep to your customer\u2019s door.',
     },
     {
       icon: LineChart,
       title: isAr ? 'تحليلات الطلبات والمخزون' : 'Orders & inventory analytics',
-      body: isAr ? 'أرقامك قدامك: مبيعات، مخزون، وتنبؤات تبني عليها قراراتك.' : 'Your numbers at a glance: sales, stock, and forecasts to act on.',
+      body: isAr ? 'اطّلع على أرقامك أول بأول: مبيعات، مخزون، وتنبؤات تبني عليها قراراتك.' : 'See your numbers as they happen: sales, stock, and forecasts to act on.',
     },
     {
       icon: PackagePlus,
       title: isAr ? 'إنشاء طلب أو استرجاع' : 'Create orders & returns',
-      body: isAr ? 'أنشئ طلب شحن جديد أو طلب استرجاع من جوالك بثواني — بدون ما تفتح اللابتوب.' : 'Create a new shipment or a return request from your phone in seconds.',
+      body: isAr ? 'أنشئ طلب شحن أو استرجاع من جوالك بثواني، بدون ما تفتح اللابتوب.' : 'Create a new shipment or a return request from your phone in seconds.',
     },
     {
       icon: Bell,
       title: isAr ? 'تنبيهات لحظية' : 'Instant alerts',
-      body: isAr ? 'مخزون قرب يخلص؟ طلب تعثر؟ يوصلك إشعار قبل ما تصير مشكلة.' : 'Low stock? A stuck order? You get notified before it becomes a problem.',
+      body: isAr ? 'استلم إشعارًا فوريًا إذا قرب مخزونك يخلص أو تعثر طلب، قبل ما تصير مشكلة.' : 'Get notified the moment stock runs low or an order gets stuck, before it becomes a problem.',
     },
   ];
 
@@ -48,8 +48,8 @@ export default function AppPromo() {
           <Reveal delay={140}>
             <p className="font-body mt-4 text-[15px] lg:text-[17px] text-fa-classic-chalk/70 leading-[1.75] max-w-[520px]">
               {isAr
-                ? 'تطبيق جوال صممناه للتجار: تتابع طلباتك، تحلل مبيعاتك ومخزونك، وتوصلك التنبيهات المهمة أول بأول — وين ما كنت.'
-                : 'A mobile app built for merchants: track your orders, analyze sales and inventory, and get the alerts that matter — wherever you are.'}
+                ? 'تطبيق جوال صممناه للتجار: تتابع طلباتك، تحلل مبيعاتك ومخزونك، وتوصلك التنبيهات المهمة أول بأول، وين ما كنت.'
+                : 'A mobile app built for merchants: track your orders, analyze sales and inventory, and get the alerts that matter, wherever you are.'}
             </p>
           </Reveal>
 

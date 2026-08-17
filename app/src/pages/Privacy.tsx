@@ -9,7 +9,7 @@ import { useT } from '../i18n/I18nContext';
  */
 export default function Privacy() {
   usePageMeta(
-    { title: 'سياسة الخصوصية | فاست أكسس', desc: 'كيف نجمع بياناتك ونستخدمها ونحميها وفق نظام حماية البيانات الشخصية السعودي — بلغة واضحة.' },
+    { title: 'سياسة الخصوصية | فاست أكسس', desc: 'كيف نجمع بياناتك ونستخدمها ونحميها وفق نظام حماية البيانات الشخصية السعودي، بلغة واضحة.' },
     { title: 'Privacy Policy | Fast Access', desc: 'How we collect, use and protect your data under the Saudi Personal Data Protection Law.' }
   );
   const { locale } = useT();
@@ -27,7 +27,7 @@ export default function Privacy() {
       <PageHeader
         chip={isAr ? 'الخصوصية' : 'Privacy'}
         title={isAr ? (<>بياناتك... <span className="text-fa-orange-soda">أمانة عندنا.</span></>) : 'Your data, in safe hands.'}
-        sub={isAr ? 'كيف نجمع بياناتك ونستخدمها ونحميها — بلغة واضحة بدون تعقيد.' : 'How we collect, use, and protect your data — in clear language.'}
+        sub={isAr ? 'كيف نجمع بياناتك ونستخدمها ونحميها، بلغة واضحة بدون تعقيد.' : 'How we collect, use, and protect your data — in clear language.'}
         bg="/assets/hero-resources.webp"
       />
       <section className="py-16 lg:py-24 bg-fa-classic-chalk">

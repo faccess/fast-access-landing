@@ -9,8 +9,8 @@ export default function Blog() {
 
   usePageMeta(
     {
-      title: 'مدونة فاست أكسس — أدلة الفلفلمنت واللوجستيات للمتاجر الإلكترونية',
-      desc: 'أدلة عملية بالعربي عن الفلفلمنت، التخزين، تجهيز الطلبات، والشحن للمتاجر الإلكترونية في السعودية — من فريق فاست أكسس.',
+      title: 'مدونة فاست أكسس: أدلة الفلفلمنت واللوجستيات للمتاجر الإلكترونية',
+      desc: 'أدلة عملية بالعربي عن الفلفلمنت، التخزين، تجهيز الطلبات، والشحن للمتاجر الإلكترونية في السعودية، من فريق فاست أكسس.',
     },
     {
       title: 'Fast Access Blog — Fulfillment & Logistics Guides for E-commerce',
@@ -40,7 +40,7 @@ export default function Blog() {
           </h1>
           <p className="font-body mt-4 text-[15px] lg:text-base text-fa-classic-chalk/70 max-w-[560px] leading-[1.7]">
             {isAr
-              ? 'أدلة عملية عن الفلفلمنت واللوجستيات — مكتوبة لتجّار السعودية.'
+              ? 'أدلة عملية عن الفلفلمنت واللوجستيات، مكتوبة لتجّار السعودية.'
               : 'Practical fulfillment and logistics guides — written for Saudi merchants.'}
           </p>
         </div>

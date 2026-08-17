@@ -93,7 +93,7 @@ export default function ServicePage() {
             <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[44px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px]">
               {svc.featuresHeading
                 ? (isAr ? svc.featuresHeading.ar : svc.featuresHeading.en)
-                : (isAr ? 'كل تفصيلة مبنية على تشغيل حقيقي.' : 'Every detail built on real operations.')}
+                : (isAr ? 'وش تاخذ معنا بالضبط؟' : 'What exactly do you get?')}
             </h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">

@@ -88,7 +88,7 @@ export default function Pricing() {
               <div className="text-[11px] font-semibold uppercase tracking-[0.1em] font-body text-fa-orange-soda">
                 {t('pricing.howEyebrow')}
               </div>
-              <h3 className="font-display mt-3 text-[22px] lg:text-[26px] font-semibold text-fa-liberty-blue tracking-[-0.01em]">
+              <h3 className="font-display mt-3 text-[22px] lg:text-[26px] font-semibold text-fa-liberty-blue tracking-[-0.01em] [text-wrap:balance]">
                 {t('pricing.howTitle')}
               </h3>
               <div className="grid sm:grid-cols-2 gap-6 mt-8">

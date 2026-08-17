@@ -21,13 +21,13 @@ export default function FAQ() {
     {
       q: isAr ? 'كيف أربط متجري؟' : 'How do I connect my store?',
       a: isAr
-        ? 'ربط مباشر بدقائق مع سلة، زد، شوبيفاي، ووكومرس وماجينتو — وطلباتك تنسحب لنظامنا تلقائيًا لحظة الشراء. وعندك نظام خاص؟ نربطه عبر API.'
+        ? 'ربط مباشر بدقائق مع سلة، زد، شوبيفاي، ووكومرس وماجينتو، وطلباتك تنسحب لنظامنا تلقائيًا لحظة الشراء. وعندك نظام خاص؟ نربطه عبر API.'
         : 'Direct integration in minutes with Salla, Zid, Shopify, WooCommerce and Magento — orders flow to us automatically the moment they\'re placed. Custom system? We connect via API.',
     },
     {
       q: isAr ? 'هل فيه عقد طويل أو حد أدنى للطلبات؟' : 'Is there a long contract or order minimum?',
       a: isAr
-        ? 'لا. تدفع على اللي تشحنه فعلًا، وتكبر أو تصغّر براحتك — بدون التزامات طويلة ولا حدود دنيا.'
+        ? 'لا. تدفع على اللي تشحنه فعلًا، وتكبر أو تصغّر براحتك، بدون التزامات طويلة ولا حدود دنيا.'
         : 'No. You pay for what you actually ship, and scale up or down freely — no long commitments, no minimums.',
     },
     {
@@ -43,7 +43,7 @@ export default function FAQ() {
         : 'All Saudi cities through our Riyadh, Jeddah and Dammam hubs, fast GCC shipping, and international delivery to 220+ countries via trusted partners.',
     },
     {
-      q: isAr ? 'منتجاتي تحتاج تخزين مبرد — عندكم؟' : 'My products need temperature-controlled storage — do you have it?',
+      q: isAr ? 'منتجاتي تحتاج تخزين مبرد، عندكم؟' : 'My products need temperature-controlled storage — do you have it?',
       a: isAr
         ? 'نعم. مستودعاتنا مرخصة من هيئة الغذاء والدواء وفيها مساحات مكيفة بدرجات حرارة مضبوطة (16-21°م) للمنتجات الحساسة مثل التجميل والمكملات.'
         : 'Yes. Our warehouses are SFDA-licensed with climate-controlled areas (16-21°C) for sensitive products like cosmetics and supplements.',
@@ -57,19 +57,19 @@ export default function FAQ() {
     {
       q: isAr ? 'وش يصير بالمرتجعات؟' : 'What about returns?',
       a: isAr
-        ? 'نستقبل المرتجع، نفحصه، ونرجعه للمخزون إذا كان سليم — أو نبلغك بحالته وتقرر. كلها تظهر لك بالنظام أولًا بأول.'
+        ? 'نستقبل المرتجع، نفحصه، ونرجعه للمخزون إذا كان سليم، أو نبلغك بحالته وتقرر. كلها تظهر لك بالنظام أولًا بأول.'
         : 'We receive the return, inspect it, and restock it if it\'s in good condition — or report its state and you decide. Everything shows in your dashboard in real time.',
     },
     {
-      q: isAr ? 'بضاعتي تجي من الصين — تقدرون تستوردونها؟' : 'My goods come from China — can you import them?',
+      q: isAr ? 'بضاعتي تجي من الصين، تقدرون تستوردونها؟' : 'My goods come from China — can you import them?',
       a: isAr
-        ? 'نعم. نرتب الشحن الدولي (بحري أو جوي) من موردك، ونتولى التخليص الجمركي كاملًا، وتوصل بضاعتك مستودعاتنا جاهزة للبيع — أنت ما تلمس ورقة وحدة.'
+        ? 'نعم. نرتب الشحن الدولي (بحري أو جوي) من موردك، ونتولى التخليص الجمركي كاملًا، وتوصل بضاعتك مستودعاتنا جاهزة للبيع، وأنت ما تلمس ورقة وحدة.'
         : 'Yes. We arrange international freight (sea or air) from your supplier, handle customs clearance end to end, and your goods arrive at our warehouses ready to sell — you never touch a single document.',
     },
     {
       q: isAr ? 'كيف تحسبون الأسعار؟' : 'How do you price?',
       a: isAr
-        ? 'ما عندنا باقات جاهزة — عرضك يُبنى على أربعة عوامل: حجم التخزين، عدد الطلبات، وزن ووجهة الشحن، وسرعة التوصيل. جرّب حاسبة التوفير بصفحة «كيف نسعّر» وخذ عرضك المفصّل خلال يوم عمل واحد.'
+        ? 'ما عندنا باقات جاهزة، عرضك يُبنى على أربعة عوامل: حجم التخزين، عدد الطلبات، وزن ووجهة الشحن، وسرعة التوصيل. جرّب حاسبة التوفير بصفحة «كيف نسعّر» وخذ عرضك المفصّل خلال يوم عمل واحد.'
         : 'No ready-made bundles — your quote is built on four factors: storage volume, order count, weight & destination, and delivery speed. Try the savings calculator on our pricing page and get your detailed quote within one business day.',
     },
     {

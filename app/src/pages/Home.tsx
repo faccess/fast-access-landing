@@ -16,7 +16,7 @@ import CTA from '../sections/CTA';
 
 export default function Home() {
   usePageMeta(
-    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: 'فاست أكسس شريكك اللوجستي في السعودية: تخزين، تجهيز بهوية علامتك، شحن لكل المملكة، وتوصيل بنفس اليوم. تكامل مباشر مع سلة وزد وشوبيفاي — خلّها علينا.' },
+    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: 'فاست أكسس شريكك اللوجستي في السعودية: تخزين، تجهيز بهوية علامتك، شحن لكل المملكة، وتوصيل بنفس اليوم. تكامل مباشر مع سلة وزد وشوبيفاي. خلّها علينا.' },
     { title: 'Fast Access — Fulfillment & Shipping for E-commerce', desc: 'Your logistics partner in Saudi Arabia: storage, branded fulfillment, live-tracked shipping, and same-day delivery from cloud warehouses.' }
   );
   return (

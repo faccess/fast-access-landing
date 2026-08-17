@@ -11,13 +11,13 @@ import { useT } from '../i18n/I18nContext';
 
 export default function Pricing() {
   usePageMeta(
-    { title: 'كيف نسعّر — عرض على قدّ شغلك | فاست أكسس', desc: 'ما عندنا باقات جاهزة. احسب توفيرك بالحاسبة، وخذ عرض سعر مفصّل على أرقامك الفعلية خلال يوم عمل واحد — بدون رسوم خفية.' },
+    { title: 'كيف نسعّر: عرض على قدّ شغلك | فاست أكسس', desc: 'ما عندنا باقات جاهزة. احسب توفيرك بالحاسبة، وخذ عرض سعر مفصّل على أرقامك الفعلية خلال يوم عمل واحد، بدون رسوم خفية.' },
     { title: 'How We Price — A Quote Built On Your Numbers | Fast Access', desc: 'No ready-made bundles. Use the savings calculator and get a detailed quote built on your real numbers within one business day.' }
   );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
-    { title: 'أسعار الفلفلمنت — عرض سعر مفصل خلال يوم عمل | فاست أكسس', desc: 'بدون باقات مبهمة ولا رسوم مخفية — تسعير مبني على اللي تشحنه فعليًا. اعرف مكونات السعر ووش يشمل، واستلم عرضك المفصل خلال يوم عمل.' },
+    { title: 'أسعار الفلفلمنت: عرض سعر مفصل خلال يوم عمل | فاست أكسس', desc: 'بدون باقات مبهمة ولا رسوم مخفية، تسعير مبني على اللي تشحنه فعليًا. اعرف مكونات السعر ووش يشمل، واستلم عرضك المفصل خلال يوم عمل.' },
     { title: "Fulfillment pricing — exact quote in one business day | Fast Access", desc: "No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in one business day." },
   );
 
@@ -61,9 +61,9 @@ export default function Pricing() {
         <div className="container-main relative z-10">
           <Reveal className="mb-4"><SectionChip>{isAr ? 'كيف نحسب السعر' : 'How we price'}</SectionChip></Reveal>
           <Reveal delay={80}>
-            <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[46px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px]">
+            <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[46px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px] [text-wrap:balance]">
               <RevealText accent={isAr ? 'أربعة عوامل' : 'four factors'} stagger={45}>
-                {isAr ? 'أربعة عوامل. عرض سعر واحد شفاف.' : 'Four factors. One transparent quote.'}
+                {isAr ? 'أربعة عوامل تحدد سعرك.' : 'Four factors set your price.'}
               </RevealText>
             </h2>
           </Reveal>

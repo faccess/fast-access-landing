@@ -9,13 +9,13 @@ import { useT } from '../i18n/I18nContext';
 
 export default function Contact() {
   usePageMeta(
-    { title: 'اطلب عرض سعر — جاهز تخلّيها علينا؟ | فاست أكسس', desc: 'عطنا تفاصيل شحنك بدقيقتين ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد. واتساب وهاتف موحد ودعم 24/7.' },
+    { title: 'اطلب عرض سعر: جاهز تخلّيها علينا؟ | فاست أكسس', desc: 'عطنا تفاصيل شحنك بدقيقتين ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد. واتساب وهاتف موحد ودعم 24/7.' },
     { title: 'Request a Quote | Fast Access', desc: 'Share your shipping profile in two minutes and get a tailored plan within one business day. WhatsApp, unified phone, 24/7 support.' }
   );
   const { locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
-    { title: 'تواصل معنا — خطة فلفلمنت مخصصة خلال يوم عمل | فاست أكسس', desc: 'قل لنا وش تشحن، ونرجع لك بخطة فلفلمنت مفصلة على مقاس متجرك خلال يوم عمل. كلم فريق فاست أكسس مباشرة.' },
+    { title: 'تواصل معنا: خطة فلفلمنت مخصصة خلال يوم عمل | فاست أكسس', desc: 'قل لنا وش تشحن، ونرجع لك بخطة فلفلمنت مفصلة على مقاس متجرك خلال يوم عمل. كلم فريق فاست أكسس مباشرة.' },
     { title: "Contact Fast Access — a tailored plan in one business day | Fast Access", desc: "Tell us what you ship and we'll come back with a tailored fulfillment plan within one business day. Talk to the Fast Access team." },
   );
 
