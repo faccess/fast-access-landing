@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 /**
  * QuoteForm — the single source of truth for the "request a quote" form.
@@ -38,8 +39,8 @@ export default function QuoteForm({ dark = false }: { dark?: boolean }) {
         </h3>
         <p className={`font-body mt-3 text-[15px] leading-[1.7] max-w-[360px] ${muted}`}>
           {isAr
-            ? 'سيتواصل معك فريقنا خلال يوم عمل واحد بخطة مخصّصة.'
-            : 'Our team will reach out within one business day with a tailored plan.'}
+            ? `سيتواصل معك فريقنا خلال ${claims.quoteTurnaround.ar} بخطة مخصّصة.`
+            : `Our team will reach out within ${claims.quoteTurnaround.en} with a tailored plan.`}
         </p>
       </div>
     );
@@ -118,7 +119,7 @@ export default function QuoteForm({ dark = false }: { dark?: boolean }) {
         </p>
       )}
       <p className={`font-body text-[12px] text-center ${dark ? 'text-fa-classic-chalk/45' : 'text-fa-ink-muted/80'}`}>
-        {isAr ? 'نرد خلال يوم عمل واحد. لا رسائل مزعجة.' : 'We reply within one business day. No spam.'}
+        {isAr ? `نرد خلال ${claims.quoteTurnaround.ar}. لا رسائل مزعجة.` : `We reply within ${claims.quoteTurnaround.en}. No spam.`}
       </p>
     </form>
   );

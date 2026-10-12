@@ -2,7 +2,17 @@
  * Content for the dedicated service pages (/solutions/<slug>).
  * Single source of truth, bilingual. Rendered by pages/ServicePage.tsx,
  * which also derives per-page meta + Service/FAQPage schema from it.
+ * Every number or promise comes from ../content/claims.ts.
  */
+
+import {
+  claims as c, joinList, plus, pct, num, tempRange, expressCitiesCount,
+} from '../content/claims';
+
+const area = num(c.warehouseAreaSqm);
+const { min: tMin, max: tMax } = c.temperatureRange;
+const w = c.expressDeliveryWindow;
+const cities = { ar: joinList(c.expressCities, 'ar'), en: joinList(c.expressCities, 'en') };
 
 export interface ServiceContent {
   slug: string;
@@ -22,27 +32,27 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'storage',
     meta: {
-      ar: { title: 'تخزين المنتجات للمتاجر الإلكترونية في السعودية | فاست أكسس', desc: 'مستودعات مرخّصة بمساحة 15,000 م² في الرياض: مساحات مكيفة بدرجات مضبوطة من 16 إلى 21°م، جرد دوري، تتبع صلاحية بنظام FEFO، ومخزونك مربوط بمنصتك لحظيًا. ادفع على الاستخدام الفعلي.' },
-      en: { title: 'E-commerce warehousing in Saudi Arabia | Fast Access', desc: 'Licensed warehouses with 15,000 m² in Riyadh: climate-controlled space, a controlled 16-21°C climate, FEFO expiry tracking, cycle counts, and live inventory sync. Pay for what you use.' },
+      ar: { title: 'تخزين المنتجات للمتاجر الإلكترونية في السعودية | فاست أكسس', desc: `مستودعات مرخّصة بمساحة تتجاوز ${area} م²: مساحات مكيفة بدرجات مضبوطة من ${tMin} إلى ${tMax} درجة مئوية، جرد دوري، تتبع صلاحية بنظام FEFO، ومخزونك مربوط بمنصتك لحظيًا. ادفع على الاستخدام الفعلي.` },
+      en: { title: 'E-commerce warehousing in Saudi Arabia | Fast Access', desc: `Licensed warehouses with over ${area} m²: climate-controlled space kept ${tempRange('en')}, FEFO expiry tracking, cycle counts, and live inventory sync. Pay for what you use.` },
     },
     chip: { ar: 'التخزين', en: 'Warehousing' },
     h1: { ar: 'تخزين يتمدد مع تجارتك وينكمش مع فاتورتك', en: 'Warehousing that scales with your store' },
     intro: {
-      ar: 'مستودعات مرخّصة بمساحة تتجاوز 15,000 م² في مواقع استراتيجية، مجهزة بأحدث أنظمة المراقبة والسلامة. تدفع على المساحة اللي تستخدمها فعليًا، وتتوسع بموسمك بدون عقود طويلة ولا التزامات ثابتة.',
-      en: 'Licensed warehouses exceeding 15,000 m² in strategic locations, equipped with modern monitoring and safety systems. You pay for the space you actually use, and scale with your season with no long contracts.',
+      ar: `مستودعات مرخّصة بمساحة تتجاوز ${area} م² في مواقع استراتيجية، مجهزة بأحدث أنظمة المراقبة والسلامة. تدفع على المساحة اللي تستخدمها فعليًا، وتتوسع بموسمك بدون عقود طويلة ولا التزامات ثابتة.`,
+      en: `Licensed warehouses exceeding ${area} m² in strategic locations, equipped with modern monitoring and safety systems. You pay for the space you actually use, and scale with your season with no long contracts.`,
     },
     features: {
       ar: [
-        { title: 'مساحات مكيفة بدرجات مضبوطة', body: 'نخزّن منتجاتك في مساحات مكيفة بدرجات مضبوطة من 16 إلى 21 درجة مئوية، لتبقى منتجات العناية والتجميل والمكملات محمية من حرارة الصيف.' },
-        { title: 'مخزونك مربوط بمنصتك', body: 'يتزامن مخزونك لحظيًا مع نظامنا ومتجرك، سلة أو زد أو شوبيفاي، فلا تبيع منتجًا خالصًا من المخزون ولا توقف منتجًا متوفرًا.' },
+        { title: 'مساحات مكيفة بدرجات مضبوطة', body: `نخزّن منتجاتك في مساحات مكيفة بدرجات مضبوطة من ${tMin} إلى ${tMax} درجة مئوية، لتبقى منتجات العناية والتجميل والمكملات محمية من حرارة الصيف.` },
+        { title: 'مخزونك مربوط بمنصتك', body: 'يتزامن مخزونك لحظيًا مع نظامنا ومتجرك، أيًا كانت منصتك، فلا تبيع منتجًا خالصًا من المخزون ولا توقف منتجًا متوفرًا.' },
         { title: 'استلام وفحص منظم', body: 'نستلم شحنتك من موردك أو من ميناء التخليص بمحضر موثق، نفحص الكميات والحالة، ونصورها قبل ترتيبها على الرفوف.' },
         { title: 'جرد دوري بدون إغلاق', body: 'نجرد مخزونك باستمرار بتقنية العد الدوري، فتبقى دقته محفوظة طوال السنة بدون إيقاف طلباتك يومًا كاملًا للجرد.' },
         { title: 'أمان على مدار الساعة', body: 'نؤمّن بضاعتك على مدار الساعة بكاميرات مراقبة وأنظمة إنذار وإطفاء وصلاحيات دخول محددة، فهي محفوظة فعليًا وورقيًا.' },
         { title: 'تواريخ الصلاحية ونظام FEFO', body: 'نسجل تاريخ انتهاء كل دفعة عند الاستلام، ونصرف الطلبات بنظام FEFO: الأقرب انتهاءً يطلع أولًا. يدور مخزونك بذكاء، وينخفض التالف لأدنى حد، مع تنبيهات مبكرة للدفعات اللي تقترب من نهايتها.' },
       ],
       en: [
-        { title: 'Controlled-climate halls', body: 'We store your products in climate-controlled spaces kept between 16 and 21°C, protecting beauty products, supplements, and anything summer heat can damage.' },
-        { title: 'Inventory synced to your platform', body: 'Your inventory syncs live with our system and your store, Salla, Zid, or Shopify, so you never oversell or pause a product that is actually in stock.' },
+        { title: 'Controlled-climate halls', body: `We store your products in climate-controlled spaces kept ${tempRange('en')}, protecting beauty products, supplements, and anything summer heat can damage.` },
+        { title: 'Inventory synced to your platform', body: 'Your inventory syncs live with our system and your store, whatever your platform, so you never oversell or pause a product that is actually in stock.' },
         { title: 'Documented receiving and inspection', body: 'We receive your shipment from your supplier or customs against a documented record, verify counts and condition, and photograph before shelving.' },
         { title: 'Cycle counting, no shutdowns', body: 'We cycle-count your stock continuously, keeping inventory accuracy high all year without freezing your orders for a full-day stock take.' },
         { title: 'Around-the-clock security', body: 'We secure your goods around the clock with CCTV, alarm and fire systems, and restricted access, so they are protected physically and on paper.' },
@@ -62,21 +72,21 @@ export const SERVICES: ServiceContent[] = [
       ],
     },
     stats: [
-      { value: '15,000 م²+', ar: 'مساحة تخزين مرخّصة', en: 'Licensed storage space' },
-      { value: '16-21 درجة مئوية', valueEn: '16–21°C', ar: 'بيئة تخزين مضبوطة', en: 'Controlled storage climate' },
-      { value: '10+', ar: 'مستودعات ومراكز', en: 'Warehouses & hubs' },
+      { value: `${area} م²+`, valueEn: `${area} m²+`, ar: 'مساحة تخزين مرخّصة', en: 'Licensed storage space' },
+      { value: tempRange('ar', true), valueEn: tempRange('en', true), ar: 'بيئة تخزين مضبوطة', en: 'Controlled storage climate' },
+      { value: plus(c.distributionCenters), ar: 'مستودعات ومراكز', en: 'Warehouses & hubs' },
     ],
     faqs: {
       ar: [
         { q: 'هل تتبعون تواريخ صلاحية منتجاتي؟', a: 'نعم، نسجل تاريخ انتهاء كل دفعة لحظة استلامها، والنظام يصرف الطلبات بمنهجية FEFO (الأقرب انتهاءً أولًا)، مع تنبيهات مبكرة قبل اقتراب أي دفعة من نهايتها. مناسب تمامًا لمنتجات التجميل والمكملات والأغذية.' },
         { q: 'هل فيه حد أدنى للكمية أو مدة التخزين؟', a: 'لا، تبدأ بالكمية اللي عندك وتدفع على الاستخدام الفعلي. نمو مخزونك بالمواسم ما يحتاج عقد جديد، والمساحة تتوسع معك تلقائيًا.' },
-        { q: 'كيف أتابع مخزوني عندكم؟', a: 'من لوحة تحكم تعرض الأرصدة لحظيًا لكل منتج ومقاس ولون، مع تقارير حركة المخزون. والأرصدة نفسها متزامنة مع متجرك على سلة أو زد أو شوبيفاي.' },
+        { q: 'كيف أتابع مخزوني عندكم؟', a: 'من لوحة تحكم تعرض الأرصدة لحظيًا لكل منتج ومقاس ولون، مع تقارير حركة المخزون. والأرصدة نفسها متزامنة مع متجرك مباشرة.' },
         { q: 'هل تستقبلون بضاعة قادمة من الصين أو الخارج مباشرة؟', a: 'نعم، عبر خدمة الشحن الدولي والتخليص الجمركي نستورد بضاعتك من موردك ونخلصها ونستلمها بمستودعاتنا مباشرة، فتدخل المخزون جاهزة للبيع بدون أي خطوة منك.' },
       ],
       en: [
         { q: 'Do you track my products\' expiry dates?', a: 'Yes — every batch\'s expiry is logged at receiving, orders pick FEFO (first expired, first out), and you get early alerts before any batch approaches its end. Ideal for beauty, supplements, and food products.' },
         { q: 'Is there a minimum quantity or storage period?', a: 'No — start with what you have and pay for actual usage. Seasonal growth expands your space automatically with no new contract.' },
-        { q: 'How do I monitor my inventory with you?', a: 'Through a dashboard showing live balances per SKU, size, and colour, with movement reports. The same balances sync to your Salla, Zid, or Shopify store.' },
+        { q: 'How do I monitor my inventory with you?', a: 'Through a dashboard showing live balances per SKU, size, and colour, with movement reports. The same balances sync to your store directly.' },
         { q: 'Can you receive stock arriving from China or abroad directly?', a: 'Yes — through our international freight and customs service we import from your supplier, clear customs, and receive at our warehouses, so stock enters ready to sell with zero steps on your side.' },
       ],
     },
@@ -85,8 +95,8 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'packing',
     meta: {
-      ar: { title: 'تجهيز وتغليف الطلبات بهوية علامتك التجارية | فاست أكسس', desc: 'فريق مدرّب يجهز طلبك خلال ساعات بمواد متينة وتغليف يحمل اسم براندك: كروت شكر، إهداءات، وتغليف مواسم. عميلك يستلم تجربة، مو كرتون.' },
-      en: { title: 'Branded pick, pack & fulfillment | Fast Access', desc: 'A trained team packs your orders within hours in durable materials carrying your brand: thank-you cards, gift options, seasonal packaging.' },
+      ar: { title: 'تجهيز وتغليف الطلبات بهوية علامتك التجارية | فاست أكسس', desc: `فريق مدرّب يجهز طلبك بمتوسط ${c.avgPackingTimeHours} ساعة بمواد متينة وتغليف يحمل اسم براندك: كروت شكر، إهداءات، وتغليف مواسم. عميلك يستلم تجربة، مو كرتون.` },
+      en: { title: 'Branded pick, pack & fulfillment | Fast Access', desc: `A trained team packs your orders in ${c.avgPackingTimeHours} hours on average, in durable materials carrying your brand: thank-you cards, gift options, seasonal packaging.` },
     },
     chip: { ar: 'التجهيز والتغليف', en: 'Pick & pack' },
     h1: { ar: 'عميلك يستلم تجربة تحمل اسمك، مو كرتون', en: 'Your customer unboxes your brand' },
@@ -98,14 +108,14 @@ export const SERVICES: ServiceContent[] = [
       ar: [
         { title: 'تغليف بهوية علامتك', body: 'نغلّف كل طلب بهويتك: كراتين وأشرطة وستيكرات بشعارك وألوانك، نخزنها عندنا ونستخدمها لكل شحنة، فتصير تجربة الاستلام امتدادًا لمتجرك مو نهاية له.' },
         { title: 'كروت وإهداءات', body: 'ننفّذ كروت الشكر والرسائل المخصصة وخيارات تغليف الهدايا اللي يختارها عميلك عند الطلب، كلها تلقائيًا بدون تدخل منك.' },
-        { title: 'فحص جودة قبل الإغلاق', body: 'نفحص كل طلب قبل الإغلاق: المنتج الصح، المقاس الصح، والحالة سليمة، قبل ما يقفل الكرتون ويطلع للشحن. أخطاء التجهيز عندنا أقل من 0.5%.' },
+        { title: 'فحص جودة قبل الإغلاق', body: `نفحص كل طلب قبل الإغلاق: المنتج الصح، المقاس الصح، والحالة سليمة، قبل ما يقفل الكرتون ويطلع للشحن. أخطاء التجهيز عندنا أقل من ${c.packingErrorRateMax}%.` },
         { title: 'جاهزية المواسم', body: 'نرفع طاقتنا التجهيزية قبل رمضان والجمعة البيضاء ومواسم الإهداء، ونجهز مواد تغليف موسمية، فتمر ذروتك وكأنها يوم عادي.' },
         { title: 'مواد متينة تحمي منتجك', body: 'نحمي منتجك بحشوات وتغليف داخلي يناسب طبيعته، زجاج أو سوائل أو إلكترونيات، فتنخفض نسبة التوالف بالشحن لأدنى حد.' },
       ],
       en: [
         { title: 'Packaging in your identity', body: 'We pack every order in your identity: boxes, tapes, and stickers in your logo and colours, stored with us and used for every shipment, so unboxing extends your store rather than ending it.' },
         { title: 'Cards and gifting', body: 'We execute thank-you cards, custom messages, and gift-wrap options your customer selects at checkout, all automatically.' },
-        { title: 'Quality gate before sealing', body: 'We inspect every order before sealing: right product, right size, sound condition, before the box closes. Packing error rate below 0.5%.' },
+        { title: 'Quality gate before sealing', body: `We inspect every order before sealing: right product, right size, sound condition, before the box closes. Packing error rate below ${c.packingErrorRateMax}%.` },
         { title: 'Peak-season readiness', body: 'We raise packing capacity ahead of Ramadan, White Friday, and gifting seasons, and prepare seasonal materials, so your peak feels like a normal day.' },
         { title: 'Materials that protect', body: 'We protect your product with inner padding matched to its nature, glass, liquids, or electronics, keeping transit damage to a minimum.' },
       ],
@@ -114,17 +124,17 @@ export const SERVICES: ServiceContent[] = [
       ar: [
         { title: 'الطلب يوصلنا تلقائيًا', body: 'من متجرك مباشرة عبر التكامل، بدون إدخال يدوي ولا نسخ أرقام.' },
         { title: 'تجهيز وفحص وتغليف', body: 'الفريق يجهّز القطع من مواقعها، يفحصها، ويغلفها بهويتك مع أي إضافات طلبها العميل.' },
-        { title: 'جاهز للشحن بنفس اليوم', body: 'الطلب يسلم لشريك الشحن الأنسب بنفس اليوم، ورابط التتبع يوصل عميلك تلقائيًا.' },
+        { title: `جاهز للشحن ${c.carrierHandover.ar === 'نفس اليوم' ? 'بنفس اليوم' : c.carrierHandover.ar}`, body: `الطلب يسلم لشريك الشحن الأنسب، ${c.carrierHandover.ar}، ورابط التتبع يوصل عميلك تلقائيًا.` },
       ],
       en: [
         { title: 'Orders flow in automatically', body: 'Straight from your store via the integration — no manual entry.' },
         { title: 'Prepare, inspect & pack', body: 'The team prepares items from their locations, inspects, and packs in your identity with any customer add-ons.' },
-        { title: 'Ready to ship in hours', body: 'Handed to the best-fit carrier the same day, with the tracking link sent to your customer automatically.' },
+        { title: `Ready to ship: ${c.carrierHandover.en.toLowerCase()}`, body: `Handed to the best-fit carrier (${c.carrierHandover.en.toLowerCase()}), with the tracking link sent to your customer automatically.` },
       ],
     },
     stats: [
-      { value: 'دقائق', ar: 'متوسط تجهيز الطلب', en: 'Average packing time' },
-      { value: '<0.5%', ar: 'نسبة أخطاء التجهيز', en: 'Packing error rate' },
+      { value: `${c.avgPackingTimeHours} ساعة`, valueEn: `${c.avgPackingTimeHours} hrs`, ar: 'متوسط تجهيز الطلب', en: 'Average packing time' },
+      { value: `<${c.packingErrorRateMax}%`, ar: 'نسبة أخطاء التجهيز', en: 'Packing error rate' },
       { value: '100%', ar: 'طلبات بهوية علامتك', en: 'Orders in your branding' },
     ],
     faqs: {
@@ -145,8 +155,8 @@ export const SERVICES: ServiceContent[] = [
     slug: 'shipping',
     featuresHeading: { ar: 'كل قرار شحن مبني على بيانات تشغيل فعلية.', en: 'Every shipping decision is built on real operational data.' },
     meta: {
-      ar: { title: 'شحن وتوصيل الطلبات لكل السعودية والخليج | فاست أكسس', desc: 'شبكة تضم أفضل شركات الشحن المحلية والدولية مع +42 مركز توزيع: توصيل بنفس اليوم داخل المدن الكبرى، تغطية الخليج، ووصول لأكثر من 220 دولة، بالتزام 98% بالمواعيد.' },
-      en: { title: 'Shipping & delivery across Saudi Arabia and the GCC | Fast Access', desc: 'A network of the best local and international carriers with 42+ distribution centres: same-day in major cities, GCC coverage, and reach to 220+ countries at 98% on-time.' },
+      ar: { title: 'شحن وتوصيل الطلبات لكل السعودية والخليج | فاست أكسس', desc: `شبكة تضم أفضل شركات الشحن المحلية والدولية مع ${plus(c.distributionCenters)} مستودع ومركز توزيع: توصيل عاجل خلال ${w.ar} داخل المدن الكبرى، تغطية الخليج، ووصول لأكثر من ${c.internationalCountries} دولة، بالتزام ${pct(c.onTimeRate)} بالمواعيد.` },
+      en: { title: 'Shipping & delivery across Saudi Arabia and the GCC | Fast Access', desc: `A network of the best local and international carriers with ${plus(c.distributionCenters)} warehouses and hubs: express delivery within ${w.en} in major cities, GCC coverage, and reach to ${plus(c.internationalCountries)} countries at ${pct(c.onTimeRate)} on-time.` },
     },
     chip: { ar: 'الشحن والتوصيل', en: 'Shipping & delivery' },
     h1: { ar: 'كل طلب ياخذ أفضل طريق سعرًا وسرعة', en: 'Every order takes the best route' },
@@ -157,15 +167,15 @@ export const SERVICES: ServiceContent[] = [
     features: {
       ar: [
         { title: 'اختيار الناقل الأذكى لكل طلب', body: 'نختار الناقل الأنسب لكل شحنة بخوارزمية توزن السعر والسرعة والتغطية: ياخذ طلب الرياض العاجل مسارًا، وطلب القرية البعيدة مسارًا أوفر.' },
-        { title: 'نفس اليوم بالمدن الكبرى', body: 'نوصّل طلبات الرياض وجدة والدمام بنفس اليوم بالتكامل مع مخازننا السحابية داخل المدن، فيوصل طلب الصباح قبل المغرب.' },
-        { title: 'تغطية خليجية ودولية', body: 'نشحن مباشرة لدول الخليج ونوصل لأكثر من 220 دولة عبر شركائنا الدوليين، فما يحتاج توسعك الإقليمي مستودعًا جديدًا.' },
+        { title: 'نفس اليوم بالمدن الكبرى', body: `نوصّل طلبات ${cities.ar} بنفس اليوم من مخازننا السحابية داخل المدن، والعاجل منها خلال ${w.ar}.` },
+        { title: 'تغطية خليجية ودولية', body: `نشحن مباشرة لدول الخليج ونوصل لأكثر من ${c.internationalCountries} دولة عبر شركائنا الدوليين، فما يحتاج توسعك الإقليمي مستودعًا جديدًا.` },
         { title: 'الدفع عند الاستلام مُدار بالكامل', body: 'ندير الدفع عند الاستلام بالكامل: التحصيل عند الباب، متابعة الرفض، إعادة المحاولة، وتحويل المبالغ لحسابك بجدول واضح.' },
         { title: 'توصيل لنقاط ريدبوكس', body: 'نوصّل لنقاط ريدبوكس الذكية لعملائك اللي يفضلون المرونة، فتنخفض تكلفة التوصيل وترتفع نسبة نجاح التسليم.' },
       ],
       en: [
         { title: 'Smart carrier selection per order', body: 'We pick the best-fit carrier per shipment with routing that weighs price, speed, and coverage: an urgent Riyadh order takes one path, a remote-village order takes a cheaper one.' },
-        { title: 'Same-day in major cities', body: 'We deliver Riyadh, Jeddah, and Dammam orders the same day through our in-city cloud stores, so a morning order arrives before sunset.' },
-        { title: 'GCC and international reach', body: 'We ship directly to GCC countries and reach 220+ countries via international partners, so regional expansion needs no new warehouse.' },
+        { title: 'Same-day in major cities', body: `We deliver ${cities.en} orders the same day from our in-city cloud warehouses, and urgent ones within ${w.en}.` },
+        { title: 'GCC and international reach', body: `We ship directly to GCC countries and reach ${plus(c.internationalCountries)} countries via international partners, so regional expansion needs no new warehouse.` },
         { title: 'Fully managed cash on delivery', body: 'We manage cash on delivery end to end: doorstep collection, refusal follow-up, retries, and remittance to your account on a clear schedule.' },
         { title: 'RedBox smart lockers', body: 'We deliver to RedBox smart lockers for customers who prefer flexibility, lowering delivery cost and raising first-attempt success.' },
       ],
@@ -183,9 +193,9 @@ export const SERVICES: ServiceContent[] = [
       ],
     },
     stats: [
-      { value: '98%', ar: 'التزام بمواعيد التسليم', en: 'On-time delivery' },
-      { value: '42+', ar: 'مركز توزيع', en: 'Distribution centres' },
-      { value: '220+', ar: 'دولة نوصل لها', en: 'Countries reached' },
+      { value: pct(c.onTimeRate), ar: 'التزام بمواعيد التسليم', en: 'On-time delivery' },
+      { value: plus(c.distributionCenters), ar: 'مستودع ومركز توزيع', en: 'Warehouses & hubs' },
+      { value: plus(c.internationalCountries), ar: 'دولة نوصل لها', en: 'Countries reached' },
     ],
     faqs: {
       ar: [
@@ -244,7 +254,7 @@ export const SERVICES: ServiceContent[] = [
     stats: [
       { value: '5', ar: 'مراحل موثقة لكل طلب', en: 'Documented stages per order' },
       { value: '100%', ar: 'من الشحنات مرئية لحظيًا', en: 'Shipments visible live' },
-      { value: '24/7', ar: 'مراقبة الاستثناءات', en: 'Exception monitoring' },
+      { value: c.support.short, ar: 'مراقبة الاستثناءات', en: 'Exception monitoring' },
     ],
     faqs: {
       ar: [
@@ -263,28 +273,28 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'cloud-stores',
     meta: {
-      ar: { title: 'المخازن السحابية: توصيل بنفس اليوم من قلب المدينة | فاست أكسس', desc: 'مخزونك موزع بمخازن داخل 6 مدن، فالطلب العاجل يوصل خلال ساعة إلى ساعتين حتى بذروة المواسم. ارفع تحويل متجرك بوعد توصيل ينافس المتاجر الفورية.' },
-      en: { title: 'Cloud stores: same-day delivery from inside the city | Fast Access', desc: 'Inventory pre-positioned in 6 cities so urgent orders arrive within 1-2 hours even at peak. Win conversions with quick-commerce delivery promises.' },
+      ar: { title: 'المخازن السحابية: توصيل بنفس اليوم من قلب المدينة | فاست أكسس', desc: `مخزونك موزع بمخازن سحابية داخل ${cities.ar}، فالطلب العاجل يوصل خلال ${w.ar} حتى بذروة المواسم. ارفع تحويل متجرك بوعد توصيل ينافس المتاجر الفورية.` },
+      en: { title: 'Cloud warehouses: same-day delivery from inside the city | Fast Access', desc: `Inventory pre-positioned in ${cities.en} so urgent orders arrive within ${w.en} even at peak. Win conversions with quick-commerce delivery promises.` },
     },
     chip: { ar: 'المخازن السحابية', en: 'Cloud stores' },
-    h1: { ar: 'مخزونك جوّا المدينة، وطلبك عند العميل خلال ساعة إلى ساعتين', en: 'Stock inside the city, orders delivered within two hours' },
+    h1: { ar: `مخزونك جوّا المدينة، وطلبك عند العميل خلال ${w.ar}`, en: `Stock inside the city, orders delivered within ${w.en}` },
     intro: {
       ar: 'العميل اللي يبي منتجه اليوم ما ينتظر توصيل بكرة، يشتري من منافسك الأسرع. المخازن السحابية تحط مخزونك المختار داخل أحياء المدن، فطلب الظهر يوصل العصر، ووعد "توصيل اليوم" بمتجرك يصير حقيقة تشغيلية مو شعار.',
       en: 'A customer who wants it today will not wait for tomorrow — they buy from your faster competitor. Cloud stores position selected inventory inside city districts, so a noon order arrives by afternoon and "same-day delivery" becomes an operational fact, not a slogan.',
     },
     features: {
       ar: [
-        { title: 'توصيل خلال ساعة إلى ساعتين', body: 'نوصّل الطلبات العاجلة داخل المدينة خلال ساعة إلى ساعتين من الضغط على \"اشتر\"، لأن المسافة أقصر والوصول أسرع.' },
+        { title: `توصيل خلال ${w.ar}`, body: `نوصّل الطلبات العاجلة داخل المدينة خلال ${w.ar} من الضغط على "اشتر"، لأن المسافة أقصر والوصول أسرع.` },
         { title: 'توزيع ذكي للمخزون', body: 'نحلل مبيعاتك ونحدد المنتجات الأعلى دورانًا لكل مدينة، فنقدّمها للمخزن السحابي ونبقي الأصناف البطيئة بالمستودع المركزي.' },
         { title: 'صمود بذروة المواسم', body: 'نحافظ على سرعة طلباتك بذروة المواسم: لما تزدحم شبكات الشحن برمضان والجمعة البيضاء، تكمل طلباتك السحابية مسارها القصير بشكل طبيعي، ميزة تنافسية بأصعب أسابيع السنة.' },
-        { title: 'ست مدن وتتوسع', body: 'نغطي ست مدن رئيسية بالمملكة، ونوسّع الشبكة حسب خريطة طلبات عملائنا.' },
+        { title: `${expressCitiesCount('ar')} وتتوسع`, body: `نغطي ${cities.ar}، ونوسّع الشبكة حسب خريطة طلبات عملائنا.` },
         { title: 'مخزون واحد بنظام واحد', body: 'ندير المخزون السحابي والمركزي بنظام واحد ولوحة واحدة بنفس المزامنة مع متجرك، ويوجّه النظام كل طلب تلقائيًا لأقرب نقطة فيها المنتج.' },
       ],
       en: [
-        { title: '1-2 hour delivery', body: 'We deliver urgent in-city orders within one to two hours of checkout, because a shorter distance means a faster arrival.' },
+        { title: `Delivery within ${w.en}`, body: `We deliver urgent in-city orders within ${w.en} of checkout, because a shorter distance means a faster arrival.` },
         { title: 'Smart inventory distribution', body: 'We analyse your sales and forward-position your fastest movers per city, keeping slower SKUs at the central warehouse.' },
         { title: 'Peak-season resilience', body: 'We keep your orders fast at peak season: when carrier networks jam in Ramadan and White Friday, your cloud orders keep their short route, a competitive edge in the hardest weeks.' },
-        { title: 'Six cities and growing', body: 'We cover six major cities across the Kingdom and expand the network with our merchants\' demand map.' },
+        { title: `${expressCitiesCount('en')} and growing`, body: `We cover ${cities.en}, and expand the network with our merchants' demand map.` },
         { title: 'One inventory, one system', body: 'We run cloud and central stock in one system and one dashboard with the same store sync, and each order routes automatically to the nearest point holding the item.' },
       ],
     },
@@ -292,18 +302,18 @@ export const SERVICES: ServiceContent[] = [
       ar: [
         { title: 'نحلل خريطة مبيعاتك', body: 'وين عملاؤك؟ وش أسرع منتجاتك؟ نحدد التشكيلة الأنسب لكل مدينة.' },
         { title: 'نوزع المخزون مقدمًا', body: 'الأصناف المختارة تتقدم للمخازن السحابية قبل الطلب، مو بعده.' },
-        { title: 'الطلب يوصل خلال ساعة إلى ساعتين', body: 'النظام يوجه الطلب لأقرب مخزن فيه المنتج، والتوصيل ينطلق فورًا.' },
+        { title: `الطلب يوصل خلال ${w.ar}`, body: 'النظام يوجه الطلب لأقرب مخزن فيه المنتج، والتوصيل ينطلق فورًا.' },
       ],
       en: [
         { title: 'We analyse your demand map', body: 'Where are your customers? What moves fastest? We define the right assortment per city.' },
         { title: 'Stock moves forward in advance', body: 'Selected SKUs pre-position to cloud stores before the order — not after.' },
-        { title: 'Orders arrive in hours', body: 'Each order routes to the nearest store holding the item, and delivery starts immediately.' },
+        { title: `Orders arrive within ${w.en}`, body: 'Each order routes to the nearest store holding the item, and delivery starts immediately.' },
       ],
     },
     stats: [
-      { value: 'ساعة إلى ساعتين', ar: 'للتوصيل العاجل داخل المدينة', en: 'Urgent in-city delivery' },
-      { value: '6', ar: 'مدن مغطاة', en: 'Cities covered' },
-      { value: 'يوميًا', ar: 'تغذية المخزون من المركز', en: 'Daily replenishment' },
+      { value: w.ar, valueEn: w.en, ar: 'للتوصيل العاجل داخل المدينة', en: 'Urgent in-city delivery' },
+      { value: String(c.expressCities.length), ar: 'مدن مغطاة', en: 'Cities covered' },
+      { value: c.cloudReplenishment.ar, valueEn: c.cloudReplenishment.en, ar: 'تغذية المخزون من المركز', en: 'Replenishment from the hub' },
     ],
     faqs: {
       ar: [
@@ -322,8 +332,8 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: 'support',
     meta: {
-      ar: { title: 'خدمة عملاء لوجستية تراقب شحناتك 24/7 | فاست أكسس', desc: 'فريق يراقب شحناتك أولًا بأول ويتدخل قبل التصعيد: أغلب المشاكل تنحل قبل ما تسمع فيها. دعم متواصل واستشارات تشغيلية لسلسلة إمدادك.' },
-      en: { title: 'Logistics support watching your shipments 24/7 | Fast Access', desc: 'A team monitoring your shipments in real time and intervening before escalation — most issues resolve before you hear about them.' },
+      ar: { title: `خدمة عملاء لوجستية تراقب شحناتك ${c.support.short} | فاست أكسس`, desc: 'فريق يراقب شحناتك أولًا بأول ويتدخل قبل التصعيد: أغلب المشاكل تنحل قبل ما تسمع فيها. دعم متواصل واستشارات تشغيلية لسلسلة إمدادك.' },
+      en: { title: `Logistics support watching your shipments ${c.support.short} | Fast Access`, desc: 'A team monitoring your shipments in real time and intervening before escalation — most issues resolve before you hear about them.' },
     },
     chip: { ar: 'خدمة العملاء', en: 'Customer care' },
     h1: { ar: 'فريق يشوف المشكلة قبلك، ويحلها قبل ما تكبر', en: 'A team that sees the problem before you do' },
@@ -360,7 +370,7 @@ export const SERVICES: ServiceContent[] = [
       ],
     },
     stats: [
-      { value: '24/7', ar: 'مراقبة ودعم متواصل', en: 'Continuous monitoring' },
+      { value: c.support.short, ar: 'مراقبة ودعم متواصل', en: 'Continuous monitoring' },
       { value: 'استباقي', ar: 'التدخل قبل التصعيد', en: 'Pre-escalation action' },
       { value: 'فريق واحد', ar: 'يعرف حسابك بالكامل', en: 'That knows your account' },
     ],

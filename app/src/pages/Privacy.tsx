@@ -1,6 +1,7 @@
 import PageHeader from '../components/PageHeader';
 import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 /**
  * سياسة الخصوصية — includes #security and #cookies anchor sections
@@ -40,7 +41,7 @@ export default function Privacy() {
             <>
               <S title="مقدمة">
                 <p>
-                  هذه السياسة توضح كيف تتعامل شركة فاست أكسس للخدمات اللوجستية («فاست أكسس»، «نحن») مع البيانات الشخصية التي نجمعها عبر موقع faccess.co وخدماتنا، وذلك التزامًا بنظام حماية البيانات الشخصية في المملكة العربية السعودية.
+                  هذه السياسة توضح كيف تتعامل {claims.legalNameAr} («فاست أكسس»، «نحن») مع البيانات الشخصية التي نجمعها عبر موقع faccess.co وخدماتنا، وذلك التزامًا بنظام حماية البيانات الشخصية في المملكة العربية السعودية.
                 </p>
               </S>
               <S title="البيانات التي نجمعها">
@@ -71,7 +72,7 @@ export default function Privacy() {
           ) : (
             <>
               <S title="Introduction">
-                <p>This policy explains how Fast Access Fulfillment Services ("Fast Access", "we") handles personal data collected through faccess.co and our services, in line with the Saudi Personal Data Protection Law.</p>
+                <p>This policy explains how {claims.legalNameEn} ("Fast Access", "we") handles personal data collected through faccess.co and our services, in line with the Saudi Personal Data Protection Law.</p>
               </S>
               <S title="Data we collect">
                 <p>We collect data you provide directly when requesting a quote or contacting us: name, phone, email, brand/company name, store URL, monthly order volume, and any details you share. We also automatically collect limited technical data (browser, device, pages visited) to operate and improve the site.</p>

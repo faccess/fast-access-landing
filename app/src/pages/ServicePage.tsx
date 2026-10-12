@@ -9,6 +9,7 @@ import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
 import { getService } from '../i18n/services';
 import usePageMeta from '../hooks/usePageMeta';
+import { claims } from '../content/claims';
 
 /**
  * Dedicated landing page for a single service (/solutions/<slug>).
@@ -185,7 +186,7 @@ export default function ServicePage() {
           </Reveal>
           <Reveal delay={90}>
             <p className="font-body mt-4 text-[15.5px] text-fa-classic-chalk/70 leading-[1.7] max-w-[560px] mx-auto">
-              {isAr ? 'أرسل تفاصيل متجرك ونرجع لك بعرض سعر مفصل خلال يوم عمل.' : 'Send your store details and get a detailed quote within one business day.'}
+              {isAr ? `أرسل تفاصيل متجرك ونرجع لك بعرض سعر مفصل خلال ${claims.quoteTurnaround.ar}.` : `Send your store details and get a detailed quote within ${claims.quoteTurnaround.en}.`}
             </p>
           </Reveal>
           <Reveal delay={160}>

@@ -6,11 +6,11 @@ import BrandPattern from '../components/brand/BrandPattern';
 import MagneticButton from '../components/brand/MagneticButton';
 import RevealText from '../components/brand/RevealText';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 export default function Hero() {
   const [trackOpen, setTrackOpen] = useState(false);
-  const { t, locale } = useT();
-  const isAr = locale === 'ar';
+  const { t } = useT();
 
   useEffect(() => {
     const elements = document.querySelectorAll('.hero-fade');
@@ -103,9 +103,9 @@ export default function Hero() {
             {/* Hero Stats */}
             <div className="hero-fade grid grid-cols-3 gap-0 mt-10 border-t border-fa-classic-chalk/15 pt-7 max-w-[560px]">
               {[
-                { value: '98', unit: '%', label: t('hero.statOnTime') },
-                { value: '99.99', unit: '%', label: t('hero.statInventory') },
-                { value: '99.7', unit: '%', label: t('hero.statCenters') },
+                { value: String(claims.onTimeRate), unit: '%', label: t('hero.statOnTime') },
+                { value: String(claims.inventoryAccuracy), unit: '%', label: t('hero.statInventory') },
+                { value: String(claims.pickAccuracy), unit: '%', label: t('hero.statCenters') },
               ].map((stat, i) => (
                 <div key={stat.label} className="flex items-stretch">
                   <div className="pe-3 sm:pe-8">

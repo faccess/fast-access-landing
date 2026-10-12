@@ -4,6 +4,7 @@ import BrandPattern from '../components/brand/BrandPattern';
 import BrandButton from '../components/brand/BrandButton';
 import QuoteForm from '../components/QuoteForm';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 
 export default function CTA() {
@@ -11,19 +12,6 @@ export default function CTA() {
   const isAr = locale === 'ar';
   const { ref, isInView } = useInView(0.15);
 
-  
-
-  
-  const handleServiceChange = (serviceName: string) => {
-    setFormData(prev => ({
-      ...prev,
-      services: prev.services.includes(serviceName)
-        ? prev.services.filter(s => s !== serviceName)
-        : [...prev.services, serviceName]
-    }));
-  };
-
-  
   return (
     <section id="quote" ref={ref} className="relative bg-fa-liberty-blue pt-24 pb-20 lg:pt-28 lg:pb-28 overflow-hidden">
       {/* Pattern 1 — Ribbon background decoration */}
@@ -56,7 +44,7 @@ export default function CTA() {
               <BrandButton href="/contact">{isAr ? 'تواصل معنا' : 'Contact us'}</BrandButton>
               <div className="flex items-center gap-2 mt-6 text-[11px] text-fa-orange-soda font-semibold uppercase tracking-wider font-body">
                 <span className="w-1.5 h-1.5 rounded-full bg-fa-orange-soda animate-pulse" />
-                {isAr ? 'الرد خلال يوم عمل واحد' : 'Reply within one business day'}
+                {isAr ? `الرد خلال ${claims.quoteTurnaround.ar}` : `Reply within ${claims.quoteTurnaround.en}`}
               </div>
             </div>
           </div>

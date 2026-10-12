@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, TrendingUp } from 'lucide-react';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 export default function AnnouncementBar() {
   const { locale } = useT();
@@ -38,8 +39,8 @@ export default function AnnouncementBar() {
           <TrendingUp size={12} className="text-[#F15B41] flex-shrink-0" />
           <p className="text-[11px] sm:text-xs text-white/65 leading-snug">
             {isAr
-              ? 'توصيل بنفس اليوم داخل المدن الرئيسية... خلّها علينا،'
-              : 'Same-day cloud-store delivery is available in major Saudi cities'}
+              ? `توصيل خلال ${claims.expressDeliveryWindow.ar} داخل المدن الرئيسية... خلّها علينا،`
+              : `Express delivery within ${claims.expressDeliveryWindow.en} in major Saudi cities`}
           </p>
           <Link
             to="/contact"

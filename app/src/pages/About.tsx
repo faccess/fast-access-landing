@@ -7,12 +7,9 @@ import RevealText from '../components/brand/RevealText';
 import MagneticButton from '../components/brand/MagneticButton';
 import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
+import { claims, plus, pct } from '../content/claims';
 
 export default function About() {
-  usePageMeta(
-    { title: 'من نحن: قصة فاست أكسس', desc: 'تعرف على فاست أكسس: شركة لوجستية سعودية تشغّل التخزين والتجهيز والشحن لمئات المتاجر، بمراكز في الرياض وجدة والدمام.' },
-    { title: 'About Fast Access', desc: 'Meet Fast Access: a Saudi logistics company running storage, fulfillment and shipping for hundreds of stores from Riyadh, Jeddah and Dammam.' }
-  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
@@ -21,17 +18,17 @@ export default function About() {
   );
 
   const values = [
-    { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نقيس أنفسنا بالساعات، لا الأيام، لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
-    { icon: ShieldCheck, title: isAr ? 'موثوقية مطلقة' : 'Radical reliability', body: isAr ? 'كل طلب يُعامل كأنه يحمل اسمك، لأنه فعلًا يحمله.' : 'Every order is handled as if it carries your name — because it does.' },
-    { icon: HeartHandshake, title: isAr ? 'شريك لا مورّد' : 'Partner, not vendor', body: isAr ? 'نجاحك هو مقياسنا الوحيد: لو ما نما متجرك، ما سوّينا شغلنا.' : 'Your growth is our only metric — if your store didn\u2019t grow, we didn\u2019t do our job.' },
-    { icon: TrendingUp, title: isAr ? 'مبنيّ للنمو' : 'Built for growth', body: isAr ? 'من ١٠٠ طلب إلى ١٠,٠٠٠: نفس الدقة، نفس السرعة، بدون ما تحس بالفرق.' : 'From 100 orders to 10,000 — same accuracy, same speed, and you won\u2019t feel the difference.' },
+    { icon: Gauge, title: isAr ? 'السرعة أولًا' : 'Speed first', body: isAr ? 'نحسبها بالساعات، مو بالأيام، لأن عميلك ينتظر.' : 'We measure ourselves in hours, not days — because your customer is waiting.' },
+    { icon: ShieldCheck, title: isAr ? 'كلمتنا وحدة' : 'Radical reliability', body: isAr ? 'نتعامل مع كل طلب كأنه يحمل اسمك، لأنه فعلًا يحمله.' : 'Every order is handled as if it carries your name — because it does.' },
+    { icon: HeartHandshake, title: isAr ? 'شريك، مو مورّد' : 'Partner, not vendor', body: isAr ? 'مقياسنا الوحيد نموّك: لو متجرك ما كبر، معناها ما سوّينا شغلنا.' : 'Your growth is our only metric — if your store didn\u2019t grow, we didn\u2019t do our job.' },
+    { icon: TrendingUp, title: isAr ? 'جاهزين لنموّك' : 'Built for growth', body: isAr ? 'من ١٠٠ طلب إلى ١٠,٠٠٠: نفس الدقة ونفس السرعة، وما تحس بالفرق.' : 'From 100 orders to 10,000 — same accuracy, same speed, and you won\u2019t feel the difference.' },
   ];
 
   const numbers = [
-    { v: '10+', l: isAr ? 'مركز توزيع' : 'Fulfilment centres' },
-    { v: '13', l: isAr ? 'منطقة في المملكة' : 'Regions in the Kingdom' },
-    { v: '97%', l: isAr ? 'التزام بالوقت' : 'On-time rate' },
-    { v: '24/7', l: isAr ? 'دعم تشغيلي' : 'Operations support' },
+    { v: plus(claims.distributionCenters), l: isAr ? 'مركز توزيع' : 'Fulfilment centres' },
+    { v: String(claims.coverageRegions), l: isAr ? 'منطقة في المملكة' : 'Regions in the Kingdom' },
+    { v: pct(claims.onTimeRate), l: isAr ? 'التزام بالوقت' : 'On-time rate' },
+    { v: claims.support.short, l: isAr ? 'دعم تشغيلي' : 'Operations support' },
   ];
 
   return (
@@ -45,22 +42,22 @@ export default function About() {
           <Reveal delay={80}>
             <p className="font-display font-normal text-[22px] sm:text-[26px] lg:text-[31px] text-fa-liberty-blue leading-[1.55] tracking-[-0.01em]">
               {isAr
-                ? 'بدأنا في 2023 بملاحظة بسيطة: التجارة الإلكترونية في السعودية تنمو بسرعة، والخدمات اللوجستية ما كانت تلحق عليها. شفنا الفجوة واضحة: تجّار يكبرون، وعمليات تشدّهم لتحت.'
-                : 'We started in 2023 with a simple observation: e-commerce in Saudi Arabia was growing fast, and logistics wasn\u2019t keeping up. The gap was clear — merchants scaling up, and operations dragging them down.'}
+                ? `بدأنا في ${claims.foundedYear} بملاحظة بسيطة: التجارة الإلكترونية في السعودية تنمو بسرعة، والخدمات اللوجستية ما كانت تلحق عليها. شفنا الفجوة واضحة: تجّار يكبرون، وعمليات تشدّهم لتحت.`
+                : `We started in ${claims.foundedYear} with a simple observation: e-commerce in Saudi Arabia was growing fast, and logistics wasn\u2019t keeping up. The gap was clear — merchants scaling up, and operations dragging them down.`}
             </p>
           </Reveal>
           <Reveal delay={140}>
             <p className="font-body mt-6 text-[16px] lg:text-[17px] text-fa-ink-muted leading-[1.85]">
               {isAr
-                ? 'فدخلنا السوق برهانين ما تنازلنا عنهما يوم: خدمة جبارة تعامل كل طلب كأنه يحمل اسمنا، وتقنية نطوّرها بأيدينا: منصة تربط متجرك، تجهّز، تشحن، وتتبّع، عشان تشوف كل شي وتتفرغ لنموك.'
-                : 'So we entered the market with two bets we\u2019ve never compromised on: exceptional service that treats every order as if it carries our name, and technology we build ourselves — a platform that connects your store, fulfills, ships, and tracks, so you see everything and focus on growth.'}
+                ? 'فدخلنا السوق برهانين ما تنازلنا عنهما يوم: خدمة تعامل كل طلب كأنه يحمل اسمنا، وتقنية نطوّرها بأيدينا: منصة تربط متجرك، تجهّز، تشحن، وتتبّع، عشان تشوف كل شي وتتفرغ لنموك.'
+                : 'So we entered the market with two bets we\u2019ve never compromised on: service that treats every order as if it carries our name, and technology we build ourselves — a platform that connects your store, fulfills, ships, and tracks, so you see everything and focus on growth.'}
             </p>
           </Reveal>
           <Reveal delay={200}>
             <p className="font-body mt-4 text-[16px] lg:text-[17px] text-fa-ink-muted leading-[1.85]">
               {isAr
-                ? 'وفي 2025 جات النقلة: موجة عملاء جدد اختاروا يخلّونها علينا، وتوسّعت عملياتنا عبر المملكة. واليوم نكمل على نفس الطريق: نكبر مع تجّارنا، ونطوّر قبل ما يحتاجون.'
-                : 'Then 2025 brought the leap: a wave of new clients chose to hand it over to us, and our operations expanded across the Kingdom. Today we\u2019re on the same road — growing with our merchants, and building ahead of their needs.'}
+                ? `وفي ${claims.growthYear} جات النقلة: موجة عملاء جدد اختاروا يخلّونها علينا، وتوسّعت عملياتنا عبر المملكة. واليوم نكمل على نفس الطريق: نكبر مع تجّارنا، ونطوّر قبل ما يحتاجون.`
+                : `Then ${claims.growthYear} brought the leap: a wave of new clients chose to hand it over to us, and our operations expanded across the Kingdom. Today we\u2019re on the same road — growing with our merchants, and building ahead of their needs.`}
             </p>
           </Reveal>
         </div>
@@ -91,10 +88,10 @@ export default function About() {
       {/* What we value */}
       <section className="relative bg-fa-cream section-padding overflow-hidden">
         <div className="container-main relative z-10">
-          <Reveal className="mb-4"><SectionChip>{isAr ? 'ما نؤمن به' : 'What we value'}</SectionChip></Reveal>
+          <Reveal className="mb-4"><SectionChip>{isAr ? 'وش نؤمن فيه' : 'What we value'}</SectionChip></Reveal>
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[46px] text-fa-liberty-blue leading-[1.08] tracking-[-0.02em] max-w-[720px]">
-              {isAr ? 'المبادئ التي تحرّك كل طلب.' : 'The principles behind every order.'}
+              {isAr ? 'المبادئ اللي تحرّك كل طلب.' : 'The principles behind every order.'}
             </h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">

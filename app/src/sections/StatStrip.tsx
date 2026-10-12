@@ -1,33 +1,38 @@
 /**
- * StatStrip — new-PPT "by the numbers" counters. Rendered on navy as one of
- * the two dark anchor moments (the rest of the page is cream-dominant).
- * Numbers count up once when scrolled into view; respects reduced-motion.
+ * StatStrip — "by the numbers" counters merged with the three before/after
+ * client stories (ResultsCards) into one navy proof section.
  *
- * NOTE: the figures are placeholders — replace with real metrics.
+ * Counters: the FINAL value is what renders on the server (prerendered HTML),
+ * so crawlers and no-JS visitors see real numbers, never zeros. Only after
+ * mount, when the counter scrolls into view, does it reset to 0 and count up.
+ * Respects reduced-motion (no animation at all). Figures live in claims.ts.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SectionChip from '../components/brand/SectionChip';
 import Reveal from '../components/Reveal';
 import { useInView } from '../hooks/useInView';
 import { useT } from '../i18n/I18nContext';
 import { content } from '../i18n/content';
+import { ResultsCards } from './Results';
 
 interface Stat { value: number; suffix?: string; prefix?: string; label: string }
 
 function format(n: number, decimals: number) {
-  return decimals > 0 ? n.toFixed(decimals) : Math.round(n).toLocaleString();
+  return decimals > 0 ? n.toFixed(decimals) : Math.round(n).toLocaleString('en-US');
 }
 
 function CountUp({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) {
   const { ref, isInView } = useInView(0.4);
-  const [display, setDisplay] = useState(0);
+  // SSR + first client render show the final value (hydration-safe).
+  const [display, setDisplay] = useState(value);
+  const played = useRef(false);
   const decimals = value % 1 !== 0 ? 1 : 0;
 
   useEffect(() => {
-    if (!isInView) return;
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) { setDisplay(value); return; }
+    if (!isInView || played.current) return;
+    played.current = true;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
     const duration = 1400;
     const start = performance.now();
     let raf = 0;
@@ -37,6 +42,7 @@ function CountUp({ value, prefix = '', suffix = '' }: { value: number; prefix?: 
       setDisplay(value * eased);
       if (p < 1) raf = requestAnimationFrame(tick);
     };
+    setDisplay(0);
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [isInView, value]);
@@ -55,7 +61,7 @@ export default function StatStrip() {
   const items = content[locale].stats.items as readonly Stat[];
 
   return (
-    <section className="relative bg-fa-liberty-blue section-padding overflow-hidden">
+    <section id="proof" className="relative bg-fa-liberty-blue section-padding overflow-hidden">
       <div className="container-main relative z-10">
         <div className="max-w-[720px] text-left rtl:text-right">
           <Reveal><SectionChip onDark>{t('stats.chip')}</SectionChip></Reveal>
@@ -85,6 +91,18 @@ export default function StatStrip() {
             </Reveal>
           ))}
         </div>
+
+        {/* Client stories, directly under the numbers */}
+        <div className="mt-20 max-w-[760px] text-left rtl:text-right">
+          <Reveal><SectionChip onDark>{t('results.chip')}</SectionChip></Reveal>
+          <Reveal delay={80}>
+            <h3 className="font-display font-bold text-[26px] sm:text-[32px] lg:text-[38px] text-fa-classic-chalk leading-[1.1] tracking-[-0.02em] mt-5">
+              {t('results.headlineA')}{' '}
+              <span className="text-fa-orange-soda">{t('results.headlineHighlight')}</span>
+            </h3>
+          </Reveal>
+        </div>
+        <ResultsCards className="mt-10" />
       </div>
     </section>
   );

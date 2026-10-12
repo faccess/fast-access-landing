@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Sparkles, TrendingUp, Clock, Wallet } from 'lucide-react';
 import BrandButton from '../components/brand/BrandButton';
 import { useT } from '../i18n/I18nContext';
+import { claims, joinList } from '../content/claims';
 
 /**
  * Calculator — interactive lead magnet, sits above the fold as the new
@@ -10,11 +11,11 @@ import { useT } from '../i18n/I18nContext';
  * and 12-month ROI. CTA at the bottom captures the lead with their inputs
  * already filled in.
  *
- * Math is intentionally conservative — the savings model assumes:
- *  - 18% reduction on per-order cost (Fast Access bulk carrier rates)
- *  - 70% reduction in weekly hours (we handle pick/pack/ship/ track)
- *  - Average delivery drops from N days to 1.5 days, or to 0.15 days
- *    (1-2hr) when same-day cloud stores are toggled on.
+ * The savings model's assumptions live in claims.ts:
+ *  - calculatorCostSavingPct off the per-order cost (bulk carrier rates)
+ *  - calculatorHoursSavingPct off weekly hours (we handle pick/pack/ship/track)
+ *  - "Expected delivery time" is not computed: it shows the published promise
+ *    (expressDeliveryWindow with cloud warehouses on, mainCitiesStandard off).
  */
 export default function Calculator() {
   const { locale } = useT();
@@ -29,12 +30,15 @@ export default function Calculator() {
 
   const results = useMemo(() => {
     const monthlyCost = orders * costPerOrder;
-    const savedCostMonthly = monthlyCost * 0.18;
-    const savedHoursWeekly = Math.round(weeklyHours * 0.7);
-    const newDeliveryDays = cloudStores ? 0.15 : Math.min(deliveryDays, 1.5);
+    const savedCostMonthly = monthlyCost * (claims.calculatorCostSavingPct / 100);
+    const savedHoursWeekly = Math.round(weeklyHours * (claims.calculatorHoursSavingPct / 100));
     const annualROI = Math.round(savedCostMonthly * 12);
-    return { savedCostMonthly: Math.round(savedCostMonthly), savedHoursWeekly, newDeliveryDays, annualROI };
-  }, [orders, costPerOrder, weeklyHours, deliveryDays, cloudStores]);
+    return { savedCostMonthly: Math.round(savedCostMonthly), savedHoursWeekly, annualROI };
+  }, [orders, costPerOrder, weeklyHours]);
+  const expectedDelivery = (cloudStores ? claims.expressDeliveryWindow : claims.mainCitiesStandard)[locale];
+  const cloudToggleLabel = isAr
+    ? `أضف التوصيل العاجل خلال ${claims.expressDeliveryWindow.ar}`
+    : `Add express delivery within ${claims.expressDeliveryWindow.en}`;
 
   // Tiny mount fade-in so the lead magnet doesn't pop in cold
   useEffect(() => {
@@ -137,7 +141,7 @@ export default function Calculator() {
                 <span
                   role="switch"
                   aria-checked={cloudStores}
-                  aria-label={isAr ? 'أضف خيار التوصيل السريع خلال ساعة إلى ساعتين' : 'Use cloud-store same-day delivery (1–2 hr)'}
+                  aria-label={cloudToggleLabel}
                   tabIndex={0}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setCloudStores(!cloudStores))}
                   className="relative inline-flex w-10 h-5 rounded-full transition-colors shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fa-orange-soda"
@@ -151,13 +155,13 @@ export default function Calculator() {
                 </span>
                 <input type="checkbox" className="sr-only" checked={cloudStores} onChange={(e) => setCloudStores(e.target.checked)} />
                 <span className="font-body text-sm text-fa-liberty-blue/80">
-                  {isAr ? 'أضف خيار التوصيل السريع خلال ساعة إلى ساعتين' : 'Use cloud-store same-day delivery (1–2 hr)'}
+                  {cloudToggleLabel}
                 </span>
               </label>
               <p className="font-body text-[11px] text-fa-liberty-blue/45 leading-[1.5] -mt-3 pl-12">
                 {isAr
-                  ? 'حوالي ⅓ من المستهلكين في السعودية يفضلون التوصيل في اليوم التالي. متاجرنا السحابية توصل خلال ساعة إلى ساعتين.'
-                  : '~⅓ of Saudi consumers want it next day. Our cloud stores ship in 2–4 hours.'}
+                  ? `مخازننا السحابية توصل خلال ${claims.expressDeliveryWindow.ar} داخل ${joinList(claims.expressCities, 'ar')}.`
+                  : `Our cloud warehouses deliver within ${claims.expressDeliveryWindow.en} in ${joinList(claims.expressCities, 'en')}.`}
               </p>
             </div>
           </div>
@@ -203,15 +207,8 @@ export default function Calculator() {
                 <Stat
                   icon={<Sparkles size={18} strokeWidth={1.7} />}
                   label={isAr ? 'مدة التوصيل المتوقعة' : 'Expected delivery time'}
-                  value={
-                    results.newDeliveryDays < 0.25
-                      ? isAr
-                        ? '2–4 ساعات'
-                        : '2–4 hrs'
-                      : isAr
-                      ? fmtDaysAr(results.newDeliveryDays)
-                      : `${results.newDeliveryDays} d`
-                  }
+                  value={expectedDelivery}
+                  compact
                 />
               </div>
 
@@ -247,7 +244,7 @@ export default function Calculator() {
             <div className="mt-4 font-body text-[11px] text-fa-liberty-blue/45 text-center">
               {isAr
                 ? 'النتائج تقديرية وتعتمد على البيانات المدخلة، وقد تختلف حسب طبيعة العمليات والخدمات المطلوبة.'
-                : 'Estimates based on average Fast Access merchant outcomes. Actual results vary.'}
+                : 'Estimates depend on the data you enter and may vary with your operations and the services you need.'}
             </div>
           </div>
         </div>
@@ -314,18 +311,26 @@ function Stat({
   label,
   value,
   highlight = false,
+  compact = false,
   className = '',
 }: {
   icon: React.ReactNode;
   label: string;
   value: string;
   highlight?: boolean;
+  /** text values (e.g. a delivery window) wrap at a smaller size */
+  compact?: boolean;
   className?: string;
 }) {
+  const size = compact
+    ? 'leading-[1.15] text-[22px] lg:text-[26px] text-fa-classic-chalk'
+    : highlight
+      ? 'leading-none whitespace-nowrap text-[36px] lg:text-[44px] xl:text-[48px] text-fa-orange-soda'
+      : 'leading-none whitespace-nowrap text-[28px] lg:text-[36px] text-fa-classic-chalk';
   return (
     <div className={`relative ${className}`.trim()}>
       <div className="flex items-center gap-2 text-fa-orange-soda mb-3">{icon}</div>
-      <div className={`font-display font-semibold leading-none tracking-[-0.02em] whitespace-nowrap ${highlight ? 'text-[36px] lg:text-[44px] xl:text-[48px] text-fa-orange-soda' : 'text-[28px] lg:text-[36px] text-fa-classic-chalk'}`}>
+      <div className={`font-display font-semibold tracking-[-0.02em] ${size}`}>
         {value}
       </div>
       <div className="mt-2 font-body text-[11px] uppercase tracking-[0.08em] text-fa-classic-chalk/55 font-semibold">{label}</div>

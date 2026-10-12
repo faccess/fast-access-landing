@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
+import { claims, pct } from '../content/claims';
 
 /**
  * /blog/what-is-fulfillment — first blog article (SEO Phase 1).
@@ -321,7 +322,7 @@ export default function BlogArticle() {
             <Link to="/#integrations" className="text-fa-orange-soda font-semibold underline underline-offset-4">شوف تكاملات فاست أكسس</Link>
           </li>
           <li className={li}><strong>سرعة التجهيز:</strong> اسأل عن متوسط الوقت من استلام الطلب لتسليمه للشحن (المعيار الممتاز: ساعات، مو أيام).</li>
-          <li className={li}><strong>الالتزام بالمواعيد:</strong> اطلب نسبة الشحن في الوقت المحدد — الشركات الجادة تعلنها (في فاست أكسس: 99.8%).</li>
+          <li className={li}><strong>الالتزام بالمواعيد:</strong> اطلب نسبة الشحن في الوقت المحدد — الشركات الجادة تعلنها (في فاست أكسس: {pct(claims.onTimeRate)}).</li>
           <li className={li}><strong>التغطية:</strong> هل توصّل لكل مناطق المملكة؟ وهل عندها خيارات توصيل سريع داخل المدن؟</li>
           <li className={li}><strong>الشفافية:</strong> لوحة تحكم توريك المخزون والطلبات لحظياً، وتسعير واضح بدون رسوم مخفية.</li>
           <li className={li}><strong>التراخيص:</strong> مستودعات مرخّصة، وترخيص SFDA إذا منتجاتك غذائية أو تجميلية أو صحية.</li>
@@ -580,7 +581,7 @@ function ArticleEn() {
             <Link to="/#integrations" className="text-fa-orange-soda font-semibold underline underline-offset-4">See Fast Access integrations</Link>
           </li>
           <li className={li}><strong>Prep speed:</strong> ask for the average time from order receipt to courier handover (excellent = hours, not days).</li>
-          <li className={li}><strong>On-time rate:</strong> serious companies publish it (at Fast Access: 99.8%).</li>
+          <li className={li}><strong>On-time rate:</strong> serious companies publish it (at Fast Access: {pct(claims.onTimeRate)}).</li>
           <li className={li}><strong>Coverage:</strong> do they deliver across all of Saudi Arabia, with fast in-city options?</li>
           <li className={li}><strong>Transparency:</strong> a live dashboard for stock and orders, and clear pricing with no hidden fees.</li>
           <li className={li}><strong>Licensing:</strong> licensed warehouses, plus SFDA licensing if your products are food, cosmetic or health items.</li>

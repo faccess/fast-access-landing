@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import usePageMeta from '../hooks/usePageMeta';
 import { useT } from '../i18n/I18nContext';
+import { claims, pct } from '../content/claims';
 
 /**
  * /blog/how-to-choose-fulfillment-company — second article.
@@ -39,7 +40,7 @@ const FAQS_EN: Array<{ q: string; a: string }> = [
   },
   {
     q: 'How do I test Fast Access against these same criteria?',
-    a: 'Simple: request a quote and ask us every question in the table above — our Salla, Zid and Shopify integrations are ready, average prep is two hours, our on-time rate is 99.8%, and we\u2019ll answer the rest with numbers.',
+    a: `Simple: request a quote and ask us every question in the table above — our Salla, Zid and Shopify integrations are ready, average prep is ${claims.avgPackingTimeHours} hours, our on-time rate is ${pct(claims.onTimeRate)}, and we\u2019ll answer the rest with numbers.`,
   },
 ];
 
@@ -62,7 +63,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: 'كيف أجرب فاست أكسس بنفس هذي المعايير؟',
-    a: 'بكل بساطة: اطلب عرض سعر واسألنا نفس أسئلة الجدول فوق — تكاملنا مع سلة وزد وشوبيفاي جاهز، متوسط التجهيز ساعتان، والتزامنا بالمواعيد 99.8%، والباقي نجاوبك عليه بالأرقام.',
+    a: `بكل بساطة: اطلب عرض سعر واسألنا نفس أسئلة الجدول فوق — تكاملنا مع سلة وزد وشوبيفاي جاهز، متوسط التجهيز ${claims.avgPackingTimeHours} ساعة، والتزامنا بالمواعيد ${pct(claims.onTimeRate)}، والباقي نجاوبك عليه بالأرقام.`,
   },
 ];
 

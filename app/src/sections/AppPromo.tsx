@@ -1,15 +1,18 @@
 import { useT } from '../i18n/I18nContext';
+import { content } from '../i18n/content';
 import SectionChip from '../components/brand/SectionChip';
 import Reveal from '../components/Reveal';
-import { Bell, LineChart, PackageSearch, Boxes, PackagePlus, } from 'lucide-react';
+import { Bell, LineChart, PackageSearch, PackagePlus, Check } from 'lucide-react';
 
 /**
- * AppPromo — merchant mobile app section (app launching soon).
- * The phone is a pure CSS/JSX mockup in brand identity — no image assets.
+ * AppPromo — the merged "dashboard & app" section on Home: the web dashboard
+ * («لوحة واحدة») and the merchant mobile app («تجارتك بجيبك», launching soon)
+ * in one band. The phone shows the approved merchant-app screen capture.
  */
 export default function AppPromo() {
-  const { locale } = useT();
+  const { t, locale } = useT();
   const isAr = locale === 'ar';
+  const platform = content[locale].platform;
 
   const feats = [
     {
@@ -35,25 +38,40 @@ export default function AppPromo() {
   ];
 
   return (
-    <section className="relative bg-fa-liberty-blue section-padding overflow-hidden">
+    <section className="relative bg-fa-liberty-blue section-padding overflow-hidden border-t border-fa-classic-chalk/10">
       <div className="container-main relative z-10 grid lg:grid-cols-2 gap-14 items-center">
         {/* Copy */}
         <div className="text-left rtl:text-right">
-          <Reveal className="mb-4"><SectionChip onDark>{isAr ? 'تطبيق فاست أكسس' : 'Fast Access app'}</SectionChip></Reveal>
+          <Reveal className="mb-4"><SectionChip onDark>{t('platform.chip')}</SectionChip></Reveal>
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[30px] sm:text-[38px] lg:text-[48px] text-fa-classic-chalk leading-[1.35] tracking-[-0.02em]">
-              {isAr ? (<>تجارتك كلها... <span className="text-fa-orange-soda">بجيبك.</span></>) : (<>Your whole business... <span className="text-fa-orange-soda">in your pocket.</span></>)}
+              {t('platform.headlineA')} <span className="text-fa-orange-soda">{t('platform.headlineHighlight')}</span>
             </h2>
           </Reveal>
           <Reveal delay={140}>
             <p className="font-body mt-4 text-[15px] lg:text-[17px] text-fa-classic-chalk/70 leading-[1.75] max-w-[520px]">
-              {isAr
-                ? 'تطبيق جوال صممناه للتجار: تتابع طلباتك، تحلل مبيعاتك ومخزونك، وتوصلك التنبيهات المهمة أول بأول، وين ما كنت.'
-                : 'A mobile app built for merchants: track your orders, analyze sales and inventory, and get the alerts that matter, wherever you are.'}
+              {t('platform.body')}
             </p>
           </Reveal>
 
-          <div className="mt-8 space-y-5">
+          {/* On the web — dashboard */}
+          <Reveal delay={170}>
+            <div className="mt-8 font-ui text-[11px] font-semibold uppercase tracking-[0.14em] text-fa-orange-soda">{t('platform.webLabel')}</div>
+            <ul className="mt-3 space-y-2.5">
+              {platform.web.map((item) => (
+                <li key={item} className="flex items-start gap-3 font-body text-[14px] text-fa-classic-chalk/75 leading-[1.6]">
+                  <Check size={16} strokeWidth={2.4} className="text-fa-orange-soda mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          {/* In the app — merchant mobile app */}
+          <Reveal delay={200}>
+            <div className="mt-9 font-ui text-[11px] font-semibold uppercase tracking-[0.14em] text-fa-orange-soda">{t('platform.appLabel')}</div>
+          </Reveal>
+          <div className="mt-4 space-y-5">
             {feats.map((f, i) => (
               <Reveal key={f.title} delay={180 + i * 70}>
                 <div className="flex items-start gap-4">

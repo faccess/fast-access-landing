@@ -5,112 +5,8 @@ import { useT } from '../i18n/I18nContext';
 import SectionChip from '../components/brand/SectionChip';
 import SpotlightCard from '../components/brand/SpotlightCard';
 import BrandPattern from '../components/brand/BrandPattern';
-
-// FAQ data with translations for all 17 slides questions and answers.
-const faqItems = [
-  {
-    qEn: 'What services does Fast Access provide?',
-    qAr: 'وش الخدمات اللي تقدمها فاست أكسس؟',
-    aEn: 'We provide end-to-end logistics solutions including storage, professional packaging, shipping, real-time tracking, cloud store fulfillment (1-2hr same-day delivery), and 24/7 customer support.',
-    aAr: 'منظومة لوجستية متكاملة: تخزين، تجهيز وتغليف، شحن وتوصيل، متابعة لحظية، متاجر سحابية توصّل خلال 2-4 ساعات، ودعم على مدار الساعة.',
-  },
-  {
-    qEn: 'Who are the clients you work with?',
-    qAr: 'مين العملاء اللي تشتغلون معهم؟',
-    aEn: 'We work with all types of e-commerce brands, commercial companies, and retailers looking for automated logistics and fast delivery inside Saudi Arabia and the Gulf.',
-    aAr: 'أصحاب المتاجر الإلكترونية، والشركات التجارية، وتجار التجزئة، من أول متجر ناشئ إلى العلامات الكبيرة.',
-  },
-  {
-    qEn: 'Do you support integration with e-commerce platforms?',
-    qAr: 'هل تدعمون الربط مع منصات التجارة الإلكترونية؟',
-    aEn: 'Yes! We support plug-and-play integrations with Salla, Zid, Shopify, WooCommerce, Magento, as well as a robust developer API for custom store platforms.',
-    aAr: 'نعم، سلة، زد، شوبيفاي، ووكومرس، ماجينتو، وواجهة API للمنصات الخاصة. الربط مباشر والطلبات تنسحب تلقائيًا.',
-  },
-  {
-    qEn: 'How long is delivery inside Saudi cities and the Gulf?',
-    qAr: 'كم مدة التوصيل؟',
-    aEn: 'Riyadh delivery is within 2-4 hours (via cloud stores). Main Saudi cities are next-day, and other regions take 2-3 business days. Gulf (GCC) delivery is completed within 3-5 business days.',
-    aAr: 'الرياض خلال 2-4 ساعات، المدن الرئيسية في اليوم التالي، باقي المناطق 2-3 أيام، ودول الخليج 3-5 أيام.',
-  },
-  {
-    qEn: 'Do you ship worldwide?',
-    qAr: 'هل يوجد شحن دولي؟',
-    aEn: 'Yes, we ship globally to over 220 countries through our strong partnerships with leading international carrier networks.',
-    aAr: 'نعم، نشحن لأكثر من 220 دولة حول العالم عبر شركاء موثوقين.',
-  },
-  {
-    qEn: 'How can I know shipping rates?',
-    qAr: 'كيف أعرف أسعار الشحن؟',
-    aEn: 'We offer flexible customized pricing based on your product dimensions, monthly order volume, and packaging choice. Use our website savings calculator or click "Inquire Now" to get a transparent custom quote.',
-    aAr: 'الأسعار مرنة ومخصصة حسب نشاطك، استخدم الحاسبة التفاعلية أو تواصل معنا ويوصلك عرضك خلال يوم عمل.',
-  },
-  {
-    qEn: 'Can you manage returns?',
-    qAr: 'هل تديرون المرتجعات؟',
-    aEn: 'Absolutely. We handle the entire reverse logistics chain: collecting returns from customers, inspecting their condition, restocking them in the warehouse, and updating your inventory instantly.',
-    aAr: 'نعم، إدارة كاملة: نستلم المرتجع، نفحصه، نرجّعه للمخزون، ونحدّث الكميات تلقائيًا.',
-  },
-  {
-    qEn: 'Do you provide reports and operational visibility?',
-    qAr: 'هل توفرون تقارير ووضوح تشغيلي؟',
-    aEn: 'Yes. Our user-friendly dashboard gives you complete live visibility on shipment stages, delivery performance, SLA on-time rates, and detailed inventory metrics.',
-    aAr: 'لوحة تحكم متكاملة بتقارير لحظية عن الشحنات والأداء والالتزام بالمواعيد وحالة المخزون.',
-  },
-  {
-    qEn: 'Can operations scale with our business growth?',
-    qAr: 'هل تقدر عملياتكم تتوسع مع نمو نشاطي؟',
-    aEn: 'Yes. Our infrastructure and fulfillment center network are built to scale with your store, handling seasonal peaks, sales events, and volume surges without delays.',
-    aAr: 'بنيتنا التحتية وشبكة مستودعاتنا مصممة أصلًا لمواكبة النمو والمواسم، توسّع براحتك، والسعة علينا.',
-  },
-  {
-    qEn: 'Do you support custom operational requirements?',
-    qAr: 'هل تدعمون متطلبات تشغيلية خاصة؟',
-    aEn: 'Yes. We support custom kitting, bundle assembly, promotional inserts, custom branded gift packaging, and specific product preparation guidelines.',
-    aAr: 'نعم، تجهيز الباقات، دمج المنتجات، كروت الهدايا، والتغليف الكامل بهوية علامتك.',
-  },
-  {
-    qEn: 'What is the warehouse size?',
-    qAr: 'كم مساحة المستودعات؟',
-    aEn: 'We operate multiple fulfillment centers strategically located across major Saudi cities, featuring over 15,000+ square meters of storage capacity built to premium specifications.',
-    aAr: 'مستودعات متعددة تتجاوز مساحتها 15,000 متر مربع.',
-  },
-  {
-    qEn: 'Can I visit the warehouse?',
-    qAr: 'هل أقدر أزور المستودع؟',
-    aEn: 'Yes. Visits can be scheduled in advance with our account managers for inventory audits, quality reviews, or general facility tours.',
-    aAr: 'أكيد، بالتنسيق مع مدير حسابك، حياك في أي وقت.',
-  },
-  {
-    qEn: 'Is there refrigerated storage?',
-    qAr: 'هل يوجد تخزين مبرّد؟',
-    aEn: 'Yes, we have specialized climate-controlled zones built to store temperature-sensitive products under perfect conditions.',
-    aAr: 'نعم، مساحات مكيّفة بدرجات حرارة مضبوطة (16-21°م) تحفظ المنتجات الحساسة بحالة مثالية.',
-  },
-  {
-    qEn: 'What temperature are your warehouses kept at?',
-    qAr: 'كم درجة حرارة المستودعات عندكم؟',
-    aEn: 'We maintain controlled temperatures between 16°C and 21°C, protecting cosmetics, vitamins, electronics, and other temperature-sensitive goods.',
-    aAr: 'نحافظ على درجات حرارة مضبوطة بين 16 و21 درجة مئوية، تحمي العطور ومستحضرات التجميل والإلكترونيات وكل المنتجات الحساسة للحرارة.',
-  },
-  {
-    qEn: 'How is inventory picked up from me and how much do I pay?',
-    qAr: 'كيف يتم استلام البضاعة مني؟',
-    aEn: 'We can arrange automated carrier pickups to transport your products directly from your supplier or location to our hubs. Inbound pricing is transparent and calculated based on pallet counts or shipment dimensions.',
-    aAr: 'ننسّق الاستلام من موقعك أو من مورّديك مباشرة، والتكلفة تُحسب حسب الحجم وعدد المنصات.',
-  },
-  {
-    qEn: 'Do you have the SFDA certificate?',
-    qAr: 'هل عندكم ترخيص هيئة الغذاء والدواء (SFDA)؟',
-    aEn: 'Yes! All our warehouses are fully certified and licensed by the Saudi Food and Drug Authority (SFDA) for cosmetics, health, and medical products.',
-    aAr: 'نعم، جميع مستودعاتنا مرخصة من الهيئة العامة للغذاء والدواء.',
-  },
-  {
-    qEn: 'If a carrier damages my products, what is the compensation?',
-    qAr: 'لو تلفت منتجاتي أثناء الشحن، وش التعويض؟',
-    aEn: 'All shipments are covered by logistics insurance. In the rare event of damage or loss by a carrier, we handle the claims process and compensate you for the declared cost value of the products.',
-    aAr: 'جميع الشحنات مغطاة بتأمين لوجستي، نتولى إدارة المطالبة كاملة، والتعويض يُحسب حسب القيمة التكلفية للمنتج.',
-  },
-];
+import { HOME_FAQS } from '../content/faq';
+import { claims } from '../content/claims';
 
 export default function FAQ() {
   const { locale } = useT();
@@ -168,7 +64,7 @@ export default function FAQ() {
                     {isAr ? 'لم تجد إجابتك؟' : 'Still have a question?'}
                   </h3>
                   <p className="font-body mt-1.5 text-[13px] text-fa-ink-muted leading-[1.55]">
-                    {isAr ? 'فريقنا يرد خلال يوم عمل واحد.' : 'Our team replies within one business day.'}
+                    {isAr ? `فريقنا يرد خلال ${claims.quoteTurnaround.ar}.` : `Our team replies within ${claims.quoteTurnaround.en}.`}
                   </p>
                   <Link
                     to="/contact"
@@ -184,9 +80,9 @@ export default function FAQ() {
 
           {/* Accordion */}
           <div className="space-y-3">
-            {faqItems.map((item, i) => {
-              const question = isAr ? item.qAr : item.qEn;
-              const answer = isAr ? item.aAr : item.aEn;
+            {HOME_FAQS.map((item, i) => {
+              const question = item.q[locale];
+              const answer = item.a[locale];
               const isOpen = activeIndex === i;
 
               return (
@@ -232,6 +128,13 @@ export default function FAQ() {
                 </div>
               );
             })}
+            <Link
+              to="/faq"
+              className="group/link inline-flex items-center gap-1.5 pt-3 text-[12px] font-semibold uppercase tracking-[0.06em] text-fa-orange-soda font-body"
+            >
+              {isAr ? 'كل الأسئلة' : 'All questions'}
+              <ArrowRight size={13} strokeWidth={2.4} className="transition-transform duration-200 group-hover/link:translate-x-1 rtl:rotate-180 rtl:group-hover/link:-translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>

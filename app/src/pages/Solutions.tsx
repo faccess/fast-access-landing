@@ -9,12 +9,10 @@ import RevealText from '../components/brand/RevealText';
 import MagneticButton from '../components/brand/MagneticButton';
 import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
+import Sectors from '../sections/Sectors';
+import { claims, platformList, plus, pct, num, tempRange, expressCitiesCount } from '../content/claims';
 
 export default function Solutions() {
-  usePageMeta(
-    { title: 'حلولنا: تخزين وتجهيز وشحن وتتبع | فاست أكسس', desc: 'كل اللي تحتاجه عشان توصل طلباتك: ربط متجرك، تخزين مرن مرخص، تجهيز بدقة 99.7%، شحن لكل المملكة والخليج، ولوحة تتبع موحدة.' },
-    { title: 'Solutions — Storage, Fulfillment & Shipping | Fast Access', desc: 'Everything to deliver your orders: store integration, licensed flexible storage, 99.7% picking accuracy, KSA & GCC shipping, unified tracking.' }
-  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
@@ -28,14 +26,14 @@ export default function Solutions() {
       step: '01',
       title: isAr ? 'نربط متجرك' : 'We connect your store',
       body: isAr
-        ? 'سلة، زد، شوبيفاي، ووكومرس أو API، ربط بدقائق، وطلباتك تنسحب لنظامنا تلقائيًا بدون أي تدخل منك.'
-        : 'Direct integration with Salla, Zid, and Shopify — orders flow to us automatically the moment a buyer checks out.',
+        ? `${platformList('ar')}، ربط خلال ${claims.integrationSetup.ar}، وطلباتك تنسحب لنظامنا تلقائيًا بدون أي تدخل منك.`
+        : `Direct integration with ${platformList('en')}. Orders flow to us automatically the moment a buyer checks out.`,
     },
     {
       step: '02',
       title: isAr ? 'نستلم مخزونك' : 'We take your stock',
       body: isAr
-        ? 'ننسّق الاستلام من موقعك أو موردك، حتى لو كان خارج المملكة، نتولى الشحن الدولي والتخليص الجمركي، نفحص البضاعة وندخلها مستودعاتنا المرخصة من هيئة الغذاء والدواء.'
+        ? `ننسّق الاستلام من موقعك أو موردك، حتى لو كان خارج المملكة، نتولى الشحن الدولي والتخليص الجمركي، نفحص البضاعة وندخلها مستودعاتنا المرخصة${claims.sfdaLicensed ? ' من هيئة الغذاء والدواء' : ''}.`
         : 'From your site or your supplier — even overseas, we handle international freight and customs — we inspect, shelve, and log every SKU.',
     },
     {
@@ -48,17 +46,17 @@ export default function Solutions() {
   ];
 
   const capabilities = [
-    { icon: Boxes, id: 'storage', title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? 'أكثر من 15,000 م² تتمدد مع موسمك، بمساحات مكيفة بدرجات مضبوطة (16-21°م) لمنتجاتك الحساسة.' : 'Space that expands with your season, with a controlled 16-21°C climate.', metric: isAr ? '10+ مراكز' : '10+ centres' },
-    { icon: PackageCheck, id: 'packing', title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'فريق مدرب يجهز طلبك بمواد متينة وهوية علامتك، كروت، إهداءات، وتغليف مخصص جاهز للمواسم.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? 'تجهيز وتغليف خلال دقائق' : 'Packed in minutes' },
-    { icon: Truck, id: 'shipping', title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? 'أفضل شركاء الشحن المحليين والدوليين، مع توصيل بنفس اليوم داخل المدن الكبرى ووصول لأكثر من 220 دولة.' : 'Wide carrier network with same-day in major cities.', metric: isAr ? '98% بالوقت' : '98% on-time' },
+    { icon: Boxes, id: 'storage', title: isAr ? 'تخزين مرن' : 'Flexible warehousing', body: isAr ? `أكثر من ${num(claims.warehouseAreaSqm)} م² تتمدد مع موسمك، بمساحات مكيفة بدرجات مضبوطة (${tempRange('ar', true)}) لمنتجاتك الحساسة.` : `Space that expands with your season, with a controlled ${tempRange('en', true)} climate.`, metric: isAr ? `${plus(claims.distributionCenters)} مراكز` : `${plus(claims.distributionCenters)} centres` },
+    { icon: PackageCheck, id: 'packing', title: isAr ? 'تجهيز وتغليف' : 'Pick & pack', body: isAr ? 'فريق مدرب يجهز طلبك بمواد متينة وهوية علامتك، كروت، إهداءات، وتغليف مخصص جاهز للمواسم.' : 'Branded packing built for your identity, ready for peak.', metric: isAr ? `متوسط التجهيز ${claims.avgPackingTimeHours} ساعة` : `${claims.avgPackingTimeHours} hr avg. prep` },
+    { icon: Truck, id: 'shipping', title: isAr ? 'شحن وتوصيل' : 'Shipping & delivery', body: isAr ? `أفضل شركاء الشحن المحليين والدوليين، مع توصيل عاجل خلال ${claims.expressDeliveryWindow.ar} داخل المدن الكبرى ووصول لأكثر من ${claims.internationalCountries} دولة.` : `Wide carrier network with express delivery within ${claims.expressDeliveryWindow.en} in major cities.`, metric: isAr ? `${pct(claims.onTimeRate)} بالوقت` : `${pct(claims.onTimeRate)} on-time` },
     { icon: Radar, id: 'tracking', title: isAr ? 'متابعة لحظية' : 'Live tracking', body: isAr ? 'لوحة واحدة تجمع كل شحناتك، وقريبًا تطبيق جوال للتجار، وروابط تتبع توصل عملاءك تلقائيًا، يعرفون وين طلبهم قبل ما يسألون.' : 'Every order event surfaces live, for you and your buyer.', metric: isAr ? '5 مراحل' : '5 stages' },
-    { icon: Store, id: 'cloud-stores', title: isAr ? 'المخازن السحابية' : 'Cloud stores', body: isAr ? 'مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال ساعة إلى ساعتين، حتى بذروة المواسم.' : 'Inventory pre-positioned where your customers actually order.', metric: isAr ? '6 مدن' : '6 cities' },
-    { icon: Headset, id: 'support', title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'فريق يراقب شحناتك أولاً بأول، وأغلب المشاكل تنحل قبل حتى ما تسمع فيها.' : 'A team watching your shipments in real time — most issues get solved before you even hear about them.', metric: isAr ? 'دعم 24/7' : '24/7 support' },
+    { icon: Store, id: 'cloud-stores', title: isAr ? 'المخازن السحابية' : 'Cloud stores', body: isAr ? `مخزونك موزّع بقلب المدن، فالطلب العاجل يوصل خلال ${claims.expressDeliveryWindow.ar}، حتى بذروة المواسم.` : 'Inventory pre-positioned where your customers actually order.', metric: expressCitiesCount(isAr ? 'ar' : 'en') },
+    { icon: Headset, id: 'support', title: isAr ? 'خدمة العملاء' : 'Customer care', body: isAr ? 'فريق يراقب شحناتك أولاً بأول، وأغلب المشاكل تنحل قبل حتى ما تسمع فيها.' : 'A team watching your shipments in real time — most issues get solved before you even hear about them.', metric: isAr ? `دعم ${claims.support.short}` : `${claims.support.short} support` },
     { icon: Smartphone, wide: true, id: 'merchant-app', title: isAr ? 'تطبيق فاست أكسس للتجار' : 'Fast Access merchant app', body: isAr ? 'تجارتك بجيبك: متابعة الطلبات، تحليلات المبيعات والمخزون، وتنبيهات لحظية توصلك أول بأول، قريبًا على App Store و Google Play.' : 'Your business in your pocket: order tracking, sales & inventory analytics, and instant alerts — soon on the App Store and Google Play.', metric: isAr ? 'قريبًا' : 'Coming soon' },
     { icon: Ship, wide: true, id: 'freight', title: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs clearance', body: isAr ? 'نستورد بضاعتك من موردك، شحن بحري وجوي، ونخلّصها جمركيًا بدون عناء، وتدخل مستودعاتنا جاهزة للبيع مباشرة.' : 'We import your goods from your supplier — sea and air freight — clear customs end to end, and your stock enters our warehouses ready to sell.', metric: isAr ? 'من الباب للرف' : 'Door to shelf' },
   ];
 
-  const stack = ['Salla', 'Zid', 'Shopify', 'WooCommerce', 'Magento', 'Custom API'];
+  const stack = [...claims.platforms.map((p) => p[locale]), ...(claims.hasCustomApi ? ['Custom API'] : [])];
 
   return (
     <>
@@ -127,6 +125,9 @@ export default function Solutions() {
         </div>
       </section>
 
+      {/* Industries — moved here from Home */}
+      <Sectors id="sectors" />
+
       <DashboardPreview />
 
       {/* Works with your stack */}
@@ -135,7 +136,7 @@ export default function Solutions() {
           <Reveal className="mb-4 flex justify-center"><SectionChip>{isAr ? 'يعمل مع أدواتك' : 'Works with your stack'}</SectionChip></Reveal>
           <Reveal delay={80}>
             <h2 className="font-display font-bold text-[26px] sm:text-[34px] lg:text-[42px] text-fa-liberty-blue leading-[1.1] tracking-[-0.02em] max-w-[680px] mx-auto">
-              {isAr ? 'نربط متجرك خلال دقائق، مو أسابيع.' : 'We connect your store in minutes, not weeks.'}
+              {isAr ? `نربط متجرك خلال ${claims.integrationSetup.ar}، مو أسابيع.` : `We connect your store in ${claims.integrationSetup.en}, not weeks.`}
             </h2>
           </Reveal>
           <Reveal delay={140}>

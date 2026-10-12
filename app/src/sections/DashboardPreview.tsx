@@ -4,6 +4,7 @@ import SectionChip from '../components/brand/SectionChip';
 import BrandPattern from '../components/brand/BrandPattern';
 import BrandButton from '../components/brand/BrandButton';
 import { useT } from '../i18n/I18nContext';
+import { claims, pct } from '../content/claims';
 
 const chartPoints = [30, 45, 35, 55, 48, 62, 58, 75, 68, 82, 78, 90];
 
@@ -40,14 +41,14 @@ export default function DashboardPreview() {
     ? [
         { label: 'طلبات اليوم', value: '2,841', delta: '12.4%', positive: true },
         { label: 'تم الشحن', value: '2,604', delta: '8.1%', positive: true },
-        { label: 'الالتزام بالمواعيد', value: '99.8%', delta: '0.4 pts', positive: true },
-        { label: 'متوسط تكلفة الملصق', value: '18.40 ر.س', delta: '0.70 ر.س', positive: false },
+        { label: 'الالتزام بالمواعيد', value: pct(claims.onTimeRate), delta: '0.4 pts', positive: true },
+        { label: 'متوسط تكلفة الشحن للطلب', value: '18.40 ر.س', delta: '0.70 ر.س', positive: false },
       ]
     : [
         { label: 'Orders today', value: '2,841', delta: '12.4%', positive: true },
         { label: 'Shipped', value: '2,604', delta: '8.1%', positive: true },
-        { label: 'On-time SLA', value: '99.8%', delta: '0.4 pts', positive: true },
-        { label: 'Avg. label cost', value: 'SAR 18.40', delta: 'SAR 0.70', positive: false },
+        { label: 'On-time SLA', value: pct(claims.onTimeRate), delta: '0.4 pts', positive: true },
+        { label: 'Avg. shipping cost per order', value: 'SAR 18.40', delta: 'SAR 0.70', positive: false },
       ];
 
   const shipments = isAr

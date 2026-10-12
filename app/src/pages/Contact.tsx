@@ -1,29 +1,26 @@
 import usePageMeta from '../hooks/usePageMeta';
-import { Mail, Phone, MapPin, Clock, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import QuoteForm from '../components/QuoteForm';
 import SectionChip from '../components/brand/SectionChip';
 import SpotlightCard from '../components/brand/SpotlightCard';
 import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 export default function Contact() {
-  usePageMeta(
-    { title: 'اطلب عرض سعر: جاهز تخلّيها علينا؟ | فاست أكسس', desc: 'عطنا تفاصيل شحنك بدقيقتين ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد. واتساب وهاتف موحد ودعم 24/7.' },
-    { title: 'Request a Quote | Fast Access', desc: 'Share your shipping profile in two minutes and get a tailored plan within one business day. WhatsApp, unified phone, 24/7 support.' }
-  );
   const { locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
-    { title: 'تواصل معنا: خطة فلفلمنت مخصصة خلال يوم عمل | فاست أكسس', desc: 'قل لنا وش تشحن، ونرجع لك بخطة فلفلمنت مفصلة على مقاس متجرك خلال يوم عمل. كلم فريق فاست أكسس مباشرة.' },
-    { title: "Contact Fast Access — a tailored plan in one business day | Fast Access", desc: "Tell us what you ship and we'll come back with a tailored fulfillment plan within one business day. Talk to the Fast Access team." },
+    { title: `تواصل معنا: خطة فلفلمنت مخصصة خلال ${claims.quoteTurnaround.ar} | فاست أكسس`, desc: `قل لنا وش تشحن، ونرجع لك بخطة فلفلمنت مفصلة على مقاس متجرك خلال ${claims.quoteTurnaround.ar}. كلم فريق فاست أكسس مباشرة.` },
+    { title: `Contact Fast Access — a tailored plan in ${claims.quoteTurnaround.en} | Fast Access`, desc: `Tell us what you ship and we'll come back with a tailored fulfillment plan within ${claims.quoteTurnaround.en}. Talk to the Fast Access team.` },
   );
 
   const methods = [
     { icon: Mail, label: isAr ? 'البريد' : 'Email', value: 'info@faccess.co' },
     { icon: Phone, label: isAr ? 'الهاتف' : 'Phone', value: '+966 920 032 768', dir: 'ltr' },
     { icon: MapPin, label: isAr ? 'المقر' : 'Head office', value: isAr ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia' },
-    { icon: Clock, label: isAr ? 'ساعات العمل' : 'Hours', value: isAr ? 'الأحد إلى الخميس، 9 صباحًا إلى 5 مساءً (دعم 24/7)' : 'Sun–Thu, 9am–5pm (24/7 support)' },
+    { icon: Clock, label: isAr ? 'ساعات خدمة العملاء' : 'Customer service hours', value: isAr ? `${claims.workingHours.ar} (دعم ${claims.support.short})` : `${claims.workingHours.en} (${claims.support.short} support)` },
   ];
 
 
@@ -32,7 +29,7 @@ export default function Contact() {
       <PageHeader
         chip={isAr ? 'تواصل' : 'Contact'}
         title={isAr ? (<>جاهز تخلّيها <span className="text-fa-orange-soda">علينا؟</span></>) : 'Let’s get your orders moving.'}
-        sub={isAr ? 'عطنا تفاصيل شحنك بدقيقتين، ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال يوم عمل واحد.' : 'Share your shipping profile and we’ll come back with a tailored plan within one business day.'}
+        sub={isAr ? `عطنا تفاصيل شحنك بدقيقتين، ونرجع لك بخطة مفصّلة على مقاس تجارتك خلال ${claims.quoteTurnaround.ar}.` : `Share your shipping profile and we’ll come back with a tailored plan within ${claims.quoteTurnaround.en}.`}
         bg="/assets/hero-contact.webp"
       />
 

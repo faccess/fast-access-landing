@@ -14,7 +14,7 @@
  *    (it belongs on / only); Organization/LocalBusiness/Service stay.
  *  - sanity checks: canonical, og:url, article schema, non-empty content.
  */
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
@@ -104,7 +104,7 @@ const [{ default: React, act }, { createRoot }, { renderToString }, entry] = awa
   import('react'),
   import('react-dom/client'),
   import('react-dom/server'),
-  import(join(appRoot, 'dist-ssr/prerender-entry.js')),
+  import(pathToFileURL(join(appRoot, 'dist-ssr/prerender-entry.js')).href),
 ]);
 const Root = entry.default;
 const preloadRoute = entry.preloadRoute;
@@ -191,7 +191,7 @@ const preloadRoute = entry.preloadRoute;
       [html.includes(`<link rel="canonical" href="${url}"`), 'canonical'],
       [html.includes(`property="og:url" content="${url}"`), 'og:url'],
       [/lang="ar"/.test(html) && /dir="rtl"/.test(html), 'lang/dir'],
-      [(route.path === '/') === html.includes('ما هي خدمة الفلفلمنت اللي تقدمها فاست أكسس؟'), 'home FAQ scoping'],
+      [(route.path === '/') === html.includes('"@id":"https://faccess.co/#faq"'), 'home FAQ scoping'],
       [!isBlogArticle || html.includes('"@type":"Article"'), 'Article schema'],
       [!isBlogArticle || html.includes('"@type":"FAQPage"'), 'article FAQPage schema'],
       [html.includes('<h1'), 'h1 present'],

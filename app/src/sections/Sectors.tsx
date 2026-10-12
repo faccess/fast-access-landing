@@ -11,12 +11,12 @@ import { content } from '../i18n/content';
 
 const icons = [Shirt, Sparkles, Smartphone, HeartPulse, UtensilsCrossed, Home];
 
-export default function Sectors() {
+export default function Sectors({ id }: { id?: string } = {}) {
   const { t, locale } = useT();
   const items = content[locale].sectors.items as readonly string[];
 
   return (
-    <section className="relative bg-fa-cream-deep section-padding overflow-hidden">
+    <section id={id} className="relative bg-fa-cream section-padding overflow-hidden scroll-mt-28">
       <div className="container-main relative z-10">
         <div className="max-w-[760px] text-left rtl:text-right">
           <Reveal className="mb-5"><SectionChip>{t('sectors.chip')}</SectionChip></Reveal>

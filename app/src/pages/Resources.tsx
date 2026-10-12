@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import usePageMeta from '../hooks/usePageMeta';
 import { BookOpen, Truck, Boxes, RotateCcw, CalendarDays, Plug, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -8,6 +7,7 @@ import RevealText from '../components/brand/RevealText';
 import MagneticButton from '../components/brand/MagneticButton';
 import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
+import { claims, joinList } from '../content/claims';
 
 export default function Resources() {
   usePageMeta(
@@ -22,16 +22,12 @@ export default function Resources() {
     { icon: Boxes, tag: isAr ? 'تخزين' : 'Storage', title: isAr ? 'إدارة المخزون بذكاء' : 'Smart inventory management', body: isAr ? 'متى توزّع مخزونك على أكثر من مركز، وكيف تستعد لمواسم الذروة.' : 'When to split stock across centres, and how to prep for peak seasons.' },
     { icon: CalendarDays, tag: isAr ? 'مواسم' : 'Peak', title: isAr ? 'الاستعداد لموسم الذروة' : 'Surviving peak season', body: isAr ? 'قائمة تحقّق عملية لرمضان والجمعة البيضاء ومواسم التخفيضات.' : 'A practical checklist for Ramadan, White Friday, and sale seasons.' },
     { icon: RotateCcw, tag: isAr ? 'مرتجعات' : 'Returns', title: isAr ? 'تحويل المرتجعات لميزة' : 'Turning returns into an edge', body: isAr ? 'سياسة مرتجعات تبني الثقة وتقلّل الخسارة في آنٍ واحد.' : 'A returns policy that builds trust and reduces loss at the same time.' },
-    { icon: Plug, tag: isAr ? 'تكامل' : 'Integration', title: isAr ? 'ربط متجرك بفاست أكسس' : 'Connecting your store to Fast Access', body: isAr ? 'خطوات ربط سلة وزد وشوبيفاي ومزامنة الطلبات تلقائيًا.' : 'Steps to link Salla, Zid, and Shopify and sync orders automatically.' },
-    { icon: BookOpen, tag: isAr ? 'مفاهيم' : 'Basics', title: isAr ? 'مصطلحات اللوجستيات' : 'A glossary of logistics terms', body: isAr ? 'من 3PL إلى المتجر السحابي، المفاهيم التي تحتاجها بلغة بسيطة.' : 'From 3PL to cloud store — the concepts you need, in plain language.' },
+    { icon: Plug, tag: isAr ? 'تكامل' : 'Integration', title: isAr ? 'ربط متجرك بفاست أكسس' : 'Connecting your store to Fast Access', body: isAr ? `خطوات ربط ${joinList(claims.platforms, 'ar')} ومزامنة الطلبات تلقائيًا.` : `Steps to link ${joinList(claims.platforms, 'en')} and sync orders automatically.` },
+    { icon: BookOpen, tag: isAr ? 'مفاهيم' : 'Basics', title: isAr ? 'مصطلحات اللوجستيات' : 'A glossary of logistics terms', body: isAr ? 'من 3PL إلى المخازن السحابية، المفاهيم التي تحتاجها بلغة بسيطة.' : 'From 3PL to cloud warehouses — the concepts you need, in plain language.' },
   ];
 
   return (
     <>
-      <Helmet>
-        <title>Resources — Fast Access</title>
-        <meta name="description" content="Guides on shipping, storage, returns, peak season, and integrations — everything merchants need to grow with Fast Access." />
-      </Helmet>
       <PageHeader title={t('pages.resources.title')} sub={t('pages.resources.sub')} bg="/assets/hero-resources.webp" />
 
       {/* Guides library */}
@@ -73,7 +69,7 @@ export default function Resources() {
           </Reveal>
           <Reveal delay={120}>
             <p className="font-body mt-5 text-base text-fa-classic-chalk/60 max-w-[480px] mx-auto leading-[1.65]">
-              {isAr ? 'نرد على أسئلة التجار خلال يوم عمل واحد.' : 'We answer merchant questions within one business day.'}
+              {isAr ? `نرد على أسئلة التجار خلال ${claims.quoteTurnaround.ar}.` : `We answer merchant questions within ${claims.quoteTurnaround.en}.`}
             </p>
           </Reveal>
           <Reveal delay={180}>

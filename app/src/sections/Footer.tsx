@@ -3,6 +3,7 @@ import type { ComponentType } from 'react';
 import { WhatsappLogo, EnvelopeSimple, Phone, FileText, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import BrandLogo from '../components/brand/BrandLogo';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 type FooterLink = { label: string; to: string; icon?: ComponentType<any>; accent?: boolean };
 
@@ -14,17 +15,17 @@ export default function Footer() {
   // `to`: "/route" → SPA link · "mailto:"/"http" → external.
   const footerLinks: Record<string, FooterLink[]> = {
     [t('footer.cols.Solutions')]: [
-      { label: isAr ? 'التخزين' : 'Storage', to: '/solutions' },
-      { label: isAr ? 'التغليف' : 'Packing', to: '/solutions' },
-      { label: isAr ? 'الشحن والتوصيل' : 'Shipping & Delivery', to: '/solutions' },
-      { label: isAr ? 'المتابعة اللحظية' : 'Real-time Tracking', to: '/solutions' },
-      { label: isAr ? 'المخازن السحابية' : 'Cloud Stores', to: '/solutions' },
-      { label: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs', to: '/solutions' },
+      { label: isAr ? 'التخزين' : 'Storage', to: '/solutions/storage' },
+      { label: isAr ? 'التجهيز والتغليف' : 'Packing', to: '/solutions/packing' },
+      { label: isAr ? 'الشحن والتوصيل' : 'Shipping & Delivery', to: '/solutions/shipping' },
+      { label: isAr ? 'المتابعة اللحظية' : 'Real-time Tracking', to: '/solutions/tracking' },
+      { label: isAr ? 'المخازن السحابية' : 'Cloud Warehouses', to: '/solutions/cloud-stores' },
+      { label: isAr ? 'الشحن الدولي والتخليص الجمركي' : 'International freight & customs', to: '/solutions/freight' },
     ],
     [t('footer.cols.Company')]: [
       { label: isAr ? 'من نحن' : 'About us', to: '/about' },
       { label: isAr ? 'المهمة والرؤية' : 'Mission & Vision', to: '/about' },
-      { label: isAr ? 'القطاعات التي نخدمها' : 'Industries served', to: '/solutions' },
+      { label: isAr ? 'القطاعات التي نخدمها' : 'Industries served', to: '/solutions#sectors' },
       { label: isAr ? 'المصادر' : 'Resources', to: '/resources' },
     ],
     [t('footer.cols.Resources')]: [
@@ -135,13 +136,13 @@ export default function Footer() {
         {/* Legal entity + registered address */}
         <div className="mb-4 text-center sm:text-start font-body text-[12.5px] leading-[1.8] text-[#8a8a9a]">
           {isAr
-            ? 'شركة مدخل السرعة للخدمات اللوجستية، الرياض، حي الوادي، شارع عثمان بن عفان'
-            : 'Madkhal Alsura Company for Logistics — Othman bin Affan St., Al Wadi District, Riyadh'}
+            ? `${claims.legalNameAr}، الرياض، حي الوادي، شارع عثمان بن عفان`
+            : `${claims.legalNameEn}, Othman bin Affan St., Al Wadi District, Riyadh`}
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-[13px] text-[#8a8a9a]" dir="ltr" style={{ unicodeBidi: 'isolate' }}>
+          <div className="text-[13px] text-[#8a8a9a]" dir={isAr ? 'rtl' : 'ltr'} style={{ unicodeBidi: 'isolate' }}>
             {t('footer.copyright')}
           </div>
           <div className="flex items-center gap-6">

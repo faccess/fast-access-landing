@@ -8,42 +8,38 @@ import RevealText from '../components/brand/RevealText';
 import MagneticButton from '../components/brand/MagneticButton';
 import Reveal from '../components/Reveal';
 import { useT } from '../i18n/I18nContext';
+import { claims } from '../content/claims';
 
 export default function Pricing() {
-  usePageMeta(
-    { title: 'كيف نسعّر: عرض على قدّ شغلك | فاست أكسس', desc: 'ما عندنا باقات جاهزة. احسب توفيرك بالحاسبة، وخذ عرض سعر مفصّل على أرقامك الفعلية خلال يوم عمل واحد، بدون رسوم خفية.' },
-    { title: 'How We Price — A Quote Built On Your Numbers | Fast Access', desc: 'No ready-made bundles. Use the savings calculator and get a detailed quote built on your real numbers within one business day.' }
-  );
   const { t, locale } = useT();
   const isAr = locale === 'ar';
   usePageMeta(
-    { title: 'أسعار الفلفلمنت: عرض سعر مفصل خلال يوم عمل | فاست أكسس', desc: 'بدون باقات مبهمة ولا رسوم مخفية، تسعير مبني على اللي تشحنه فعليًا. اعرف مكونات السعر ووش يشمل، واستلم عرضك المفصل خلال يوم عمل.' },
-    { title: "Fulfillment pricing — exact quote in one business day | Fast Access", desc: "No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in one business day." },
+    { title: `أسعار الفلفلمنت: عرض سعر مفصل خلال ${claims.quoteTurnaround.ar} | فاست أكسس`, desc: `بدون باقات مبهمة ولا رسوم مخفية، تسعير مبني على اللي تشحنه فعليًا. اعرف مكونات السعر ووش يشمل، واستلم عرضك المفصل خلال ${claims.quoteTurnaround.ar}.` },
+    { title: `Fulfillment pricing — exact quote in ${claims.quoteTurnaround.en} | Fast Access`, desc: `No tiers, no hidden fees — pricing built around what you actually ship. See what drives the price, what's included, and get an exact quote in ${claims.quoteTurnaround.en}.` },
   );
 
-  // What actually moves the price — pricing-page specific
-  const drivers = [
-    { icon: Boxes, title: isAr ? 'حجم التخزين' : 'Storage footprint', body: isAr ? 'المساحة اللي تشغلها بضاعتك ومدة بقائها عندنا، تدفع على المستخدم فعلاً.' : 'The space your stock occupies and how long it sits on the shelf.' },
-    { icon: PackageCheck, title: isAr ? 'عدد الطلبات' : 'Order volume', body: isAr ? 'كم طلب نجهّز ونغلّف شهريًا، وكل ما زاد العدد انخفض سعر الطلب الواحد.' : 'How many orders we pick & pack monthly — more volume, lower per-unit rate.' },
-    { icon: Truck, title: isAr ? 'وزن ووجهة الشحن' : 'Weight & destination', body: isAr ? 'وزن الطرد ووجهته يحددان تكلفة الشحن الحقيقية، بدون متوسطات مضخمة.' : 'Parcel weight and distance set the real shipping cost.' },
-    { icon: MapPin, title: isAr ? 'سرعة التوصيل' : 'Delivery speed', body: isAr ? 'قياسي، أو بنفس اليوم من المخازن السحابية، أنت تختار لكل شريحة من طلباتك.' : 'Standard, or same-day from a cloud store.' },
-  ];
+  // What actually moves the price — the four factors (claims.pricingFactors, shared with Home)
+  const driverIcons = [Boxes, PackageCheck, Truck, MapPin];
+  const drivers = claims.pricingFactors.map((f, i) => ({ icon: driverIcons[i], title: f.title[locale], body: f.body[locale] }));
 
   const included = [
     isAr ? 'استلام وفحص البضاعة' : 'Inbound receiving & inspection',
     isAr ? 'تكامل المتجر والطلبات' : 'Store & order integration',
     isAr ? 'لوحة تتبع لحظية' : 'Live tracking dashboard',
-    isAr ? 'تغليف بهوية علامتك' : 'Branded packaging',
+    claims.brandedPackagingIncluded && (isAr ? 'تغليف بهوية علامتك' : 'Branded packaging'),
     isAr ? 'إدارة المرتجعات' : 'Returns handling',
-    isAr ? 'دعم تشغيلي 24/7' : '24/7 operations support',
-  ];
+    isAr ? `دعم تشغيلي ${claims.support.short}` : `${claims.support.short} operations support`,
+    // moved from the Home pricing card
+    claims.setupFee === 0 && (isAr ? 'بدون رسوم إعداد أو ربط' : 'No setup or integration fees'),
+    claims.minimumCommitment === null && (isAr ? 'بدون عقود طويلة ولا حد أدنى' : 'No long contracts, no minimums'),
+  ].filter((x): x is string => Boolean(x));
 
   const faqs = [
-    { q: isAr ? 'هل فيه عقد طويل أو حد أدنى؟' : 'Is there a long contract or minimum?', a: isAr ? 'لا. تدفع على اللي تشحنه فعلاً، وتكبر أو تصغّر براحتك.' : 'No. You pay for what you actually ship, and scale up or down freely.' },
-    { q: isAr ? 'فيه رسوم تأسيس أو إعداد؟' : 'Are there setup fees?', a: isAr ? 'أبدًا. الإعداد والربط مجاني بالكامل، والفوترة تبدأ من أول طلب نجهزه لك.' : 'None. Onboarding and integration are completely free — billing starts with your first fulfilled order.' },
-    { q: isAr ? 'متى يوصلني عرض السعر؟' : 'How fast do I get a quote?', a: isAr ? 'خلال يوم عمل واحد من مشاركتك تفاصيل شحنك.' : 'Within one business day of sharing your shipping profile.' },
+    claims.minimumCommitment === null && { q: isAr ? 'هل فيه عقد طويل أو حد أدنى؟' : 'Is there a long contract or minimum?', a: isAr ? 'لا. تدفع على اللي تشحنه فعلاً، وتكبر أو تصغّر براحتك.' : 'No. You pay for what you actually ship, and scale up or down freely.' },
+    claims.setupFee === 0 && { q: isAr ? 'فيه رسوم تأسيس أو إعداد؟' : 'Are there setup fees?', a: isAr ? 'أبدًا. الإعداد والربط مجاني بالكامل، والفوترة تبدأ من أول طلب نجهزه لك.' : 'None. Onboarding and integration are completely free — billing starts with your first fulfilled order.' },
+    { q: isAr ? 'متى يوصلني عرض السعر؟' : 'How fast do I get a quote?', a: isAr ? `خلال ${claims.quoteTurnaround.ar} من مشاركتك تفاصيل شحنك.` : `Within ${claims.quoteTurnaround.en} of sharing your shipping profile.` },
     { q: isAr ? 'ليش ما تنشرون أسعار ثابتة؟' : 'Why not publish fixed prices?', a: isAr ? 'لأن تكلفة شحن عطر 200 جرام للرياض تختلف جذريًا عن أثاث 15 كيلو لأبها. السعر الثابت يعني إن أحد يدفع زيادة، وغالبًا أنت.' : 'Because shipping a 200g perfume to Riyadh costs radically less than 15kg of furniture to Abha. A fixed price means someone overpays — usually you.' },
-  ];
+  ].filter((x): x is { q: string; a: string } => Boolean(x));
 
   return (
     <>
@@ -130,10 +126,10 @@ export default function Pricing() {
             <Reveal delay={120}>
               <SpotlightCard className="fa-card fa-card--glow p-8 lg:p-10 text-left rtl:text-right">
                 <h3 className="font-display text-[24px] lg:text-[30px] font-bold text-fa-liberty-blue leading-[1.15] tracking-[-0.02em]">
-                  {isAr ? 'أرقامك جاهزة؟ عرضك جاهز.' : 'Get an exact quote within one business day.'}
+                  {isAr ? 'أرقامك جاهزة؟ عرضك جاهز.' : `Get an exact quote within ${claims.quoteTurnaround.en}.`}
                 </h3>
                 <p className="font-body mt-4 text-[15px] text-fa-ink-muted leading-[1.7]">
-                  {isAr ? 'شاركنا تفاصيل شحنك، ونرد عليك بخطة مفصّلة على أرقامك أنت، خلال يوم عمل واحد.' : 'Share your shipping profile and we’ll come back with a detailed plan built on your real numbers.'}
+                  {isAr ? `شاركنا تفاصيل شحنك، ونرد عليك بخطة مفصّلة على أرقامك أنت، خلال ${claims.quoteTurnaround.ar}.` : 'Share your shipping profile and we’ll come back with a detailed plan built on your real numbers.'}
                 </p>
                 <div className="mt-8">
                   <MagneticButton variant="filled" href="/contact">

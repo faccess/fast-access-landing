@@ -1,44 +1,43 @@
 import usePageMeta from '../hooks/usePageMeta';
 import Hero from '../sections/Hero';
-import WhatIsFA from '../sections/WhatIsFA';
 import TrustedBy from '../sections/TrustedBy';
-import KickerBar from '../sections/KickerBar';
+import WhyFA from '../sections/WhyFA';
 import ServicesGrid from '../sections/ServicesGrid';
-import ScrollRoute from '../sections/ScrollRoute';
-import Sectors from '../sections/Sectors';
-import Coverage from '../sections/Coverage';
+import OrderJourney from '../sections/OrderJourney';
 import StatStrip from '../sections/StatStrip';
-import Results from '../sections/Results';
 import AppPromo from '../sections/AppPromo';
 import Pricing from '../sections/Pricing';
 import FAQ from '../sections/FAQ';
 import CTA from '../sections/CTA';
+import { claims } from '../content/claims';
+import { indexMeta } from '../content/seo';
+
+const w = claims.expressDeliveryWindow;
 
 export default function Home() {
   usePageMeta(
-    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: 'فاست أكسس شريكك اللوجستي في السعودية: تخزين، تجهيز بهوية علامتك، شحن لكل المملكة، وتوصيل بنفس اليوم. تكامل مباشر مع سلة وزد وشوبيفاي. خلّها علينا.' },
-    { title: 'Fast Access — Fulfillment & Shipping for E-commerce', desc: 'Your logistics partner in Saudi Arabia: storage, branded fulfillment, live-tracked shipping, and same-day delivery from cloud warehouses.' }
+    { title: 'فاست أكسس | شركة تخزين وتجهيز وشحن للمتاجر الإلكترونية في السعودية', desc: indexMeta.description },
+    { title: 'Fast Access — Fulfillment & Shipping for E-commerce', desc: `Your logistics partner in Saudi Arabia: storage, branded fulfillment, live-tracked shipping, and express delivery within ${w.en} from our cloud warehouses.` }
   );
   return (
     <>
+      {/* 1. Hero: headline + the three performance stats */}
       <Hero />
-      {/* Plain-language value prop first: tell visitors what we do */}
-      <WhatIsFA />
-      {/* Social proof high up: the platforms we plug into, right after the pitch */}
+      {/* Platforms strip, shown once */}
       <TrustedBy />
-      <KickerBar />
+      {/* 2. Why Fast Access: three differentiators + comparison table */}
+      <WhyFA />
+      {/* 3. The seven services, compact */}
       <ServicesGrid />
-      {/* The journey beat: cinematic order-in-motion */}
-      <ScrollRoute />
-      {/* The platform: live-ops dashboard — follows the journey's
-          "live readout" story with the tool that delivers it */}
-      <Sectors />
-      {/* Navy "proof" block: network + the numbers */}
-      <Coverage />
+      {/* 4. The order journey: five fixed steps with times from claims */}
+      <OrderJourney />
+      {/* 5. Numbers + client stories, merged */}
       <StatStrip />
-      <Results />
+      {/* 6. Dashboard + merchant app, merged */}
       <AppPromo />
+      {/* 7. Pricing in brief */}
       <Pricing />
+      {/* 8. Top-5 FAQ, final CTA + quote form */}
       <FAQ />
       <CTA />
     </>
