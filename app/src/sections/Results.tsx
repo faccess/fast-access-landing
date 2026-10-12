@@ -44,7 +44,8 @@ export function ResultsCards({ className = '' }: { className?: string }) {
                   </span>
                   <div className="font-display text-[15px] font-semibold text-fa-liberty-blue leading-tight">{it.name}</div>
                 </div>
-                {/* Case facts */}
+                {/* Case facts — hidden while the {{CASE_n_*}} placeholders are unfilled */}
+                {!it.sector.startsWith('{{') && (
                 <dl className="grid grid-cols-3 gap-2 px-6 pb-4 font-body text-[11px] leading-snug">
                   {[
                     [t('results.sectorLabel'), it.sector],
@@ -57,6 +58,7 @@ export function ResultsCards({ className = '' }: { className?: string }) {
                     </div>
                   ))}
                 </dl>
+                )}
 
                 {/* Before */}
                 <div className="px-6 py-5 bg-fa-cream-deep/60">

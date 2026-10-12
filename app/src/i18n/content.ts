@@ -29,7 +29,8 @@ const en = {
   },
   why: {
     chip: 'Why Fast Access?',
-    headline: '{{USP_HEADLINE}}',
+    // TODO: USP_HEADLINE — temporary headline until Meshal sets the final one
+    headline: 'Three reasons to leave it to us.',
     intro: 'A Saudi company running your store’s orders from the shelf to your customer’s door. One partner, one dashboard, full accountability.',
     cards: [
       { title: `Delivery within ${c.expressDeliveryWindow.en}`, body: `Your stock sits in cloud warehouses inside ${joinList(c.expressCities, 'en')}, close to your customer, so "delivered today" is an operational fact, not a slogan.` },
@@ -252,7 +253,8 @@ const ar = {
   },
   why: {
     chip: 'ليش فاست أكسس؟',
-    headline: '{{USP_HEADLINE}}',
+    // TODO: USP_HEADLINE — عنوان مؤقت إلى أن يحدد مشعل العنوان النهائي
+    headline: 'ثلاثة أسباب تخليك تخلّيها علينا.',
     intro: 'شركة سعودية تدير طلبات متجرك من الرف إلى باب عميلك. شريك واحد، لوحة واحدة، ومسؤولية كاملة.',
     cards: [
       { title: `توصيل خلال ${c.expressDeliveryWindow.ar}`, body: `مخزونك في مخازن سحابية داخل ${joinList(c.expressCities, 'ar')}، قريب من عميلك، فوعد «توصيل اليوم» يصير حقيقة مو شعار.` },
