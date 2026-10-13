@@ -33,6 +33,7 @@ export const Contact = lazyRoute(() => import('./pages/Contact'));
 export const NotFound = lazyRoute(() => import('./pages/NotFound'));
 export const FAQ = lazyRoute(() => import('./pages/FAQ'));
 export const Privacy = lazyRoute(() => import('./pages/Privacy'));
+export const AppPrivacy = lazyRoute(() => import('./pages/AppPrivacy'));
 export const Terms = lazyRoute(() => import('./pages/Terms'));
 export const ServicePage = lazyRoute(() => import('./pages/ServicePage'));
 export const Blog = lazyRoute(() => import('./pages/Blog'));
@@ -55,6 +56,7 @@ const byPath: Record<string, Preloadable> = {
   '/contact': Contact,
   '/faq': FAQ,
   '/privacy': Privacy,
+  '/app-privacy': AppPrivacy,
   '/terms': Terms,
   '/solutions/storage': ServicePage,
   '/solutions/packing': ServicePage,

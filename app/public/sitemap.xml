@@ -25,5 +25,6 @@
   <url><loc>https://faccess.co/blog/peak-season-preparation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://faccess.co/blog/inventory-management-basics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://faccess.co/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://faccess.co/app-privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://faccess.co/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
