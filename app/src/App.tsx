@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 
 import {
   Home, Solutions, Pricing, About, Resources, Contact, NotFound, FAQ,
-  Privacy, Terms, Blog, BlogArticle, BlogArticle2, BlogArticle3, BlogArticle4,
+  Privacy, AppPrivacy, Terms, Blog, BlogArticle, BlogArticle2, BlogArticle3, BlogArticle4,
   BlogArticle5, BlogArticle6, BlogArticle7, BlogArticle8, BlogArticle9,
   ServicePage,
 } from './routeLoaders';
@@ -38,6 +38,7 @@ export default function App() {
             <Route path="/blog/peak-season-preparation" element={<BlogArticle8 />} />
             <Route path="/blog/inventory-management-basics" element={<BlogArticle9 />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/app-privacy" element={<AppPrivacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
           </Route>

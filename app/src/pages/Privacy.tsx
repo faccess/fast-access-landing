@@ -43,6 +43,7 @@ export default function Privacy() {
                 <p>
                   هذه السياسة توضح كيف تتعامل {claims.legalNameAr} («فاست أكسس»، «نحن») مع البيانات الشخصية التي نجمعها عبر موقع faccess.co وخدماتنا، وذلك التزامًا بنظام حماية البيانات الشخصية في المملكة العربية السعودية.
                 </p>
+                <p>لتطبيق فاست أكسس للتجار سياسة خصوصية مستقلة: <a href="/app-privacy" className="text-fa-orange-soda font-semibold">سياسة خصوصية التطبيق</a>.</p>
               </S>
               <S title="البيانات التي نجمعها">
                 <p>نجمع البيانات التي تزودنا بها مباشرة عند طلب عرض سعر أو التواصل معنا، وتشمل: الاسم، رقم الجوال، البريد الإلكتروني، اسم العلامة التجارية أو الشركة، رابط المتجر، وحجم الطلبات الشهرية، وأي تفاصيل إضافية تشاركها معنا.</p>
@@ -73,6 +74,7 @@ export default function Privacy() {
             <>
               <S title="Introduction">
                 <p>This policy explains how {claims.legalNameEn} ("Fast Access", "we") handles personal data collected through faccess.co and our services, in line with the Saudi Personal Data Protection Law.</p>
+                <p>The Fast Access merchant app has its own policy: <a href="/app-privacy" className="text-fa-orange-soda font-semibold">App Privacy Policy</a>.</p>
               </S>
               <S title="Data we collect">
                 <p>We collect data you provide directly when requesting a quote or contacting us: name, phone, email, brand/company name, store URL, monthly order volume, and any details you share. We also automatically collect limited technical data (browser, device, pages visited) to operate and improve the site.</p>

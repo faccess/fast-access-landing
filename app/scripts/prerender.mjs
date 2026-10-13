@@ -40,6 +40,7 @@ const ROUTES = [
   { path: '/faq', mustContain: 'الأسئلة' },
   { path: '/contact', mustContain: 'تواصل' },
   { path: '/privacy', mustContain: 'الخصوصية' },
+  { path: '/app-privacy', mustContain: 'خصوصية التطبيق' },
   { path: '/terms', mustContain: 'الشروط' },
   { path: '/blog', out: 'blog/index.html', mustContain: 'المدونة' },
   { path: '/blog/what-is-fulfillment', mustContain: 'الدليل الشامل' },
