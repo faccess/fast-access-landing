@@ -53,7 +53,7 @@ export default function AppPrivacy() {
       <section className="py-16 lg:py-24 bg-fa-classic-chalk">
         <div className="container-main max-w-[820px]">
           <p className="font-body text-[13px] text-fa-ink-muted/70 mb-10">
-            {isAr ? 'آخر تحديث: 14 أكتوبر 2026' : 'Last updated: October 14, 2026'}
+            {isAr ? 'آخر تحديث: 18 أكتوبر 2026' : 'Last updated: October 18, 2026'}
           </p>
 
           {isAr ? (
@@ -92,8 +92,7 @@ export default function AppPrivacy() {
                 <UL items={[
                   'نوع الجهاز ونظام التشغيل وإصدار التطبيق واللغة',
                   'معرّفات الجهاز ورموز الإشعارات',
-                  'عنوان IP وأوقات الدخول وسجلات الأعطال والتشخيص',
-                  'بيانات الاستخدام مثل الشاشات المعروضة والميزات المستخدمة، لتحسين الأداء والاستقرار',
+                  'عنوان IP وأوقات الدخول، تُحفظ في سجلات خوادمنا لأغراض الأمان وحل المشكلات',
                 ]} />
                 <H>٢.٤ صلاحيات التطبيق</H>
                 <p>يطلب التطبيق صلاحية واحدة فقط، وهي اختيارية ويمكن تغييرها من إعدادات جهازك:</p>
@@ -121,7 +120,7 @@ export default function AppPrivacy() {
                   <><strong>منصة إدارة المستودعات والطلبات:</strong> يعمل التطبيق عبر نظام إدارة المستودعات والطلبات لدينا (Omniful) الذي يستضيف بياناتك التشغيلية ويعالجها.</>,
                   <><strong>شركات التوصيل:</strong> اسم المستلم ورقمه وعنوانه وتفاصيل الطرد تُشارك مع شركة النقل المكلفة بالتوصيل أو الاستلام.</>,
                   <><strong>قنوات البيع المرتبطة:</strong> تُزامن بيانات الطلبات والمخزون مع منصات التجارة الإلكترونية التي تربطها بحسابك (مثل سلة، زد، شوبيفاي، نون).</>,
-                  <><strong>مزودو الخدمات:</strong> الاستضافة السحابية، الرسائل (واتساب/SMS/بريد)، و<span dir="ltr">Google Firebase</span> الذي نستخدمه للإشعارات (<span dir="ltr">Firebase Cloud Messaging</span>) وتحليلات التطبيق وتقارير الأعطال (<span dir="ltr">Crashlytics</span>)، ويعالج معرّفات الجهاز ورموز الإشعارات وبيانات الاستخدام والأعطال وفق سياسة خصوصية Google.</>,
+                  <><strong>مزودو الخدمات:</strong> الاستضافة السحابية، الرسائل (واتساب/SMS/بريد)، و<span dir="ltr">Google Firebase</span> الذي نستخدمه للإشعارات (<span dir="ltr">Firebase Cloud Messaging</span>)، ويعالج معرّفات الجهاز ورموز الإشعارات وفق سياسة خصوصية Google.</>,
                   <><strong>الجهات النظامية:</strong> الجهات الحكومية أو المحاكم أو الجهات الرقابية عند طلبها بموجب النظام، أو لحماية حقوقنا أو سلامتنا أو ممتلكاتنا.</>,
                   <><strong>نقل الأعمال:</strong> في حال الاندماج أو الاستحواذ أو بيع الأصول، مع الالتزام بنفس الحماية الواردة في هذه السياسة.</>,
                 ]} />
@@ -130,7 +129,7 @@ export default function AppPrivacy() {
 
               <S id="security" title="٥. الاحتفاظ بالبيانات وحمايتها">
                 <p>
-                  <strong>الاحتفاظ.</strong> نحتفظ ببيانات الحساب طوال فترة نشاط حسابك. تُحفظ السجلات التشغيلية (الطلبات، الشحنات، المرتجعات، الفواتير) للمدة التي تفرضها الأنظمة التجارية والضريبية والمحاسبية في المملكة (حتى ١٠ سنوات عادةً) ثم تُحذف أو تُجهّل. تُحفظ سجلات الاستخدام والأعطال لمدة لا تتجاوز ١٢ شهرًا. عند حذف حسابك، تُحذف البيانات الشخصية غير الخاضعة لمتطلبات احتفاظ نظامية خلال ٣٠ يومًا.
+                  <strong>الاحتفاظ.</strong> نحتفظ ببيانات الحساب طوال فترة نشاط حسابك. تُحفظ السجلات التشغيلية (الطلبات، الشحنات، المرتجعات، الفواتير) للمدة التي تفرضها الأنظمة التجارية والضريبية والمحاسبية في المملكة (حتى ١٠ سنوات عادةً) ثم تُحذف أو تُجهّل. تُحفظ سجلات الوصول للخوادم لمدة لا تتجاوز ١٢ شهرًا. عند حذف حسابك، تُحذف البيانات الشخصية غير الخاضعة لمتطلبات احتفاظ نظامية خلال ٣٠ يومًا.
                 </p>
                 <p>
                   <strong>الحماية.</strong> نحمي بياناتك بالتشفير أثناء النقل (<span dir="ltr">TLS</span>) والتخزين المشفّر والتحكم في الصلاحيات حسب الدور ورموز مصادقة تنتهي وتتجدد تلقائيًا وتسجيل الوصول إلى الأنظمة التي تحتفظ ببيانات شخصية. يقتصر الوصول على الموظفين والمتعاقدين الذين يحتاجونه لأداء عملهم. لا توجد وسيلة نقل أو تخزين آمنة بنسبة ١٠٠٪، وفي حال وقوع اختراق يمس بياناتك سنبلغك والجهة المختصة وفق ما يقتضيه النظام.
@@ -160,7 +159,7 @@ export default function AppPrivacy() {
 
               <S title="٧. معلومات أخرى والتواصل">
                 <p><strong>الأطفال.</strong> التطبيق مخصص للأعمال وللمستخدمين من عمر ١٨ عامًا فأكثر. لا نجمع بيانات الأطفال عن علم، وإذا اعتقدت أن طفلًا زوّدنا ببيانات فتواصل معنا لحذفها.</p>
-                <p><strong>النقل خارج المملكة.</strong> تُخزَّن بياناتك بشكل أساسي داخل المملكة العربية السعودية. قد يعالج بعض مزودي الخدمات (مثل الاستضافة السحابية أو الإشعارات أو التحليلات) بيانات خارج المملكة، وأي نقل يتم وفق ضوابط نظام حماية البيانات الشخصية وبضمانات تحافظ على نفس مستوى الحماية الوارد في هذه السياسة.</p>
+                <p><strong>النقل خارج المملكة.</strong> تُخزَّن بياناتك بشكل أساسي داخل المملكة العربية السعودية. قد يعالج بعض مزودي الخدمات (مثل الاستضافة السحابية أو الإشعارات) بيانات خارج المملكة، وأي نقل يتم وفق ضوابط نظام حماية البيانات الشخصية وبضمانات تحافظ على نفس مستوى الحماية الوارد في هذه السياسة.</p>
                 <p><strong>الروابط الخارجية.</strong> قد يحتوي التطبيق على روابط لمنصات خارجية (مثل قنوات البيع أو صفحات تتبع شركات الشحن) تخضع لسياسات الخصوصية الخاصة بها.</p>
                 <p><strong>التعديلات.</strong> قد نحدّث هذه السياسة من وقت لآخر، ويظهر تاريخ آخر تحديث في أعلى الصفحة. سنعلن عن أي تغييرات جوهرية داخل التطبيق أو بالبريد قبل سريانها.</p>
                 <H>للتواصل</H>
@@ -204,8 +203,7 @@ export default function AppPrivacy() {
                 <UL items={[
                   'Device type, operating system version, app version, and language',
                   'Device identifiers and push-notification tokens',
-                  'IP address, access times, and crash and diagnostic logs',
-                  'Usage data such as screens viewed and features used, to improve performance and stability',
+                  'IP address and access times, kept in our server logs for security and troubleshooting',
                 ]} />
                 <H>2.4 App permissions</H>
                 <p>The App requests only the following permission. It is optional and can be changed in your device settings:</p>
@@ -233,7 +231,7 @@ export default function AppPrivacy() {
                   <><strong>Warehouse and order management platform:</strong> the App is powered by our warehouse and order management system (Omniful), which hosts and processes your operational data.</>,
                   <><strong>Delivery partners:</strong> recipient name, phone number, address, and parcel details are shared with the courier assigned to deliver or collect a shipment.</>,
                   <><strong>Sales channels you connect:</strong> order and inventory data is synced with the e-commerce platforms you link to your account (such as Salla, Zid, Shopify, or Noon).</>,
-                  <><strong>Service providers:</strong> cloud hosting, messaging (WhatsApp/SMS/email), and Google Firebase, which we use for push notifications (Firebase Cloud Messaging), app analytics, and crash reporting (Crashlytics). Firebase processes device identifiers, push tokens, and usage and crash data under Google's privacy policy.</>,
+                  <><strong>Service providers:</strong> cloud hosting, messaging (WhatsApp/SMS/email), and Google Firebase, which we use for push notifications (Firebase Cloud Messaging). Firebase processes device identifiers and push tokens under Google's privacy policy.</>,
                   <><strong>Legal and regulatory:</strong> government authorities, courts, or regulators where required by law, or to protect our rights, safety, or property.</>,
                   <><strong>Business transfers:</strong> in the event of a merger, acquisition, or sale of assets, subject to the same protections in this Policy.</>,
                 ]} />
@@ -241,7 +239,7 @@ export default function AppPrivacy() {
               </S>
 
               <S id="security" title="5. Data Retention and Security">
-                <p><strong>Retention.</strong> We keep account data for as long as your merchant account is active. Operational records (orders, shipments, returns, invoices) are retained for the period required by Saudi commercial, tax, and accounting regulations, typically up to 10 years, after which they are deleted or anonymized. Diagnostic and usage logs are kept for no longer than 12 months. When you delete your account, personal data not subject to a legal retention requirement is deleted within 30 days.</p>
+                <p><strong>Retention.</strong> We keep account data for as long as your merchant account is active. Operational records (orders, shipments, returns, invoices) are retained for the period required by Saudi commercial, tax, and accounting regulations, typically up to 10 years, after which they are deleted or anonymized. Server access logs are kept for no longer than 12 months. When you delete your account, personal data not subject to a legal retention requirement is deleted within 30 days.</p>
                 <p><strong>Security.</strong> We protect your data with encryption in transit (TLS), encrypted storage, role-based access controls, authentication tokens that expire and rotate, and logging of access to systems that hold personal data. Access is limited to employees and contractors who need it to perform their work. No method of transmission or storage is completely secure; if we become aware of a breach affecting your data, we will notify you and the competent authority as required by law.</p>
               </S>
 
@@ -268,7 +266,7 @@ export default function AppPrivacy() {
 
               <S title="7. Other Information and Contact">
                 <p><strong>Children.</strong> The App is a business tool intended for users aged 18 and over. We do not knowingly collect personal data from children. If you believe a child has provided us with data, contact us and we will delete it.</p>
-                <p><strong>International transfers.</strong> Your data is primarily stored in the Kingdom of Saudi Arabia. Some service providers (for example cloud hosting, notification, or analytics providers) may process data outside Saudi Arabia. Any such transfer is made in accordance with the PDPL and with safeguards that protect your data to the same standard described in this Policy.</p>
+                <p><strong>International transfers.</strong> Your data is primarily stored in the Kingdom of Saudi Arabia. Some service providers (for example cloud hosting or notification providers) may process data outside Saudi Arabia. Any such transfer is made in accordance with the PDPL and with safeguards that protect your data to the same standard described in this Policy.</p>
                 <p><strong>Third-party links.</strong> The App may link to third-party platforms (such as sales channels or courier tracking pages). Their privacy practices are governed by their own policies.</p>
                 <p><strong>Changes to this Policy.</strong> We may update this Policy from time to time. The "Last updated" date at the top shows the current version. Material changes will be announced in the App or by email before they take effect.</p>
                 <H>Contact us</H>
