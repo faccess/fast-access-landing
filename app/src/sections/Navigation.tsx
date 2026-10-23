@@ -106,7 +106,9 @@ export default function Navigation() {
               key={i}
               className="w-5 h-0.5 mb-1 last:mb-0 transition-all duration-200"
               style={{
-                backgroundColor: scrolled || mobileOpen ? '#0D1232' : '#FAFBFC',
+                // Dark only once the bar has its cream background; over the
+                // transparent hero the X must stay light to be visible.
+                backgroundColor: scrolled ? '#0D1232' : '#FAFBFC',
                 transform: mobileOpen
                   ? i === 0 ? 'rotate(45deg) translate(3px, 3px)' : i === 2 ? 'rotate(-45deg) translate(3px, -3px)' : 'none'
                   : 'none',
