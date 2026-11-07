@@ -16,7 +16,7 @@ import { useT } from '../i18n/I18nContext';
 import { content } from '../i18n/content';
 import { claims, pct } from '../content/claims';
 
-interface Item { name: string; sector: string; monthlyOrders: string; period: string; before: string; after: string }
+interface Item { name: string; logo?: string; url?: string; sector: string; monthlyOrders: string; period: string; before: string; after: string }
 
 function metricValue(v: string) {
   return v === 'pickAccuracy' ? pct(claims.pickAccuracy) : v;
@@ -39,10 +39,18 @@ export function ResultsCards({ className = '' }: { className?: string }) {
               <div className="relative z-10 flex h-full flex-col">
                 {/* Merchant */}
                 <div className="flex items-center gap-3 px-6 pt-6 pb-3">
-                  <span className="fa-iconchip w-9 h-9 rounded-xl font-display text-[15px] font-bold">
-                    {it.name.trim().charAt(0)}
-                  </span>
-                  <div className="font-display text-[15px] font-semibold text-fa-liberty-blue leading-tight">{it.name}</div>
+                  {it.logo ? (
+                    <img src={it.logo} alt={it.name} width={36} height={36} loading="lazy" className="w-9 h-9 rounded-xl object-cover ring-1 ring-fa-hairline" />
+                  ) : (
+                    <span className="fa-iconchip w-9 h-9 rounded-xl font-display text-[15px] font-bold">
+                      {it.name.trim().charAt(0)}
+                    </span>
+                  )}
+                  <div className="font-display text-[15px] font-semibold text-fa-liberty-blue leading-tight">
+                    {it.url ? (
+                      <a href={it.url} target="_blank" rel="noopener noreferrer" className="hover:text-fa-orange-soda transition-colors">{it.name}</a>
+                    ) : it.name}
+                  </div>
                 </div>
                 {/* Case facts — hidden while the {{CASE_n_*}} placeholders are unfilled */}
                 {!it.sector.startsWith('{{') && (

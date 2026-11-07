@@ -114,7 +114,7 @@ export const claims = {
   returnsErrorRate: 1, // TODO: confirm — يُعرض «<1%»
   /** مقاييس قصص العملاء الثلاث (بنفس ترتيب القصص) */
   caseStudyMetrics: [
-    { value: '2x', label: { ar: 'تضاعفت المبيعات', en: 'sales after joining' } },
+    { value: '~0%', label: { ar: 'نسبة الخطأ في الطلبات', en: 'order error rate' } },
     { value: 'pickAccuracy', label: { ar: 'دقة تجهيز الطلبات', en: 'order accuracy' } },
     { value: '-85%', label: { ar: 'مرتجعات تالفة', en: 'damage returns' } },
   ] as { value: string; label: Bi }[], // TODO: confirm — كانت «توضيحية» حسب تعليق الكود؛ القيمة 'pickAccuracy' تقرأ من claims.pickAccuracy
