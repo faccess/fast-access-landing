@@ -218,7 +218,7 @@ const en = {
     headlineB: '',
     sectorLabel: 'Sector', ordersLabel: 'Orders / month', periodLabel: 'Period',
     items: [
-      { name: 'Jennamm', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'Every few orders, one went out in the wrong size or colour, and some reached the customer late.', after: 'Errors are now close to zero, delivery is faster, and customer service is with us every step of the way.' },
+      { name: 'JENNAMM', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'Every few orders, one went out in the wrong size or colour, and some reached the customer late.', after: 'Errors are now close to zero, delivery is faster, and customer service is with us every step of the way.' },
       { name: 'A skincare store', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates, and orders ship right the first time.' },
       { name: 'A perfume store', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'High returns, and orders arriving damaged because the packaging didn’t protect the product.', after: 'Secure packaging worthy of perfumes, and returns dropped to a minimum.' },
     ],
