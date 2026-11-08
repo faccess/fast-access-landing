@@ -47,8 +47,8 @@ export default function OrderJourney() {
                     </div>
                     <div className="font-display mt-2 text-[20px] lg:text-[22px] font-bold text-fa-liberty-blue leading-tight tracking-[-0.01em]">
                       {step.time}
-                      {label && <span className="ms-1.5 font-body text-[11px] font-semibold text-fa-orange-soda align-middle">{label}</span>}
                     </div>
+                    {label && <div className="mt-1 font-body text-[11px] font-semibold text-fa-orange-soda leading-none">{label}</div>}
                     <p className="font-body mt-2 text-[13.5px] text-fa-ink-muted leading-[1.6]">{step.body}</p>
                   </div>
                 </div>

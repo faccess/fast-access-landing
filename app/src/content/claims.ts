@@ -115,7 +115,7 @@ export const claims = {
   /** مقاييس قصص العملاء الثلاث (بنفس ترتيب القصص) */
   caseStudyMetrics: [
     { value: '~0%', label: { ar: 'نسبة الخطأ في الطلبات', en: 'order error rate' } },
-    { value: 'pickAccuracy', label: { ar: 'دقة تجهيز الطلبات', en: 'order accuracy' } },
+    { value: '<15', label: { ar: 'دقيقة متوسط وقت الرد', en: 'min average reply time' } },
     { value: '-85%', label: { ar: 'مرتجعات تالفة', en: 'damage returns' } },
   ] as { value: string; label: Bi }[], // TODO: confirm — كانت «توضيحية» حسب تعليق الكود؛ القيمة 'pickAccuracy' تقرأ من claims.pickAccuracy
 

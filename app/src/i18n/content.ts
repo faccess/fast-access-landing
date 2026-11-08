@@ -219,7 +219,7 @@ const en = {
     sectorLabel: 'Sector', ordersLabel: 'Orders / month', periodLabel: 'Period',
     items: [
       { name: 'JENNAMM', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'Every few orders, one went out in the wrong size or colour, and some reached the customer late.', after: 'Errors are now close to zero, delivery is faster, and customer service is with us every step of the way.' },
-      { name: 'A skincare store', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'A large inventory with zero clarity: missing expiry dates, orders going out wrong.', after: 'Full visibility of stock and expiry dates, and orders ship right the first time.' },
+      { name: 'SYS', logo: '/assets/merchants/sys.png', url: 'https://saveyourskin-sa.com/', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'Everything ran late: packaging, orders, the work itself, and the warehouse was painfully slow to respond.', after: 'Fast delivery, flawless packaging, and a response from the Fast Access team we never expected.' },
       { name: 'A perfume store', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'High returns, and orders arriving damaged because the packaging didn’t protect the product.', after: 'Secure packaging worthy of perfumes, and returns dropped to a minimum.' },
     ],
   },
@@ -317,7 +317,7 @@ const ar = {
       { title: 'وصول الطلب', time: c.orderSync.ar, body: 'الطلب ينسحب من متجرك لنظامنا تلقائيًا، بدون إدخال يدوي.' },
       { title: 'التجهيز', time: `${c.avgPackingTimeHours} ساعة`, timeLabel: 'متوسط', body: 'نجهّز الطلب ونفحصه ونغلّفه بهوية علامتك.' },
       { title: 'الشحن', time: c.carrierHandover.ar, body: 'نسلّمه للناقل الأنسب، ورابط التتبع يوصل عميلك تلقائيًا.' },
-      { title: 'التسليم', time: c.expressDeliveryWindow.ar, timeLabel: 'عاجل', body: `العاجل داخل ${joinList(c.expressCities, 'ar')}، و${c.otherRegionsStandard.ar} لباقي مناطق المملكة.` },
+      { title: 'التسليم', time: c.expressDeliveryWindow.ar, timeLabel: 'توصيل سريع', body: `السريع داخل ${joinList(c.expressCities, 'ar')}، و${c.otherRegionsStandard.ar} لباقي مناطق المملكة.` },
       { title: 'المرتجع', time: c.returnsVisibility.ar, body: 'نستقبل المرتجع ونفحصه ونرجعه لمخزونك، وتشوف حالته بلوحتك.' },
     ],
     coverage: `نغطي مناطق المملكة الـ${c.coverageRegions} كلها، ونشحن لدول الخليج خلال ${c.gccDelivery.ar}، ولأكثر من ${c.internationalCountries} دولة.`,
@@ -443,7 +443,7 @@ const ar = {
     sectorLabel: 'القطاع', ordersLabel: 'الطلبات شهريًا', periodLabel: 'الفترة',
     items: [
       { name: 'جنام', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'كل كم طلب يطلع فيه غلط مقاس أو لون، وبعضها يتأخر على العميل.', after: 'نسبة الخطأ صارت شبه معدومة، والتوصيل أسرع، وخدمة العملاء معنا أول بأول.' },
-      { name: 'متجر عناية', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'مخزون كبير بدون وضوح: تواريخ انتهاء غايبة، وطلبات تطلع غلط.', after: 'رؤية كاملة للمخزون وتواريخ الصلاحية... والطلب يطلع صح من أول مرة.' },
+      { name: 'SYS', logo: '/assets/merchants/sys.png', url: 'https://saveyourskin-sa.com/', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'كل شي كان متأخر: التغليف والطلبات والشغل، وتجاوب المستودع جدا سيء.', after: 'توصيل سريع، تغليف ممتاز بدون مشاكل، وتجاوب من فريق فاست أكسس ما توقعناه.' },
       { name: 'متجر عطور', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'مرتجعات مرتفعة، وطلبات توصل مكسورة بسبب تغليف ما يحمي المنتج.', after: 'تغليف محكم يليق بالعطور، والمرتجعات نزلت لأدنى حد.' },
     ],
   },
