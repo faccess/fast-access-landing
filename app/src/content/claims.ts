@@ -116,7 +116,7 @@ export const claims = {
   caseStudyMetrics: [
     { value: '~0%', label: { ar: 'نسبة الخطأ في الطلبات', en: 'order error rate' } },
     { value: '<15', label: { ar: 'دقيقة متوسط وقت الرد', en: 'min average reply time' } },
-    { value: '-85%', label: { ar: 'مرتجعات تالفة', en: 'damage returns' } },
+    { value: '1.5', label: { ar: 'يوم متوسط وصول الطلب للعميل', en: 'days average delivery time' } },
   ] as { value: string; label: Bi }[], // TODO: confirm — كانت «توضيحية» حسب تعليق الكود؛ القيمة 'pickAccuracy' تقرأ من claims.pickAccuracy
 
   // ── التأمين والتعويض ────────────────────────────────────────────────

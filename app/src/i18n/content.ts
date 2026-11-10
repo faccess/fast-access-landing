@@ -220,7 +220,7 @@ const en = {
     items: [
       { name: 'JENNAMM', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'Every few orders, one went out in the wrong size or colour, and some reached the customer late.', after: 'Errors are now close to zero, delivery is faster, and customer service is with us every step of the way.' },
       { name: 'SYS', logo: '/assets/merchants/sys.png', url: 'https://saveyourskin-sa.com/', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'Everything ran late: packaging, orders, the work itself, and the warehouse was painfully slow to respond.', after: 'Fast delivery, flawless packaging, and a response from the Fast Access team we never expected.' },
-      { name: 'A perfume store', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'High returns, and orders arriving damaged because the packaging didn’t protect the product.', after: 'Secure packaging worthy of perfumes, and returns dropped to a minimum.' },
+      { name: 'Yoga Beauty', logo: '/assets/merchants/yoga-beauty.png', url: 'https://korean-yoga.com/', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'Late shipping and a lot of returns.', after: 'Faster shipping, fewer returns, and outstanding customer service. Our experience with Fast Access has been great and we recommend working with them.' },
     ],
   },
   footer: {
@@ -444,7 +444,7 @@ const ar = {
     items: [
       { name: 'جنام', logo: '/assets/merchants/jennamm.png', url: 'https://jennamm.com/', sector: '{{CASE_1_SECTOR}}', monthlyOrders: '{{CASE_1_MONTHLY_ORDERS}}', period: '{{CASE_1_PERIOD}}', before: 'كل كم طلب يطلع فيه غلط مقاس أو لون، وبعضها يتأخر على العميل.', after: 'نسبة الخطأ صارت شبه معدومة، والتوصيل أسرع، وخدمة العملاء معنا أول بأول.' },
       { name: 'SYS', logo: '/assets/merchants/sys.png', url: 'https://saveyourskin-sa.com/', sector: '{{CASE_2_SECTOR}}', monthlyOrders: '{{CASE_2_MONTHLY_ORDERS}}', period: '{{CASE_2_PERIOD}}', before: 'كل شي كان متأخر: التغليف والطلبات والشغل، وتجاوب المستودع جدا سيء.', after: 'توصيل سريع، تغليف ممتاز بدون مشاكل، وتجاوب من فريق فاست أكسس ما توقعناه.' },
-      { name: 'متجر عطور', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'مرتجعات مرتفعة، وطلبات توصل مكسورة بسبب تغليف ما يحمي المنتج.', after: 'تغليف محكم يليق بالعطور، والمرتجعات نزلت لأدنى حد.' },
+      { name: 'يوجا بيوتي', logo: '/assets/merchants/yoga-beauty.png', url: 'https://korean-yoga.com/', sector: '{{CASE_3_SECTOR}}', monthlyOrders: '{{CASE_3_MONTHLY_ORDERS}}', period: '{{CASE_3_PERIOD}}', before: 'شحن متأخر ومرتجعات كثير.', after: 'شحن أسرع، مرتجعات أقل، وخدمة عملاء فوق الممتازة. تجربتنا مع فاست أكسس رائعة وننصح بالتعامل معهم.' },
     ],
   },
   footer: {
