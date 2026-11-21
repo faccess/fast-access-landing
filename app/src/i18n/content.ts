@@ -34,7 +34,7 @@ const en = {
     intro: 'A Saudi company running your store’s orders from the shelf to your customer’s door. One partner, one dashboard, full accountability.',
     cards: [
       { title: `Delivery within ${c.expressDeliveryWindow.en}`, body: `Your stock sits in cloud warehouses inside ${joinList(c.expressCities, 'en')}, close to your customer, so "delivered today" is an operational fact, not a slogan.` },
-      { title: 'A platform and app we build ourselves', body: 'We develop our technology in-house: a dashboard that connects your store and shows every order and unit live, and a merchant app coming soon.' },
+      { title: 'A platform and app we build ourselves', body: 'We develop our technology in-house: a dashboard that connects your store and shows every order and unit live, and a merchant app on the App Store and Google Play.' },
       { title: 'The whole chain, under one roof', body: 'From import and customs clearance, through storage, packing, and shipping, to returns. One accountable team from start to finish.' },
     ],
     compareTitle: 'How do the options compare?',
@@ -104,7 +104,7 @@ const en = {
     headlineHighlight: 'and an app in your pocket.',
     body: 'Follow every order and your stock live from the dashboard, while the merchant app brings the alerts that matter wherever you are.',
     webLabel: 'On the web',
-    appLabel: 'In the app (coming soon)',
+    appLabel: 'In the app',
     web: [
       'Your inventory, live and clear across every location',
       'Restock alerts before you run out',
@@ -258,7 +258,7 @@ const ar = {
     intro: 'شركة سعودية تدير طلبات متجرك من الرف إلى باب عميلك. شريك واحد، لوحة واحدة، ومسؤولية كاملة.',
     cards: [
       { title: `توصيل خلال ${c.expressDeliveryWindow.ar}`, body: `مخزونك في مخازن سحابية داخل ${joinList(c.expressCities, 'ar')}، قريب من عميلك، فوعد «توصيل اليوم» يصير حقيقة مو شعار.` },
-      { title: 'منصة وتطبيق نطوّرها بأيدينا', body: 'نطوّر تقنيتنا داخليًا: لوحة تحكم تربط متجرك وتعرض كل طلب وكل قطعة لحظة بلحظة، وتطبيق للتجار قريبًا.' },
+      { title: 'منصة وتطبيق نطوّرها بأيدينا', body: 'نطوّر تقنيتنا داخليًا: لوحة تحكم تربط متجرك وتعرض كل طلب وكل قطعة لحظة بلحظة، وتطبيق للتجار على App Store و Google Play.' },
       { title: 'السلسلة كاملة عندنا', body: 'من الاستيراد والتخليص الجمركي، للتخزين والتجهيز والشحن، إلى المرتجعات. فريق واحد مسؤول عن طلبك من أوله لآخره.' },
     ],
     compareTitle: 'وش الفرق؟',
@@ -328,7 +328,7 @@ const ar = {
     headlineHighlight: 'وتطبيق بجيبك.',
     body: 'تتابع كل طلب ومخزونك لحظة بلحظة من لوحة التحكم، وتطبيق التجار يوصلك التنبيهات المهمة وين ما كنت.',
     webLabel: 'على الويب',
-    appLabel: 'في التطبيق (قريبًا)',
+    appLabel: 'في التطبيق',
     web: [
       'مخزونك مباشر وواضح عبر كل المواقع',
       'تنبيهات إعادة الطلب قبل لا ينفد المخزون',

@@ -1,3 +1,4 @@
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../content/appLinks';
 import { Link } from 'react-router-dom';
 import type { ComponentType } from 'react';
 import { WhatsappLogo, EnvelopeSimple, Phone, FileText, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
@@ -111,7 +112,10 @@ export default function Footer() {
               {t('footer.body')}
             </p>
             <p className="mt-4 font-ui text-[12px] font-semibold text-[#8a8a9a]">
-              {isAr ? '📱 تطبيق فاست أكسس للتجار: قريبًا على App Store و Google Play' : '📱 Fast Access merchant app — soon on the App Store & Google Play'}
+              {isAr ? '📱 تطبيق فاست أكسس للتجار: ' : '📱 Fast Access merchant app: '}
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-fa-classic-chalk transition-colors">App Store</a>
+              {isAr ? ' و ' : ' and '}
+              <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-fa-classic-chalk transition-colors">Google Play</a>
             </p>
           </div>
 

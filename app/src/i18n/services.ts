@@ -229,14 +229,14 @@ export const SERVICES: ServiceContent[] = [
         { title: 'روابط تتبع تلقائية لعملائك', body: 'نرسل لعميلك رابط تتبع بهوية متجرك لحظة شحن الطلب، يحدث نفسه تلقائيًا، فتنخفض مكالمات \"وين طلبي\" بشكل ملموس.' },
         { title: 'تقارير تبني عليها قرارات', body: 'نعطيك تقارير تبني عليها قرارات: متوسط زمن التسليم بمنطقة، أداء كل ناقل، ونسب نجاح التسليم من أول محاولة، أرقام حقيقية توجه اختياراتك التشغيلية والتسويقية.' },
         { title: 'تنبيهات الاستثناءات', body: 'ننبهك فور تأخر شحنة عن نافذتها أو تعثر تسليم أو نقص عنوان: تظهر لك كاستثناء يحتاج قرارًا، مو رقمًا ضايعًا وسط جدول.' },
-        { title: 'تطبيق التجار، قريبًا', body: 'تابع طلباتك وتحليلات مبيعاتك ومخزونك وتنبيهاتك اللحظية من جوالك، قريبًا على App Store و Google Play.' },
+        { title: 'تطبيق التجار', body: 'تابع طلباتك وتحليلات مبيعاتك ومخزونك وتنبيهاتك اللحظية من جوالك، متوفر على App Store و Google Play.' },
       ],
       en: [
         { title: 'Five clear stages', body: 'We document every order across five stages: received, packed, out for shipping, in transit, delivered. Every transition is timestamped, so no shipment goes dark between stages.' },
         { title: 'Automatic customer tracking links', body: 'We send your customer a branded self-updating tracking link the moment an order ships, so \"where is my order\" contacts drop measurably.' },
         { title: 'Reports you can act on', body: 'We give you reports you can act on: average delivery time per region, per-carrier performance, and first-attempt success rates, real numbers guiding operational and marketing choices.' },
         { title: 'Exception alerts', body: 'We alert you the moment a shipment slips its window, a delivery fails, or an address is missing: surfaced as an exception needing a decision, not a lost row in a table.' },
-        { title: 'Merchant app — coming soon', body: 'Track your orders, sales and inventory analytics, and instant alerts from your phone. Soon on the App Store and Google Play.' },
+        { title: 'Merchant app', body: 'Track your orders, sales and inventory analytics, and instant alerts from your phone. Available on the App Store and Google Play.' },
       ],
     },
     steps: {

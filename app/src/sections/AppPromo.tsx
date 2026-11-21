@@ -2,11 +2,12 @@ import { useT } from '../i18n/I18nContext';
 import { content } from '../i18n/content';
 import SectionChip from '../components/brand/SectionChip';
 import Reveal from '../components/Reveal';
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../content/appLinks';
 import { Bell, LineChart, PackageSearch, PackagePlus, Check } from 'lucide-react';
 
 /**
  * AppPromo — the merged "dashboard & app" section on Home: the web dashboard
- * («لوحة واحدة») and the merchant mobile app («تجارتك بجيبك», launching soon)
+ * («لوحة واحدة») and the merchant mobile app («تجارتك بجيبك», live on both stores)
  * in one band. The phone shows the approved merchant-app screen capture.
  */
 export default function AppPromo() {
@@ -87,14 +88,15 @@ export default function AppPromo() {
             ))}
           </div>
 
-          {/* Store badges — soon state. Two-column grid so both cards are
+          {/* Store badges — link to the live listings. Two-column grid so both cards are
               always the exact same size, incl. mobile. */}
           <Reveal delay={420}>
             <div className="mt-9 grid grid-cols-2 gap-3 max-w-[460px]">
               {[
                 {
                   store: 'App Store',
-                  sub: isAr ? 'قريبًا على' : 'Soon on',
+                  href: APP_STORE_URL,
+                  sub: isAr ? 'حمّله من' : 'Download on the',
                   logo: (
                     /* Apple logo */
                     <svg viewBox="0 0 384 512" className="h-6 w-6 shrink-0" fill="currentColor" aria-hidden>
@@ -104,7 +106,8 @@ export default function AppPromo() {
                 },
                 {
                   store: 'Google Play',
-                  sub: isAr ? 'قريبًا على' : 'Soon on',
+                  href: GOOGLE_PLAY_URL,
+                  sub: isAr ? 'حمّله من' : 'Get it on',
                   logo: (
                     /* Google Play logo — monochrome like official dark badges */
                     <svg viewBox="0 0 512 512" className="h-6 w-6 shrink-0" fill="currentColor" aria-hidden>
@@ -113,15 +116,20 @@ export default function AppPromo() {
                   ),
                 },
               ].map((b) => (
-                <div key={b.store} className="relative flex items-center justify-center gap-3 rounded-xl border border-fa-classic-chalk/25 bg-white/5 px-4 py-3.5 select-none">
-                  {/* floating soon-tag on the card edge — never competes with the text */}
-                  <span className="absolute -top-2.5 end-3 rounded-full bg-fa-orange-soda px-2.5 py-0.5 font-ui text-[9.5px] font-bold text-white shadow-sm">{isAr ? 'قريبًا' : 'Soon'}</span>
+                <a
+                  key={b.store}
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={isAr ? `حمّل تطبيق فاست أكسس من ${b.store}` : `Download the Fast Access app on ${b.store}`}
+                  className="relative flex items-center justify-center gap-3 rounded-xl border border-fa-classic-chalk/25 bg-white/5 px-4 py-3.5 transition-colors hover:border-fa-orange-soda hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-fa-orange-soda"
+                >
                   <span className="text-fa-classic-chalk">{b.logo}</span>
                   <div className="text-left rtl:text-right min-w-0">
                     <div className="font-ui text-[10px] uppercase tracking-[0.08em] text-fa-classic-chalk/55 whitespace-nowrap">{b.sub}</div>
                     <div className="font-display text-[15px] font-bold text-fa-classic-chalk leading-tight whitespace-nowrap">{b.store}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </Reveal>
